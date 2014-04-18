@@ -1,5 +1,6 @@
 <?php
     include '../../lang/ar.php';
+//TODO: add a response to faild log in attempt
 ?>
 <html class="no-js" lang="ar" dir="rtl">
     <head>
