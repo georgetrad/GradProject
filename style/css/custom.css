@@ -1,0 +1,26 @@
+footer {
+    position:fixed;
+    bottom:0;    
+    background-color:#444;
+    opacity: 1;
+    color:#333;
+    height:100px;
+    clear:both;
+    width:100%;
+}
+
+footer a:link {   
+    color:#D8D8D8;
+    text-align: left;
+    display: inline-block;
+    padding-left: 280px;
+    padding-top: 20px;
+}
+
+footer img{        
+    display: inline-block;    
+}
+
+footer a{        
+    color: #D8D8D8;    
+}
