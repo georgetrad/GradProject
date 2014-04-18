@@ -1,6 +1,10 @@
 <?php
-    include '../../lang/ar.php';
 //TODO: add a response to faild log in attempt
+include '../../models/core.php';   
+include '../../lang/ar.php';
+if (loggedin()){
+    header('Location: ../../index.php');    
+}
 ?>
 <html class="no-js" lang="ar" dir="rtl">
     <head>
@@ -36,7 +40,7 @@
                 &nbsp;
             </div>
             <div class="large-2 columns">
-                <input type="password" id="password" placeholder="<?=PASSWORD?>" style="font-size: 18px" required>
+                <input type="password" id="password" placeholder="<?=PASSWORD?>" style="font-size: 18px;" required>
             </div>
             <div class="large-5 columns">
                 &nbsp;

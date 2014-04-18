@@ -1,7 +1,6 @@
 <?php
-include './db_connect.php';
-/**
- * Description of databaseClass
+include 'db_connect.php';
+/** 
  * This class contains Database related functions for (SELECT, INSERT, UPDATE) queries.
  * @author George Trad
  */
@@ -21,19 +20,19 @@ class databaseClass {
             $queryNumRows = mysql_num_rows($queryRun);
             if($queryNumRows == 0){
                 $response = array(
-                    "success"   => true
-                );
-                return $response;
+                    "success"   => false
+                );                
             }
             else if($queryNumRows == 1){                        
                 $userId = mysql_result($queryRun, 0, 'user_id');
                 $userType = mysql_result($queryRun, 0, 'type');                
                 $response = array(
+                    "success"   => true,
                     "userId"    => $userId,
                     "userType"  => $userType
-                );
-                return $response;
+                );                
             }
+            return $response;
         }		
     }
 }
