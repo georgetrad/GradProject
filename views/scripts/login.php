@@ -49,8 +49,8 @@ if (loggedin()){
             <div class="large-5 columns">
                 &nbsp;
             </div>
-            <div class="row large-2 columns">
-                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="margin-right: 75px; background-color: #07034a; font-size: 14px">
+            <div class="large-2 columns text-center">
+                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="background-color: #07034a; font-size: 14px">
             </div>
             <div class="large-5 columns">
                 &nbsp;
