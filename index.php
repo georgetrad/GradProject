@@ -10,6 +10,5 @@ if(loggedin()){
     }
 }
 else{
-    header('Location: ./views/scripts/login.php');    
+    header('Location: ./views/scripts/login.php');
 }
-

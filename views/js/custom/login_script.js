@@ -12,11 +12,10 @@ function login(){
     $.post('../../views/scripts/_global_ajax.php', {phpCase:'login', username: username, password: password }, function(data){        
         var result = JSON.parse(data);
         var success = result.success;
-        var type = result.userType;
-        var id = result.userId;
+        var type = result.userType;        
         
         if (type === 'A'){
-            window.location.replace("././dean/home.php");
+            window.location.replace("././dean/home.php");            
         }
         else if(type === 'U'){
             window.location.replace("././teacher/home.php");

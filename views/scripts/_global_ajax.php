@@ -1,5 +1,6 @@
 <?php
 include '../../models/databaseClass.php';
+
 switch($_POST['phpCase']){
     case 'login':{
         if (isset($_POST['username'])){
@@ -17,4 +18,3 @@ switch($_POST['phpCase']){
         }        
     }    
 }
-

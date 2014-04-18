@@ -1,7 +1,7 @@
 <?php
 //TODO: add a response to faild log in attempt
-include '../../models/core.php';   
-include '../../lang/ar.php';
+include '../../models/core.php';
+
 if (loggedin()){
     header('Location: ../../index.php');    
 }
