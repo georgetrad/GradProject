@@ -24,7 +24,7 @@
                 &nbsp;
             </div>
             <div class="large-2 columns">
-                <input type="text" id="username" placeholder="<?=USERNAME?>" style="font-size: 18" required>
+                <input type="text" id="username" placeholder="<?=USERNAME?>" style="font-size: 18px" required>
             </div>
             <div class="large-5 columns">
                 &nbsp;
@@ -35,7 +35,7 @@
                 &nbsp;
             </div>
             <div class="large-2 columns">
-                <input type="password" id="password" placeholder="<?=PASSWORD?>" style="font-size: 18" required>
+                <input type="password" id="password" placeholder="<?=PASSWORD?>" style="font-size: 18px" required>
             </div>
             <div class="large-5 columns">
                 &nbsp;
@@ -46,14 +46,14 @@
                 &nbsp;
             </div>
             <div class="row large-2 columns">
-                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="margin-right: 75; background-color: #07034a; font-size: 14">
+                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="margin-right: 75px; background-color: #07034a; font-size: 14px">
             </div>
             <div class="large-5 columns">
                 &nbsp;
             </div>
         </div>        
         <footer>
-            <img src="../../style/img/logo - Copy.png" alt="digitech Logo" style="float: left; width:200 ; height: 50; margin-left: 200; margin-top: 25">
+            <img src="../../style/img/logo - Copy.png" alt="digitech Logo" style="float: left; width:200px ; height: 50px; margin-left: 200px; margin-top: 25px">
         </footer>
         <script type="text/javascript" src="../js/jquery/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
