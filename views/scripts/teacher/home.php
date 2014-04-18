@@ -1,2 +1,9 @@
 <?php
-echo 'You are a teacher';
+include '../../../models/core.php';
+
+if (loggedin() && $_SESSION['userType'] == 'U'){
+    echo 'You are logged in as a dean';
+}
+else{
+    echo 'You do not have access to this page.';
+}
