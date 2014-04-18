@@ -51,8 +51,7 @@
             <div class="large-5 columns">
                 &nbsp;
             </div>
-        </div>
-        <div id="feedback"></div>
+        </div>        
         <footer>
             <img src="../../style/img/logo - Copy.png" alt="digitech Logo" style="float: left; width:200 ; height: 50; margin-left: 200; margin-top: 25">
         </footer>
