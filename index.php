@@ -9,4 +9,7 @@ if(loggedin()){
         header('Location: ./views/scripts/teacher/home.php');                
     }
 }
+else{
+    header('Location: ./views/scripts/login.php');    
+}
 
