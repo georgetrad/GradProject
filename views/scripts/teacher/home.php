@@ -1,8 +1,11 @@
 <?php
-require_once '../../../models/core.php';
-if (loggedIn() && $_SESSION['userType'] == 'U'){
+include '../header.php';
+if (loggedIn() && $_SESSION['userType'] == 'U'){    
     echo 'You are logged in as a teacher';
 }
 else{
-    echo 'You do not have access to this page.';
+    echo '<div data-alert class="alert-box warning" style="font-size: 20; background-color: red; text-align: center">
+            '.ACCESS_DENIED.'
+            <a href="#" class="close">&times;</a>
+          </div>';        
 }

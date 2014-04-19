@@ -1,5 +1,5 @@
 <?php
-require '../../models/databaseClass.php';
+require $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/databaseClass.php';
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 
 switch($_POST['phpCase']){
@@ -19,7 +19,7 @@ switch($_POST['phpCase']){
         break;
     }
     
-    case 'logOut':{
+    case 'logOut':{            
         session_destroy();
         echo 'success';
         break;

@@ -1,5 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
+
 ?>
 <html class="no-js" lang="ar" dir="rtl">
     <head>

@@ -14,7 +14,7 @@ function logIn(){
         var success = result.success;
         var type = result.userType;        
         
-        if (type === 'A'){
+        if (type === 'A'){            
             window.location.replace("././dean/home.php");
         }
         else if(type === 'U'){
