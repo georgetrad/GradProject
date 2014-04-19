@@ -1,4 +1,5 @@
 <?php
+require '../../../models/core.php';
 if (loggedIn() && $_SESSION['userType'] == 'U'){
     echo 'You are logged in as a dean';
 }
