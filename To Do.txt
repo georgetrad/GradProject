@@ -1,6 +1,8 @@
 George:
 - Redirect user to login page after logging out.
-
+- create a headr.
+- Smaller footer (50px).
+- create index.php in every folder.
 
 
 Mohammad:
