@@ -4,3 +4,5 @@ George:
 
 
 Mohammad:
+- add notification if login failed
+- merge the controller of the dean page and the teacher's
