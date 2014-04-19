@@ -1,6 +1,6 @@
 <?php
 include '../header.php';
-if (loggedIn() && $_SESSION['userType'] == 'A'){    
+if (loggedIn() && $_SESSION['userType'] == 'A'){
     echo 'You are logged in as a dean';
 }
 else{

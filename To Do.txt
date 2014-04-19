@@ -3,7 +3,10 @@ George:
 - Include header.php in home.php (Done)
 - create a headr in login.php
 - Smaller footer (50px).
-- create index.php in every folder.
+- create index.php in every folder (if signed in).
+- New home hierarchy.
+- Add a Side bar.
+- Add keystroke "enter" when logging in.
 
 
 Mohammad:

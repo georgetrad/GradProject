@@ -3,15 +3,15 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 
 if(loggedIn()){
     if($_SESSION['userType'] == 'A'){
-        header('Location: ./views/scripts/dean/home.php');
+        header('Location: ./dean/home.php');
         exit();
     }
     else if($_SESSION['userType'] == 'U'){
-        header('Location: ./views/scripts/teacher/home.php');
+        header('Location: ./teacher/home.php');
         exit();
     }
 }
 else{
-    header('Location: ./views/scripts/login.php');
+    header('Location: ./login.php');
     exit();
 }

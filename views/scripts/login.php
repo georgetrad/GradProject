@@ -53,9 +53,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
                 &nbsp;
             </div>
         </div>        
-        <footer>
-            <img src="../../style/img/logo - Copy.png" alt="digitech Logo" style="float: left; width:100px ; height: 25px; margin-left: 200px; margin-top: 25px">
-        </footer>
+        <?php include './footer.php';?>
         <script type="text/javascript" src="../js/jquery/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="../js/custom/login_script.js"></script>
