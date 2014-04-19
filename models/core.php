@@ -9,4 +9,3 @@ function loggedIn(){
         return false;
     }
 }
-?>

@@ -1,0 +1,6 @@
+George:
+- Redirect user to login page after logging out.
+
+
+
+Mohammad:
