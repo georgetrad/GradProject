@@ -5,7 +5,5 @@ $(function(){
 });
 
 function logOut(){
-    $.post('../../views/scripts/_global_ajax.php', {phpCase:'logOut'}, function(data){                
-                
-    });
+    $.post('../../views/scripts/_global_ajax.php', {phpCase:'logOut'});
 }
