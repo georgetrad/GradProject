@@ -54,7 +54,7 @@ require '../../lang/ar.php';
             </div>
         </div>        
         <footer>
-            <img src="../../style/img/logo - Copy.png" alt="digitech Logo" style="float: left; width:200px ; height: 50px; margin-left: 200px; margin-top: 25px">
+            <img src="../../style/img/logo - Copy.png" alt="digitech Logo" style="float: left; width:100px ; height: 25px; margin-left: 200px; margin-top: 25px">
         </footer>
         <script type="text/javascript" src="../js/jquery/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
