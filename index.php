@@ -1,5 +1,6 @@
 <?php
-require './models/core.php';
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
+
 if(loggedIn()){
     if($_SESSION['userType'] == 'A'){
         header('Location: ./views/scripts/dean/home.php');

@@ -1,4 +1,5 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/lang/ar.php';
 ob_start();
 session_start();
 function loggedIn(){

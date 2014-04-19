@@ -1,7 +1,6 @@
 <?php
 require '../../models/databaseClass.php';
-require '../../models/core.php';
-require '../../lang/ar.php';
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 
 switch($_POST['phpCase']){
     case 'logIn':{
@@ -21,7 +20,8 @@ switch($_POST['phpCase']){
     }
     
     case 'logOut':{
-        session_destroy();        
+        session_destroy();
+        echo 'success';
         break;
     }
 }
