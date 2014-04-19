@@ -1,9 +1,7 @@
 <?php
 ob_start();
 session_start();
-include '../../lang/ar.php';
-
-function loggedin(){
+function loggedIn(){
     if(isset($_SESSION['userId']) && !empty($_SESSION['userId'])){		
         return true;
     }
@@ -11,3 +9,4 @@ function loggedin(){
         return false;
     }
 }
+?>

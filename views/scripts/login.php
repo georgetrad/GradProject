@@ -1,10 +1,6 @@
 <?php
-//TODO: add a response to faild log in attempt
-include '../../models/core.php';
-
-if (loggedin()){
-    header('Location: ../../index.php');    
-}
+require '../../models/core.php';
+require '../../lang/ar.php';
 ?>
 <html class="no-js" lang="ar" dir="rtl">
     <head>

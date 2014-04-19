@@ -1,5 +1,8 @@
 <?php
-DEFINE('LOGIN', 'تسجيل الدخول');
-DEFINE('USERNAME', 'اسم المستخدم');
-DEFINE('PASSWORD', 'كلمة المرور');
+define('LOGIN', 'تسجيل الدخول');
+define('USERNAME', 'اسم المستخدم');
+define('PASSWORD', 'كلمة المرور');
+
+define('TITLE', 'الارشاد الأكاديمي');
+define('LOGOUT', 'تسجيل الخروج');
 ?>

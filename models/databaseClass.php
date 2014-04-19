@@ -1,5 +1,5 @@
 <?php
-include 'db_connect.php';
+require 'db_connect.php';
 /** 
  * This class contains Database related functions for (SELECT, INSERT, UPDATE) queries.
  * @author George Trad
@@ -12,7 +12,7 @@ class databaseClass {
      * @return boolean: false if the username and/or password are invalid.
      * @return boolean user_type (A: Admin, U: User)
      */
-    public static function login($username, $password){
+    public static function logIn($username, $password){
         $password_hash	= md5($password);   //Decrypting the MD5 encrypted password.        
         $query = "SELECT user_id, username, type FROM user WHERE username='".mysql_real_escape_string($username)."' AND password='".mysql_real_escape_string($password_hash)."'";
         $queryRun = mysql_query($query);        
@@ -20,16 +20,18 @@ class databaseClass {
             $queryNumRows = mysql_num_rows($queryRun);
             if($queryNumRows == 0){
                 $response = array(
-                    "success"   => false
+                    'success'   => false
                 );                
             }
             else if($queryNumRows == 1){                        
                 $userId = mysql_result($queryRun, 0, 'user_id');
-                $userType = mysql_result($queryRun, 0, 'type');                
+                $username = mysql_result($queryRun, 0, 'username');
+                $userType = mysql_result($queryRun, 0, 'type');                                
                 $response = array(
-                    "success"   => true,
-                    "userId"    => $userId,
-                    "userType"  => $userType
+                    'success'   => true,
+                    'userId'    => $userId,
+                    'userType'  => $userType,
+                    'username'  => $username
                 );                
             }
             return $response;
