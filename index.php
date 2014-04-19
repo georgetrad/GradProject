@@ -1,6 +1,5 @@
 <?php
 require './models/core.php';
-
 if(loggedIn()){
     if($_SESSION['userType'] == 'A'){
         header('Location: ./views/scripts/dean/home.php');

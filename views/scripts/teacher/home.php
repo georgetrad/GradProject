@@ -1,7 +1,5 @@
 <?php
-include '../../../models/core.php';
-
-if (loggedin() && $_SESSION['userType'] == 'U'){
+if (loggedIn() && $_SESSION['userType'] == 'U'){
     echo 'You are logged in as a dean';
 }
 else{
