@@ -1,6 +1,10 @@
 <?php
 require '../../models/core.php';
 require '../../lang/ar.php';
+if(!loggedIn()){
+    echo 'You do not have access to this page.';
+    exit();
+}
 ?>
 <html class="no-js" lang="ar" dir="rtl">
     <head>
