@@ -5,9 +5,8 @@ $(function(){
 });
 
 function logOut(){    
-    $.post('../../scripts/_global_ajax.php', {phpCase:'logOut'},  function(data){        
-        if(data == 'success'){
-            alert('hello');
+    $.post('../../views/scripts/_global_ajax.php', {phpCase:'logOut'},  function(data){                
+        if(data == 'success'){            
             window.location.replace("../../login.php");
         }
     });

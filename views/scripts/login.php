@@ -1,6 +1,5 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-
 ?>
 <html class="no-js" lang="ar" dir="rtl">
     <head>
@@ -55,10 +54,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
         </div>        
         <?php include './footer.php';?>        
         <script type="text/javascript" src="../js/jquery/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="../js/jquery/jquery-ui-1.10.4.custom.min.js"></script>        
-        <script type="text/javascript" src="../js/custom/login_script.js"></script>
+        <script type="text/javascript" src="../js/jquery/jquery-ui-1.10.4.custom.min.js"></script>                
         <script type="text/javascript" src="../js/foundation/foundation.js"></script>
         <script type="text/javascript" src="../js/foundation/foundation.reveal.js"></script>
+        <script type="text/javascript" src="../js/custom/login_script.js"></script>
         <script>
             $(document).foundation();
         </script>
