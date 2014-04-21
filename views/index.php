@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
+include_once '../models/core.php';
 
 if(loggedIn()){
     if($_SESSION['userType'] == 'A'){

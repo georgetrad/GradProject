@@ -1,6 +1,6 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/databaseClass.php';
-include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
+include_once '../../models/databaseClass.php';
+include_once '../../models/core.php';
 switch($_POST['phpCase']){
     case 'logIn':{
         if (isset($_POST['username'])){
@@ -8,8 +8,7 @@ switch($_POST['phpCase']){
             $password = $_POST['password'];
             $userInfo = databaseClass::logIn($username, $password);
 
-            if($userInfo['success'] == true){
-                
+            if($userInfo['success'] == true){                
                 $_SESSION['userId'] = $userInfo['userId'];			//Assigning the user_id to a session to use it later.                
                 $_SESSION['userType'] = $userInfo['userType'];
                 $_SESSION['username'] = $userInfo['username'];
@@ -20,8 +19,8 @@ switch($_POST['phpCase']){
     }
     
     case 'logOut':{
-        //if(isset($_SESSION['userId'])){
-            session_destroy();
+        //if(isset($_SESSION['userId'])){                        
+        session_destroy();            
             echo 'success';
         //}
         break;

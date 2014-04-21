@@ -30,7 +30,7 @@ if(!loggedIn()){
                       <li class="has-dropdown">
                         <a href="#"><?=$_SESSION['username'];?></a>
                         <ul class="dropdown">
-                            <li><a href="#" id="logout_button" style="font-family: Tahoma"><?=LOGOUT?></a></li>
+                            <li><a href="#" id="logout_button"><?=LOGOUT?></a></li>
                         </ul>
                       </li>
                     </ul>               

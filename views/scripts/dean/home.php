@@ -1,5 +1,5 @@
 <?php
-include '../header.php';
+include_once '../header.php';
 if (loggedIn() && $_SESSION['userType'] == 'A'){
     echo 'You are logged in as a dean';
 }
