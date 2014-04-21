@@ -10,7 +10,7 @@ switch($_POST['phpCase']){
             $userInfo = databaseClass::logIn($username, $password);
 
             if($userInfo['success'] == true){                
-                $_SESSION['userId'] = $userInfo['userId'];				//Assigning the user_id to a session to use it later.                
+                $_SESSION['userId'] = $userInfo['userId'];			//Assigning the user_id to a session to use it later.                
                 $_SESSION['userType'] = $userInfo['userType'];
                 $_SESSION['username'] = $userInfo['username'];
             }            
@@ -19,9 +19,11 @@ switch($_POST['phpCase']){
         break;
     }
     
-    case 'logOut':{            
-        session_destroy();
-        echo 'success';
+    case 'logOut':{
+        if(isset($_SESSION['userId'])){
+            session_destroy();
+            echo 'success';
+        }
         break;
     }
 }

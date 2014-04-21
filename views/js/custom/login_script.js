@@ -9,7 +9,7 @@ function logIn(){
     var username = $('#username').val();
     var password = $('#password').val();
 
-    $.post('../../views/scripts/_global_ajax.php', {phpCase:'logIn', username: username, password: password }, function(data){        
+    $.post('../../scripts/_global_ajax.php', {phpCase:'logIn', username: username, password: password }, function(data){        
         var result = JSON.parse(data);
         var success = result.success;
         var type = result.userType;        
