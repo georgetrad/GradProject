@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn()){
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit();
 }
 ?>
