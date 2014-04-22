@@ -1,7 +1,7 @@
 <?php
 
 include_once '../../models/db_connect.php';
-include_once '../../gen/PHPExcel/IOFactory.php';
+include_once '../../models/PHPExcel/IOFactory.php';
 include_once '../../models/importFunction.php';
     
 //*******************Student name*******************//
