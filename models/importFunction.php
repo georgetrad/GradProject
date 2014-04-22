@@ -86,4 +86,3 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
     $rValue = array ("Rows have been added"=>$added,"Rows that are duplicated"=>$duplicated);
     return $rValue;
 }
-?>
