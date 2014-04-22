@@ -1,4 +1,6 @@
 <?php
+// Arabic language strings constants.
+
 define('LOGIN', 'تسجيل الدخول');
 define('USERNAME', 'اسم المستخدم');
 define('PASSWORD', 'كلمة المرور');

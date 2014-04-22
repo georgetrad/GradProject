@@ -1,16 +1,16 @@
 <?php
-require 'db_connect.php';
-/** 
- * This class contains Database related functions for (SELECT, INSERT, UPDATE) queries.
- * @author George Trad
+include_once 'db_connect.php';
+/**  
+ * * This class contains Database related functions for (SELECT, INSERT, UPDATE) queries.
  */
 class databaseClass {
     /**
-     * This method accepts two parameters to log the user in
+     * @author George Trad
+     * This method accepts two parameters to log the user in.
      * @param string $username
      * @param string $password
-     * @return boolean: false if the username and/or password are invalid.
-     * @return boolean user_type (A: Admin, U: User)
+     * @return array: false if the username and/or password are invalid.
+     * @return array: true and user information (A: Admin, U: User)     
      */
     public static function logIn($username, $password){
         $password_hash	= md5($password);   //Decrypting the MD5 encrypted password.        

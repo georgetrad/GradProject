@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn()){
-    echo 'You do not have access to this page.';
+    header('Location: login.php');
     exit();
 }
 ?>
@@ -30,7 +30,7 @@ if(!loggedIn()){
                       <li class="has-dropdown">
                         <a href="#"><?=$_SESSION['username'];?></a>
                         <ul class="dropdown">
-                            <li><a href="#" id="logout_button"><?=LOGOUT?></a></li>
+                            <li><a href="views/scripts/log_out.php"><?=LOGOUT?></a></li>
                         </ul>
                       </li>
                     </ul>               
@@ -41,8 +41,7 @@ if(!loggedIn()){
         <script type="text/javascript" src="views/js/jquery/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="views/js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="views/js/foundation/foundation.js"></script>
-        <script type="text/javascript" src="views/js/foundation/foundation.topbar.js"></script>
-        <script type="text/javascript" src="views/js/custom/logout_script.js"></script>
+        <script type="text/javascript" src="views/js/foundation/foundation.topbar.js"></script>        
         <script>
             $(document).foundation();
         </script>

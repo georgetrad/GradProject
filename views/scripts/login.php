@@ -15,20 +15,19 @@ if(loggedIn()){
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, text/html" />        
-        <title><?=LOGIN?></title>      
-        <link rel="stylesheet" href="../../style/css/foundation.css"/>
-        <link rel="stylesheet" href="../../style/css/custom.css"/>
-        <script type="text/javascript" src="../js/vendor/modernizr.js"></script>        
+        <title><?=LOGIN?></title>
+        <base href="http://localhost/GradProject/" />
+        <link rel="stylesheet" href="style/css/foundation.css"/>
+        <link rel="stylesheet" href="style/css/custom.css"/>
+        <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>        
     </head>
     <body>
-        <div class="row large-12 columns">
+        <div class="row large-12 columns show-for-large-up text-center">
             <br><br><br><br><br><br><br>
-            <center>
-                <img src="../../style/img/Ebla_logo.png" alt="EPU Logo">
-                <br><br><br>
-            </center>            
+            <img src="style/img/Ebla_logo.png" alt="EPU Logo">
+            <br><br><br>
         </div>
-        
+                
         <div class="row">
             <div class="large-5 columns">
                 &nbsp;
@@ -62,12 +61,13 @@ if(loggedIn()){
                 &nbsp;
             </div>
         </div>        
+                
         <?php include './footer.php';?>        
-        <script type="text/javascript" src="../js/jquery/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="../js/jquery/jquery-ui-1.10.4.custom.min.js"></script>                
-        <script type="text/javascript" src="../js/foundation/foundation.js"></script>
-        <script type="text/javascript" src="../js/foundation/foundation.reveal.js"></script>
-        <script type="text/javascript" src="../js/custom/login_script.js"></script>
+        <script type="text/javascript" src="views/js/jquery/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="views/js/jquery/jquery-ui-1.10.4.custom.min.js"></script>                
+        <script type="text/javascript" src="views/js/foundation/foundation.js"></script>
+        <script type="text/javascript" src="views/js/foundation/foundation.reveal.js"></script>
+        <script type="text/javascript" src="views/js/custom/login_script.js"></script>
         <script>
             $(document).foundation();
         </script>
