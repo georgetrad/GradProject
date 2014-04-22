@@ -1,8 +1,7 @@
 <?php
-
-include_once '../../models/db_connect.php';
-include_once '../../models/PHPExcel/IOFactory.php';
-include_once '../../models/importFunction.php';
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/PHPExcel/IOFactory.php';
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/importFunction.php';
     
 //*******************Student name*******************//
 //configurations 

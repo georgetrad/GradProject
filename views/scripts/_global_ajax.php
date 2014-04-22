@@ -18,9 +18,9 @@ switch($_POST['phpCase']){
                 $_SESSION['userId'] = $userInfo['userId'];
                 $_SESSION['userType'] = $userInfo['userType'];
                 $_SESSION['username'] = $userInfo['username'];
-            }            
+            }
             echo json_encode($userInfo);    // Encoding the user info in JSON because it cannot be returned as an array.
         }
         break;
-    }        
+    }
 }
