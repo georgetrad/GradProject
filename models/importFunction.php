@@ -1,5 +1,5 @@
 <?php
-function import($inputFileName, $columns, $table_name, $rows, $rowsOffSet, $staticData = array())
+function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData = array())
 {
 /*
  * configurations 
@@ -16,7 +16,7 @@ function import($inputFileName, $columns, $table_name, $rows, $rowsOffSet, $stat
 //        "status"                => "A",
 //        "address"               => "---"
 //    );
-//    $table_name = 'student';
+//    $tableName = 'student';
 //    $rows = 1000;
 //    $rowsOffSet = 5500;
 
@@ -65,7 +65,7 @@ function import($inputFileName, $columns, $table_name, $rows, $rowsOffSet, $stat
         $allValues = array_unique($aValues);
     }
 
-    $sql = "INSERT INTO ".$table_name;
+    $sql = "INSERT INTO ".$tableName;
     $sql.= "(".$columnsNames.")";
     $added=0;
     $duplicated=0;
