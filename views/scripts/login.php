@@ -28,7 +28,7 @@ if(loggedIn()){
             <br><br><br>
         </div>
                 
-        <div class="row">
+        <div class="row large-12 columns show-for-large-up">
             <div class="large-5 columns">
                 &nbsp;
             </div>
@@ -39,7 +39,7 @@ if(loggedIn()){
                 &nbsp;
             </div>
         </div>
-        <div class="row">
+        <div class="row large-12 columns show-for-large-up">
             <div class="large-5 columns">
                 &nbsp;
             </div>
@@ -50,7 +50,7 @@ if(loggedIn()){
                 &nbsp;
             </div>
         </div>            
-        <div class="row">
+        <div class="row large-12 columns show-for-large-up">
             <div class="large-5 columns">
                 &nbsp;
             </div>
