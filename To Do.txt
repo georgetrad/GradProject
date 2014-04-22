@@ -1,6 +1,4 @@
 George:
-- Redirect user to login page after logging out. (Done).
-- Include header.php in home.php (Done)
 - create a headr in login.php
 - Smaller footer (50px).
 - create index.php in every folder (if signed in).
