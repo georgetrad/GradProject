@@ -14,7 +14,8 @@ class databaseClass {
      */
     public static function logIn($username, $password){
         $password_hash	= md5($password);   //Decrypting the MD5 encrypted password.        
-        $query = "SELECT user_id, username, type FROM user WHERE username='".mysql_real_escape_string($username)."' AND password='".mysql_real_escape_string($password_hash)."'";
+        // mySQL query
+        $query = "SELECT user_id, username, level FROM user WHERE username='".mysql_real_escape_string($username)."' AND password='".mysql_real_escape_string($password_hash)."' AND active = 'A'";
         $queryRun = mysql_query($query);        
         if($queryRun){
             $queryNumRows = mysql_num_rows($queryRun);
@@ -26,11 +27,11 @@ class databaseClass {
             else if($queryNumRows == 1){                        
                 $userId = mysql_result($queryRun, 0, 'user_id');
                 $username = mysql_result($queryRun, 0, 'username');
-                $userType = mysql_result($queryRun, 0, 'type');                                
+                $userLevel = mysql_result($queryRun, 0, 'level');                                
                 $response = array(
                     'success'   => true,
                     'userId'    => $userId,
-                    'userType'  => $userType,
+                    'userLevel'  => $userLevel,
                     'username'  => $username
                 );                
             }

@@ -15,9 +15,9 @@ switch($_POST['phpCase']){
 
             if($userInfo['success'] == true){
                 // Assigning the user info to a session to use it later.
-                $_SESSION['userId'] = $userInfo['userId'];
-                $_SESSION['userType'] = $userInfo['userType'];
+                $_SESSION['userId'] = $userInfo['userId'];                
                 $_SESSION['username'] = $userInfo['username'];
+                $_SESSION['userLevel'] = $userInfo['userLevel'];
             }
             echo json_encode($userInfo);    // Encoding the user info in JSON because it cannot be returned as an array.
         }

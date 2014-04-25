@@ -19,15 +19,15 @@ function logIn(){
     $.post('views/scripts/_global_ajax.php', {phpCase:'logIn', username: username, password: password }, function(data){        
         var result = JSON.parse(data);
         var success = result.success;
-        var type = result.userType;        
+        var type = result.userLevel;        
         
-        if (type === 'A'){            
-            window.location.replace("views/scripts/dean/home.php");
+        if (type === '-1'){            
+            window.location.replace('views/scripts/dean/home.php');
             return true;
         }
-        else if(type === 'U'){
+        else if(type === '0'){                        
+            window.location.replace('views/scripts/teacher/home.php');
             return true;
-            window.location.replace("views/scripts/teacher/home.php");
         }
         else if(success === false){
             alert('Invalid Username/Password combination.');

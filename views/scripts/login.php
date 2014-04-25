@@ -1,11 +1,11 @@
 <?php
 include_once '../../models/core.php';
 if(loggedIn()){
-    if($_SESSION['userType'] == 'A'){
+    if($_SESSION['userLevel'] == -1){
         header('Location: dean/home.php');
         exit();
     }
-    else if($_SESSION['userType'] == 'U'){
+    else if($_SESSION['userLevel'] == 0){
         header('Location: teacher/home.php');
         exit();
     }

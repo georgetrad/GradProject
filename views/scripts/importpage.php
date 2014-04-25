@@ -5,17 +5,20 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/importFunction.php';
     
 //*******************Student name*******************//
 //configurations 
-$inputFileName = '../../uploads/crn.xlsx';
+$inputFileName = '../../uploads/c.xls';
 $columns = array(
     "id"            => "A",
     "first_name"    => "B",
     "middle_name"   => "C",
     "last_name"     => "D"    
 );
+$staticData = array(
+        "status"    => "A"       
+    );
+    
 $table_name = 'student';
 $rows = 5000;
 $rowsOffSet = 1;
 
 $a = import($inputFileName, $columns, $table_name, $rows, $rowsOffSet);
 var_dump($a);echo '<br>';
-
