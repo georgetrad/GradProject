@@ -1,9 +1,18 @@
 <?php
 ?>
-<footer>    
-    <div data-reveal-id="myModal" data-reveal style="cursor: pointer">
-        <img src="style/img/digitech_logo_footer.png" alt="digitech Logo" style="float: left; width:100px ; height: 25px; margin-left: 200px; margin-top: 25px" >        
+<footer>
+    <div class="large-9 columns show-for-large-up">
+        &nbsp;
     </div>
+    <div class="large-2 columns show-for-large-up">
+        <div data-reveal-id="myModal" data-reveal style="cursor: pointer">
+            <img class="text-right" src="style/img/digitech_logo_footer.png" alt="digitech Logo" style="float: left; width:100px ; height: 25px; margin-top: 20px" >        
+        </div>
+    </div>
+    <div class="large-1 columns show-for-large-up">
+        &nbsp;
+    </div>
+    
 </footer>
 
 <div id="myModal" class="reveal-modal medium text-center" data-reveal>

@@ -15,7 +15,7 @@ if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == -1)){
                     <ul class="dropdown">                                
                         <li><a href="models/log_out.php"><?=LOGOUT?></a></li>
                     </ul>
-                </li>                                                
+                </li>                
             </ul>               
         </section>
     </nav>

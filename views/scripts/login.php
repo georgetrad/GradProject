@@ -22,8 +22,13 @@ if(loggedIn()){
         <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>        
     </head>
     <body>
-        <div class="row large-12 columns show-for-large-up text-center">
-            <br><br><br><br><br><br><br>
+        <div class="row large-12 columns show-for-large-up text-center">            
+            <br><br>
+            <img src="style/img/Untitled-4.png" alt="logo">
+            <br><br><br>
+        </div>
+        
+        <div class="row large-12 columns show-for-large-up text-center">            
             <img src="style/img/Ebla_logo.png" alt="EPU Logo">
             <br><br><br>
         </div>
@@ -33,7 +38,7 @@ if(loggedIn()){
                 &nbsp;
             </div>
             <div class="large-2 columns">
-                <input type="text" id="username" placeholder="<?=USERNAME?>" style="font-size: 18px" required>
+                <input type="text" id="username" placeholder="<?=USERNAME?>" style="font-size: 12px; font-family: DroidKufi-Regular" required>
             </div>
             <div class="large-5 columns">
                 &nbsp;
@@ -44,7 +49,7 @@ if(loggedIn()){
                 &nbsp;
             </div>
             <div class="large-2 columns">
-                <input type="password" id="password" placeholder="<?=PASSWORD?>" style="font-size: 18px;" required>
+                <input type="password" id="password" placeholder="<?=PASSWORD?>" style="font-size: 12px; font-family: DroidKufi-Regular" required>
             </div>
             <div class="large-5 columns">
                 &nbsp;
@@ -55,7 +60,7 @@ if(loggedIn()){
                 &nbsp;
             </div>
             <div class="large-2 columns text-center">
-                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="background-color: #07034a; font-size: 14px">
+                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="background-color: #07034a; font-size: 12px; font-family: DroidKufi-Regular">
             </div>
             <div class="large-5 columns">
                 &nbsp;

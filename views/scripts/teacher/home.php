@@ -1,7 +1,6 @@
 <?php
 include_once './header.php';;
-if (loggedIn() && $_SESSION['userLevel'] == 0){
-    echo 'You are logged in as a teacher';    
+if (loggedIn() && $_SESSION['userLevel'] == 0){    
 }
 ?>
 <html class="no-js" lang="ar" dir="rtl">

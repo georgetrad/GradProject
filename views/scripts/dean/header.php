@@ -15,7 +15,49 @@ if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
                     <ul class="dropdown">                                
                         <li><a href="models/log_out.php"><?=LOGOUT?></a></li>
                     </ul>
-                </li>                                                
+                </li>
+                
+                <li class="has-dropdown">
+                    <a><?=SEMESTERS?></a>
+                    <ul class="dropdown">                                
+                        <li><a><?=PREV_SEMESTERS?></a></li>
+                        <li><a><?=NEW_SEMESTER?></a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a><?=COURSES?></a>
+                    <ul class="dropdown">                                
+                        <li><a><?=SUGGEST_COURSES?></a></li>
+                        <li><a><?=ALL_COURSES?></a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a><?=TEACHERS?></a>
+                    <ul class="dropdown">                                
+                        <li><a><?=ASSIGN_STUDENTS?></a></li>                        
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a><?=STUDENTS?></a>
+                    <ul class="dropdown">                                
+                        <li><a><?=ALL_STUDENTS?></a></li>                        
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a><?=IMPORT?></a>
+                    <ul class="dropdown">                                
+                        <li><a><?=STUDENTS_FILE?></a></li>
+                        <li><a><?=COURSE_FILE?></a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a><?=DB?></a>                    
+                </li>
             </ul>               
         </section>
     </nav>

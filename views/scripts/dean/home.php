@@ -1,7 +1,7 @@
 <?php
 include_once './header.php';;
 if (loggedIn() && $_SESSION['userLevel'] == -1){
-    echo 'You are logged in as a dean';    
+        
 }
 ?>
 <html class="no-js" lang="ar" dir="rtl">
