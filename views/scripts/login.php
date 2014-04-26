@@ -24,7 +24,7 @@ if(loggedIn()){
     <body>
         <div class="row large-12 columns show-for-large-up text-center">            
             <br><br>
-            <img src="style/img/Untitled-4.png" alt="logo">
+            <img src="style/img/GeorgeLogo2.png" alt="logo">
             <br><br><br>
         </div>
         
@@ -33,7 +33,7 @@ if(loggedIn()){
             <br><br><br>
         </div>
                 
-        <div class="row large-12 columns show-for-large-up">
+        <div id="username_div" class="row large-12 columns show-for-large-up">
             <div class="large-5 columns">
                 &nbsp;
             </div>
@@ -60,13 +60,25 @@ if(loggedIn()){
                 &nbsp;
             </div>
             <div class="large-2 columns text-center">
-                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="background-color: #07034a; font-size: 12px; font-family: DroidKufi-Regular">
+                <input type="button" id="login_button" class="tiny button" value="<?=LOGIN?>" style="background-color: #3e667b; font-size: 12px; font-family: DroidKufi-Regular">
             </div>
             <div class="large-5 columns">
                 &nbsp;
             </div>
-        </div>        
-                
+        </div>
+        <div class="large-5 columns">
+            &nbsp;
+        </div>   
+        <div class="large-2 columns show-for-medium-up">            
+            <div id="wrong" data-alert class="alert-box warning" style="font-size: 12px; font-family: DroidKufi-Regular">
+                <span id="invalid_login"><?=INVALID_LOGIN?></span>
+                <a href="#" class="close"></a>
+            </div>            
+        </div>
+        <div class="large-5 columns">
+            &nbsp;
+        </div>
+        
         <?php include './footer.php';?>        
         <script type="text/javascript" src="views/js/jquery/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="views/js/jquery/jquery-ui-1.10.4.custom.min.js"></script>                

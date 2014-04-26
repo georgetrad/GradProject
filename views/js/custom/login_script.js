@@ -1,5 +1,6 @@
 // On Load //
 $(function(){    
+    $('#wrong').hide();
     $('#login_button').click(function (){
         logIn();
     });
@@ -14,8 +15,13 @@ $(function(){
  */
 function logIn(){
     var username = $('#username').val();
-    var password = $('#password').val();
+    var password = $('#password').val();      
 
+    if(username === '' || password === ''){
+        $('#wrong').show();
+        return;
+    }
+    
     $.post('views/scripts/_global_ajax.php', {phpCase:'logIn', username: username, password: password }, function(data){        
         var result = JSON.parse(data);
         var success = result.success;
@@ -30,8 +36,10 @@ function logIn(){
             return true;
         }
         else if(success === false){
-            alert('Invalid Username/Password combination.');
-            $('#password').val('');
+            $('#invalid_login').html('معلومات تسجيل الدخول غير صحيحة'); 
+//            $('#wrong').show();
+//            alert('Invalid Username/Password combination.');
+//            $('#password').val('');
             return false;
         }
     });    

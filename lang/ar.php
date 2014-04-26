@@ -7,7 +7,7 @@ define('TITLE', 'الإرشاد الأكاديمي');
 define('LOGIN', 'تسجيل الدخول');
 define('USERNAME', 'اسم المستخدم');
 define('PASSWORD', 'كلمة المرور');
-
+define('INVALID_LOGIN', 'يرجى إدخال معلومات تسجيل الدخول');
 define('WELCOME', 'مرحباً بك');
 define('LOGOUT', 'تسجيل الخروج');
 
