@@ -1,7 +1,6 @@
 // On Load //
 $(function(){    
-    $('#wrong').hide();
-    $('#login_button').click(function (){
+    $('#login_button').click(function (){        
         logIn();
     });
 });
@@ -18,8 +17,8 @@ function logIn(){
     var password = $('#password').val();      
 
     if(username === '' || password === ''){
-        $('#wrong').show();
-        return;
+        $('#wrong').css({'display': 'block'});      
+        return false;
     }
     
     $.post('views/scripts/_global_ajax.php', {phpCase:'logIn', username: username, password: password }, function(data){        
@@ -35,11 +34,9 @@ function logIn(){
             window.location.replace('views/scripts/teacher/home.php');
             return true;
         }
-        else if(success === false){
-            $('#invalid_login').html('معلومات تسجيل الدخول غير صحيحة'); 
-//            $('#wrong').show();
-//            alert('Invalid Username/Password combination.');
-//            $('#password').val('');
+        else if(success === false){            
+            $('#invalid_login').html('معلومات تسجيل الدخول غير صحيحة');
+            $('#password').val('');
             return false;
         }
     });    

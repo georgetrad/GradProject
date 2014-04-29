@@ -24,7 +24,7 @@ class databaseClass {
                     'success'   => false
                 );                
             }
-            else if($queryNumRows == 1){                        
+            else if($queryNumRows == 1){
                 $userId = mysql_result($queryRun, 0, 'user_id');
                 $username = mysql_result($queryRun, 0, 'username');
                 $userLevel = mysql_result($queryRun, 0, 'level');                                

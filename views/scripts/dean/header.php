@@ -16,7 +16,10 @@ if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
                         <li><a href="models/log_out.php"><?=LOGOUT?></a></li>
                     </ul>
                 </li>
-                
+                <li>
+                    <a><?=HOME?></a>                    
+                </li>
+                <li class="divider"></li>
                 <li class="has-dropdown">
                     <a><?=SEMESTERS?></a>
                     <ul class="dropdown">                                

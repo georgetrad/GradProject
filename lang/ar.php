@@ -11,6 +11,8 @@ define('INVALID_LOGIN', 'يرجى إدخال معلومات تسجيل الدخ�
 define('WELCOME', 'مرحباً بك');
 define('LOGOUT', 'تسجيل الخروج');
 
+define('HOME', 'الرئيسية');
+
 define('SEMESTERS', 'الفصول');
     define('PREV_SEMESTERS', 'الفصول السابقة');
     define('NEW_SEMESTER', 'فصل جديد');
