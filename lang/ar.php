@@ -22,7 +22,8 @@ define('COURSES', 'المقررات');
     define('ALL_COURSES', 'مقررات الكلية');
     
 define('STUDENTS', 'الطلاب');
-    define('ALL_STUDENTS', 'طلاب الكلية');    
+    define('ALL_STUDENTS', 'طلاب الكلية');
+    define('SEARCH_TYPE', 'نوع البحث');
     
 define('TEACHERS', 'المدرسون');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');

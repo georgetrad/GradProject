@@ -46,7 +46,7 @@ if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
                 <li class="has-dropdown">
                     <a><?=STUDENTS?></a>
                     <ul class="dropdown">                                
-                        <li><a><?=ALL_STUDENTS?></a></li>                        
+                        <li><a id="all_students"><?=ALL_STUDENTS?></a></li>                        
                     </ul>
                 </li>
                 <li class="divider"></li>

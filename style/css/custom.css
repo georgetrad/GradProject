@@ -27,3 +27,11 @@ footer a{
 body{
     min-height: 600px;
 }
+
+#jTable select{
+    width:50px;
+}
+
+#search_text input{
+    
+}
