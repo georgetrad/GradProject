@@ -9,13 +9,13 @@ if (loggedIn() && $_SESSION['userLevel'] == -1){
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, text/html" />        
         <base href="http://localhost/GradProject/" />
-        <link rel="stylesheet" href="style/css/foundation.css"/>
-        <link rel="stylesheet" href="style/css/custom.css"/>        
+        <link rel="stylesheet" href="style/css/foundation.css"/>  
         <link rel="stylesheet" href="style/jTable/themes/metro/darkgray/jtable.css"  type="text/css" />
         <link rel="stylesheet" href="style/jTable/themes/basic/jtable_basic.css"/>
         <link rel="stylesheet" href="style/jTable/themes/jqueryui/jtable_jqueryui.min.css"/>
         <link rel="stylesheet" href="style/jTable/themes/metro/jtable_metro_base.css"/>
         <link rel="stylesheet" href="style/jTable/themes/jMetro/css/jquery-ui.css"/>
+        <link rel="stylesheet" href="style/css/custom.css"/>      
         <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>
     </head>
     <body>
@@ -23,9 +23,8 @@ if (loggedIn() && $_SESSION['userLevel'] == -1){
         
         <div id="search_div" class="row" style="display: none">
             <div class="medium-1 large-1 columns show-for-medium-up">
+                <br>
                 <span><?=SEARCH_TYPE?></span>
-            </div>
-            <div class="medium-2 large-2 columns show-for-medium-up">
                 <form>                        
                     <select id="search_id">                    
                         <option value="0">الرقم الجامعي</option>
@@ -33,21 +32,15 @@ if (loggedIn() && $_SESSION['userLevel'] == -1){
                         <option value="2">اسم الأب</option>
                         <option value="3">النسبة</option>                    
                     </select>
+                    <input type="search" id="search_text" style="text-align: center"/>
+                    <input type="submit" class="tiny button" id="search_button" value="ابحث">
                 </form>
-            </div>
-            <div class="medium-2 large-2 columns show-for-medium-up">
-                <input type="search" id="search_text" style="text-align: center"/>                    
-            </div>
-            <div class="medium-2 large-2 columns show-for-medium-up">
-                <input type="submit" class="tiny button" id="search_button" value="ابحث">
-            </div>
+            </div>                       
         </div>
         
         <div id="jTable" class="row medium-6 large-6 columns show-for-medium-up">
-            
         </div>
         
-        <?php include_once '../footer.php';?>
         
         <script type="text/javascript" src="views/js/jquery/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="views/js/jquery/jquery-ui-1.10.4.custom.min.js"></script>

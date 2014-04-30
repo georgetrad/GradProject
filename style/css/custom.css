@@ -26,12 +26,18 @@ footer a{
 }
 body{
     min-height: 600px;
+    clear: both;
 }
 
 #jTable select{
+    color: black; /* 1 */
+    font: inherit; /* 2 */
+    margin: auto; /* 3 */
+    padding: 0px;
     width:50px;
+    height: 1.9em;    
 }
 
-#search_text input{
-    
+#s {
+    position: inherit;
 }

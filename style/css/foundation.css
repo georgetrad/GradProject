@@ -4375,7 +4375,7 @@ textarea[rows] {
   height: auto; }
 
 /* Add height value for select elements to match text input height */
-/*select {
+select {
   -webkit-appearance: none !important;
   background-color: #fafafa;
   background-image: url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==");
@@ -4397,7 +4397,7 @@ input[type="file"],
 input[type="checkbox"],
 input[type="radio"],
 select {
-  margin: 0 0 1rem 0; }*/
+  margin: 0 0 1rem 0; }
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
