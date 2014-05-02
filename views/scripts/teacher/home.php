@@ -1,27 +1,29 @@
 <?php
-include_once './header.php';;
-if (loggedIn() && $_SESSION['userLevel'] == 0){    
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
+if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == -1)){
+    header('Location: ../../../index.php');
 }
-?>
-<html class="no-js" lang="ar" dir="rtl">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, text/html" />        
-        <base href="http://localhost/GradProject/" />
-        <link rel="stylesheet" href="style/css/foundation.css"/>
-        <link rel="stylesheet" href="style/css/custom.css"/>
-        <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>        
-    </head>
-    <body>
-        <?php include_once './header.php';?>
-        <?php include_once '../footer.php';?>
-        
-        <script type="text/javascript" src="views/js/jquery/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="views/js/jquery/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="views/js/foundation/foundation.js"></script>
-        <script type="text/javascript" src="views/js/foundation/foundation.topbar.js"></script>        
-        <script type="text/javascript" src="views/js/foundation/foundation.reveal.js"></script>
-        <script>
-            $(document).foundation();
-        </script>
-    </body>
+$title = HOME;
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_bar.php';
+?>        
+<div id="search_div" class="row" style="display: none">
+    <div class="medium-1 large-1 columns show-for-medium-up">
+        <br>
+        <span><?=SEARCH_TYPE?></span>
+        <form>                        
+            <select id="search_id">                    
+                <option value="0">الرقم الجامعي</option>
+                <option value="1">الاسم</option>
+                <option value="2">اسم الأب</option>
+                <option value="3">النسبة</option>                    
+            </select>
+            <input type="search" id="search_text" style="text-align: center"/>
+            <input type="submit" class="tiny button" id="search_button" value="ابحث">
+        </form>
+    </div>                       
+</div>        
+
+<div id="jTable" class="row medium-6 large-6 columns show-for-medium-up">            
+</div>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';?>
