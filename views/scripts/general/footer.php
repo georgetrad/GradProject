@@ -29,8 +29,8 @@
 <script type="text/javascript" src="views/js/foundation/foundation.reveal.js"></script>
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.min.js"></script>
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
-<script type="text/javascript" src="views/js/custom/jTable.js"></script>
 <script type="text/javascript" src="views/js/custom/login_script.js"></script>
+<script type="text/javascript" src="views/js/custom/all_students_script.js"></script>
 <script>
     $(document).foundation();
 </script>
