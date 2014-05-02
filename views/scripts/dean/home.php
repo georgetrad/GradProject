@@ -36,9 +36,9 @@ if (loggedIn() && $_SESSION['userLevel'] == -1){
                     <input type="submit" class="tiny button" id="search_button" value="ابحث">
                 </form>
             </div>                       
-        </div>
+        </div>        
         
-        <div id="jTable" class="row medium-6 large-6 columns show-for-medium-up">
+        <div id="jTable" class="row medium-6 large-6 columns show-for-medium-up">            
         </div>
         
         
@@ -51,7 +51,7 @@ if (loggedIn() && $_SESSION['userLevel'] == -1){
         <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
         <script type="text/javascript" src="views/js/custom/jTable.js"></script>
         <script>
-            $(document).foundation();
+            $(document).foundation();            
         </script>
     </body>
     
