@@ -1,9 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
-    header('Location: ../login.php');
-    exit();
-}
+
 ?>
 <div class="contain-to-grid sticky">
     <nav class="top-bar" data-topbar>                

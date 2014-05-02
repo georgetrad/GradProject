@@ -1,8 +1,5 @@
 <?php
-include_once './header.php';;
-if (loggedIn() && $_SESSION['userLevel'] == -1){
-        
-}
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 ?>
 <html class="no-js" lang="ar" dir="rtl">
     <head>

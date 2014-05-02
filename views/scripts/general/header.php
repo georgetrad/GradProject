@@ -3,12 +3,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn()){
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/login.php';
 }
-else if(loggedIn() && $_SESSION['userLevel'] == -1){
-    header('Location: views/scripts/dean/home.php');    
-}
-else if(loggedIn() && $_SESSION['userLevel'] == 0){
-    header('Location: views/scripts/teacher/home.php');
-}
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="ar" dir="rtl">
@@ -18,6 +12,11 @@ else if(loggedIn() && $_SESSION['userLevel'] == 0){
         <title><?=$title?></title>
         <base href="http://localhost/GradProject/" />
         <link rel="stylesheet" href="style/css/foundation.css"/>
+        <link rel="stylesheet" href="style/jTable/themes/metro/darkgray/jtable.css"  type="text/css" />
+        <link rel="stylesheet" href="style/jTable/themes/basic/jtable_basic.css"/>
+        <link rel="stylesheet" href="style/jTable/themes/jqueryui/jtable_jqueryui.min.css"/>
+        <link rel="stylesheet" href="style/jTable/themes/metro/jtable_metro_base.css"/>
+        <link rel="stylesheet" href="style/jTable/themes/jMetro/css/jquery-ui.css"/>
         <link rel="stylesheet" href="style/css/custom.css"/>
         <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>        
     </head>
