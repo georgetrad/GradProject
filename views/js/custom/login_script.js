@@ -21,23 +21,23 @@ function logIn(){
         return false;
     }
     
-    $.post('views/scripts/_global_ajax.php', {phpCase:'logIn', username: username, password: password }, function(data){        
-        var result = JSON.parse(data);
-        var success = result.success;
-        var type = result.userLevel;        
-        
-        if (type === '-1'){            
-            window.location.replace('views/scripts/dean/home.php');
-            return true;
-        }
-        else if(type === '0'){                        
-            window.location.replace('views/scripts/teacher/home.php');
-            return true;
-        }
-        else if(success === false){            
-            $('#invalid_login').html('معلومات تسجيل الدخول غير صحيحة');
-            $('#password').val('');
-            return false;
-        }
+    $.post('models/functions/log_in.php', {username: username, password: password }, function(data){        
+//        var result = JSON.parse(data);
+//        var success = result.success;
+//        var type = result.userLevel;        
+//        
+//        if (type === '-1'){            
+//            window.location.replace('views/scripts/dean/home.php');            
+//            return true;
+//        }
+//        else if(type === '0'){                        
+//            window.location.replace('views/scripts/teacher/home.php');
+//            return true;
+//        }
+//        else if(success === false){            
+//            $('#invalid_login').html('معلومات تسجيل الدخول غير صحيحة');
+//            $('#password').val('');
+//            return false;
+//        }
     });    
 }

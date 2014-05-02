@@ -26,6 +26,7 @@
 <script type="text/javascript" src="views/js/jquery/jquery-ui-1.10.4.custom.min.js"></script>                
 <script type="text/javascript" src="views/js/foundation/foundation.js"></script>
 <script type="text/javascript" src="views/js/foundation/foundation.reveal.js"></script>
+<script type="text/javascript" src="views/js/custom/login_script.js"></script>
 <script>
     $(document).foundation();
 </script>

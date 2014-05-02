@@ -1,5 +1,6 @@
 <?php
-include_once 'db_connect.php';
+include_once '../core.php';
+include_once '../db_connect.php';
 /**  
  * * This class contains Database related functions for (SELECT, INSERT, UPDATE) queries.
  */
