@@ -13,7 +13,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a><?=HOME?></a>                    
+                    <a href="views/scripts/dean/home.php"><?=HOME?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">
@@ -42,7 +42,7 @@
                 <li class="has-dropdown">
                     <a><?=STUDENTS?></a>
                     <ul class="dropdown">                                
-                        <li><a id="all_students"><?=ALL_STUDENTS?></a></li>                        
+                        <li><a href="views/scripts/dean/all_students.php"><?=ALL_STUDENTS?></a></li>                        
                     </ul>
                 </li>
                 <li class="divider"></li>
