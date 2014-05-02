@@ -9,7 +9,7 @@
                 <li class="active has-dropdown">
                     <a><?=WELCOME.' '.$_SESSION['username']?></a>
                     <ul class="dropdown">                                
-                        <li><a href="models/log_out.php"><?=LOGOUT?></a></li>
+                        <li><a href="models/functions/log_out.php"><?=LOGOUT?></a></li>
                     </ul>
                 </li>
                 <li>

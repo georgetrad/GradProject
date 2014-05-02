@@ -1,14 +1,5 @@
 <?php
-if(loggedIn()){
-    if($_SESSION['userLevel'] == -1){
-        header('Location: dean/home.php');
-        exit();
-    }
-    else if($_SESSION['userLevel'] == 0){
-        header('Location: teacher/home.php');
-        exit();
-    }
-}
+
 ?>
 <div class="row large-12 columns show-for-medium-up text-center">            
     <br><br>

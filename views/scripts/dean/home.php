@@ -24,4 +24,5 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 </div>        
 
 <div id="jTable" class="row medium-6 large-6 columns show-for-medium-up">            
-</div>                                 
+</div>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';?>
