@@ -31,6 +31,7 @@ define('TEACHERS', 'المدرسون');
 define('IMPORT', 'الاستيراد');
     define('STUDENTS_FILE', 'ملف طلاب');
     define('COURSE_FILE', 'ملف مقرر');
+    define('UPLOAD', 'رفع ملف');
     
 define('DB', 'قاعدة البيانات');
 ?>
