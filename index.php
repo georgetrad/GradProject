@@ -1,17 +1,8 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-
-if(loggedIn()){
-    if($_SESSION['userType'] == 'A'){
-        header('Location: ./views/scripts/dean/home.php');
-        exit();
-    }
-    else if($_SESSION['userType'] == 'U'){
-        header('Location: ./views/scripts/teacher/home.php');
-        exit();
-    }
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
+if(!loggedIn()){
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/login.php';
 }
-else{
-    header('Location: ./views/scripts/login.php');
-    exit();
-}
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
+?>
