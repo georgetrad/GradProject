@@ -19,7 +19,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         &nbsp;
     </div>
     <form>
-        <div class="medium-1 large-1 columns show-for-medium-up">
+        <div class="medium-2 large-1 columns show-for-medium-up">
             <select id="search_id">                    
                 <option value="0">الرقم الجامعي</option>
                 <option value="1">الاسم</option>

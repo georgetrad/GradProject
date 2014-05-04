@@ -10,7 +10,8 @@ $files1 = scandir($dir);
 
 echo '<br><br>Import page:<br><br>';
 
-foreach ($files1 as $data){
+foreach ($files1 as $data){;
+    $q = explode('.', $data);
     if (!($data == '..'||$data == '.'))
-        echo '<a href="">Click to import: "'.$data.'"</a><br>';    
+        echo '<a id="'.$q[0].'" href="">Click to import: "'.$data.'"</a><br>';    
 }
