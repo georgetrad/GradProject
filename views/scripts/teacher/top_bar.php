@@ -19,7 +19,7 @@
                 <li class="has-dropdown">
                     <a><?=STUDENTS?></a>
                     <ul class="dropdown">                                
-                        <li><a id="all_students"><?=ALL_STUDENTS?></a></li>                        
+                        <li><a><?=MY_STUDENTS?></a></li>                        
                     </ul>
                 </li>
                 <li class="divider"></li>
@@ -37,5 +37,3 @@
         </section>
     </nav>
 </div>
-    
-

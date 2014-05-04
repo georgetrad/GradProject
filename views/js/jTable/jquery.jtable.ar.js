@@ -3,10 +3,9 @@
     Author: George Trad
 */
 (function ($) {
-
     $.extend(true, $.hik.jtable.prototype.options.messages, {
         serverCommunicationError: 'خطأ في المخدم',
-        loadingMessage: 'تحميل الرسالة',
+        loadingMessage: 'تحميل البيانات',
         noDataAvailable: 'لا يوجد بيانات',
         addNewRecord: 'إضافة سجل جديد',
         editRecord: 'تعديل سجل',
@@ -15,7 +14,7 @@
         save: 'حفظ',
         saving: 'يتم الحفظ',
         cancel: 'إلغاء',
-        deleteText: 'حذف النص',
+        deleteText: 'حذف',
         deleting: 'يتم الحذف',
         error: 'خطأ',
         close: 'إغلاق',
@@ -25,5 +24,4 @@
         pageSizeChangeLabel: 'عدد السجلات',
         gotoPageLabel: 'إذهب إلى الصفحة'
     });
-
 })(jQuery);
