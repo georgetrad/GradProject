@@ -29,8 +29,9 @@
 <script type="text/javascript" src="views/js/foundation/foundation.reveal.js"></script>
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.min.js"></script>
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
-<script type="text/javascript" src="views/js/custom/login_script.js"></script>
-<script type="text/javascript" src="views/js/custom/all_students_script.js"></script>
+
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/login_script.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';?>
 <script>
     $(document).foundation();
 </script>

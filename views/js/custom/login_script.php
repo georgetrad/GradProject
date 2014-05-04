@@ -1,3 +1,4 @@
+<script>
 // On Load //
 $(function(){    
     $('#login_button').click(function (){        
@@ -20,7 +21,7 @@ function logIn(){
         $('#wrong').css({'display': 'block'});      
         return false;
     }
-    
+    $('#ajax_loaer').show();
     $.post('models/functions/log_in.php', {username: username, password: password }, function(data){        
         var result = JSON.parse(data);
         var success = result.success;
@@ -35,9 +36,13 @@ function logIn(){
             return true;
         }
         else if(success === false){            
-            $('#invalid_login').html('معلومات تسجيل الدخول غير صحيحة');
+            $('#ajax_loaer').hide();
+            $('#invalid_login').html('<?php echo INVALID_CRED;?>');
             $('#password').val('');
             return false;
         }
-    });    
+        
+alert();
+    });   
 }
+</script>

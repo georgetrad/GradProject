@@ -8,6 +8,7 @@ define('LOGIN', 'تسجيل الدخول');
 define('USERNAME', 'اسم المستخدم');
 define('PASSWORD', 'كلمة المرور');
 define('INVALID_LOGIN', 'يرجى إدخال معلومات تسجيل الدخول');
+define('INVALID_CRED', 'معلومات تسجيل الدخول غير صحيحة');
 define('WELCOME', 'مرحباً بك');
 define('LOGOUT', 'تسجيل الخروج');
 
@@ -24,6 +25,11 @@ define('COURSES', 'المقررات');
 define('STUDENTS', 'الطلاب');
     define('ALL_STUDENTS', 'طلاب الكلية');
     define('SEARCH_TYPE', 'نوع البحث');
+    define('COLLEGE_ID', 'الرقم الجامعي');
+    define('NAME', 'الاسم');
+    define('MIDDLE_NAME', 'اسم الأب');
+    define('LAST_NAME', 'النسبة');
+    define('STUDENTS_TABLE', 'جدول الطلاب');
     
 define('TEACHERS', 'المدرسون');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');
@@ -34,4 +40,5 @@ define('IMPORT', 'الاستيراد');
     define('UPLOAD', 'رفع ملف');
     
 define('DB', 'قاعدة البيانات');
+define('SEARCH', 'بحث');
 ?>
