@@ -40,5 +40,6 @@ define('IMPORT', 'الاستيراد');
     define('UPLOAD', 'رفع ملف');
     
 define('DB', 'قاعدة البيانات');
+define('SETTINGS', 'الاعدادات');
 define('SEARCH', 'بحث');
 ?>

@@ -1,7 +1,7 @@
 <script>
 $(function(){    
     $('#jTable').jtable({
-    title: '<?php echo STUDENTS_TABLE;?>',
+    title: '<?php echo ALL_STUDENTS;?>',
     paging: true,                    
     columnResizable: false, //Actually, no need to set true since it's default
     columnSelectable: false, //Actually, no need to set true since it's default

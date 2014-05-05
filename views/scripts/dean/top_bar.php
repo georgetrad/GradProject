@@ -57,6 +57,10 @@
                 <li>
                     <a><?=DB?></a>                    
                 </li>
+                <li class="divider"></li>
+                <li>
+                    <a><?=SETTINGS?></a>                    
+                </li>
             </ul>               
         </section>
     </nav>
