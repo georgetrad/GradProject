@@ -5,10 +5,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importFunction.
 echo '<div id="foo"></div>';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/import_page_script.php';
 
+
+$file = $_POST['file'];
+$inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+
 //*******************Variables   *******************//
 $rows = 5000;
 $rowsOffSet = 2;
-$inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/c.xls';
+//$inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/2008-2009-S1.xls';
 //*******************Student name*******************//
 $columns = array(
     "id"            => "A",
@@ -107,3 +111,6 @@ $tableName = 'duty';
 $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 var_dump($a);echo '<br>';
 unset($columns, $tableName, $staticData, $a);
+
+
+return true;

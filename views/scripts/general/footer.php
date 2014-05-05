@@ -43,5 +43,10 @@ else if(loggedIn() && $_SESSION['userLevel'] == 0){
 }
 ?>
 <script>
+    $(document).foundation();
+    $('#file_link').click(function(){
+			alert($('#file_link').text());
+		});
+</script>
     $(document).foundation();    
 </script>

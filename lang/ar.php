@@ -35,9 +35,9 @@ define('TEACHERS', 'المدرسون');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');
     
 define('IMPORT', 'الاستيراد');
-    define('STUDENTS_FILE', 'ملف طلاب');
-    define('COURSE_FILE', 'ملف مقرر');
-    define('UPLOAD', 'رفع ملف');
+    define('IMPORT_GENERAL_FILE', 'إستيراد ملف عام');
+    define('UPLOAD_FILE', 'رفع ملف');
+    define('UPLOAD', 'رفع');
     
 define('DB', 'قاعدة البيانات');
 define('SETTINGS', 'الاعدادات');

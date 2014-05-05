@@ -19,7 +19,8 @@ if(!loggedIn()){
         <link rel="stylesheet" href="style/jTable/themes/metro/jtable_metro_base.css"/>
         <link rel="stylesheet" href="style/jTable/themes/jMetro/css/jquery-ui.css"/>
         <link rel="stylesheet" href="style/css/custom.css"/>
-        <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>        
+        <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>
+        <script type="text/javascript" src="views/js/spin.min.js "></script>     
     </head>
     <body>
 
