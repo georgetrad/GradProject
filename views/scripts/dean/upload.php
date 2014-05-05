@@ -1,22 +1,20 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-$title = UPLOAD;
+if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
+    header('Location: ../../../index.php');
+}
+$title = HOME;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 ?>
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-<body>
+
     <form action="/GradProject/views/scripts/dean/upload.php" method="post" enctype="multipart/form-data">
         <label for="file">Filename:</label>
         <input type="file" name="file" id="file"><br>
         <input type="submit" name="submit" value="Submit">
     </form>
-</body>
-</html> 
+
 
 <?php
 if (isset($_FILES["file"])){
@@ -28,7 +26,6 @@ $extension = end($temp);
 echo '<br>'.$_FILES["file"]["type"].'<br>';
 
 if ((($_FILES["file"]["type"] == "application/vnd.ms-excel")
-//|| ($_FILES["file"]["type"] == "")
 || ($_FILES["file"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
 && ($_FILES["file"]["size"] < 5000000)
 && in_array($extension, $allowedExts)) {

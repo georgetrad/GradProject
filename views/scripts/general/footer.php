@@ -34,6 +34,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/login_script.php';?>
 <?php if(loggedIn()){
         include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/import_page_script.php';
     }
 ?>
 <script>
