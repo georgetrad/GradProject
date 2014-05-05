@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 ?>
 <footer>
     <div class="medium-9 large-9 columns show-for-medium-up">
@@ -31,7 +32,10 @@
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
 
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/login_script.php';?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';?>
+<?php if(loggedIn()){
+        include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
+    }
+?>
 <script>
     $(document).foundation();
 </script>

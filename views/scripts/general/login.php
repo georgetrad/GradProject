@@ -47,19 +47,7 @@
     </div>
     <!--</form>-->
 </div>
-
-<div class="row show-for-medium-up">
-    <div class="medium-5 large-5 columns">
-        &nbsp;
-    </div>
-    <div id="ajax_loaer" class="medium-2 large-2 columns text-center" style="display: none">
-        <img src="style/img/ajax-loader.gif" alt="AJAX Loader..">
-    </div>
-    <div class="medium-5 large-5 columns">
-        &nbsp;
-    </div>
-</div>
-<br>   
+ 
 <div class="row show-for-medium-up">
     <div class="medium-5 large-5 columns">
         &nbsp;

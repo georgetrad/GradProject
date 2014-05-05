@@ -21,7 +21,7 @@ function logIn(){
         $('#wrong').css({'display': 'block'});      
         return false;
     }
-    $('#ajax_loaer').show();
+    
     $.post('models/functions/log_in.php', {username: username, password: password }, function(data){        
         var result = JSON.parse(data);
         var success = result.success;
@@ -35,14 +35,11 @@ function logIn(){
             window.location.replace('views/scripts/teacher/home.php');
             return true;
         }
-        else if(success === false){            
-            $('#ajax_loaer').hide();
+        else if(success === false){                        
             $('#invalid_login').html('<?php echo INVALID_CRED;?>');
             $('#password').val('');
             return false;
-        }
-        
-alert();
+        }        
     });   
 }
 </script>
