@@ -49,8 +49,8 @@
                 <li class="has-dropdown">
                     <a><?=IMPORT?></a>
                     <ul class="dropdown">                                
-                        <li><a><?=STUDENTS_FILE?></a></li>
-                        <li><a><?=COURSE_FILE?></a></li>
+                        <li><a href="views/scripts/dean/upload.php"><?=UPLOAD_FILE?></a></li>
+                        <li><a href="views/scripts/dean/import.php"><?=IMPORT_GENERAL_FILE?></a></li>
                     </ul>
                 </li>
                 <li class="divider"></li>
