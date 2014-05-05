@@ -19,6 +19,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 </html> 
 
 <?php
+if (isset($_FILES["file"])){
 $uploadPath = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/';
 
 $allowedExts = array("xls", "xlsx");
@@ -49,5 +50,5 @@ if ((($_FILES["file"]["type"] == "application/vnd.ms-excel")
 } else {
   echo "Invalid file";
 }
-
+}
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
