@@ -31,11 +31,20 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.min.js"></script>
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/login_script.php';?>
-<?php if(loggedIn()){
-        include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
-    }
+<?php
+if(!loggedIn()){
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/login_script.php';
+}
+else if(loggedIn() && $_SESSION['userLevel'] == -1){
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
+}
+else if(loggedIn() && $_SESSION['userLevel'] == 0){
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
+}
 ?>
 <script>
     $(document).foundation();
+    $('#file_link').click(function(){
+			alert($('#file_link').text());
+		});
 </script>
