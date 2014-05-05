@@ -8,7 +8,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/import_page
 //*******************Variables   *******************//
 $rows = 5000;
 $rowsOffSet = 2;
-$inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/2008-2009-S1.xls';
+$inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/c.xls';
 //*******************Student name*******************//
 $columns = array(
     "id"            => "A",
@@ -107,6 +107,3 @@ $tableName = 'duty';
 $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 var_dump($a);echo '<br>';
 unset($columns, $tableName, $staticData, $a);
-
-
-

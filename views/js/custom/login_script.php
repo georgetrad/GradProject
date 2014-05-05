@@ -26,7 +26,7 @@ function logIn(username, password){
     $.post('models/functions/log_in.php', {username: username, password: password }, function(data){        
         var result = JSON.parse(data);
         var success = result.success;
-        var type = result.userLevel;        
+        var type = result.userLevel;
         
         if (type === '-1'){            
             window.location.replace('views/scripts/dean/home.php');            
