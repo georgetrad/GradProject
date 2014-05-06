@@ -1,5 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
 if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
     header('Location: ../../../index.php');
 }
@@ -34,12 +35,37 @@ $files1 = scandir($dir);
         &nbsp;  
     </div>
 </div>
+<div class="row">
+    <div class="medium-2 large-2 columns show-for-medium-up">
+        &nbsp;  
+    </div>
+    <div class="medium-3 large-3 columns show-for-medium-up">
+        <br>
+        <span>الفصل الدراسي:  </span>
+        <br>
+        <br>
+        <?php
+            // select options
+            echo '<select>';
+            $strSQL = "SELECT * FROM semester";
+            $rs = mysql_query($strSQL);
+            while($row = mysql_fetch_array($rs)) {
+                $strName = $row['name'];
+                echo "<option value = '" . $row['id'] ."'> ". $strName . "</option>";
+            }
+            echo '</select>';
+        ?>
+        <div class="result"></div>
+    </div>  
+    <div class="medium-7 large-7 columns show-for-medium-up">
+        &nbsp;  
+    </div>    
+</div>
 
-<div id="spin"></div>  
+<div id="spin"></div>
 
 
 
-<?php
-    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
-    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/import_page_script.php';
- ?>
+
+
+<?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
