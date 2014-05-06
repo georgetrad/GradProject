@@ -42,4 +42,8 @@ define('IMPORT', 'الاستيراد');
 define('DB', 'قاعدة البيانات');
 define('SETTINGS', 'الاعدادات');
 define('SEARCH', 'بحث');
+define('FILENAME', 'اسم الملف');
+define('BROWSE', 'إستعراض');
+define('STUDENT_GRADE', 'كشف علامات الطالب');
+
 ?>
