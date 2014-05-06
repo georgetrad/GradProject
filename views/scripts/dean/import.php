@@ -13,10 +13,10 @@ $files1 = scandir($dir);
 
 echo '<br><br>Import page:<br><br>';
 
-foreach ($files1 as $data){;
+foreach ($files1 as $data){
     $q = explode('.', $data);
     if (!($data == '..'||$data == '.'))
-        echo '<span>Click to import: <a class="fileLink" data-file="q">'.$data.'</a></span><br>';    
+        echo '<span>Click to import: <a class="fileLink">'.$data.'</a></span><br>';    
 }
 ?>
 <div class="result"></div>
@@ -25,4 +25,5 @@ foreach ($files1 as $data){;
 
 <?php
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/import_page_script.php';
  ?>
