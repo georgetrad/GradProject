@@ -39,6 +39,15 @@ $tableName = 'course';
 $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 var_dump($a);echo '<br>';
 unset($columns, $tableName, $staticData, $a);
+//*******************semester *******************//
+$columns = array(
+    "name"       => "E"
+);
+$staticData = array();   
+$tableName = 'semester';
+$a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+var_dump($a);echo '<br>';
+unset($columns, $tableName, $staticData, $a);
 //*******************Class name*******************//
 $columns = array(
     "id"        => "H",
