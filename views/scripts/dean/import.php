@@ -29,12 +29,13 @@ $files1 = scandir($dir);
     }
 ?>
         <div class="result"></div>
-        <div id="spin"></div>  
     </div>  
     <div class="medium-2 large-2 columns show-for-medium-up">
         &nbsp;  
     </div>
 </div>
+
+<div id="spin"></div>  
 
 
 
