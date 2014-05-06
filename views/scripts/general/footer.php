@@ -37,11 +37,13 @@ if(!loggedIn()){
 }
 else if(loggedIn() && $_SESSION['userLevel'] == -1){
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/import_page_script.php';
 }
 else if(loggedIn() && $_SESSION['userLevel'] == 0){
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
 }
 ?>   
 <script>
-    $(document).foundation();    
+    $(document).foundation();
 </script>
+

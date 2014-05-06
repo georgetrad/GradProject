@@ -7,15 +7,26 @@ $title = HOME;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 ?>
-
-
-    <form action="/GradProject/views/scripts/dean/upload.php" method="post" enctype="multipart/form-data">
-        <label for="file">Filename:</label>
-        <input type="file" name="file" id="file"><br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
-
-
+<div class="row">
+    &nbsp;    
+</div>
+<div class="row">
+    <div class="medium-2 large-2 columns show-for-medium-up">
+        &nbsp;  
+    </div>
+    <div class="medium-8 large-8 columns show-for-medium-up">
+        <form action="/GradProject/views/scripts/dean/upload.php" method="post" enctype="multipart/form-data">
+            <label for="file"><?=FILENAME?>:</label>
+            <input type="file" name="file" id="file"><br>
+            <input type="submit" name="submit" value="<?=UPLOAD?>">
+        </form>
+        <div class="result"></div>
+        <div id="spin"></div>  
+    </div>  
+    <div class="medium-2 large-2 columns show-for-medium-up">
+        &nbsp;  
+    </div>
+</div>
 <?php
 if (isset($_FILES["file"])){
 $uploadPath = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/';
