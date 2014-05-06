@@ -41,3 +41,7 @@ body{
 #s {
     position: inherit;
 }
+
+div.jtable-main-container{
+    padding-bottom: 5em;
+}
