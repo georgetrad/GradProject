@@ -4,6 +4,10 @@ $(function(){
     $('#login_button').click(function (){        
         logIn();
     });
+    $( "#password" ).keypress(function(key) {
+        if (key.which === 13)
+        $('#login_button').click();
+    });
 });
 /**
  * @author George Trad
