@@ -41,12 +41,7 @@ else if(loggedIn() && $_SESSION['userLevel'] == -1){
 else if(loggedIn() && $_SESSION['userLevel'] == 0){
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
 }
-?>
+?>   
 <script>
-    $(document).foundation();
-    $('#file_link').click(function(){
-			alert($('#file_link').text());
-		});
-</script>
     $(document).foundation();    
 </script>
