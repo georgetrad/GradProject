@@ -40,5 +40,4 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/student_grade_script.php';
-
 ?>

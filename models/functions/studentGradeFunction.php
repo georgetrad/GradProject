@@ -4,11 +4,22 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
 
 $number = $_POST['number'];
 
-$query = "SELECT student.first_name,
-  student.middle_name,
-  student.last_name,
-  student.id,
-  duty_type.name_ar,
+$query =   "SELECT student.first_name, student.middle_name, student.last_name, student.id
+            FROM student
+            WHERE student.id = ".$number;
+$result =  mysql_query($query);
+
+echo '<table cellpadding="5" cellspacing="5" class="db-table">';
+while($row2 = mysql_fetch_row($result)) {
+    echo '<tr>';
+    foreach($row2 as $key=>$value) {
+            echo '<td>',$value,'</td>';
+    }
+    echo '</tr>';
+}
+echo '</table>';
+
+$query = "SELECT duty_type.name_ar,
   duty.grade AS Grade,
   class.id AS CRN,
   course.name_ar AS `Course Name`,
@@ -32,3 +43,4 @@ while($row2 = mysql_fetch_row($result)) {
     }
     echo '</tr>';
 }
+echo '</table><br><br><br><br><br> &nbsp;';
