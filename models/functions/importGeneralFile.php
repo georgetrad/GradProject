@@ -10,7 +10,7 @@ $file = $_POST['file'];
 $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
 
 //*******************Variables   *******************//
-$rows = 100;
+$rows = 5000;
 $rowsOffSet = 3;
 //$inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/2008-2009-S1.xls';
 //*******************Student name*******************//
@@ -36,6 +36,15 @@ $columns = array(
 );
 $staticData = array();   
 $tableName = 'course';
+$a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+var_dump($a);echo '<br>';
+unset($columns, $tableName, $staticData, $a);
+//*******************semester *******************//
+$columns = array(
+    "name"       => "E"
+);
+$staticData = array();   
+$tableName = 'semester';
 $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 var_dump($a);echo '<br>';
 unset($columns, $tableName, $staticData, $a);

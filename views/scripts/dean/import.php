@@ -20,16 +20,15 @@ $files1 = scandir($dir);
         &nbsp;  
     </div>
     <div class="medium-8 large-8 columns show-for-medium-up">
-<?php 
-    echo '<br><br> الملفات التاليه محمله على المخدم وجاهزه للإستيراد الى قاعدة البيانات:<br><br>';
+        <?php 
+        echo '<br><br> الملفات التالية محمله على المخدم وجاهزه للإستيراد الى قاعدة البيانات، إضغط للإستيراد<br><br>';
 
-    foreach ($files1 as $data){
-        $q = explode('.', $data);
-        if (!($data == '..'||$data == '.'))
-            echo '<span>إضغط للإستيراد:  </span><a class="fileLink">'.$data.'</a><br>';    
-    }
-?>
-        <div class="result"></div>
+        foreach ($files1 as $data){
+            $q = explode('.', $data);
+            if (!($data == '..'||$data == '.'))
+                echo '<a class="fileLink">'.$data.'</a><br>';    
+        }
+        ?>
     </div>  
     <div class="medium-2 large-2 columns show-for-medium-up">
         &nbsp;  
@@ -42,8 +41,7 @@ $files1 = scandir($dir);
     <div class="medium-3 large-3 columns show-for-medium-up">
         <br>
         <span>الفصل الدراسي:  </span>
-        <br>
-        <br>
+        <br><br>
         <?php
             // select options
             echo '<select>';
@@ -55,17 +53,26 @@ $files1 = scandir($dir);
             }
             echo '</select>';
         ?>
-        <div class="result"></div>
     </div>  
     <div class="medium-7 large-7 columns show-for-medium-up">
         &nbsp;  
     </div>    
 </div>
-
-<div id="spin"></div>
-
-
-
-
+<div class="row">
+    <div class="medium-12 large-12 columns show-for-medium-up">
+        <div id="spin"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="medium-2 large-2 columns show-for-medium-up">
+        &nbsp;  
+    </div>
+    <div class="medium-8 large-8 columns show-for-medium-up" style="padding: 2em;">
+        <div class="result">&nbsp;</div>
+    </div>  
+    <div class="medium-2 large-2 columns show-for-medium-up">
+        &nbsp;  
+    </div>    
+</div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
