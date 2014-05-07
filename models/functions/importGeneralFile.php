@@ -10,7 +10,7 @@ $file = $_POST['file'];
 $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
 
 //*******************Variables   *******************//
-$rows = 5000;
+$rows = 100;
 $rowsOffSet = 3;
 //$inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/2008-2009-S1.xls';
 //*******************Student name*******************//

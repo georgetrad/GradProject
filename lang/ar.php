@@ -17,6 +17,13 @@ define('HOME', 'الرئيسية');
 define('SEMESTERS', 'الفصول');
     define('PREV_SEMESTERS', 'الفصول السابقة');
     define('NEW_SEMESTER', 'فصل جديد');
+    define('START_DATE', 'تاريخ البدء');
+    define('END_DATE', 'تاريخ الانتهاء');
+    define('MIN_REQ_HRS', 'عدد الساعات الأدنى');
+    define('MAX_REQ_HRS', 'عدد الساعات الأعلى');
+    define('EXC_GPA', 'المعدل المستثنى');
+    define('EXC_GPA_HRS', 'عدد ساعاته');
+    define('MAX_GRAD_STU_HRS', 'ساعات طالب التخرج');
 
 define('COURSES', 'المقررات');    
     define('SUGGEST_COURSES', 'اقتراح مقرات');

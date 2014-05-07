@@ -16,12 +16,8 @@
                     <a href="views/scripts/dean/home.php"><?=HOME?></a>                    
                 </li>
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a><?=SEMESTERS?></a>
-                    <ul class="dropdown">                                
-                        <li><a><?=PREV_SEMESTERS?></a></li>
-                        <li><a><?=NEW_SEMESTER?></a></li>
-                    </ul>
+                <li>
+                    <a href="views/scripts/dean/semester.php"><?=SEMESTERS?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">

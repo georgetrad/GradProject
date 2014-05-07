@@ -2021,7 +2021,7 @@ THE SOFTWARE.
                 .appendTo(self._$mainContainer);
 
             //Prepare dialog
-            self._$addRecordDiv.dialog({
+            self._$addRecordDiv.dialog({                
                 autoOpen: false,
                 show: self.options.dialogShowEffect,
                 hide: self.options.dialogHideEffect,
@@ -2375,7 +2375,7 @@ THE SOFTWARE.
                 .appendTo(self._$mainContainer);
 
             //Prepare dialog
-            self._$editDiv.dialog({
+            self._$editDiv.dialog({                
                 autoOpen: false,
                 show: self.options.dialogShowEffect,
                 hide: self.options.dialogHideEffect,
