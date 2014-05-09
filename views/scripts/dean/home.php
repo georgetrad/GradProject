@@ -18,7 +18,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         &nbsp;  
     </div>
 </div>	
-
-<?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/homeFunction.php';?>	
+	
 			
 <?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';?>
