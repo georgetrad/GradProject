@@ -3,11 +3,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
     header('Location: ../../../index.php');
 }
-$title = HOME;
+$title = STUDENT_GRADE;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 ?>
-
+<h4 class="title text-center"><?=$title;?></h4>
 <div class="row">   
     <br><br><br>
     <form>

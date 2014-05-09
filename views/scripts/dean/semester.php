@@ -8,10 +8,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/heade
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 ?>
 <div class="row">
-    &nbsp;    
-</div>
-<div class="row">
-    &nbsp;    
+    <h4 class="title text-center"><?=$title;?></h4>
 </div>
 <div class="row">
     <div class="medium-1 large-1 columns">

@@ -4,7 +4,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
 if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
     header('Location: ../../../index.php');
 }
-$title = HOME;
+$title = IMPORT_GENERAL_FILE;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 
@@ -13,7 +13,7 @@ $dir = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/';
 $files1 = scandir($dir);
 ?>
 <div class="row">
-    &nbsp;    
+    <h4 class="title text-center"><?=$title;?></h4>
 </div>
 <div class="row">
     <div class="medium-2 large-2 columns show-for-medium-up">

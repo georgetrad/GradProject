@@ -23,8 +23,8 @@
                 <li class="has-dropdown">
                     <a><?=COURSES?></a>
                     <ul class="dropdown">                                
-                        <li><a><?=SUGGEST_COURSES?></a></li>
-                        <li><a><?=ALL_COURSES?></a></li>
+                        <li><a href="views/scripts/dean/all_courses.php"><?=SUGGEST_COURSES?></a></li>
+                        <li><a><?=SUGGESTED_COURSES?></a></li>
                     </ul>
                 </li>
                 <li class="divider"></li>

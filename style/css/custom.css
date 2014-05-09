@@ -45,3 +45,23 @@ body{
 div.jtable-main-container{
     padding-bottom: 5em;
 }
+
+h4.title {
+    padding:  10px;
+}
+
+.input-color {
+    position: relative;
+}
+.input-color input {
+    padding-left: 20px;
+}
+.input-color .color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+   
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}

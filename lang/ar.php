@@ -26,17 +26,27 @@ define('SEMESTERS', 'الفصول');
     define('MAX_GRAD_STU_HRS', 'ساعات طالب التخرج');
 
 define('COURSES', 'المقررات');    
-    define('SUGGEST_COURSES', 'اقتراح مقرات');
-    define('ALL_COURSES', 'مقررات الكلية');
+    define('SUGGEST_COURSES', 'اقتراح مقررات');
+        define('COURSE_CODE', 'رمز المقرر');
+        define('COURSE_NAME', 'اسم المقرر');
+        define('COURSE_TYPE', 'نوع المقرر');
+        define('LEVEL', 'المستوى');
+        define('REQ_COURSE', 'المتطلب السابق');
+        define('CREDITS', 'عدد الساعات');
+        define('CLASS_HRS', 'ساعات النظري');
+        define('LAB_HRS', 'ساعات العملي');
+        define('FEES', 'الرسوم');        
+    
+    define('SUGGESTED_COURSES', 'المقررات المقترحة');
     
 define('STUDENTS', 'الطلاب');
     define('ALL_STUDENTS', 'طلاب الكلية');
-    define('SEARCH_TYPE', 'نوع البحث');
-    define('COLLEGE_ID', 'الرقم الجامعي');
-    define('NAME', 'الاسم');
-    define('MIDDLE_NAME', 'اسم الأب');
-    define('LAST_NAME', 'النسبة');
-    define('STUDENTS_TABLE', 'جدول الطلاب');
+        define('SEARCH_TYPE', 'نوع البحث');
+        define('COLLEGE_ID', 'الرقم الجامعي');
+        define('NAME', 'الاسم');
+        define('MIDDLE_NAME', 'اسم الأب');
+        define('LAST_NAME', 'النسبة');
+        define('STUDENTS_TABLE', 'جدول الطلاب');
     
 define('TEACHERS', 'المدرسون');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');
@@ -52,5 +62,6 @@ define('SEARCH', 'بحث');
 define('FILENAME', 'اسم الملف');
 define('BROWSE', 'إستعراض');
 define('STUDENT_GRADE', 'كشف علامات الطالب');
-
+define('ARABIC', 'عربي');
+define('ENGLISH', 'إنكليزي');
 ?>

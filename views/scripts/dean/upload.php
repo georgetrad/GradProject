@@ -3,12 +3,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
     header('Location: ../../../index.php');
 }
-$title = HOME;
+$title = UPLOAD_FILE;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 ?>
 <div class="row">
-    &nbsp;    
+    <h4 class="title text-center"><?=$title;?></h4>    
 </div>
 <div class="row">
     <div class="medium-2 large-2 columns show-for-medium-up">
