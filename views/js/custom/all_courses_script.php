@@ -63,7 +63,7 @@ $(function(){
         added: {
             visibility: 'visible',
             display: function (data) {
-                return '<a class="add">Add</a>';                    
+                return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
             }
         }        
     }
@@ -99,5 +99,28 @@ $(function(){
             
         });    
     });
+    $.post('models/functions/sugg_function.php','', function(data){
+        var i = 0;
+        for (i=0;i<data.length;i++){
+//            alert(data[i]['COURSE_ID']);
+            $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find("td:last").text('Remove').css('color','red').bind( "click", function() {
+           var courseCode = $(this).parents("tr").find("td:first").text();
+                     
+            if($(this).text() === 'Add'){
+                var action = 'add';
+                $(this).text('Remove');
+                $(this).css('color','red');
+            }
+            else{
+                action = 'remove';
+                $(this).text('Add');
+                $(this).css('color','green');
+            }
+            $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
+            });
+            
+        });   
+        }
+    }, "json");
 });
 </script>
