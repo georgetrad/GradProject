@@ -15,9 +15,8 @@ $(function(){
         resizable:false,
         actions: {
             listAction: 'models/jTableFunctions/list_semester.php',
-            createAction: 'models/jTableFunctions/create_semester.php'
-    //        updateAction: 'GettingStarted/UpdatePerson.php',
-    //        deleteAction: 'GettingStarted/DeletePerson.php',                        
+            createAction: 'models/jTableFunctions/create_semester.php',
+            updateAction: 'models/jTableFunctions/update_semester.php'    
         },
         fields: {
             id: {
@@ -58,9 +57,9 @@ $(function(){
             },
             max_grad_stu_hrs: {
                 title: '<?php echo MAX_GRAD_STU_HRS;?>',
-                width: '10%'
+                width: '10%'                
             },
-            dummyColumn: {
+            dummyColumn: {              
                 visibility: 'hidden',
                 edit: false,
                 create: false

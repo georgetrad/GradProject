@@ -1,11 +1,13 @@
 <?php
 include_once '../db_connect.php';
-// Get record count
+
+// Get records count
 $query1 = "SELECT COUNT(*) AS RecordCount FROM student";
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
-    if($searchId == 0){
+    
+    if($searchId == 0){                                         // Modifying the query according to the search text.
         $query1.= " WHERE id LIKE '$searchText%'";
     }
     else if($searchId == 1){
@@ -16,26 +18,27 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     }
     else if($searchId == 3){
         $query1.= " WHERE last_name LIKE '$searchText%'";
-    }
-    
+    }  
 }
-$result1 = mysql_query($query1);
-$row = mysql_fetch_array($result1);
-$recordCount = $row['RecordCount'];
+$result1 = mysql_query($query1);            // Executing the query.
+$row = mysql_fetch_array($result1);         // Fetching the result.
+$recordCount = $row['RecordCount'];         // Filling the result in an variable.
 
 
-$pageSize = $_GET['jtPageSize'];
+$pageSize = $_GET['jtPageSize'];            // Getting the selected page size, start index from jTable
 $startIndex = $_GET['jtStartIndex'];
-$sorting = 'id ASC';
+$sorting = 'id ASC';                        // Assigning a default sorting order.
+
 if(isset($_GET['jtSorting'])){
- $sorting = $_GET['jtSorting'];   
+    $sorting = $_GET['jtSorting'];             // Changing sort order according to what the user has selected.
 }
 
-//Get records from database
+//Get the records from database
 $query2 = "SELECT * FROM student";
-if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
+if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
+    
     if($searchId == 0){
         $query2.= " WHERE id LIKE '$searchText%'";
     }
@@ -47,8 +50,7 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     }
     else if($searchId == 3){
         $query2.= " WHERE last_name LIKE '$searchText%'";
-    }
-    
+    }   
 }
 
 $query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
@@ -61,7 +63,7 @@ while($row = mysql_fetch_array($result2))
     $rows[] = $row;
 }
  
-//Return result to jTable
+//Return results to jTable
 $jTableResult = array();
 $jTableResult['Result'] = "OK";
 $jTableResult['TotalRecordCount'] = $recordCount;

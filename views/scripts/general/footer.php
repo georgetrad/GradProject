@@ -35,8 +35,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn()){
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/login_script.php';
 }
-else if(loggedIn() && $_SESSION['userLevel'] == -1){
-//    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';    
+else if(loggedIn() && $_SESSION['userLevel'] == -1){    
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/import_page_script.php';
 }
 else if(loggedIn() && $_SESSION['userLevel'] == 0){
