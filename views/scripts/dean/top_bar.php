@@ -20,12 +20,8 @@
                     <a href="views/scripts/dean/semester.php"><?=SEMESTERS?></a>                    
                 </li>
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a><?=COURSES?></a>
-                    <ul class="dropdown">                                
-                        <li><a href="views/scripts/dean/all_courses.php"><?=SUGGEST_COURSES?></a></li>
-                        <li><a><?=SUGGESTED_COURSES?></a></li>
-                    </ul>
+                <li>
+                    <a href="views/scripts/dean/all_courses.php"><?=SUGGEST_COURSES?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">

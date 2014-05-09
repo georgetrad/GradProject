@@ -44,7 +44,7 @@ function suggest(){
     
     
 $(function(){
-    $('#all_courses_Table').jtable({
+    $('#sugg_courses_Table').jtable({
     title: '<?php echo COURSES;?>',
     paging: false,                    
     columnResizable: false, //Actually, no need to set true since it's default
@@ -57,64 +57,49 @@ $(function(){
     selectOnRowClick: true, //Enable this to only select using checkboxes
     totalRecordCount: 'RecordCount',
     actions: {
-        listAction: 'models/jTableFunctions/list_courses.php'                      
+        listAction: 'models/jTableFunctions/list_sugg_courses.php'                      
     },
     fields: {
         id: {
             key: true,
             list: true,
             title: '<?php echo COURSE_CODE;?>',
-            width: '10%'
+            width: '15%'
         },
         name_ar: {
             title: '<?php echo COURSE_NAME.' ('.ARABIC.')';?>',                            
-            width: '10%',
+            width: '15%',
             visibility: 'fixed' //This column always will be shown,                            
         },
         name_er: {
             title: '<?php echo COURSE_NAME.' ('.ENGLISH.')';?>',                            
-            width: '10%',
+            width: '15%',
             visibility: 'fixed' //This column always will be shown,                            
         },
         course_type_id: {
             title: '<?php echo COURSE_TYPE;?>',
-            width: '10%'
+            width: '15%'
         },
         level: {
             title: '<?php echo LEVEL;?>',
-            width: '10%'
+            width: '15%'
         },
         req_course_id: {
             title: '<?php echo REQ_COURSE;?>',
-            width: '10%'
+            width: '15%'
         },
         credits: {
             title: '<?php echo CREDITS;?>',
-            width: '10%'
+            width: '15%'
         },
-        class_hours: {
-            title: '<?php echo CLASS_HRS;?>',
-            width: '10%'                         
-        },
-        lab_hours: {
-            title: '<?php echo LAB_HRS;?>',
-            width: '10%'                     
-        },
-        fees: {
-            title: '<?php echo FEES;?>',
-            width: '10%'                   
-        },
-        added: {
-            visibility: 'visible',
-            display: function (data) {
-                return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
-            }
-        }        
+        dummyColumns: {
+            visibility: 'hidden'            
+        }            
     }
     });
     
     //Re-load records when user click 'load records' button.
-    $('#search_button').click(function (e) {
+    $('#sugg_courses_Table').click(function (e) {
         e.preventDefault();
         $('#all_courses_Table').jtable('load', {
             searchText: $('#search_text').val(),
@@ -123,9 +108,9 @@ $(function(){
         suggest();
     });
 
-    $('#all_courses_Table').jtable('load');
+    $('#sugg_courses_Table').jtable('load');
     
-    $('#all_courses_Table').jtable('load', undefined, function(){        
+    $('#sugg_courses_Table').jtable('load', undefined, function(){        
        $('.add').bind( "click", function() {
            var courseCode = $(this).parents("tr").find("td:first").text();
                      
