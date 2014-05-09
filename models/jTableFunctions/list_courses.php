@@ -45,36 +45,36 @@ if(isset($_GET['jtSorting'])){
 
 //Get the records from database
 $query2 = "SELECT * FROM course";
-if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
+if(true){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
     
     if($searchId == 0){                                         // Modifying the query according to the search text.
-        $query1.= " WHERE id LIKE '$searchText%'";
+        $query2.= " WHERE id LIKE '$searchText%'";
     }
     else if($searchId == 1){
-        $query1.= " WHERE name_ar LIKE '$searchText%'";
+        $query2.= " WHERE name_ar LIKE '$searchText%'";
     }
     else if ($searchId == 2) {
-        $query1.= " WHERE name_en LIKE '$searchText%'";
+        $query2.= " WHERE name_en LIKE '$searchText%'";
     }
     else if($searchId == 3){
-        $query1.= " WHERE course_type_id LIKE '$searchText%'";
+        $query2.= " WHERE course_type_id LIKE '$searchText%'";
     }
     else if($searchId == 4){
-        $query1.= " WHERE level LIKE '$searchText%'";
+        $query2.= " WHERE level LIKE '$searchText%'";
     }
     else if($searchId == 5){
-        $query1.= " WHERE credits LIKE '$searchText%'";
+        $query2.= " WHERE credits LIKE '$searchText%'";
     }
     else if($searchId == 6){
-        $query1.= " WHERE fees LIKE '$searchText%'";
-    }   
+        $query2.= " WHERE fees LIKE '$searchText%'";
+    }
 }
 
 $query2.= " ORDER BY $sorting";
 $result2 = mysql_query($query2);
- 
+
 //Add all records to an array
 $rows = array();
 while($row = mysql_fetch_array($result2))

@@ -83,21 +83,19 @@ $(function(){
     $('#jTable').jtable('load', undefined, function(){        
        $('.add').bind( "click", function() {
            var courseCode = $(this).parents("tr").find("td:first").text();
-                     
-            if($(this).text() === 'Add'){
-                var action = 'add';
-                $(this).text('Remove');
-                $(this).css('color','red');
-            }
-            else{
-                action = 'remove';
-                $(this).text('Add');
-                $(this).css('color','green');
-            }
-            $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
-            });
-            
-        });    
-    });
+           if($(this).text() === 'Add'){
+               var action = 'add';
+               $(this).text('Remove');
+               $(this).css('color','red');
+           }
+           else{
+               action = 'remove';
+               $(this).text('Add');
+               $(this).css('color','green');
+           }
+           $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
+           });
+       });
+   });
 });
 </script>
