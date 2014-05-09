@@ -12,9 +12,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 </div>
 <!-- Filtering Area -->
 <div class="row">    
-    <div class="medium-4 large-4 columns show-for-medium-up">
-        &nbsp;
-    </div>
     <form>
         <div class="medium-2 large-2 columns show-for-medium-up">
             <select id="search_id">                    

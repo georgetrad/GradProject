@@ -7,6 +7,9 @@ $title = HOME;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 ?>
+<div class="row">
+    <h4 class="title text-center"><?=$title;?></h4>
+</div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/homeFunction.php';?>	
 			
