@@ -45,7 +45,7 @@ if(isset($_GET['jtSorting'])){
 
 //Get the records from database
 $query2 = "SELECT * FROM course";
-if(true){            // Modifying the query according to the search text.
+if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
     
