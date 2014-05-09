@@ -12,8 +12,7 @@
     <br><br><br>
 </div>
 
-<div id="username_div" class="row large-12 columns show-for-medium-up">
-   <!--<form>-->
+<div id="username_div" class="row large-12 columns show-for-medium-up">   
     <div class="medium-5 large-5 columns">
         &nbsp;
     </div>
@@ -44,21 +43,33 @@
     </div>
     <div class="medium-5 large-5 columns">
         &nbsp;
-    </div>
-    <!--</form>-->
+    </div>    
 </div>
- 
-<div class="row show-for-medium-up">
+<div class="row">
     <div class="medium-5 large-5 columns">
         &nbsp;
     </div>
-    <div class="medium-2 large-2 columns">            
-        <div id="wrong" data-alert class="alert-box warning" style="font-size: 12px; font-family: DroidKufi-Regular; display: none">
-            <span id="invalid_login"><?=INVALID_LOGIN?></span>
-            <a href="#" class="close"></a>
-        </div>            
+    <div class="medium-2 large-2 columns text-center">
+        <span id="spinner"></span>
     </div>
     <div class="medium-5 large-5 columns">
         &nbsp;
     </div>
+</div>
+
+<div class="row">
+    <div class="show-for-medium-up" style="padding-top: 5px">
+        <div class="medium-5 large-5 columns">
+            &nbsp;
+        </div>
+        <div class="medium-2 large-2 columns">            
+            <div id="wrong" data-alert class="alert-box warning" style="font-size: 12px; font-family: DroidKufi-Regular; display: none">
+                <span id="invalid_login"><?=INVALID_LOGIN?></span>
+                <a href="#" class="close"></a>
+            </div>            
+        </div>
+        <div class="medium-5 large-5 columns">
+            &nbsp;
+        </div>
+    </div> 
 </div>

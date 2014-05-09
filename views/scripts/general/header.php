@@ -22,5 +22,5 @@ if(!loggedIn()){
         <script type="text/javascript" src="views/js/vendor/modernizr.js"></script>
         <script type="text/javascript" src="views/js/spin.min.js"></script>   
     </head>
-    <body>
+    <body style="height: 700px">
 
