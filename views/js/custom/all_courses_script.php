@@ -1,5 +1,11 @@
 <script>   
-function suggest(){
+    $(function(){
+        $('#sugg').click(function (){
+            $('#sugg_courses_Table').jtable('load');            
+        });
+    });
+    
+    function suggest(){
     $('.add').bind( "click", function() {
            var courseCode = $(this).parents("tr").find("td:first").text();
                      

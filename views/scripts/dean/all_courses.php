@@ -11,11 +11,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <h4 class="title text-center"><?=$title;?></h4>
 </div>
 
-<div class="row">
+<div class="row tabs_bar">
     <div class="medium-6 large-6 columns">
         <dl class="tabs" data-tab>
             <dd class="active"><a href="#panel2-1"><?=COURSES?></a></dd>
-            <dd><a href="#panel2-2"><?=SUGGESTED_COURSES?></a></dd>
+            <dd><a id="sugg" href="#panel2-2"><?=SUGGESTED_COURSES?></a></dd>
             <dd><a href="#panel2-3"><?=AFFECTED_STU?></a></dd>  
         </dl>
     </div>

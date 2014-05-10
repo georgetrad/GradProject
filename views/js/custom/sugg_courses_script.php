@@ -1,48 +1,4 @@
 <script>   
-function suggest(){
-    $('.add').bind( "click", function() {
-           var courseCode = $(this).parents("tr").find("td:first").text();
-                     
-            if($(this).text() === 'Add'){
-                var action = 'add';
-                $(this).text('Remove');
-                $(this).css('color','red');
-            }
-            else{
-                action = 'remove';
-                $(this).text('Add');
-                $(this).css('color','green');
-            }
-            $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
-            });
-            
-    });  
-    $.post('models/functions/sugg_function.php','', function(data){
-        var i = 0;
-        for (i=0;i<data.length;i++){
-//            alert(data[i]['COURSE_ID']);
-            $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find("td:last").text('Remove').css('color','red').bind( "click", function() {
-           var courseCode = $(this).parents("tr").find("td:first").text();
-                     
-            if($(this).text() === 'Add'){
-                var action = 'add';
-                $(this).text('Remove');
-                $(this).css('color','red');
-            }
-            else{
-                action = 'remove';
-                $(this).text('Add');
-                $(this).css('color','green');
-            }
-            $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
-            });
-            
-        });   
-        }
-    }, "json");
-}    
-    
-    
 $(function(){
     $('#sugg_courses_Table').jtable({
     title: '<?php echo COURSES;?>',
@@ -96,17 +52,7 @@ $(function(){
             visibility: 'hidden'            
         }            
     }
-    });
-    
-    //Re-load records when user click 'load records' button.
-    $('#sugg_courses_Table').click(function (e) {
-        e.preventDefault();
-        $('#all_courses_Table').jtable('load', {
-            searchText: $('#search_text').val(),
-            searchId: $('#search_id').val()
-        });
-        suggest();
-    });
+    });        
 
     $('#sugg_courses_Table').jtable('load');
     
