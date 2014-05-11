@@ -24,11 +24,8 @@
                     <a href="views/scripts/dean/all_courses.php"><?=SUGGEST_COURSES?></a>                    
                 </li>
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a><?=TEACHERS?></a>
-                    <ul class="dropdown">                                
-                        <li><a><?=ASSIGN_STUDENTS?></a></li>                        
-                    </ul>
+                <li>
+                    <a><?=TEACHERS?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">
@@ -36,6 +33,12 @@
                     <ul class="dropdown">                                
                         <li><a href="views/scripts/dean/all_students.php"><?=ALL_STUDENTS?></a></li>                                 
                         <li><a href="views/scripts/dean/student_grade.php"><?=STUDENT_GRADE?></a></li>                        
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a><?=ACADEMIC_ADVISING?></a>
+                    <ul class="dropdown">                                
+                        <li><a href="views/scripts/dean/assign_advisor.php"><?=ASSIGN_STUDENTS?></a></li>                        
                     </ul>
                 </li>
                 <li class="divider"></li>

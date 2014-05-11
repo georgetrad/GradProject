@@ -51,6 +51,10 @@ define('STUDENTS', 'الطلاب');
     
 define('TEACHERS', 'المدرسون');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');
+    define('ADVISOR', 'المرشد الحالي');
+    define('STU_NAME', 'اسم الطالب');
+    
+define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');    
     
 define('IMPORT', 'الاستيراد');
     define('IMPORT_GENERAL_FILE', 'إستيراد ملف عام');
@@ -65,4 +69,5 @@ define('BROWSE', 'إستعراض');
 define('STUDENT_GRADE', 'كشف علامات الطالب');
 define('ARABIC', 'عربي');
 define('ENGLISH', 'إنكليزي');
+define('SAVE', 'حفظ');
 ?>

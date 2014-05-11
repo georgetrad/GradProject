@@ -19,14 +19,12 @@ $(function() {
         left: '50%' // Left position relative to parent
     };
     var spinner = new Spinner(opts);
-    var target = document.getElementById('spin');
-    
+    var target = document.getElementById('spin');    
 
     $('.fileLink').each(function() {
-    this.submitting = false;
+        this.submitting = false;
     }).click(function() {
-        if (!this.submitting)
-        {
+        if (!this.submitting) {
             this.submitting = true;
             var self = this;
             spinner.spin(target);
@@ -35,16 +33,6 @@ $(function() {
                 spinner.stop(target);
             });  
         }
-    });
-    /*
-     * 
-    $('.fileLink').click(function(){
-        spinner.spin(target);
-        $.post( "models/functions/importGeneralFile.php", { file:$(this).text()},function( data ) {
-            $( ".result" ).html( data );
-            spinner.stop(target);
-        });            
-    });
-    */
+    });    
 });
 </script>   

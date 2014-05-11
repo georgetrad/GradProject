@@ -11,7 +11,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <h4 class="title text-center"><?=$title;?></h4>
 </div>
 
-<div class="row tabs_bar">
+<div class="row">
     <div class="medium-6 large-6 columns">
         <dl class="tabs" data-tab>
             <dd class="active"><a href="#panel2-1"><?=COURSES?></a></dd>
