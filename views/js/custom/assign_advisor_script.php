@@ -22,7 +22,7 @@ $(function(){
                 title: '<?php echo COLLEGE_ID;?>',
                 width: '10%'
             },
-            name: {
+            studentName: {
                 title: '<?php echo STU_NAME;?>',                            
                 width: '15%',
                 visibility: 'fixed' //This column always will be shown,                            
@@ -44,10 +44,10 @@ $('#save').click(function (){
 
     $('td.jtable-selecting-column input').each(function (i){
         if($(this).prop('checked')){
-            var selectedVal = [];
-            selectedVal[i] = $('#jTable tr').find('td:nth-child(2)').text();                
+            var selectedVal = [];            
+            selectedVal[i] = $('#jTable tr').find('td').eq(i).text();            
             alert(selectedVal[i]);
         }            
-    });        
+    });
 });
 </script>

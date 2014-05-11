@@ -33,7 +33,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
             ?>            
         </div>
         <div class="medium-2 large-1 columns">
-            <input type="submit" id="save" class="tiny button" value='<?=SAVE?>'>
+            <input type="button" id="save" class="tiny button" value='<?=SAVE?>'>
         </div>
         <div class="medium-5 large-6 columns">            
         </div>

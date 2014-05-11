@@ -18,13 +18,15 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT id, concat(first_name, ' ', middle_name, ' ', last_name) AS name ";
-$query2.= "FROM student ";
-//$query2.= "JOIN teacher AS t2";
-//$query2.= "ON t1.advisor_id = t2.id ";
+$query2 = "SELECT s.id, concat(s.first_name, ' ', s.middle_name, ' ', s.last_name) AS studentName, ";
+$query2.= "concat(t.first_name, ' ', t.last_name) AS advisorName ";
+$query2.= "FROM student as s ";
+$query2.= "LEFT JOIN teacher as t ";
+$query2.= "ON s.advisor_id = t.id ";
 $query2.= "ORDER BY $sorting LIMIT $startIndex, $pageSize";
+
 $result2 = mysql_query($query2);
-//print_r($query2);exit; 
+
 //Add all records to an array
 $rows = array();
 while($row = mysql_fetch_array($result2))
