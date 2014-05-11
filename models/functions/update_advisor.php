@@ -8,13 +8,26 @@ $selectedStudents   = $_POST['selectedStudents'];
 $tableName = 'student';
 
 $cols = array(    
-    "advisor_id"   
+    "id",
+    "advisor_id"
 );
 
 $data = array(    
+    $selectedStudents[0],
     $advisorId
 );
 
+$uCols = array(    
+    "id",
+    "advisor_id"   
+);
+
+$uData = array(    
+    $selectedStudents[0],
+    $advisorId
+);
+
+$result = dbInsert('student', $cols, $data, true, $uCols, $uData);
 
 print json_encode($result);
 
