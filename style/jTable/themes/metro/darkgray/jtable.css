@@ -415,7 +415,7 @@ div.jtable-main-container > table.jtable > tbody > tr:hover {
 }
 div.jtable-main-container > table.jtable > tbody > tr.jtable-row-selected {
   color: #fff;
-  background-color: #676767;
+  background-color: #65A36A;
 }
 div.jtable-main-container > table.jtable > tbody > tr.jtable-row-created {
   background-color: #787878;
