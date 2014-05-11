@@ -12,23 +12,25 @@ $cols = array(
     "advisor_id"
 );
 
-$data = array(    
-    $selectedStudents[0],
-    $advisorId
-);
+foreach ($selectedStudents as $id){
+    $data = array( $id, $advisorId);
+    dbInsert('student', $cols, $data, true, $cols, $data);
+}
+//$data = array(    
+//    $selectedStudents[0],
+//    $advisorId
+//);
+//
+//$uCols = array(    
+//    "id",
+//    "advisor_id"   
+//);
+//
+//$uData = array(    
+//    $selectedStudents[0],
+//    $advisorId
+//);
+//
+//$result = dbInsert('student', $cols, $data, true, $uCols, $uData);
 
-$uCols = array(    
-    "id",
-    "advisor_id"   
-);
-
-$uData = array(    
-    $selectedStudents[0],
-    $advisorId
-);
-
-$result = dbInsert('student', $cols, $data, true, $uCols, $uData);
-
-print json_encode($result);
-
-
+//print json_encode($result);
