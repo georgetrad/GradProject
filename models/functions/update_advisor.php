@@ -5,6 +5,7 @@ include_once '../functions/dbFunctions.php';
 
 $advisorId          = $_POST['advisorId'];
 $selectedStudents   = $_POST['selectedStudents'];
+print_r($selectedStudents);exit;
 $tableName = 'student';
 
 $cols = array(    

@@ -45,7 +45,7 @@ function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicat
             if(count($uColumns)>1 && $i<(count($uColumns)-1)){
                 $query.= ", ";
             }
-        }       
+        }
     }
     else if($isDuplicate == false){
         $query = "INSERT INTO $tableName ";
