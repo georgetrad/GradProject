@@ -31,8 +31,6 @@ while($row = mysql_fetch_array($result2))
 {
     $rows[] = $row;
 }
-
-
 //Return results to jTable
 $jTableResult = array();
 $jTableResult['Result'] = "OK";

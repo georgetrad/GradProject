@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
     header('Location: ../../../index.php');
 }
-$title = TEACHERS;
+$title = ASSIGN_STUDENTS;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunction.php';
@@ -21,7 +21,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
         <div class="medium-3 large-2 columns show-for-medium-up">            
             <?php
                 // select options
-                echo '<select>';
+                echo '<select id="advisor_id">';
                     $query = "SELECT id, first_name, last_name FROM teacher";
                     $result = mysql_query($query);
                     while($row = mysql_fetch_array($result)) {
@@ -33,7 +33,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
             ?>            
         </div>
         <div class="medium-2 large-1 columns">
-            <input type="submit" class="tiny button" value='<?=SAVE?>'>
+            <input type="submit" id="save" class="tiny button" value='<?=SAVE?>'>
         </div>
         <div class="medium-5 large-6 columns">            
         </div>

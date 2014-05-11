@@ -1,4 +1,4 @@
-<script>
+<script>    
 $(function(){    
     $('#jTable').jtable({
         title: '<?php echo ALL_STUDENTS;?>',
@@ -36,6 +36,18 @@ $(function(){
             }
         }
     });
-    $('#jTable').jtable('load');
+    $('#jTable').jtable('load');        
+});
+
+$('#save').click(function (){
+    var advisorId = $('#advisor_id').val();
+
+    $('td.jtable-selecting-column input').each(function (i){
+        if($(this).prop('checked')){
+            var selectedVal = [];
+            selectedVal[i] = $('#jTable tr').find('td:nth-child(2)').text();                
+            alert(selectedVal[i]);
+        }            
+    });        
 });
 </script>
