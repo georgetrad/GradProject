@@ -13,10 +13,7 @@ $(function(){
     selectOnRowClick: true, //Enable this to only select using checkboxes
     totalRecordCount: 'RecordCount',
     actions: {
-        listAction: 'models/jTableFunctions/list_student.php',
-        //createAction: 'GettingStarted/CreatePerson.php',
-//        updateAction: 'GettingStarted/UpdatePerson.php',
-//        deleteAction: 'GettingStarted/DeletePerson.php',                        
+        listAction: 'models/jTableFunctions/list_student.php'                      
     },
     fields: {
         id: {

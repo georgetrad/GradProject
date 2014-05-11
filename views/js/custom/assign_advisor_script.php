@@ -41,13 +41,19 @@ $(function(){
 
 $('#save').click(function (){
     var advisorId = $('#advisor_id').val();
-
-    $('td.jtable-selecting-column input').each(function (i){
+    var selectedStudents = [];
+    $('td.jtable-selecting-column input').each(function(){
         if($(this).prop('checked')){
-            var selectedVal = [];            
-            selectedVal[i] = $('#jTable tr').find('td').eq(i).text();            
-            alert(selectedVal[i]);
-        }            
+            var t = $(this).parents().parents().data('record-key');            
+            selectedStudents.push(t);
+        } 
     });
+    assign(advisorId, selectedStudents);
 });
+
+function assign(advisorId, selectedStudents){
+    $.post( "models/functions/update_advisor.php", { advisorId: advisorId, selectedStudents: selectedStudents },function( data ) {
+        
+    });
+}
 </script>
