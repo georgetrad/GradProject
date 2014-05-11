@@ -41,13 +41,13 @@ $(function(){
 
 $('#save').click(function (){
     var advisorId = $('#advisor_id').val();
-
-    $('td.jtable-selecting-column input').each(function (i){
+    var selectedVal = [];
+    $('td.jtable-selecting-column input').each(function(){
         if($(this).prop('checked')){
-            var selectedVal = [];
-            selectedVal[i] = $('#jTable tr').find('td:nth-child(2)').text();                
-            alert(selectedVal[i]);
-        }            
-    });        
+            var t = $(this).parents().parents().data('record-key');            
+            selectedVal.push(t);
+        } 
+    });
+    alert(selectedVal);
 });
 </script>
