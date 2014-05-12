@@ -1,6 +1,6 @@
 <?php
 include_once '../core.php';
-include_once './databaseClass.php';
+include_once '../db_connect.php';
 
 $action         = $_POST['action'];
 $courseCode     = $_POST['courseCode'];

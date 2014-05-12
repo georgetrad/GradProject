@@ -25,7 +25,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a><?=TEACHERS?></a>                    
+                    <a href="views/scripts/dean/all_teachers.php"><?=TEACHERS?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">

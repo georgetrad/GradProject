@@ -50,11 +50,15 @@ define('STUDENTS', 'الطلاب');
         define('STUDENTS_TABLE', 'جدول الطلاب');
     
 define('TEACHERS', 'المدرسون');
+    define('DEP', 'القسم');
+    define('DEGREE', 'المرتبة العلمية');
+        define('DOCTOR', 'دكتور');
+        define('ENGINEER', 'مهندس');
+    
+define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');
     define('ADVISOR', 'المرشد الحالي');
     define('STU_NAME', 'اسم الطالب');
-    
-define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');    
     
 define('IMPORT', 'الاستيراد');
     define('IMPORT_GENERAL_FILE', 'إستيراد ملف عام');
@@ -66,6 +70,8 @@ define('SETTINGS', 'الاعدادات');
 define('SEARCH', 'بحث');
 define('FILENAME', 'اسم الملف');
 define('BROWSE', 'إستعراض');
+define('PHONE_NUM', 'رقم الهاتف');
+
 define('STUDENT_GRADE', 'كشف علامات الطالب');
 define('ARABIC', 'عربي');
 define('ENGLISH', 'إنكليزي');
