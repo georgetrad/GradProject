@@ -86,3 +86,10 @@ $result =  mysql_query($query);
 while($row = mysql_fetch_array($result)) {
     echo $row[0];
 }
+
+
+$students = getData('*', 'student');
+//$students = array("a"=>"v","x"=>"c","a"=>array("a"=>"v"),"B"=>array("a"=>"v"));
+
+echo  array2table($students);
+//var_dump($students);

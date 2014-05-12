@@ -21,14 +21,53 @@ $(function() {
     var spinner = new Spinner(opts);
     var target = document.getElementById('spin');    
 
-    $('.fileLink').each(function() {
+    $('.fileLink_std').each(function() {
         this.submitting = false;
     }).click(function() {
         if (!this.submitting) {
             this.submitting = true;
             var self = this;
             spinner.spin(target);
-            $.post( "models/functions/importGeneralFile.php", { file:$(this).text()},function( data ) {
+            $.post( "models/functions/importGeneralFile_std.php", { file:$(this).text(),semester:$('#semester').val()},function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });
+    $('.fileLink_crs').each(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            $.post( "models/functions/importGeneralFile_crs.php", { file:$(this).text(),semester:$('#semester').val()},function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });
+    $('.fileLink_grd').each(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            $.post( "models/functions/importGeneralFile_grd.php", { file:$(this).text(),semester:$('#semester').val()},function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });
+    $('.fileLink_cls').each(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            $.post( "models/functions/importGeneralFile_cls.php", { file:$(this).text(),semester:$('#semester').val()},function( data ) {
                 $( ".result" ).html( data );
                 spinner.stop(target);
             });  
