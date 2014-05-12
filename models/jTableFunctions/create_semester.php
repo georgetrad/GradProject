@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-include_once '../db_connect.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/dbFunctions.php';
 
 // Getting the inserted values in from the form.
 $name           = $_POST['name'];
@@ -13,15 +13,40 @@ $excGpaHrs      = $_POST['exc_gpa_hrs'];
 $maxGradStuHrs  = $_POST['max_grad_stu_hrs'];
 $userId         = $_SESSION['userId'];
 
-$query1 = "INSERT INTO semester(name, start_date, end_date, min_req_hrs, max_req_hrs, exc_gpa, exc_gpa_hrs, max_grad_stu_hrs, active, create_date, user_id) ";
-$query1.= "VALUES('$name', $startDate, $endDate, $minReqHrs, $maxReqHrs, $excGpa, $excGpaHrs, $maxGradStuHrs, 'A', now(), $userId);";
+$cols = array(
+    'name',
+    'start_date', 
+    'end_date',
+    'min_req_hrs',
+    'max_req_hrs',
+    'exc_gpa',
+    'exc_gpa_hrs',
+    'max_grad_stu_hrs',
+    'active',
+    'create_date',
+    'user_id'
+    );
 
-mysql_query($query1);           // Executing the query
+$data = array(
+    "'$name'",
+    $startDate,
+    $endDate,
+    $minReqHrs,
+    $maxReqHrs,
+    $excGpa,
+    $excGpaHrs,
+    $maxGradStuHrs,
+    "'A'",
+    'now()',
+    $userId
+);
+
+dbInsert('semester', $cols, $data);
 
 //Get last inserted record (to show it on jTable)
-$query2 = "SELECT * FROM semester WHERE id = LAST_INSERT_ID();";
-$result2 = mysql_query($query2);
-$row = mysql_fetch_array($result2);
+$query = "SELECT * FROM semester WHERE id = LAST_INSERT_ID();";
+$result = mysql_query($query);
+$row = mysql_fetch_array($result);
 
 //Return results to jTable
 $jTableResult = array();

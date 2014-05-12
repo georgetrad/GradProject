@@ -1,7 +1,6 @@
 <?php
 include_once '../core.php';
-include_once './databaseClass.php';
-
+include_once '../db_connect.php';
 /**
  * This dbInsert functions receives all the necessary data and it executes the query on its own.
  * @author George Trad
@@ -17,7 +16,7 @@ include_once './databaseClass.php';
  * @return string
  */
 
-function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicate=false, $uColumns, $uValues){
+function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicate=false, $uColumns='', $uValues=''){
     if($isDuplicate){
         $query = "INSERT INTO $tableName ";
         $query.= "(";
@@ -68,9 +67,7 @@ function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicat
         }
         $query.= ") ";
     }
-           
     mysql_query($query);                 // Executing the query
-
     $result = array();
     $result['Result'] = "Sucess";
     return $result;
@@ -99,12 +96,9 @@ function dbUpdate($tableName, $columns = array(), $values = array(), $condition 
         }
     }    
     $query.= " WHERE $condition";
-    
-    print_r($query);exit;
     mysql_query($query);                 // Executing the query
 
     $result = array();
     $result['Result'] = "Sucess";
     return $result;
 }
-
