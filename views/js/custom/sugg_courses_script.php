@@ -70,7 +70,7 @@
                     $(this).text('Add');
                     $(this).css('color','green');
                 }
-                $.post('models/functions/_global_db.php', {case: 'suggest', action: action, courseCode: courseCode}, function(data){
+                $.post('models/functions/add_course.php', {case: 'suggest', action: action, courseCode: courseCode}, function(data){
                     getSuggCoursesNum();
                 });            
             });    
@@ -92,7 +92,7 @@
                         $(this).text('Add');
                         $(this).css('color','green');
                     }
-                    $.post('models/functions/_global_db.php', {case: 'suggest', action: action, courseCode: courseCode}, function(data){                
+                    $.post('models/functions/add-course.php', {case: 'suggest', action: action, courseCode: courseCode}, function(data){                
                         getSuggCoursesNum();
                     });            
                 });   
