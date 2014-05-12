@@ -43,7 +43,8 @@ $(function(){
         },
         phone_number: {
             title: '<?php echo PHONE_NUM;?>',
-            width: '20%'                            
+            width: '20%',
+            align: 'left'
         },
         dummyColumn: {
             visibility: 'hidden'

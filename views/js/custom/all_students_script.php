@@ -1,44 +1,44 @@
 <script>
 $(function(){    
     $('#jTable').jtable({
-    title: '<?php echo ALL_STUDENTS;?>',
-    paging: true,                    
-    columnResizable: false, //Actually, no need to set true since it's default
-    columnSelectable: false, //Actually, no need to set true since it's default
-    saveUserPreferences: false, //Actually, no need to set true since it's default
-    sorting: true,                    
-    selecting: false, //Enable selecting
-    multiselect: false, //Allow multiple selecting
-    selectingCheckboxes: false, //Show checkboxes on first column
-    selectOnRowClick: true, //Enable this to only select using checkboxes
-    totalRecordCount: 'RecordCount',
-    actions: {
-        listAction: 'models/jTableFunctions/list_student.php'                      
-    },
-    fields: {
-        id: {
-            key: true,
-            list: true,
-            title: '<?php echo COLLEGE_ID;?>',
-            width: '25%'
+        title: '<?php echo ALL_STUDENTS;?>',
+        paging: true,                    
+        columnResizable: false, //Actually, no need to set true since it's default
+        columnSelectable: false, //Actually, no need to set true since it's default
+        saveUserPreferences: false, //Actually, no need to set true since it's default
+        sorting: true,                    
+        selecting: false, //Enable selecting
+        multiselect: false, //Allow multiple selecting
+        selectingCheckboxes: false, //Show checkboxes on first column
+        selectOnRowClick: true, //Enable this to only select using checkboxes
+        totalRecordCount: 'RecordCount',
+        actions: {
+            listAction: 'models/jTableFunctions/list_student.php'                      
         },
-        first_name: {
-            title: '<?php echo NAME;?>',                            
-            width: '25%',
-            visibility: 'fixed' //This column always will be shown,                            
-        },
-        middle_name: {
-            title: '<?php echo MIDDLE_NAME;?>',
-            width: '25%'
-        },
-        last_name: {
-            title: '<?php echo LAST_NAME;?>',
-            width: '25%'                            
-        },
-        dummyColumn: {
-            visibility: 'hidden'
-        }        
-    }
+        fields: {
+            id: {
+                key: true,
+                list: true,
+                title: '<?php echo COLLEGE_ID;?>',
+                width: '25%'
+            },
+            first_name: {
+                title: '<?php echo NAME;?>',                            
+                width: '25%',
+                visibility: 'fixed' //This column always will be shown,                            
+            },
+            middle_name: {
+                title: '<?php echo MIDDLE_NAME;?>',
+                width: '25%'
+            },
+            last_name: {
+                title: '<?php echo LAST_NAME;?>',
+                width: '25%'                            
+            },
+            dummyColumn: {
+                visibility: 'hidden'
+            }        
+        }
     }); 
     //Re-load records when user click 'load records' button.
     $('#search_button').click(function (e) {

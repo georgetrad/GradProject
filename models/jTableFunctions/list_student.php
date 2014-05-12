@@ -2,23 +2,17 @@
 include_once '../db_connect.php';
 
 // Get records count
-$query1 = "SELECT COUNT(*) AS RecordCount FROM student";
+$query1 = "SELECT COUNT(id) AS RecordCount FROM student WHERE active='A'";
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
     
-    if($searchId == 0){                                         // Modifying the query according to the search text.
-        $query1.= " WHERE id LIKE '$searchText%'";
+    if($searchId == 1){                                         // Modifying the query according to the search text.
+        $query1.= " AND (first_name LIKE '$searchText%' OR middle_name LIKE '$searchText%' OR last_name LIKE '$searchText%') ";
     }
-    else if($searchId == 1){
-        $query1.= " WHERE first_name LIKE '$searchText%'";
-    }
-    else if ($searchId == 2) {
-        $query1.= " WHERE middle_name LIKE '$searchText%'";
-    }
-    else if($searchId == 3){
-        $query1.= " WHERE last_name LIKE '$searchText%'";
-    }  
+    else if($searchId == 2){
+        $query1.= " AND id LIKE '$searchText%'";
+    }     
 }
 $result1 = mysql_query($query1);            // Executing the query.
 $row = mysql_fetch_array($result1);         // Fetching the result.
@@ -30,27 +24,21 @@ $startIndex = $_GET['jtStartIndex'];
 $sorting = 'id ASC';                        // Assigning a default sorting order.
 
 if(isset($_GET['jtSorting'])){
-    $sorting = $_GET['jtSorting'];             // Changing sort order according to what the user has selected.
+    $sorting = $_GET['jtSorting'];           // Changing sort order according to what the user has selected.  
 }
 
 //Get the records from database
-$query2 = "SELECT * FROM student";
+$query2 = "SELECT * FROM student WHERE active='A'";
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
     
-    if($searchId == 0){
-        $query2.= " WHERE id LIKE '$searchText%'";
+    if($searchId == 1){
+        $query2.= " AND (first_name LIKE '$searchText%' OR middle_name LIKE '$searchText%' OR last_name LIKE '$searchText%') ";
     }
-    else if($searchId == 1){
-        $query2.= " WHERE first_name LIKE '$searchText%'";
-    }
-    else if ($searchId == 2) {
-        $query2.= " WHERE middle_name LIKE '$searchText%'";
-    }
-    else if($searchId == 3){
-        $query2.= " WHERE last_name LIKE '$searchText%'";
-    }   
+    else if($searchId == 2){
+        $query2.= " AND id LIKE '$searchText%'";
+    }     
 }
 
 $query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";

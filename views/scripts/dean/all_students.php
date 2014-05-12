@@ -18,10 +18,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <form>
         <div class="medium-2 large-1 columns show-for-medium-up">
             <select id="search_id">                    
-                <option value="0"><?=COLLEGE_ID?></option>
                 <option value="1"><?=NAME?></option>
-                <option value="2"><?=MIDDLE_NAME?></option>
-                <option value="3"><?=LAST_NAME?></option>                    
+                <option value="2"><?=COLLEGE_ID?></option>                                   
             </select>
         </div> 
         <div class="medium-2 large-2 columns show-for-medium-up">

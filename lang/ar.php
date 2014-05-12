@@ -9,7 +9,7 @@ define('USERNAME', 'اسم المستخدم');
 define('PASSWORD', 'كلمة المرور');
 define('INVALID_LOGIN', 'يرجى إدخال معلومات تسجيل الدخول');
 define('INVALID_CRED', 'معلومات تسجيل الدخول غير صحيحة');
-define('WELCOME', 'مرحباً بك');
+define('WELCOME', 'مرحباً');
 define('LOGOUT', 'تسجيل الخروج');
 
 define('HOME', 'الرئيسية');
