@@ -22,11 +22,40 @@ $files1 = scandir($dir);
     <div class="medium-8 large-8 columns show-for-medium-up">
         <?php 
         echo '<br><br> الملفات التالية محمله على المخدم وجاهزه للإستيراد الى قاعدة البيانات، إضغط للإستيراد<br><br>';
-
+        /******************** ********************/
+        echo '<br><br>إستيراد الطلاب<br><br>';        
         foreach ($files1 as $data){
             $q = explode('.', $data);
             if (!($data == '..'||$data == '.'))
-                echo '<a class="fileLink">'.$data.'</a><br>';    
+                echo '<a class="fileLink_std">'.$data.'</a><br>';    
+        }
+        /******************** ********************/
+        echo '<br><br>إستيراد المقررات<br><br>';
+        foreach ($files1 as $data){
+            $q = explode('.', $data);
+            if (!($data == '..'||$data == '.'))
+                echo '<a class="fileLink_crs">'.$data.'</a><br>';    
+        }
+        /******************** ********************/
+        echo '<br><br>إستيراد العلامات النهائية<br><br>';
+        foreach ($files1 as $data){
+            $q = explode('.', $data);
+            if (!($data == '..'||$data == '.'))
+                echo '<a class="fileLink_grd">'.$data.'</a><br>';    
+        }
+        /******************** ********************/
+        echo '<br><br>إستيراد الشعب<br><br>';
+        foreach ($files1 as $data){
+            $q = explode('.', $data);
+            if (!($data == '..'||$data == '.'))
+                echo '<a class="fileLink_cls">'.$data.'</a><br>';    
+        }
+        /******************** ********************/
+        echo '<br><br>إستيراد ملف مقررات<br><br>';
+        foreach ($files1 as $data){
+            $q = explode('.', $data);
+            if (!($data == '..'||$data == '.'))
+                echo '<a class="fileLink_courses">'.$data.'</a><br>';    
         }
         ?>
     </div>  
@@ -44,7 +73,7 @@ $files1 = scandir($dir);
         <br><br>
         <?php
             // select options
-            echo '<select>';
+            echo '<select id="semester">';
             $strSQL = "SELECT * FROM semester";
             $rs = mysql_query($strSQL);
             while($row = mysql_fetch_array($rs)) {
