@@ -50,6 +50,13 @@ $files1 = scandir($dir);
             if (!($data == '..'||$data == '.'))
                 echo '<a class="fileLink_cls">'.$data.'</a><br>';    
         }
+        /******************** ********************/
+        echo '<br><br>إستيراد ملف مقررات<br><br>';
+        foreach ($files1 as $data){
+            $q = explode('.', $data);
+            if (!($data == '..'||$data == '.'))
+                echo '<a class="fileLink_courses">'.$data.'</a><br>';    
+        }
         ?>
     </div>  
     <div class="medium-2 large-2 columns show-for-medium-up">

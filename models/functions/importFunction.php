@@ -83,6 +83,6 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
 //                echo '<p>You could not insert your data due to a system error!.</p>';
         }
     }     
-    $rValue = array ("Rows have been added"=>$added,"Rows that are duplicated"=>$duplicated);
+    $rValue = array ("Rows have been added"=>$added,"Rows that are duplicated"=>$duplicated,"SQL is:"=>$sql.$sqlValues);
     return $rValue;
 }

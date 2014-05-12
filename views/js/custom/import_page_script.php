@@ -72,6 +72,19 @@ $(function() {
                 spinner.stop(target);
             });  
         }
+    });   
+    $('.fileLink_courses').each(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            $.post( "models/functions/importCoursesFile.php", { file:$(this).text(),semester:$('#semester').val()},function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
     });    
 });
 </script>   
