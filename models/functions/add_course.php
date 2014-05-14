@@ -8,7 +8,7 @@ $userId         = $_SESSION['userId'];
 
 if($action == 'add'){
     $query = "INSERT INTO sugg_course(course_id, semester_id, active, create_date, user_id) ";
-    $query.= "VALUES ('$courseCode', 11, 'A', now(), $userId);";
+    $query.= "VALUES ('$courseCode', 56, 'A', now(), $userId);";
 }
 else if($action == 'remove'){
     $query = "DELETE FROM sugg_course ";

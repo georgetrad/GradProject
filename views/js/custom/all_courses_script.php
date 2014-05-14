@@ -1,5 +1,5 @@
-<script>
-    $('#sugg').click(function (){
+<script>    
+    $('#sugg').click(function (){        
         $('#sugg_courses_Table').jtable('load');
         getSuggCoursesNum();
     });
@@ -25,7 +25,7 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '10%'
+                    width: '5%'
                 },
                 name_ar: {
                     title: '<?php echo COURSE_NAME.' ('.ARABIC.')';?>',                            
@@ -43,27 +43,19 @@
                 },
                 level: {
                     title: '<?php echo LEVEL;?>',
-                    width: '10%'
+                    width: '5%'
                 },
                 req_course_id: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '10%'
+                    width: '8%'
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
-                    width: '10%'
-                },
-                class_hours: {
-                    title: '<?php echo CLASS_HRS;?>',
-                    width: '10%'                         
-                },
-                lab_hours: {
-                    title: '<?php echo LAB_HRS;?>',
-                    width: '10%'                     
-                },
+                    width: '6%'
+                },                
                 fees: {
                     title: '<?php echo FEES;?>',
-                    width: '10%'                   
+                    width: '5%'                   
                 },
                 added: {
                     visibility: 'visible',
@@ -80,16 +72,62 @@
             $('#all_courses_Table').jtable('load', {
                 searchText: $('#search_text').val(),
                 searchId: $('#search_id').val()
-            });            
+            });
+            getSuggCourse();
         });
 
         $('#all_courses_Table').jtable('load');
-        getSuggCoursesNum();                
+        getSuggCoursesNum();        
     });       
     
     function getSuggCoursesNum(){
         $.post('models/functions/_global_db.php', {case: 'getSuggCoursesNum'}, function(data){
             $('#counter').html(' ('+data+')');
         });
+    }
+    
+    function getSuggCourse(){
+    $('#sugg_courses_Table').jtable('load', undefined, function(){
+            $('.add').bind( "click", function() {
+                var courseCode = $(this).parents("tr").find("td:first").text();
+
+                if($(this).text() === 'Add'){
+                    var action = 'add';
+                    $(this).text('Remove');
+                    $(this).css('color','red');                    
+                }
+                else{
+                    action = 'remove';
+                    $(this).text('Add');
+                    $(this).css('color','green');
+                }
+                $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){
+                    getSuggCoursesNum();
+                });            
+            });    
+        });
+
+        $.post('models/functions/sugg_function.php','', function(data){
+            var i = 0;
+            for (i=0;i<data.length;i++){
+                $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find("td:last").text('Remove').css({'color':'red', 'cursor':'pointer'}).bind( "click", function() {
+                    var courseCode = $(this).parents("tr").find("td:first").text();
+
+                    if($(this).text() === 'Add'){
+                        var action = 'add';
+                        $(this).text('Remove');
+                        $(this).css('color','red');                        
+                    }
+                    else{
+                        action = 'remove';
+                        $(this).text('Add');
+                        $(this).css('color','green');
+                    }
+                    $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
+                        getSuggCoursesNum();
+                    });            
+                });   
+            }
+        }, "json");   
     }
 </script>

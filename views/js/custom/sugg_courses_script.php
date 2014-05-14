@@ -1,7 +1,7 @@
 <script>
     $(function(){
         $('#sugg_courses_Table').jtable({
-            title: '<?php echo COURSES;?>',
+            title: '<?php echo SUGGESTED_COURSES;?>',
             paging: false,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default
@@ -54,49 +54,7 @@
             }
         });        
 
-        $('#sugg_courses_Table').jtable('load');    
-
-        $('#sugg_courses_Table').jtable('load', undefined, function(){
-            $('.add').bind( "click", function() {
-                var courseCode = $(this).parents("tr").find("td:first").text();
-
-                if($(this).text() === 'Add'){
-                    var action = 'add';
-                    $(this).text('Remove');
-                    $(this).css('color','red');                    
-                }
-                else{
-                    action = 'remove';
-                    $(this).text('Add');
-                    $(this).css('color','green');
-                }
-                $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){
-                    getSuggCoursesNum();
-                });            
-            });    
-        });
-
-        $.post('models/functions/sugg_function.php','', function(data){
-            var i = 0;
-            for (i=0;i<data.length;i++){
-                $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find("td:last").text('Remove').css({'color':'red', 'cursor':'pointer'}).bind( "click", function() {
-                    var courseCode = $(this).parents("tr").find("td:first").text();
-
-                    if($(this).text() === 'Add'){
-                        var action = 'add';
-                        $(this).text('Remove');
-                        $(this).css('color','red');                        
-                    }
-                    else{
-                        action = 'remove';
-                        $(this).text('Add');
-                        $(this).css('color','green');
-                    }
-                    $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
-                        getSuggCoursesNum();
-                    });            
-                });   
-            }
-        }, "json");
+        $('#sugg_courses_Table').jtable('load');
+        getSuggCourse();
     });
 </script>
