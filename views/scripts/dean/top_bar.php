@@ -35,6 +35,7 @@
                         <li><a href="views/scripts/dean/student_grade.php"><?=STUDENT_GRADE?></a></li>                        
                     </ul>
                 </li>
+                <li class="divider"></li>
                 <li class="has-dropdown">
                     <a><?=ACADEMIC_ADVISING?></a>
                     <ul class="dropdown">                                

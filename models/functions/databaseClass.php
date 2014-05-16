@@ -49,7 +49,7 @@ class databaseClass {
     public static function suggCourse($action, $courseCode, $userId){
         if($action == 'add'){
             $cols = array('course_id', 'semester_id', 'active', 'create_date', 'user_id');            
-            $values = array("'$courseCode'", 56, "'A'", 'now()', $userId);
+            $values = array("'$courseCode'", 38, "'A'", 'now()', $userId);
             dbInsert('sugg_course', $cols, $values);            
         }
         else if($action == 'remove'){
