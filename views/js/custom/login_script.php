@@ -53,7 +53,7 @@
         var target = document.getElementById('spinner');
         var spinner = new Spinner(options);
         
-        $.post('models/functions/log_in.php', {username: username, password: password }, function(data){
+        $.post('models/functions/_global_ajax.php', {case:'login', username: username, password: password }, function(data){
             spinner.spin(target);
             var result = JSON.parse(data);
             var success = result.success;

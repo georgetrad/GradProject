@@ -2,7 +2,7 @@
 include_once '../core.php';
 include_once '../db_connect.php';
 /**  
- * * This class contains Database related functions for (SELECT, INSERT, UPDATE) queries.
+ * * This class contains Database related functions for (SELECT, INSERT, UPDATE, DELETE) queries.
  */
 class databaseClass {
     /**
@@ -31,12 +31,65 @@ class databaseClass {
                 $userLevel = mysql_result($queryRun, 0, 'level');                                
                 $response = array(
                     'success'   => true,
+                    'username'  => $username,
                     'userId'    => $userId,
-                    'userLevel'  => $userLevel,
-                    'username'  => $username
+                    'userLevel'  => $userLevel                    
                 );                
             }
             return $response;
         }
+    }        
+    /**
+     * This function inserts/removes to/from sugg_course table.
+     * @author George Trad
+     * @param String $action
+     * @param String $courseCode
+     * @param Integer $userId
+     */
+    public static function suggCourse($action, $courseCode, $userId){
+        if($action == 'add'){
+            $cols = array('course_id', 'semester_id', 'active', 'create_date', 'user_id');            
+            $values = array("'$courseCode'", 56, "'A'", 'now()', $userId);
+            dbInsert('sugg_course', $cols, $values);            
+        }
+        else if($action == 'remove'){
+            $query = "DELETE FROM sugg_course ";
+            $query.= "WHERE course_id='$courseCode';";
+            $queryRun = mysql_query($query);
+        }
+        if($queryRun){
+            $response = array(
+                'Success' => true
+            );
+        }        
+        return $response;
+    }
+    /**
+     * This function returns the courses that have been suggested by the dean to show them in jTable.
+     * @author Mohammad Haddad
+     * @return JSON Array
+     */
+    public static function getSuggCourses(){
+        $resultArray =array();
+        $columns = 'COURSE_ID';
+        $tableName = 'sugg_course';
+        $query =   "SELECT ".$columns." FROM ".$tableName;
+        $result =  mysql_query($query);
+        while ($result2 = mysql_fetch_array($result)){
+            array_push($resultArray, $result2);
+        }
+        return $resultArray;
+    }
+    
+    /**
+     * This function returns the total number of suggested courses from sugg_course table
+     * @author George Trad
+     * @return type
+     */
+    public static function getSuggCoursesNum(){
+        $query = "SELECT count(id) FROM sugg_course WHERE active='A'";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
     }
 }

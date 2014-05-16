@@ -81,7 +81,9 @@
     });       
     
     function getSuggCoursesNum(){
-        $.post('models/functions/_global_db.php', {case: 'getSuggCoursesNum'}, function(data){
+        $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
+            var result = JSON.parse(data);
+            var number = result.success;
             $('#counter').html(' ('+data+')');
         });
     }
@@ -101,13 +103,13 @@
                     $(this).text('Add');
                     $(this).css('color','green');
                 }
-                $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){
+                $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){
                     getSuggCoursesNum();
                 });            
             });    
         });
 
-        $.post('models/functions/sugg_function.php','', function(data){
+        $.post('models/functions/_global_ajax.php',{case: 'getSuggCourses'}, function(data){
             var i = 0;
             for (i=0;i<data.length;i++){
                 $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find("td:last").text('Remove').css({'color':'red', 'cursor':'pointer'}).bind( "click", function() {
@@ -123,7 +125,7 @@
                         $(this).text('Add');
                         $(this).css('color','green');
                     }
-                    $.post('models/functions/add_course.php', {action: action, courseCode: courseCode}, function(data){                
+                    $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){                
                         getSuggCoursesNum();
                     });            
                 });   

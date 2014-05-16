@@ -17,65 +17,65 @@
         top: '35%', // Top position relative to parent
         left: '5%' // Left position relative to parent
         };
-$(function(){    
-    $('#jTable').jtable({
-        title: '<?php echo ALL_STUDENTS;?>',
-        paging: true,                    
-        columnResizable: false, //Actually, no need to set true since it's default
-        columnSelectable: false, //Actually, no need to set true since it's default
-        saveUserPreferences: false, //Actually, no need to set true since it's default
-        sorting: true,                    
-        selecting: true, //Enable selecting
-        multiselect: true, //Allow multiple selecting
-        selectingCheckboxes: true, //Show checkboxes on first column
-        selectOnRowClick: true, //Enable this to only select using checkboxes
-        totalRecordCount: 'RecordCount',
-        actions: {
-            listAction: 'models/jTableFunctions/list_stu_adv.php'                      
-        },
-        fields: {
-            id: {
-                key: true,
-                list: true,
-                title: '<?php echo COLLEGE_ID;?>',
-                width: '10%'
+    $(function(){    
+        $('#jTable').jtable({
+            title: '<?php echo ALL_STUDENTS;?>',
+            paging: true,                    
+            columnResizable: false, //Actually, no need to set true since it's default
+            columnSelectable: false, //Actually, no need to set true since it's default
+            saveUserPreferences: false, //Actually, no need to set true since it's default
+            sorting: true,                    
+            selecting: true, //Enable selecting
+            multiselect: true, //Allow multiple selecting
+            selectingCheckboxes: true, //Show checkboxes on first column
+            selectOnRowClick: true, //Enable this to only select using checkboxes
+            totalRecordCount: 'RecordCount',
+            actions: {
+                listAction: 'models/jTableFunctions/list_stu_adv.php'                      
             },
-            studentName: {
-                title: '<?php echo STU_NAME;?>',                            
-                width: '15%',
-                visibility: 'fixed' //This column always will be shown,                            
-            },
-            advisorName: {
-                title: '<?php echo ADVISOR;?>',
-                width: '15%'
-            },
-            dummyColumn: {
-                visibility: 'hidden'
+            fields: {
+                id: {
+                    key: true,
+                    list: true,
+                    title: '<?php echo COLLEGE_ID;?>',
+                    width: '10%'
+                },
+                studentName: {
+                    title: '<?php echo STU_NAME;?>',                            
+                    width: '15%',
+                    visibility: 'fixed' //This column always will be shown,                            
+                },
+                advisorName: {
+                    title: '<?php echo ADVISOR;?>',
+                    width: '15%'
+                },
+                dummyColumn: {
+                    visibility: 'hidden'
+                }
             }
-        }
+        });
+        $('#jTable').jtable('load');        
     });
-    $('#jTable').jtable('load');        
-});
 
-$('#save').click(function (){
-    var advisorId = $('#advisor_id').val();
-    var selectedStudents = [];
-    $('td.jtable-selecting-column input').each(function(){
-        if($(this).prop('checked')){
-            var t = $(this).parents().parents().data('record-key');            
-            selectedStudents.push(t);
-        } 
+    $('#save').click(function (){
+        var advisorId = $('#advisor_id').val();
+        var selectedStudents = [];
+        $('td.jtable-selecting-column input').each(function(){
+            if($(this).prop('checked')){
+                var t = $(this).parents().parents().data('record-key');            
+                selectedStudents.push(t);
+            } 
+        });
+        assign(advisorId, selectedStudents);
     });
-    assign(advisorId, selectedStudents);
-});
 
-function assign(advisorId, selectedStudents){
-    var target = document.getElementById('spinner');
-    var spinner = new Spinner(options);
-    spinner.spin(target);
-    $.post( "models/functions/update_advisor.php", { advisorId: advisorId, selectedStudents: selectedStudents },function( data ) {       
-        $('#jTable').jtable('load');
-        spinner.stop(target);
-    });
-}
+    function assign(advisorId, selectedStudents){
+        var target = document.getElementById('spinner');
+        var spinner = new Spinner(options);
+        spinner.spin(target);
+        $.post( "models/functions/_global_ajax.php", {case:'updateAdvisor', advisorId: advisorId, selectedStudents: selectedStudents },function( data ) {       
+            $('#jTable').jtable('load');
+            spinner.stop(target);
+        });
+    }
 </script>
