@@ -1,7 +1,7 @@
 <script>
 $(function(){    
     $('#jTable').jtable({
-        title: '<?php echo ALL_STUDENTS;?>',
+        title: '<?php echo GRADES;?>',
         paging: true,                    
         columnResizable: false, //Actually, no need to set true since it's default
         columnSelectable: false, //Actually, no need to set true since it's default
@@ -13,42 +13,36 @@ $(function(){
         selectOnRowClick: true, //Enable this to only select using checkboxes
         totalRecordCount: 'RecordCount',
         actions: {
-            listAction: 'models/jTableFunctions/list_student.php'                      
+            listAction: 'models/jTableFunctions/list_grades_dist.php',
+            createAction: 'models/jTableFunctions/create_grades_dist.php',
+            updateAction: 'models/jTableFunctions/update_grades_dist.php'  
         },
         fields: {
             id: {
                 key: true,
-                list: true,
-                title: '<?php echo COLLEGE_ID;?>',
-                width: '25%'
+                list: false
             },
-            first_name: {
-                title: '<?php echo NAME;?>',                            
-                width: '25%',
+            grade_from: {
+                title: '<?php echo GRADE_FROM;?>',                            
+                width: '30%',
                 visibility: 'fixed' //This column always will be shown,                            
             },
-            middle_name: {
-                title: '<?php echo MIDDLE_NAME;?>',
-                width: '25%'
+            applies_to: {
+                title: '<?php echo APPLIES_TO;?>',
+                width: '30%',
+                type: 'year'
             },
-            last_name: {
-                title: '<?php echo LAST_NAME;?>',
-                width: '25%'                            
+            points: {
+                title: '<?php echo POINTS;?>',
+                width: '30%'                            
             },
             dummyColumn: {
-                visibility: 'hidden'
+                visibility: 'hidden',
+                edit: false,
+                create: false
             }        
         }
     }); 
-    //Re-load records when user click 'load records' button.
-    $('#search_button').click(function (e) {
-        e.preventDefault();
-        $('#jTable').jtable('load', {
-            searchText: $('#search_text').val(),
-            searchId: $('#search_id').val()
-        });
-    });
-
-    $('#jTable').jtable('load');   
+    $('#jTable').jtable('load');    
 });
 </script>

@@ -1,10 +1,8 @@
 test
 George:
 - create index.php in every folder (if signed in).
-- Add a Side bar.
-- Add keystroke "enter" when logging in.
+- Add back to top link
 
 
 Mohammad:
-- add notification if login failed
 - merge the controller of the dean page and the teacher's

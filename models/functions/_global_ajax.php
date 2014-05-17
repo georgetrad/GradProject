@@ -14,10 +14,12 @@ switch ($case){
         $userInfo = databaseClass::logIn($username, $password);             // getting the user info from the database.
 
         if($userInfo['success'] == true){
+            $semester = databaseClass::getLatestSemester();
             // Assigning the user info to a session to use it later.
-            $_SESSION['userId'] = $userInfo['userId'];                
-            $_SESSION['username'] = $userInfo['username'];
-            $_SESSION['userLevel'] = $userInfo['userLevel'];
+            $_SESSION['userId']     = $userInfo['userId'];                
+            $_SESSION['username']   = $userInfo['username'];
+            $_SESSION['userLevel']  = $userInfo['userLevel'];           
+            $_SESSION['semester']   = $semester;
         }
         echo json_encode($userInfo);    // Encoding the user info in JSON because it cannot be returned as an array.
         }
@@ -64,5 +66,12 @@ switch ($case){
             dbInsert('student', $cols, $data, true, $cols, $data);
         }
         break;
-    }    
+    }
+    
+    case 'deleteFile':{
+        $selectedFiles   = $_POST['selectedFiles'];
+        foreach ($selectedFiles as $id){
+            unlink('../../uploads/'."'$id'");            
+        }
+    }
 }

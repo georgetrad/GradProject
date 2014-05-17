@@ -7,7 +7,7 @@
             <!-- Right Navigation Section -->
             <ul class="right">                
                 <li class="active has-dropdown">
-                    <a><?=WELCOME.' '.$_SESSION['username']?></a>
+                    <a>&nbsp;&nbsp;&nbsp;&nbsp;<?= $_SESSION['username']?></a>
                     <ul class="dropdown">                                
                         <li><a href="models/functions/log_out.php"><?=LOGOUT?></a></li>
                     </ul>
@@ -47,16 +47,20 @@
                     <a><?=IMPORT?></a>
                     <ul class="dropdown">                                
                         <li><a href="views/scripts/dean/upload.php"><?=UPLOAD_FILE?></a></li>
-                        <li><a href="views/scripts/dean/import.php"><?=IMPORT_GENERAL_FILE?></a></li>
+                        <li><a href="views/scripts/dean/import.php"><?=IMPORT_FILES?></a></li>
+                    </ul>
+                </li>                                
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    <a><?=SETTINGS?></a>
+                    <ul class="dropdown">                                
+                        <li><a href="views/scripts/dean/grades_dist.php"><?=GRADES_DIST?></a></li>
+                        <li><a href="#"><?=HRS_CONST?></a></li>
                     </ul>
                 </li>
                 <li class="divider"></li>
                 <li>
                     <a><?=DB?></a>                    
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a><?=SETTINGS?></a>                    
                 </li>
             </ul>               
         </section>

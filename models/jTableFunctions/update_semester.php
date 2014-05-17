@@ -22,9 +22,8 @@ $cols = array(
     'max_req_hrs',
     'exc_gpa',
     'exc_gpa_hrs',
-    'max_grad_stu_hrs',
-    'active',
-    'create_date',
+    'max_grad_stu_hrs',    
+    'update_date',
     'user_id'
     );
 
@@ -36,8 +35,7 @@ $data = array(
     $maxReqHrs,
     $excGpa,
     $excGpaHrs,
-    $maxGradStuHrs,
-    "'A'",
+    $maxGradStuHrs,    
     'now()',
     $userId
 );

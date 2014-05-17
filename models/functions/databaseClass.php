@@ -48,8 +48,9 @@ class databaseClass {
      */
     public static function suggCourse($action, $courseCode, $userId){
         if($action == 'add'){
+            $semester = $_SESSION['semester'];
             $cols = array('course_id', 'semester_id', 'active', 'create_date', 'user_id');            
-            $values = array("'$courseCode'", 38, "'A'", 'now()', $userId);
+            $values = array("'$courseCode'", $semester, "'A'", 'now()', $userId);
             dbInsert('sugg_course', $cols, $values);            
         }
         else if($action == 'remove'){
@@ -91,5 +92,16 @@ class databaseClass {
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];
+    }
+    /**
+     * This functions returns the latest inserted semester.
+     * @author George Trad
+     * @return Integer    
+     */
+    public static function getLatestSemester(){
+        $query = "SELECT max(id) FROM semester WHERE active='A'";
+        $result = mysql_query($query);
+        $last = mysql_fetch_array($result);        
+        return $last[0];        
     }
 }

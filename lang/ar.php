@@ -36,7 +36,10 @@ define('COURSES', 'المقررات');
         define('CREDITS', 'عدد الساعات');
         define('CLASS_HRS', 'ساعات النظري');
         define('LAB_HRS', 'ساعات العملي');
-        define('FEES', 'الرسوم');        
+        define('FEES', 'الرسوم');
+        define('NEVER_ADDED', 'لم تُضف من قبل');
+        define('ADDED', 'أُضيفت');
+        define('REMOVED', 'حُذفت');
     
     define('SUGGESTED_COURSES', 'المقررات المقترحة');
     
@@ -61,12 +64,29 @@ define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
     define('STU_NAME', 'اسم الطالب');
     
 define('IMPORT', 'الاستيراد');
-    define('IMPORT_GENERAL_FILE', 'إستيراد ملف عام');
+    define('IMPORT_FILES', 'استيراد ملفات');
     define('UPLOAD_FILE', 'رفع ملف');
     define('UPLOAD', 'رفع');
+    define('SEMESRER', 'الفصل الدراسي');
+    define('PICK_SEMESTER', 'اختر الفصل');
+    define('IMP_STU', 'طلاب');
+    define('IMP_COURSES', 'مقررات');
+    define('IMP_CLASSES', 'شعب');
+    define('IMP_FIN_GRADE', 'علامات نهائية');    
+    define('IMP_COURSE_FILE', 'ملف مقرر');
+    define('IMP_MSG', 'الملفات التالية محملة على المخدم وجاهزة للإستيراد الى قاعدة البيانات، إضغط للإستيراد');
+    
+define('SETTINGS', 'الاعدادات');
+    define('GRADES_DIST', 'توزيع الدرجات');
+        define('GRADES', 'الدرجات');
+        define('GRADE_FROM', 'الحد الأدنى');
+        define('APPLIES_TO', 'تطبق على طلاب عام');
+        define('POINTS', 'النقاط');
+        
+    define('HRS_CONST', 'ثوابت الساعات');
     
 define('DB', 'قاعدة البيانات');
-define('SETTINGS', 'الاعدادات');
+
 define('SEARCH', 'بحث');
 define('FILENAME', 'اسم الملف');
 define('BROWSE', 'إستعراض');
@@ -76,4 +96,5 @@ define('STUDENT_GRADE', 'كشف علامات الطالب');
 define('ARABIC', 'عربي');
 define('ENGLISH', 'إنكليزي');
 define('SAVE', 'حفظ');
+define('DELETE', 'حذف');
 ?>
