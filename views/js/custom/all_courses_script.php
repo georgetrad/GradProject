@@ -41,7 +41,7 @@
                     title: '<?php echo COURSE_TYPE;?>',
                     width: '10%'
                 },
-                level: {
+                course_level: {
                     title: '<?php echo LEVEL;?>',
                     width: '5%'
                 },

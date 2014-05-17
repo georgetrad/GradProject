@@ -1,28 +1,6 @@
 <?php
 function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData = array())
 {
-/*
- * configurations 
- */
-    
-//    $inputFileName = '../gdb.xls';
-//        $columns = array(
-//        "student_id"            => "A",
-//        "student_first_name"    => "B",
-//        "student_middle_name"   => "C",
-//        "student_last_name"     => "D"    
-//    );
-//    $staticData = array(
-//        "status"                => "A",
-//        "address"               => "---"
-//    );
-//    $tableName = 'student';
-//    $rows = 1000;
-//    $rowsOffSet = 5500;
-
-    /*
-     * working
-     */
     $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
     $highestRow = $objPHPExcel->getActiveSheet()->getHighestRow();
 
@@ -56,7 +34,6 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
         }
         
         $values = '"'.implode ('", "', $records_string);
-        
         if ($nsr!='')
             $values .= '", "'.$nsr;
         $values .= '"';
@@ -67,22 +44,22 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
 
     $sql = "INSERT INTO ".$tableName;
     $sql.= "(".$columnsNames.")";
-    $added=0;
-    $duplicated=0;
-    foreach ($allValues as $value){
-        $sqlValues = " VALUES(".$value.");";
-//        echo $sql.$sqlValues.'<br>';
-        $result = mysql_query($sql.$sqlValues);
-        
-        if($result){
-            $added++;
-//                echo '<p><b>YOU HAVE INSERTED YOUR DATA SUCCESSFULY.</b></p>';
-        }
-        else{
-            $duplicated++;
-//                echo '<p>You could not insert your data due to a system error!.</p>';
-        }
-    }     
-    $rValue = array ("Rows have been added"=>$added,"Rows that are duplicated"=>$duplicated,"SQL is:"=>$sql.$sqlValues);
-    return $rValue;
+    
+    unset($columnName[0]);
+    $duplicate = array();
+    foreach ($columnName as $c){
+        $x = $c." = VALUES(".$c.")";
+        array_push($duplicate,$x);
+    }
+    
+    $sDuplicate = '';
+    $sDuplicate .= implode(', ',$duplicate);
+
+    $sqlValues = " VALUES(";
+    $sqlValues .= implode('), (',$allValues);
+    $sqlValues .= ")";
+    $sqlValues .= "ON DUPLICATE KEY UPDATE ".$sDuplicate.";";
+    
+    $result = mysql_query($sql.$sqlValues);
+    return $result ? $result : $sql.$sqlValues;
 }
