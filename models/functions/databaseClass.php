@@ -144,11 +144,15 @@ class databaseClass {
         );
         $staticData = array();   
         $tableName = 'course';
-        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-        var_dump($a);echo '<br>';
-        unset($columns, $tableName, $staticData, $a);
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
-        return true;     
+        if ($result===true)
+            echo 'file imported successfully';
+        else 
+            echo $result;
+
+        unset($columns, $tableName, $staticData, $a);
+        return true;   
     }
     public static function classImport($file,$inputSemester){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
@@ -164,9 +168,15 @@ class databaseClass {
             "semester_id"   => $inputSemester
         );
         $tableName = 'class';
-        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-        var_dump($a);echo '<br>';
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+
+        if ($result===true)
+            echo 'file imported successfully';
+        else 
+            echo $result;
+
         unset($columns, $tableName, $staticData, $a);
+        return true;   
         ////*******************Student class*******************//
         $columns = array(
             "student_id"    => "A",
@@ -174,11 +184,15 @@ class databaseClass {
         );
         $staticData = array();
         $tableName = 'student_class';
-        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-        var_dump($a);echo '<br>';
-        unset($columns, $tableName, $staticData, $a);
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
-        return true;      
+        if ($result===true)
+            echo 'file imported successfully';
+        else 
+            echo $result;
+
+        unset($columns, $tableName, $staticData, $a);
+        return true;   
     }
     public static function gradeImport($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
@@ -195,18 +209,62 @@ class databaseClass {
                 "duty_type_id"    => "5"       
         );   
         $tableName = 'duty';
-        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-        var_dump($a);echo '<br>';
-        unset($columns, $tableName, $staticData, $a);
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
-        return true;       
+        if ($result===true)
+            echo 'file imported successfully';
+        else 
+            echo $result;
+
+        unset($columns, $tableName, $staticData, $a);
+        return true;   
     }
     public static function courseFileImport($file){
-
+//        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+//        //*******************Variables   *******************//
+//        $rows = 5000;
+//        $rowsOffSet = 3;
+//        //*******************Student duty , duty number 5*******************//
+//        $columns = array(
+//            "student_class_student_id"                  => "A",
+//            "student_class_class_id"                    => "H",
+//            "grade"                                     => "O"
+//        );
+//        $staticData = array(
+//                "duty_type_id"    => "5"       
+//        );   
+//        $tableName = 'duty';
+//        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+//        var_dump($a);echo '<br>';
+//        unset($columns, $tableName, $staticData, $a);
+//
+//        return true;       
         
     }
     public static function studentFileImport($file){
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        //*******************Variables   *******************//
+        $rows = 5000;
+        $rowsOffSet = 3;
+        //*******************Student duty , duty number 5*******************//
+        $columns = array(
+            "id"            => "A",
+            "first_name"    => "B",
+            "middle_name"   => "C",
+            "last_name"     => "D"    
+        );
+        $staticData = array(
+                "duty_type_id"    => "5"       
+        );   
+        $tableName = 'student';
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
-        
+        if ($result===true)
+            echo 'file imported successfully';
+        else 
+            echo $result;
+
+        unset($columns, $tableName, $staticData, $a);
+        return true;   
     }
 }
