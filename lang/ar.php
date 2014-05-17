@@ -74,7 +74,7 @@ define('IMPORT', 'الاستيراد');
     define('IMP_CLASSES', 'شعب');
     define('IMP_FIN_GRADE', 'علامات نهائية');    
     define('IMP_COURSE_FILE', 'ملف مقرر');
-    define('IMP_MSG', 'الملفات التالية محملة على المخدم وجاهزة للإستيراد الى قاعدة البيانات، إضغط للإستيراد');
+    define('IMP_STUDENT_FILE', 'ملف طلاب');
     
 define('SETTINGS', 'الاعدادات');
     define('GRADES_DIST', 'توزيع الدرجات');

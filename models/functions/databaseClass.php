@@ -1,6 +1,8 @@
 <?php
 include_once '../core.php';
 include_once '../db_connect.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/PHPExcel/IOFactory.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importFunction.php';
 /**  
  * * This class contains Database related functions for (SELECT, INSERT, UPDATE, DELETE) queries.
  */
@@ -102,6 +104,109 @@ class databaseClass {
         $query = "SELECT max(id) FROM semester WHERE active='A'";
         $result = mysql_query($query);
         $last = mysql_fetch_array($result);        
-        return $last[0];        
+        return $last[0]; 
+    }
+    public static function importStudent($file){
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        //** Variables ******************************************************************************//
+        $rows = 5000;
+        $rowsOffSet = 3;
+        //** Student name ******************************************************************************//
+        $columns = array(
+            "id"            => "A",
+            "first_name"    => "B",
+            "middle_name"   => "C",
+            "last_name"     => "D"    
+        );
+        $staticData = array(
+                "status"    => "A"       
+        );    
+        $tableName = 'student';
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+
+        if ($result===true)
+            echo 'file imported successfully';
+        else 
+            echo $result;
+
+        unset($columns, $tableName, $staticData, $a);
+        return true;        
+    }
+    public static function courseImport($file){
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        //*******************Variables   *******************//
+        $rows = 5000;
+        $rowsOffSet = 3;
+        ////*******************Course name*******************//
+        $columns = array(
+            "id"            => "F",
+            "name_ar"       => "G"
+        );
+        $staticData = array();   
+        $tableName = 'course';
+        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        var_dump($a);echo '<br>';
+        unset($columns, $tableName, $staticData, $a);
+
+        return true;     
+    }
+    public static function classImport($file,$inputSemester){
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        //*******************Variables   *******************//
+        $rows = 5000;
+        $rowsOffSet = 3;
+        ////*******************Class name*******************//
+        $columns = array(
+            "id"            => "H",
+            "course_id"     => "F"
+        );
+        $staticData = array(
+            "semester_id"   => $inputSemester
+        );
+        $tableName = 'class';
+        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        var_dump($a);echo '<br>';
+        unset($columns, $tableName, $staticData, $a);
+        ////*******************Student class*******************//
+        $columns = array(
+            "student_id"    => "A",
+            "class_id"      => "H" 
+        );
+        $staticData = array();
+        $tableName = 'student_class';
+        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        var_dump($a);echo '<br>';
+        unset($columns, $tableName, $staticData, $a);
+
+        return true;      
+    }
+    public static function gradeImport($file){
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        //*******************Variables   *******************//
+        $rows = 5000;
+        $rowsOffSet = 3;
+        //*******************Student duty , duty number 5*******************//
+        $columns = array(
+            "student_class_student_id"                  => "A",
+            "student_class_class_id"                    => "H",
+            "grade"                                     => "O"
+        );
+        $staticData = array(
+                "duty_type_id"    => "5"       
+        );   
+        $tableName = 'duty';
+        $a = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        var_dump($a);echo '<br>';
+        unset($columns, $tableName, $staticData, $a);
+
+        return true;       
+    }
+    public static function courseFileImport($file){
+
+        
+    }
+    public static function studentFileImport($file){
+
+        
     }
 }
