@@ -19,8 +19,10 @@ $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
+$string = 'عرض رقم السطر';
+$string = utf8_decode($string);
 for($i=1;$i<=40;$i++){
-    $pdf->Cell(0,10,'Printing line number '.$i,0,1);
+    $pdf->Cell(0,10,$string.$i,0,1);
 }
 $pdf->Output();
 ?>

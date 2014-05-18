@@ -73,8 +73,10 @@ define('IMPORT', 'الاستيراد');
     define('IMP_COURSES', 'مقررات');
     define('IMP_CLASSES', 'شعب');
     define('IMP_FIN_GRADE', 'علامات نهائية');    
-    define('IMP_COURSE_FILE', 'ملف مقرر');
-    define('IMP_MSG', 'الملفات التالية محملة على المخدم وجاهزة للإستيراد الى قاعدة البيانات، إضغط للإستيراد');
+    define('IMP_COURSE_FILE', 'ملف مقرر');    
+    define('UPDATE_DATA', 'تحديث بيانات');
+    define('UPDATE_STU', 'تحديث عدد الساعات المنجزة ومستوى الطلاب');
+    define('UPDATE_RELATION', 'تحديث مواد الطلاب');
     
 define('SETTINGS', 'الاعدادات');
     define('GRADES_DIST', 'توزيع الدرجات');
@@ -97,4 +99,6 @@ define('ARABIC', 'عربي');
 define('ENGLISH', 'إنكليزي');
 define('SAVE', 'حفظ');
 define('DELETE', 'حذف');
+define('CHOOSE_OPTION', 'اختر أحد الخيارات');
+define('UPDATE', 'تحديث');
 ?>

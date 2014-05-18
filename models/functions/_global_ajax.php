@@ -73,5 +73,5 @@ switch ($case){
         foreach ($selectedFiles as $id){
             unlink('../../uploads/'."'$id'");            
         }
-    }
+    }    
 }
