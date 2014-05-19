@@ -272,13 +272,10 @@ class databaseClass {
     public static function updateData($option){
         if($option == 1){
             // Update completed hours for all students.
-            $query1 = "CALL hours_completed_update()";
+            $query1 = "CALL hours_and_level_update()";
             $result1 = mysql_query($query1);            
             // Update all students level according to their hours.
-            $query2 = "CALL level_update()";
-            $result2 = mysql_query($query2);
-            
-            if($result1 && $result2){
+            if($result1){
                 $response = 'Success';
             }
         }
