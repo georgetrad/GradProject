@@ -124,10 +124,12 @@ class databaseClass {
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
-        if ($result===true)
+        if ($result===true){
             echo 'file imported successfully';
-        else 
-            echo $result;
+        }
+        else{ 
+            echo $result;            
+        }
 
         unset($columns, $tableName, $staticData, $a);
         return true;        
@@ -266,5 +268,31 @@ class databaseClass {
 
         unset($columns, $tableName, $staticData, $a);
         return true;   
+    }
+    
+    public static function updateData($option){
+        if($option == 1){
+            // Update completed hours for all students.
+            $query1 = "CALL hours_completed_update()";
+            $result1 = mysql_query($query1);            
+            // Update all students level according to their hours.
+            $query2 = "CALL level_update()";
+            $result2 = mysql_query($query2);
+            
+            if($result1 && $result2){
+                $response = 'Success';
+            }
+        }
+        else if($option == 2){
+            $query3 = "CALL update_student_course()";
+            $result3 = mysql_query($query3);
+            if($result3){
+                $response = 'Success';
+            }
+        }
+        else{
+            $response = 'Fail';
+        }        
+        return $response;        
     }
 }

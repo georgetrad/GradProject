@@ -22,7 +22,7 @@ $(function(){
                 key: true,
                 list: false
             },
-            grade_from: {
+            grade_from_up: {
                 title: '<?php echo GRADE_FROM;?>',                            
                 width: '30%',
                 visibility: 'fixed' //This column always will be shown,                            

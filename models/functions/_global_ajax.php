@@ -73,8 +73,7 @@ switch ($case){
         foreach ($selectedFiles as $id){
             unlink('../../uploads/'."'$id'");            
         }
-    }
-    
+    }    
     /******************** importStudent ********************/
     case 'importStudent':{
         $file = $_POST['selectFile'];
@@ -117,5 +116,11 @@ switch ($case){
         $result = databaseClass::studentFileImport($file);
         echo $result;
         break;
-    } 
+    }
+    case 'updateData':{
+        $selectedOption = $_POST['selectUpdate'];
+        $result = databaseClass::updateData($selectedOption);
+        echo $result;
+        break;
+    }
 }

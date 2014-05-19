@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-$title = LOGIN;
+$title = ACADEMIC_ADVISING.' - '.LOGIN;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 
 if(!loggedIn()){
