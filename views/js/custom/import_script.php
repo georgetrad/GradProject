@@ -20,8 +20,8 @@ $(function() {
     };
     var spinner = new Spinner(opts);
     var target = document.getElementById('spin');    
-
-    $('#importButton').click(function() {
+/** student Import **********************************************************************************/
+    $('#studentImportButton').click(function() {
         this.submitting = false;
     }).click(function() {
         if (!this.submitting) {
@@ -29,7 +29,88 @@ $(function() {
             var self = this;
             spinner.spin(target);
             var formData = $('#studentImportForm').serialize();
-            $.post( "models/functions/importStudentStatusFile.php", formData ,function( data ) {
+            formData += '&case=importStudent';
+            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });    
+/** course Import **********************************************************************************/
+    $('#courseImportButton').click(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            var formData = $('#courseImportForm').serialize();
+            formData += '&case=courseImport';
+            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });    
+/** Class Import **********************************************************************************/
+    $('#classImportButton').click(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            var formData = $('#classImportForm').serialize();
+            formData += '&case=classImport';
+            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });    
+/** grade Import **********************************************************************************/
+    $('#gradeImportButton').click(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            var formData = $('#gradeImportForm').serialize();
+            formData += '&case=gradeImport';
+            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });   
+/** course File Import **********************************************************************************/
+    $('#courseFileImportButton').click(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            var formData = $('#courseFileImportForm').serialize();
+            formData += '&case=courseFileImport';
+            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
+                $( ".result" ).html( data );
+                spinner.stop(target);
+            });  
+        }
+    });   
+/** student File Import **********************************************************************************/
+    $('#studentFileImportButton').click(function() {
+        this.submitting = false;
+    }).click(function() {
+        if (!this.submitting) {
+            this.submitting = true;
+            var self = this;
+            spinner.spin(target);
+            var formData = $('#studentFileImportForm').serialize();
+            formData += '&case=studentFileImport';
+            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
                 $( ".result" ).html( data );
                 spinner.stop(target);
             });  

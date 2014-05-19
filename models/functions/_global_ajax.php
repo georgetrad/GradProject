@@ -73,5 +73,49 @@ switch ($case){
         foreach ($selectedFiles as $id){
             unlink('../../uploads/'."'$id'");            
         }
-    }    
+    }
+    
+    /******************** importStudent ********************/
+    case 'importStudent':{
+        $file = $_POST['selectFile'];
+        $result = databaseClass::importStudent($file);
+        echo $result;
+        break;
+    } 
+    /******************** courseImport ********************/
+    case 'courseImport':{
+        $file = $_POST['selectFile'];
+        $result = databaseClass::courseImport($file);
+        echo $result;
+        break;
+    } 
+    /******************** classImport ********************/
+    case 'classImport':{
+        $file           = $_POST['selectFile'];
+        $selectSemester = $_POST['selectSemester'];
+        $result = databaseClass::classImport($file,$selectSemester);
+        echo $result;
+        break;
+    } 
+    /******************** gradeImport ********************/
+    case 'gradeImport':{
+        $file = $_POST['selectFile'];
+        $result = databaseClass::gradeImport($file);
+        echo $result;
+        break;
+    } 
+    /******************** courseFileImport ********************/
+    case 'courseFileImport':{
+        $file = $_POST['selectFile'];
+        $result = databaseClass::courseFileImport($file);
+        echo $result;
+        break;
+    } 
+    /******************** studentFileImport ********************/
+    case 'studentFileImport':{
+        $file = $_POST['selectFile'];
+        $result = databaseClass::studentFileImport($file);
+        echo $result;
+        break;
+    } 
 }
