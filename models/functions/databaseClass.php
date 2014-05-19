@@ -3,6 +3,7 @@ include_once '../core.php';
 include_once '../db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/PHPExcel/IOFactory.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importFunction.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importStudentClassFunction.php';
 /**  
  * * This class contains Database related functions for (SELECT, INSERT, UPDATE, DELETE) queries.
  */
@@ -185,7 +186,7 @@ class databaseClass {
         );
         $staticData = array();
         $tableName = 'student_class';
-        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        $result = importSC($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
         if ($result===true)
             echo 'file imported successfully';
