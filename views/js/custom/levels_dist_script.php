@@ -1,7 +1,7 @@
 <script>
 $(function(){    
     $('#jTable').jtable({
-        title: '<?php echo GRADES;?>',
+        title: '<?php echo LEVELS_DIST;?>',
         paging: true,                    
         columnResizable: false, //Actually, no need to set true since it's default
         columnSelectable: false, //Actually, no need to set true since it's default
@@ -13,29 +13,24 @@ $(function(){
         selectOnRowClick: true, //Enable this to only select using checkboxes
         totalRecordCount: 'RecordCount',
         actions: {
-            listAction: 'models/jTableFunctions/list_grades_dist.php',
-            createAction: 'models/jTableFunctions/create_grades_dist.php',
-            updateAction: 'models/jTableFunctions/update_grades_dist.php'  
+            listAction: 'models/jTableFunctions/list_levels_dist.php',            
+            updateAction: 'models/jTableFunctions/update_levels_dist.php'  
         },
         fields: {
             id: {
                 key: true,
                 list: false
             },
-            grade_from_up: {
-                title: '<?php echo GRADE_FROM;?>',                            
+            name: {
+                title: '<?php echo LEVEL;?>',                            
                 width: '30%',
-                visibility: 'fixed' //This column always will be shown,                            
+                visibility: 'fixed',
+                edit: false
             },
-            applies_to: {
-                title: '<?php echo APPLIES_TO;?>',
-                width: '30%',
-                type: 'year'
-            },
-            points: {
-                title: '<?php echo POINTS;?>',
-                width: '30%'                            
-            },
+            value: {
+                title: '<?php echo NUM_COMP_HRS;?>',
+                width: '30%',                
+            },            
             dummyColumn: {
                 visibility: 'hidden',
                 edit: false,

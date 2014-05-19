@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
     header('Location: ../../../index.php');
 }
-$title = GRADES_DIST;
+$title = HRS_CONST;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
 ?>
@@ -18,5 +18,5 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 </div>
 <?php 
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/grades_dist_script.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/levels_dist_script.php';
 ?>

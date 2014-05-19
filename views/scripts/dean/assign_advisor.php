@@ -43,12 +43,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
 
 <div class="row">
     <div class="medium-2 large-3 columns show-for-medium-up">
-        &nbsp;
+        &nbsp;        
     </div>    
     <div id="jTable" class="medium-8 large-6 columns show-for-medium-up"><!--Table--></div>
     <div class="medium-2 large-3 columns show-for-medium-up"></div>
 </div>
 <?php 
-    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/assign_advisor_script.php';
 ?>

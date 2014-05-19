@@ -56,7 +56,7 @@
                     <a><?=SETTINGS?></a>
                     <ul class="dropdown">
                         <li><a href="views/scripts/dean/grades_dist.php"><?=GRADES_DIST?></a></li>
-                        <li><a href="#"><?=HRS_CONST?></a></li>
+                        <li><a href="views/scripts/dean/levels_dist.php"><?=HRS_CONST?></a></li>
                     </ul>
                 </li>
                 <li class="divider"></li>

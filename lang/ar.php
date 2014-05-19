@@ -73,19 +73,26 @@ define('IMPORT', 'الاستيراد');
     define('IMP_COURSES', 'مقررات');
     define('IMP_CLASSES', 'شعب');
     define('IMP_FIN_GRADE', 'علامات نهائية');    
-    define('IMP_COURSE_FILE', 'ملف مقرر');    
+    define('IMP_COURSE_FILE', 'ملف مقرر');
+    define('IMP_STUDENT_FILE', 'ملف طلاب');
     define('UPDATE_DATA', 'تحديث بيانات');
     define('UPDATE_STU', 'تحديث عدد الساعات المنجزة ومستوى الطلاب');
     define('UPDATE_RELATION', 'تحديث مواد الطلاب');
     
 define('SETTINGS', 'الاعدادات');
-    define('GRADES_DIST', 'توزيع الدرجات');
+    define('GRADES_DIST', 'توزيع الدرجات والنقاط');
         define('GRADES', 'الدرجات');
         define('GRADE_FROM', 'الحد الأدنى');
         define('APPLIES_TO', 'تطبق على طلاب عام');
         define('POINTS', 'النقاط');
         
-    define('HRS_CONST', 'ثوابت الساعات');
+    define('HRS_CONST', 'ثوابت ساعات المستويات');
+        define('LEVELS_DIST', 'توزيع المستويات');
+        define('NUM_COMP_HRS', 'عدد الساعات المنجزة');
+        define('LEVEL_2', 'الثاني');
+        define('LEVEL_3', 'الثالث');
+        define('LEVEL_4', 'الرابع');
+        define('LEVEL_5', 'الخامس');
     
 define('DB', 'قاعدة البيانات');
 

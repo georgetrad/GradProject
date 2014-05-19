@@ -63,17 +63,18 @@
         $('td.jtable-selecting-column input').each(function(){
             if($(this).prop('checked')){
                 var t = $(this).parents().data('record-key');            
+                alert(t);
                 selectedStudents.push(t);
             } 
         });
         assign(advisorId, selectedStudents);
     });
 
-    function assign(advisorId, selectedStudents){
+    function assign(advisorId, selectedStudents){                
         var target = document.getElementById('spinner');
         var spinner = new Spinner(options);
         spinner.spin(target);
-        $.post( "models/functions/_global_ajax.php", {case:'updateAdvisor', advisorId: advisorId, selectedStudents: selectedStudents },function( data ) {       
+        $.post( "models/functions/_global_ajax.php", {case:'updateAdvisor', advisorId: advisorId, selectedStudents: selectedStudents },function(data) {       
             $('#jTable').jtable('load');
             spinner.stop(target);
         });

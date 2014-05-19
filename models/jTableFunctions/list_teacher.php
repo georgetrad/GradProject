@@ -48,7 +48,7 @@ for($i=0 ; $i<count($rows) ; $i++){
     }
     if($rows[$i][12] == 'E'){
         $rows[$i]['degree'] = ENGINEER;
-    }    
+    }
 }
 //Return results to jTable
 $jTableResult = array();

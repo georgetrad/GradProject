@@ -29,7 +29,8 @@ $(function() {
             var self = this;
             spinner.spin(target);
             var formData = $('#updateDataForm').serialize();
-            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {                
+            formData += '&case=updateData';
+            $.post("models/functions/_global_ajax.php", formData, function( data ) {                
                 $( ".result" ).html( data );
                 spinner.stop(target);
             });  
