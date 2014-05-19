@@ -108,7 +108,7 @@ $(function() {
             this.submitting = true;
             var self = this;
             spinner.spin(target);
-            var formData = $('#studentFileImportForm').serialize();
+            var formData = $('#studnetFileImportForm').serialize();
             formData += '&case=studentFileImport';
             $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
                 $( ".result" ).html( data );

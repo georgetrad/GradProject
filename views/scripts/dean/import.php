@@ -195,7 +195,7 @@ $filesList = scandir($dir);
         <div class="row">&nbsp;</div>
         <div class="row">
             <div class="medium-2 large-2 columns show-for-medium-up">
-                <input type="button" class="tiny button" id="studnetFileImportButton" name="studnetFileImportButton" value="<?=IMPORT?>">
+                <input type="button" class="tiny button" id="studentFileImportButton" name="studentFileImportButton" value="<?=IMPORT?>">
             </div>
         </div>
     </div> 

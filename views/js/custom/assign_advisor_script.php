@@ -62,7 +62,7 @@
         var selectedStudents = [];
         $('td.jtable-selecting-column input').each(function(){
             if($(this).prop('checked')){
-                var t = $(this).parents().data('record-key');            
+                var t = $(this).parents().parents().data('record-key');            
                 selectedStudents.push(t);
             } 
         });
