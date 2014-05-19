@@ -212,10 +212,12 @@ class databaseClass {
         $tableName = 'duty';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
-        if ($result===true)
+        if ($result===true){
             echo 'file imported successfully';
-        else 
+        }
+        else{ 
             echo $result;
+        }
 
         unset($columns, $tableName, $staticData, $a);
         return true;   
@@ -236,10 +238,12 @@ class databaseClass {
         $staticData = array();
         $tableName = 'course';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-        if ($result===true)
+        if ($result===true){
             echo 'file imported successfully';
-        else 
+        }
+        else{
             echo $result;
+        }
         unset($columns, $tableName, $staticData);        
     }
     public static function studentFileImport($file){
@@ -260,10 +264,12 @@ class databaseClass {
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
 
-        if ($result===true)
+        if ($result===true){
             echo 'file imported successfully';
-        else 
+        }
+        else {
             echo $result;
+        }
 
         unset($columns, $tableName, $staticData, $a);
         return true;   
@@ -288,7 +294,7 @@ class databaseClass {
         }
         else{
             $response = 'Fail';
-        }        
+        }
         return $response;        
     }
 }
