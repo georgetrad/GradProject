@@ -11,7 +11,7 @@ $(function(){
         multiselect: false, //Allow multiple selecting
         selectingCheckboxes: false, //Show checkboxes on first column
         selectOnRowClick: true, //Enable this to only select using checkboxes
-        totalRecordCount: 'RecordCount',
+        totalRecordCount: 'RecordCount',        
         actions: {
             listAction: 'models/jTableFunctions/list_levels_dist.php',            
             updateAction: 'models/jTableFunctions/update_levels_dist.php'  
@@ -29,15 +29,16 @@ $(function(){
             },
             value: {
                 title: '<?php echo NUM_COMP_HRS;?>',
-                width: '30%',                
-            },            
+                width: '30%'
+            },
             dummyColumn: {
                 visibility: 'hidden',
                 edit: false,
                 create: false
             }        
         }
-    }); 
+    });
+    
     $('#jTable').jtable('load');    
 });
 </script>
