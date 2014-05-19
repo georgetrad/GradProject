@@ -178,7 +178,6 @@ class databaseClass {
             echo $result;
 
         unset($columns, $tableName, $staticData, $a);
-        return true;   
         ////*******************Student class*******************//
         $columns = array(
             "student_id"    => "A",
@@ -194,7 +193,6 @@ class databaseClass {
             echo $result;
 
         unset($columns, $tableName, $staticData, $a);
-        return true;   
     }
     public static function gradeImport($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
