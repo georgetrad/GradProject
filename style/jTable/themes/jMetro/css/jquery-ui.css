@@ -384,7 +384,7 @@ button.ui-button-icons-only { width: 3.7em; }
 
 /*button text element */
 .ui-button .ui-button-text { display: block; line-height: 1.4;  }
-.ui-button-text-only .ui-button-text { padding: .4em 1em; }
+.ui-button-text-only .ui-button-text { padding: .4em 1em; background-color: #3399ff; color: white;}
 .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
 .ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 2.1em; }
 .ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 2.1em .4em 1em; }
@@ -608,7 +608,7 @@ html, body{background-color:#ffffff;}
 .ui-dialog-titlebar {border:none;border-bottom-width:2px;padding:.6em 1em .6em 1em !important;font-weight:bold;font-size:1.1em;}
 .ui-dialog-buttonpane{border-top-width:2px !important;margin-top:0 !important;}
 .ui-dialog .ui-dialog-titlebar-close{width:24px;height:24px;margin:-13px 0px 0px 0px;padding:0;}
-.ui-dialog-titlebar-close > .ui-icon{margin:4px !important;}
+.ui-dialog-titlebar-close > .ui-icon{margin:-8px !important;}
 
 /* Datepicker*/
 .ui-datepicker {border:2px solid;padding:0 !important;}
@@ -660,7 +660,7 @@ html, body{background-color:#ffffff;}
 
 
 /* Button states */
-.ui-state-default, .ui-widget-content .ui-state-default{background-color:#d4d4d4;border-color:#d4d4d4;color:#525252;}
+.ui-state-default, .ui-widget-content .ui-state-default{background-color:inherit;border-color:#d4d4d4;color:#525252;border:none;}
 .ui-state-focus, .ui-widget-content .ui-state-focus{background-color:#66B3FF;border-color:#66B3FF;color:#ffffff;}
 .ui-state-hover, .ui-widget-content .ui-state-hover{background-color:#66B3FF;border-color:#66B3FF;color:#ffffff;}
 .ui-state-active, .ui-widget-content .ui-state-active{background-color:#3399ff;border-color:#3399ff;color:#ffffff;}
