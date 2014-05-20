@@ -107,6 +107,12 @@ class databaseClass {
         $last = mysql_fetch_array($result);        
         return $last[0]; 
     }
+    /**
+     * This function imports a students excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function importStudent($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //** Variables ******************************************************************************//
@@ -135,6 +141,12 @@ class databaseClass {
         unset($columns, $tableName, $staticData, $a);
         return true;        
     }
+    /**
+     * This function imports a courses excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function courseImport($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
@@ -157,6 +169,12 @@ class databaseClass {
         unset($columns, $tableName, $staticData, $a);
         return true;   
     }
+    /**
+     * This function imports classes from an excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function classImport($file,$inputSemester){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
@@ -195,6 +213,12 @@ class databaseClass {
 
         unset($columns, $tableName, $staticData, $a);
     }
+    /**
+     * This function imports students grades from an excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function gradeImport($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
@@ -222,6 +246,12 @@ class databaseClass {
         unset($columns, $tableName, $staticData, $a);
         return true;   
     }
+    /**
+     * This function imports courses from an excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function courseFileImport($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
@@ -246,6 +276,12 @@ class databaseClass {
         }
         unset($columns, $tableName, $staticData);        
     }
+    /**
+     * This function imports students from an excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function studentFileImport($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
@@ -275,23 +311,26 @@ class databaseClass {
         return true;   
     }
     
-    public static function updateData($option){
-        if($option == 1){
-            // Update completed hours for all students.
-            $query1 = "CALL hours_and_level_update()";
-            $result1 = mysql_query($query1);            
-            // Update all students level according to their hours.
-            if($result1){
-                $response = 'Success';
-            }
+    public static function updateHoursLevel(){
+        // Update completed hours for all students.
+        $query1 = "CALL hours_and_level_update()";
+        $result1 = mysql_query($query1);            
+        // Update all students level according to their hours.
+        if($result1){
+            $response = 'Success';
         }
-        else if($option == 2){
-            $query3 = "CALL update_student_course()";
-            $result3 = mysql_query($query3);
-            if($result3){
-                $response = 'Success';
-            }
+        else{
+            $response = 'Fail';
         }
+        return $response;        
+    }
+    
+    public static function updateStuCourse(){        
+        $query3 = "CALL update_student_course()";
+        $result3 = mysql_query($query3);
+        if($result3){
+            $response = 'Success';
+        }        
         else{
             $response = 'Fail';
         }

@@ -20,26 +20,26 @@ $(function(){
                 key: true,
                 list: true,
                 title: '<?php echo COLLEGE_ID;?>',
-                width: '25%'
+                width: '15%'
             },
-            first_name: {
+            name: {
                 title: '<?php echo NAME;?>',                            
-                width: '25%',
+                width: '15%',
                 visibility: 'fixed' //This column always will be shown,                            
+            },            
+            gender: {
+                title: '<?php echo GENDER;?>',
+                width: '15%'                            
             },
-            middle_name: {
-                title: '<?php echo MIDDLE_NAME;?>',
-                width: '25%'
-            },
-            last_name: {
-                title: '<?php echo LAST_NAME;?>',
-                width: '25%'                            
+            birth_date: {
+                title: '<?php echo BIRTH_DATE;?>',
+                width: '15%'                            
             },
             dummyColumn: {
                 visibility: 'hidden'
             }        
         }
-    }); 
+    });    
     //Re-load records when user click 'load records' button.
     $('#search_button').click(function (e) {
         e.preventDefault();

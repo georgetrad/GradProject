@@ -20,18 +20,10 @@ $(function(){
             key: true,
             list: false
         },
-        first_name: {
+        name: {
             title: '<?php echo NAME;?>',                            
             width: '15%',
             visibility: 'fixed' //This column always will be shown,                            
-        },
-        middle_name: {
-            title: '<?php echo MIDDLE_NAME;?>',
-            width: '15%'
-        },
-        last_name: {
-            title: '<?php echo LAST_NAME;?>',
-            width: '15%'                            
         },
         dep_name: {
             title: '<?php echo DEP;?>',

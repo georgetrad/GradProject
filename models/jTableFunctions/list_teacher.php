@@ -23,17 +23,17 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT t.*, d.name_ar as dep_name FROM teacher as t ";
+$query2 = "SELECT CONCAT(t.first_name, ' ', t.last_name) as name, t.degree, t.phone_number, d.name_ar as dep_name ";
+$query2.= "FROM teacher as t ";
 $query2.= "LEFT JOIN department as d ON  t.department_id= d.id ";
 $query2.= "WHERE t.active='A'";
+
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];    
-    $query2.= " AND (first_name LIKE '$searchText%' OR middle_name LIKE '$searchText%' OR last_name LIKE '$searchText%') ";
+    $query2.= " AND CONCAT(t.first_name, ' ', t.last_name) LIKE '%$searchText%'";
 }
-
 $query2.= " ORDER BY t.$sorting LIMIT $startIndex, $pageSize";
 $result2 = mysql_query($query2);
-//print_r($query2);exit;
  
 //Add all records to an array
 $rows = array();
@@ -43,10 +43,10 @@ while($row = mysql_fetch_array($result2))
 }
 
 for($i=0 ; $i<count($rows) ; $i++){
-    if($rows[$i][12] == 'P'){
+    if($rows[$i]['degree'] == 'P'){
         $rows[$i]['degree'] = DOCTOR;
     }
-    if($rows[$i][12] == 'E'){
+    if($rows[$i]['degree'] == 'E'){
         $rows[$i]['degree'] = ENGINEER;
     }
 }

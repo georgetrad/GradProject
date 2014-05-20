@@ -36,7 +36,23 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         </div>
     </div>
 </div>
-
+<div class="row" >
+    <div id="spinner"></div>
+</div>
+<div class="row">
+    <div class="medium-4 large-4 columns">
+        &nbsp;
+    </div>
+    <div class="medium-4 large-4 columns">
+        <div data-alert class="result alert-box info" style="visibility: hidden; font-size: 20px; font-family: 'DroidKufi-Regular'; text-align: center">
+            <?=UPDATE_SUCCESS?>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div class="medium-4 large-4 columns">
+        &nbsp;
+    </div>
+</div>
 <?php 
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/update_data_script.php';

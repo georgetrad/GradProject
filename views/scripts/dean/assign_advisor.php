@@ -16,7 +16,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
 <div class="row">    
     <div class="medium-2 large-3 columns show-for-medium-up">
         &nbsp;
-    </div>    
+    </div>
     <form>       
         <div class="medium-3 large-2 columns show-for-medium-up">            
             <?php

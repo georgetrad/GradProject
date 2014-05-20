@@ -74,21 +74,21 @@ switch ($case){
             unlink('../../uploads/'."'$id'");            
         }
     }    
-    /******************** importStudent ********************/
+    /******************** import_script ********************/
     case 'importStudent':{
         $file = $_POST['selectFile'];
         $result = databaseClass::importStudent($file);
         echo $result;
         break;
     } 
-    /******************** courseImport ********************/
+    /******************** import_script ********************/
     case 'courseImport':{
         $file = $_POST['selectFile'];
         $result = databaseClass::courseImport($file);
         echo $result;
         break;
     } 
-    /******************** classImport ********************/
+    /******************** import_script ********************/
     case 'classImport':{
         $file           = $_POST['selectFile'];
         $selectSemester = $_POST['selectSemester'];
@@ -96,21 +96,21 @@ switch ($case){
         echo $result;
         break;
     } 
-    /******************** gradeImport ********************/
+    /******************** import_script ********************/
     case 'gradeImport':{
         $file = $_POST['selectFile'];
         $result = databaseClass::gradeImport($file);
         echo $result;
         break;
     } 
-    /******************** courseFileImport ********************/
+    /******************** import_script ********************/
     case 'courseFileImport':{
         $file = $_POST['selectFile'];
         $result = databaseClass::courseFileImport($file);
         echo $result;
         break;
     } 
-    /******************** studentFileImport ********************/
+    /******************** import_script ********************/
     case 'studentFileImport':{
         $file = $_POST['selectFile'];
         $result = databaseClass::studentFileImport($file);
@@ -119,7 +119,15 @@ switch ($case){
     }
     case 'updateData':{
         $selectedOption = $_POST['selectUpdate'];
-        $result = databaseClass::updateData($selectedOption);
+        if($selectedOption == 1){
+            $result = databaseClass::updateHoursLevel();
+        }
+        else if($selectedOption == 2){
+            $result = databaseClass::updateStuCourse();
+        }
+//        else if($selectedOption == 3){
+//            $result = databaseClass::updateStuCourse();
+//        }
         echo $result;
         break;
     }

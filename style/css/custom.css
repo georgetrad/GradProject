@@ -77,3 +77,14 @@ h4.title {
     left: 5px;
     top: 5px;
 }
+
+.home {
+    padding: 25px;
+}
+
+.data_container {
+    border: solid;
+    border-width: 2px;
+    border-radius: 50px;
+    border-color: #ccc    
+}

@@ -18,12 +18,12 @@ $filesList = scandir($dir);
 <div class="row">
     <div class="medium-12 large-12 columns">
         <dl class="tabs" data-tab>
-            <dd class="active"><a id="all_courses" href="#panel2-1"><?=IMP_STU?></a></dd>
-            <dd><a id="sugg" href="#panel2-2"><?=IMP_COURSES?><span id="counter"></span></a></dd>
-            <dd><a href="#panel2-3"><?=IMP_CLASSES?></a></dd>
-            <dd><a href="#panel2-4"><?=IMP_FIN_GRADE?></a></dd>
-            <dd><a href="#panel2-5"><?=IMP_COURSE_FILE?></a></dd>
-            <dd><a href="#panel2-6"><?=IMP_STUDENT_FILE?></a></dd>
+            <dd class="active"><a class="tab" id="all_courses" href="#panel2-1"><?=IMP_STU?></a></dd>
+            <dd><a class="tab" id="sugg" href="#panel2-2"><?=IMP_COURSES?><span id="counter"></span></a></dd>
+            <dd><a class="tab" href="#panel2-3"><?=IMP_CLASSES?></a></dd>
+            <dd><a class="tab" href="#panel2-4"><?=IMP_FIN_GRADE?></a></dd>
+            <dd><a class="tab" href="#panel2-5"><?=IMP_COURSE_FILE?></a></dd>
+            <dd><a class="tab" href="#panel2-6"><?=IMP_STUDENT_FILE?></a></dd>
         </dl>
     </div>        
 </div>
@@ -198,9 +198,20 @@ $filesList = scandir($dir);
     </div>
 </div>
 <div class="row" >
-    <div id="spin"></div>
-    <div data-alert class="medium-3 large-3 columns alert-box result" style="visibility: hidden">
-        <a href="#" class="close">&times;</a>
+    <div id="spin"></div>    
+</div>
+<div class="row">
+    <div class="medium-4 large-4 columns">
+        &nbsp;
+    </div>
+    <div class="medium-4 large-4 columns">
+        <div data-alert class="result alert-box info" style="visibility: hidden; font-size: 20px; font-family: 'DroidKufi-Regular'; text-align: center">
+            <?=INSERT_SUCCESS?>
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+    <div class="medium-4 large-4 columns">
+        &nbsp;
     </div>
 </div>
 <?php 
