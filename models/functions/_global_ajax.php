@@ -113,7 +113,8 @@ switch ($case){
     /******************** import_script ********************/
     case 'studentFileImport':{
         $file = $_POST['selectFile'];
-        $result = databaseClass::studentFileImport($file);
+        $major = $_POST['selectMajor'];
+        $result = databaseClass::studentFileImport($file, $major);
         echo $result;
         break;
     }

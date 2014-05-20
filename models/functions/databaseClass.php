@@ -282,7 +282,7 @@ class databaseClass {
      * @param String $file File name
      * @return boolean
      */
-    public static function studentFileImport($file){
+    public static function studentFileImport($file, $major){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
         $rows = 5000;
@@ -295,7 +295,7 @@ class databaseClass {
             "last_name"     => "D"    
         );
         $staticData = array(
-            "department_id" => "2"       
+            "department_id" => $major       
         );   
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);

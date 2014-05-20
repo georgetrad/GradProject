@@ -186,6 +186,11 @@ $filesList = scandir($dir);
                             }
                         }?>
                     </select>
+                    <select id="selectMajor" name="selectMajor">
+                        <option value="0">---</option>
+                        <option value="1">ICT</option>
+                        <option value="2">ARC</option>                
+                    </select>
                 </div>
             </form>
         </div>        
