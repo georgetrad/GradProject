@@ -20,7 +20,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         </div>
     </div>
     <div class="home row">
-        <div class="medium-4 large-4 columns">            
+        <div class="medium-4 large-4 columns">
+            Current Semester
         </div>
     </div>
     <div class="home row">
