@@ -44,7 +44,7 @@
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">
-                    <a><?=IMPORT?></a>
+                    <a><?=IMPORTING?></a>
                     <ul class="dropdown">                                
                         <li><a href="views/scripts/dean/upload.php"><?=UPLOAD_FILE?></a></li>
                         <li><a href="views/scripts/dean/import.php"><?=IMPORT_FILES?></a></li>

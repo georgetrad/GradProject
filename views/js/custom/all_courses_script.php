@@ -25,35 +25,30 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '5%'
+                    width: '2%'
                 },
                 name_ar: {
                     title: '<?php echo COURSE_NAME.' ('.ARABIC.')';?>',                            
                     width: '10%',
                     visibility: 'fixed' //This column always will be shown,                            
-                },
-                name_er: {
-                    title: '<?php echo COURSE_NAME.' ('.ENGLISH.')';?>',                            
-                    width: '10%',
-                    visibility: 'fixed' //This column always will be shown,                            
-                },
-                course_type_id: {
+                },                
+                ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',
-                    width: '10%'
+                    width: '4%'
                 },
                 course_level: {
                     title: '<?php echo LEVEL;?>',
-                    width: '5%'
+                    width: '2%'
                 },
                 req_course_id: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '8%'
+                    width: '2%'
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
-                    width: '6%'
+                    width: '5%'
                 },                
-                fees: {
+                student_count: {
                     title: '<?php echo FEES;?>',
                     width: '5%'                   
                 },

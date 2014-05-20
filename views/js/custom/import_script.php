@@ -30,8 +30,9 @@ $(function() {
             spinner.spin(target);
             var formData = $('#studentImportForm').serialize();
             formData += '&case=importStudent';
-            $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
-                $( ".result" ).html( data );
+            $.post('models/functions/_global_ajax.php', formData ,function( data ) {
+                $('.result').css('visibility', 'visible');
+                $('.result').html(data);
                 spinner.stop(target);
             });  
         }

@@ -25,10 +25,7 @@ $filesList = scandir($dir);
             <dd><a href="#panel2-5"><?=IMP_COURSE_FILE?></a></dd>
             <dd><a href="#panel2-6"><?=IMP_STUDENT_FILE?></a></dd>
         </dl>
-    </div>
-        <div class="row" id="spin">
-            <div class="result">&nbsp;</div>
-        </div>
+    </div>        
 </div>
 
 <div class="tabs-content medium-10 large-12 columns">
@@ -198,7 +195,13 @@ $filesList = scandir($dir);
                 <input type="button" class="tiny button" id="studentFileImportButton" name="studentFileImportButton" value="<?=IMPORT?>">
             </div>
         </div>
-    </div> 
+    </div>
+</div>
+<div class="row" >
+    <div id="spin"></div>
+    <div data-alert class="medium-3 large-3 columns alert-box result" style="visibility: hidden">
+        <a href="#" class="close">&times;</a>
+    </div>
 </div>
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
