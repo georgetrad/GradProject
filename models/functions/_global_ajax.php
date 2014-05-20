@@ -120,15 +120,18 @@ switch ($case){
     }
     case 'updateData':{
         $selectedOption = $_POST['selectUpdate'];
+        if($selectedOption == 0){
+            $result = 'Fail';
+        }
         if($selectedOption == 1){
             $result = databaseClass::updateHoursLevel();
         }
         else if($selectedOption == 2){
             $result = databaseClass::updateStuCourse();
         }
-//        else if($selectedOption == 3){
-//            $result = databaseClass::updateStuCourse();
-//        }
+        else if($selectedOption == 3){
+            $result = databaseClass::updateCourse();
+        }
         echo $result;
         break;
     }

@@ -313,10 +313,10 @@ class databaseClass {
     
     public static function updateHoursLevel(){
         // Update completed hours for all students.
-        $query1 = "CALL hours_and_level_update()";
-        $result1 = mysql_query($query1);            
+        $query = "CALL update_hours_and_level()";
+        $result = mysql_query($query);            
         // Update all students level according to their hours.
-        if($result1){
+        if($result){
             $response = 'Success';
         }
         else{
@@ -326,9 +326,21 @@ class databaseClass {
     }
     
     public static function updateStuCourse(){        
-        $query3 = "CALL update_student_course()";
-        $result3 = mysql_query($query3);
-        if($result3){
+        $query = "CALL update_student_course()";
+        $result = mysql_query($query);
+        if($result){
+            $response = 'Success';
+        }        
+        else{
+            $response = 'Fail';
+        }
+        return $response;        
+    }
+    
+    public static function updateCourse(){        
+        $query = "CALL update_course()";
+        $result = mysql_query($query);
+        if($result){
             $response = 'Success';
         }        
         else{

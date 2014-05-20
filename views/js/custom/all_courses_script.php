@@ -25,10 +25,10 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '2%'
+                    width: '5%'
                 },
                 name_ar: {
-                    title: '<?php echo COURSE_NAME.' ('.ARABIC.')';?>',                            
+                    title: '<?php echo COURSE_NAME;?>',                            
                     width: '10%',
                     visibility: 'fixed' //This column always will be shown,                            
                 },                
@@ -48,9 +48,17 @@
                     title: '<?php echo CREDITS;?>',
                     width: '5%'
                 },                
-                student_count: {
-                    title: '<?php echo FEES;?>',
-                    width: '5%'                   
+                classA: {
+                    title: '<?php echo CLASS_A;?>',
+                    width: '7%'                   
+                },
+                classB: {
+                    title: '<?php echo CLASS_B;?>',
+                    width: '6%'                   
+                },
+                classC: {
+                    title: '<?php echo CLASS_C;?>',
+                    width: '8%'                   
                 },
                 added: {
                     visibility: 'visible',

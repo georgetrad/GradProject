@@ -27,7 +27,7 @@ define('SEMESTERS', 'الفصول');
 
 define('COURSES', 'المقررات');    
     define('SUGGEST_COURSES', 'اقتراح مقررات');
-        define('AFFECTED_STU', 'الطلاب المتأثرون بالتعديلات');
+        define('AFFECTED_STU', 'الطلاب الذين لم يحققوا عدد الساعات الأدنى');
         define('COURSE_CODE', 'رمز المقرر');
         define('COURSE_NAME', 'اسم المقرر');
         define('COURSE_TYPE', 'نوع المقرر');
@@ -40,7 +40,10 @@ define('COURSES', 'المقررات');
         define('NEVER_ADDED', 'لم تُضف من قبل');
         define('ADDED', 'أُضيفت');
         define('REMOVED', 'حُذفت');
-    
+        define('CLASS_A', 'ضمن/أعلى - راسبون');
+        define('CLASS_B', 'أدنى بمستوى واحد');
+        define('CLASS_C', 'راسبون في المتطلب السابق');        
+        
     define('SUGGESTED_COURSES', 'المقررات المقترحة');
     
 define('STUDENTS', 'الطلاب');
@@ -53,6 +56,9 @@ define('STUDENTS', 'الطلاب');
             define('LAST_NAME', 'النسبة');
             define('GENDER', 'الجنس');
             define('BIRTH_DATE', 'تاريخ الميلاد');
+            define('NATIONAL_ID', 'الرقم الوطني');
+            define('EMAIL', 'البريد الالكتروني');
+            define('ADDRESS', 'العنوان');
     
 define('TEACHERS', 'المدرسون');
     define('DEP', 'القسم');
@@ -62,8 +68,12 @@ define('TEACHERS', 'المدرسون');
     
 define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');
-    define('ADVISOR', 'المرشد الحالي');
-    define('STU_NAME', 'اسم الطالب');
+        define('ADVISOR', 'المرشد الحالي');
+        define('STU_NAME', 'اسم الطالب');
+    define('ADVISE', 'إرشاد طالب');
+    define('PERSONAL_INFO', 'المعلومات الشخصية');
+    define('ACADEMIC_INFO', 'المعلومات الأكاديمية');
+    define('AVAILABLE_CRS', 'المقررات المتاحة');
     
 define('IMPORTING', 'الاستيراد');
     define('IMPORT_FILES', 'استيراد ملفات');
@@ -82,7 +92,8 @@ define('IMPORTING', 'الاستيراد');
     define('UPDATE_DATA', 'تحديث بيانات');
         define('UPDATE_STU', 'تحديث عدد الساعات المنجزة ومستوى الطلاب');
         define('UPDATE_RELATION', 'تحديث مواد الطلاب');
-        define('UPDATE_SUCCESS', 'تمّ تحديث البيانات بنجاح');        
+        define('UPDATE_SUCCESS', 'تمّ تحديث البيانات بنجاح');
+        define('UPDATE_STU_NUM', 'تحديث عدد الطلاب في كل مقرر');
     
 define('SETTINGS', 'الاعدادات');
     define('GRADES_DIST', 'توزيع الدرجات والنقاط');

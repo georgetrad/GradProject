@@ -92,3 +92,13 @@ h4.title {
 .home_data {
     font-size: 14px;
 }
+
+.stu_title {
+    font-size: 14px;
+    width: 150px;
+}
+
+.stu_data {
+    font-size: 14px;
+    width: 250px;
+}

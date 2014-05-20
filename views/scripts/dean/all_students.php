@@ -31,7 +31,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         <div class="medium-4 large-4 columns show-for-medium-up">
         </div>
     </form>       
-</div>    
+</div>
 <div class="row medium-3 large-3 columns show-for-medium-up">
     &nbsp;
 </div>
