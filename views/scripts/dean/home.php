@@ -16,7 +16,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 <div class="data_container medium-10 large-10 columns">    
     <div class="home row">
         <div class="medium-4 large-4 columns">
-            DATE & TIME
+            <span class="home_data label" id="date"></span><span class="home_data secondary label" id="time"></span>
         </div>
     </div>
     <div class="home row">
@@ -36,8 +36,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     </div>
     <div class="home row">
         <div class="medium-4 large-4 columns">
-            Number of Suggested Courses
+            Number of Suggested Courses            
         </div>
     </div>
 </div>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';?>
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/home_script.php';
+?>
