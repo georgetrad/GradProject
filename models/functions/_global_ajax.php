@@ -135,4 +135,11 @@ switch ($case){
         echo $result;
         break;
     }
+    
+    case 'getStuData':{
+        $id = $_POST['id'];
+        $result = databaseClass::getStuData($id);        
+        echo (json_encode($result));
+        break;
+    }
 }

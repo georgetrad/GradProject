@@ -56,13 +56,12 @@
 
 <div class="row">
     <div class="show-for-medium-up" style="padding-top: 5px">
-        <div class="medium-5 large-5 columns">
+        <div class="medium-4 large-5 columns">
             &nbsp;
         </div>
-        <div class="medium-3 large-2 columns">            
-            <div id="wrong" data-alert class="alert-box warning" style="font-size: 12px; font-family: DroidKufi-Regular; display: none">
-                <span id="invalid_login"><?=INVALID_LOGIN?></span>
-                <a href="#" class="close"></a>
+        <div class="medium-4 large-2 columns text-center">            
+            <div id="wrong" data-alert class="alert-box alert" style="font-size: 12px; font-family: DroidKufi-Regular; display: none; ">
+                <span id="invalid_login"><?=INVALID_LOGIN?></span>                
             </div>            
         </div>
         <div class="medium-4 large-5 columns">

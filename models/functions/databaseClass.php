@@ -348,4 +348,34 @@ class databaseClass {
         }
         return $response;        
     }
+    
+    public static function getStuData($id){        
+        $query = "SELECT id, CONCAT(first_name, ' ', middle_name, ' ', last_name) as name, ";
+        $query.= "gender, birth_date, national_id, address, phone_number, email ";
+        $query.= "FROM student ";
+        $query.= "WHERE id = $id";
+        $queryRun = mysql_query($query);
+        if (!$queryRun){
+            $response = array('success' => false);
+        }
+        else if ($queryRun){
+            $stuId = mysql_result($queryRun, 0, 'id');
+            $name = mysql_result($queryRun, 0, 'name');
+            $gender = mysql_result($queryRun, 0, 'gender');
+            $birthDate = mysql_result($queryRun, 0, 'birth_date');
+            $nationalId = mysql_result($queryRun, 0, 'national_id');
+            $address = mysql_result($queryRun, 0, 'address');
+            $phone = mysql_result($queryRun, 0, 'phone_number');
+            $email = mysql_result($queryRun, 0, 'email');
+            if($gender == 'M'){
+                $gender = MALE;
+            }
+            else if($gender == 'F'){
+                $gender = FEMALE;
+            }
+            $response = array('success'   => true, 'id'  => $stuId, 'name'    => $name, 'gender'  => $gender, 'birthDate'  => $birthDate,
+                              'nationalId'  => $nationalId, 'address'  => $address, 'phone' => $phone, 'email' => $email);
+            }         
+        return $response;
+    }
 }

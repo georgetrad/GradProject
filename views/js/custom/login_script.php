@@ -28,7 +28,7 @@
             var password = $('#password').val();      
 
             if(username === '' || password === ''){
-                $('#wrong').css({'display': 'block'});
+                $('#wrong').css({'display': 'block'});                
                 return false;
             }        
             else{

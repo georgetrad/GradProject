@@ -71,10 +71,19 @@ define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
         define('ADVISOR', 'المرشد الحالي');
         define('STU_NAME', 'اسم الطالب');
     define('ADVISE', 'إرشاد طالب');
-    define('PERSONAL_INFO', 'المعلومات الشخصية');
-    define('ACADEMIC_INFO', 'المعلومات الأكاديمية');
-    define('AVAILABLE_CRS', 'المقررات المتاحة');
-    
+        define('PERSONAL_INFO', 'المعلومات الشخصية');
+        define('ACADEMIC_INFO', 'المعلومات الأكاديمية');
+        define('AVAILABLE_CRS', 'المقررات المتاحة');
+        define('ADVISE_SEARCH_ERROR', 'لا يمكنك رؤية معلومات هذا الطالب');
+        define('ENTER_STU_ID', 'الرجاء إدخال الرقم الجامعي للطالب');
+        define('COMPLETED_HRS', 'عدد الساعات المنجزة');
+        define('GPA', 'المعدل النقطي');        
+        define('FAILED_CRS_NUM', 'عدد المواد الراسبة');        
+        define('REG_DATE', 'تاريخ التسجيل');
+//        define('', '');
+//        define('', '');
+//        define('', '');
+        
 define('IMPORTING', 'الاستيراد');
     define('IMPORT_FILES', 'استيراد ملفات');
     define('UPLOAD_FILE', 'رفع ملف');
@@ -124,4 +133,6 @@ define('SAVE', 'حفظ');
 define('DELETE', 'حذف');
 define('CHOOSE_OPTION', 'اختر أحد الخيارات');
 define('UPDATE', 'تحديث');
+define('MALE', 'ذكر');
+define('FEMALE', 'أنثى');
 ?>
