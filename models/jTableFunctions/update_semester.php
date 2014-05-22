@@ -29,8 +29,8 @@ $cols = array(
 
 $data = array(
     "'$name'",
-    $startDate,
-    $endDate,
+    "'$startDate'",
+    "'$endDate'",
     $minReqHrs,
     $maxReqHrs,
     $excGpa,

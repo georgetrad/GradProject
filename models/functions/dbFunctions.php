@@ -5,7 +5,7 @@ include_once '../db_connect.php';
  * This dbInsert functions receives all the necessary data and it executes the query on its own.
  * @author George Trad
  * @category Database
- * @version 0.3
+ * @version 0.4
  * 
  * @param String $tableName The name of the table you want to insert into
  * @param String Array $columns This array contains the columns you want to insert into.
@@ -31,6 +31,9 @@ function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicat
         $query.= "VALUES ";
         $query.= "( ";
         for ($i=0 ; $i<count($values) ; $i++){
+            if($values[$i] == ''){
+                $values[$i] = 'null';
+            }
             $query.= $values[$i];
             if(count($values)>1 && $i<(count($values)-1)){
                 $query.= ", ";
@@ -60,6 +63,9 @@ function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicat
         $query.= "VALUES ";
         $query.= "( ";
         for ($i=0 ; $i<count($values) ; $i++){
+            if($values[$i] == ''){
+                $values[$i] = 'null';
+            }
             $query.= $values[$i];
             if(count($values)>1 && $i<(count($values)-1)){
                 $query.= ", ";
@@ -78,7 +84,7 @@ function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicat
  * This dbUpdate functions receives all the necessary data and it executes the query on its own.
  * @author George Trad
  * @category Database
- * @version 0.1
+ * @version 0.2
  * 
  * @param String $tableName The name of the table you want to insert into
  * @param Array $columns This array contains the columns you want to insert into.
@@ -91,6 +97,9 @@ function dbUpdate($tableName, $columns = array(), $values = array(), $condition 
     $query = "UPDATE $tableName ";
     $query.= "SET ";
     for ($i=0 ; $i<count($columns) ; $i++){
+        if($values[$i] == ''){
+            $values[$i] = 'null';
+        }
         $query.= $columns[$i]." = ".$values[$i];
         if(count($columns)>1 && $i<(count($columns)-1)){
             $query.= ", ";
@@ -98,7 +107,7 @@ function dbUpdate($tableName, $columns = array(), $values = array(), $condition 
     }    
     $query.= " WHERE $condition";
     mysql_query($query);                 // Executing the query
-    
+    //print_r($query);exit;
     $result = array();
     $result['Result'] = "Sucess";
     return $result;

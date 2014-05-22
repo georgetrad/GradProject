@@ -78,10 +78,6 @@ h4.title {
     top: 5px;
 }
 
-.home {
-    padding: 25px;
-}
-
 .data_container {
     border: solid;
     border-width: 2px;
@@ -89,16 +85,45 @@ h4.title {
     border-color: #ccc    
 }
 
-.home_data {
+.date_title {
     font-size: 14px;
+    width: 150px;
+}
+
+.time_title {
+    font-size: 14px;   
 }
 
 .stu_title {
     font-size: 14px;
     width: 150px;
+    text-align: right;
 }
 
 .stu_data {
     font-size: 14px;
     width: 250px;
+    text-align: right;
+    background-color: white !important;
+}
+
+.right_home_title {
+    font-size: 14px;
+    width: 150px;
+    //text-align: right;
+    margin-bottom: 5px;    
+}
+
+.home_data {
+    font-size: 14px;
+    width: 200px;
+    text-align: right;
+    background-color: white !important;
+}
+
+.left_home_title {
+    font-size: 14px;
+    width: 220px;
+    //text-align: right;
+    //margin-bottom: 5px;    
 }

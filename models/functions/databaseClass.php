@@ -1,6 +1,6 @@
 <?php
-include_once '../core.php';
-include_once '../db_connect.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/PHPExcel/IOFactory.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importFunction.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importStudentClassFunction.php';
@@ -350,10 +350,14 @@ class databaseClass {
     }
     
     public static function getStuData($id){        
-        $query = "SELECT id, CONCAT(first_name, ' ', middle_name, ' ', last_name) as name, ";
-        $query.= "gender, birth_date, national_id, address, phone_number, email ";
-        $query.= "FROM student ";
-        $query.= "WHERE id = $id";
+        $query = "SELECT s.id, CONCAT(s.first_name, ' ', s.middle_name, ' ', s.last_name) as name, s.department_id, s.registration_date, ";
+        $query.= "s.gender, s.birth_date, s.national_id, s.address, s.phone_number, s.email, s.tot_hours_completed, s.current_level, s.current_gpa, ";
+        $query.= "d.name_ar, d.tot_hours ";
+        $query.= "FROM student AS s ";
+        $query.= "LEFT JOIN department AS d ";
+        $query.= "ON s.department_id = d.id ";
+        $query.= "WHERE s.id = $id";
+                
         $queryRun = mysql_query($query);
         if (!$queryRun){
             $response = array('success' => false);
@@ -367,15 +371,38 @@ class databaseClass {
             $address = mysql_result($queryRun, 0, 'address');
             $phone = mysql_result($queryRun, 0, 'phone_number');
             $email = mysql_result($queryRun, 0, 'email');
+            $gpa = mysql_result($queryRun, 0, 'current_gpa');
+            $comHrs = mysql_result($queryRun, 0, 'tot_hours_completed');
+            $stuLevel = mysql_result($queryRun, 0, 'current_level');
+            $depName = mysql_result($queryRun, 0, 'name_ar');
+            $depHrs = mysql_result($queryRun, 0, 'tot_hours');
+            $regDate = mysql_result($queryRun, 0, 'registration_date');
             if($gender == 'M'){
                 $gender = MALE;
             }
             else if($gender == 'F'){
                 $gender = FEMALE;
             }
+            
+            $failedQuery = "SELECT count(status) FROM student_course where student_id = 20910264 AND status = 'F'";
+            $result = mysql_query($failedQuery);
+            $num = mysql_fetch_array($result);
+            
             $response = array('success'   => true, 'id'  => $stuId, 'name'    => $name, 'gender'  => $gender, 'birthDate'  => $birthDate,
-                              'nationalId'  => $nationalId, 'address'  => $address, 'phone' => $phone, 'email' => $email);
+                              'nationalId'  => $nationalId, 'address'  => $address, 'phone' => $phone, 'email' => $email, 'gpa' => $gpa,
+                                'comHrs' => $comHrs, 'level' => $stuLevel, 'depName' => $depName, 'depHrs' => $depHrs, 'regDate' => $regDate, 
+                                'failedCrs' => $num[0]);
             }         
         return $response;
     }
+    
+    public function getCurrSemInfo(){
+        $query = "SELECT * FROM semester WHERE id= (SELECT max(id) FROM semester) AND active = 'A'";
+        $result = mysql_query($query);
+        $rows = array();
+        while($row = mysql_fetch_array($result)){
+            $rows[] = $row;
+        }
+        return $rows;
+    }   
 }

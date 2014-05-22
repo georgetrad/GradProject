@@ -9,7 +9,7 @@ $recordCount = $row['RecordCount'];
 
 $pageSize = $_GET['jtPageSize'];
 $startIndex = $_GET['jtStartIndex'];
-$sorting = 'id ASC';
+$sorting = 'id DESC';
 if(isset($_GET['jtSorting'])){
     $sorting = $_GET['jtSorting'];   
 }

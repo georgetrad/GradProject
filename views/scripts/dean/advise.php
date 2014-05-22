@@ -42,7 +42,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <div id="panel1" class="content active">
                     <div class="row">
                         <div class="medium-8 large-4 columns">
-                            <div class="stu_title label"><?=COLLEGE_ID?></div> <div id="stu_id" class="stu_data secondary label"></div>
+                            <div class="stu_title label"><?=COLLEGE_ID?></div> <div id="stu_id" class="secondary label stu_data "></div>
                         </div>
                         <div class="medium-4 large-4 columns">
                             <div class="stu_title label"><?=ADDRESS?></div> <div id="address" class="stu_data secondary label"></div>
@@ -84,31 +84,36 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <div id="panel2" class="content">
                     <div class="row">
                         <div class="medium-8 large-4 columns">
-                            <div class="stu_title label"><?=DEP?></div> <div id="hrs" class="stu_data secondary label"></div>                                
+                            <div class="stu_title label"><?=DEP?></div> <div id="dep_name" class="stu_data secondary label"></div>                                
                         </div>
                         <div class="medium-8 large-4 columns">
-                            <div class="stu_title label"><?=COMPLETED_HRS?></div> <div id="hrs" class="stu_data secondary label"></div>                                
-                        </div>
-                        <div class="medium-4 large-4 columns"></div>
-                    </div>
-                    <div class="row">
-                        <div class="medium-8 large-4 columns">
-                            <div class="stu_title label"><?=REG_DATE?></div> <div id="hrs" class="stu_data secondary label"></div>                                
-                        </div>
-                        <div class="medium-8 large-4 columns">
-                            <div class="stu_title label"><?=FAILED_CRS_NUM?></div> <div id="hrs" class="stu_data secondary label"></div>                                
+                            <div class="stu_title label"><?=COMPLETED_HRS?></div> <div id="com_hrs" class="stu_data secondary label"></div>                                
                         </div>
                         <div class="medium-4 large-4 columns"></div>
                     </div>
                     <div class="row">
                         <div class="medium-8 large-4 columns">
-                            <div class="stu_title label"><?=LEVEL?></div> <div id="hrs" class="stu_data secondary label"></div>                                
+                            <div class="stu_title label"><?=DEP_HRS?></div> <div id="dep_hrs" class="stu_data secondary label"></div>                                
+                        </div>
+                        <div class="medium-8 large-4 columns">
+                            <div class="stu_title label"><?=FAILED_CRS_NUM?></div> <div id="failed_crs" class="stu_data secondary label"></div>                                
+                        </div>
+                        <div class="medium-4 large-4 columns"></div>
+                    </div>
+                    <div class="row">
+                        <div class="medium-8 large-4 columns">
+                            <div class="stu_title label"><?=REG_DATE?></div> <div id="reg_date" class="stu_data secondary label"></div>                                
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="medium-8 large-4 columns">
+                            <div class="stu_title label"><?=LEVEL?></div> <div id="level" class="stu_data secondary label"></div>                                
                         </div>                        
                         <div class="medium-4 large-4 columns"></div>
                     </div>
                     <div class="row">
                         <div class="medium-8 large-4 columns">
-                            <div class="stu_title label"><?=GPA?></div> <div id="hrs" class="stu_data secondary label"></div>                                
+                            <div class="stu_title label"><?=GPA?></div> <div id="gpa" class="stu_data secondary label"></div>                                
                         </div>                        
                         <div class="medium-4 large-4 columns"></div>
                     </div>

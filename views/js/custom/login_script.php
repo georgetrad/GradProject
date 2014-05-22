@@ -35,7 +35,7 @@
                 logIn(username, password);
             }
         });
-        $( "#password" ).keypress(function(key) {
+        $("#password").keypress(function(key) {
             if (key.which === 13)
             $('#login_button').click();
         });

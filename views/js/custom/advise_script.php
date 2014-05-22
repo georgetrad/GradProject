@@ -87,15 +87,22 @@
             if(success === true){
                 $('#wrong').css('visibility', 'hidden');
                 $('#contents').css('visibility', 'visible');
-                var id = result.id;
-                var name = result.name;
-                var gender = result.gender;
-                var birthDate = result.birthDate;
-                var nationalId = result.nationalId;
-                var address = result.address;
-                var phone = result.phone;
-                var email = result.email;
-
+                var id          = result.id;
+                var name        = result.name;
+                var gender      = result.gender;
+                var birthDate   = result.birthDate;
+                var nationalId  = result.nationalId;
+                var address     = result.address;
+                var phone       = result.phone;
+                var email       = result.email;
+                var gpa         = result.gpa;
+                var comHrs      = result.comHrs;
+                var level       = result.level;
+                var depName     = result.depName;
+                var depHrs      = result.depHrs;
+                var regDate     = result.regDate;
+                var failedCrs   = result.failedCrs;
+                
                 $('#stu_id').html(id);
                 $('#name').html(name);
                 $('#gender').html(gender);
@@ -104,6 +111,13 @@
                 $('#address').html(address);
                 $('#phone').html(phone);
                 $('#email').html(email);
+                $('#dep_name').html(depName);
+                $('#dep_hrs').html(depHrs);
+                $('#level').html(level);
+                $('#com_hrs').html(comHrs);
+                $('#reg_date').html(regDate);
+                $('#gpa').html(gpa);
+                $('#failed_crs').html(failedCrs);
                 spinner.stop(target);
             }
             else if (success === false){                

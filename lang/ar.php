@@ -13,6 +13,12 @@ define('WELCOME', 'مرحباً');
 define('LOGOUT', 'تسجيل الخروج');
 
 define('HOME', 'الرئيسية');
+    define('CURRENT_SEMESTER', 'الفصل الحالي');
+    define('NUM_SUGG_CRS', 'عدد المواد المقترحة');
+    define('NUM_BELOW_STU', 'عدد الطلاب دون النصاب');
+    define('NUM_STU_WITHOUT_ADV', 'عدد الطلاب بدون مرشد أكاديمي');
+    define('MOST_FAILED_CRS', 'المادة الأكثر رسوباً');
+    define('MOST_PASSED_CRS', 'المادة الأكثر نجاحاً');    
 
 define('SEMESTERS', 'الفصول');
     define('PREV_SEMESTERS', 'الفصول السابقة');
@@ -80,10 +86,8 @@ define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
         define('GPA', 'المعدل النقطي');        
         define('FAILED_CRS_NUM', 'عدد المواد الراسبة');        
         define('REG_DATE', 'تاريخ التسجيل');
-//        define('', '');
-//        define('', '');
-//        define('', '');
-        
+        define('DEP_HRS', 'ساعات القسم');
+
 define('IMPORTING', 'الاستيراد');
     define('IMPORT_FILES', 'استيراد ملفات');
     define('UPLOAD_FILE', 'رفع ملف');
