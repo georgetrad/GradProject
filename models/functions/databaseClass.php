@@ -346,7 +346,7 @@ class databaseClass {
         else{
             $response = 'Fail';
         }
-        return $response;        
+        return $response;
     }
     
     public static function getStuData($id){        
@@ -404,5 +404,21 @@ class databaseClass {
             $rows[] = $row;
         }
         return $rows;
-    }   
+    }
+    
+    public static function getStuGrades($stuId){
+        $query = "SELECT * FROM stu_grades WHERE id2 = $stuId";
+        $result = mysql_query($query);
+        $queryNumRows = mysql_num_rows($result);
+        if($queryNumRows == 0){
+            print_r('Error');exit;
+        }
+        else{
+            $rows = array();
+            while($row = mysql_fetch_array($result)){
+                $rows[] = $row;
+            }
+        }
+        return $rows;
+    }
 }

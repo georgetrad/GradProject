@@ -16,7 +16,7 @@ $semesterInfo = databaseClass::getCurrSemInfo();
 <div class="medium-1 large-1 columns">
     &nbsp;
 </div>
-<div class="data_container medium-10 large-10 columns">    
+<div class="data_container medium-10 large-10 columns text-center">    
     <div class="row" style="padding-bottom: 25px; padding-top: 25px">
         <div class="medium-12 large-12 columns">
             <span class="round date_title label" id="date"></span> <span class="round time_title secondary label" id="time"></span>
@@ -58,7 +58,7 @@ $semesterInfo = databaseClass::getCurrSemInfo();
         <div class="medium-5 large-5 columns">
             <div class="round right_home_title label"><?=MAX_REQ_HRS?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['max_req_hrs']?></div>
         </div>
-        <div class="medium-5 large-5 columns">
+        <div class="medium-5 large-5 columns" style="padding-bottom: 25px;">
             <div class="round left_home_title label"><?=MOST_PASSED_CRS?></div> <div class=" secondary label"></div>
         </div>        
     </div>    

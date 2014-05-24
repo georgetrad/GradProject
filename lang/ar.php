@@ -65,6 +65,7 @@ define('STUDENTS', 'الطلاب');
             define('NATIONAL_ID', 'الرقم الوطني');
             define('EMAIL', 'البريد الالكتروني');
             define('ADDRESS', 'العنوان');
+            define('FINAL_GRADE', 'الدرجة النهائية');
     
 define('TEACHERS', 'المدرسون');
     define('DEP', 'القسم');
@@ -114,6 +115,7 @@ define('SETTINGS', 'الاعدادات');
         define('GRADE_FROM', 'الحد الأدنى');
         define('APPLIES_TO', 'تطبق على طلاب عام');
         define('POINTS', 'النقاط');
+        define('LETTER', 'التقدير');
         
     define('HRS_CONST', 'ثوابت ساعات المستويات');
         define('LEVELS_DIST', 'توزيع المستويات');
