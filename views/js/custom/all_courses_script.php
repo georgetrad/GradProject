@@ -3,9 +3,9 @@
         $('#sugg_courses_Table').jtable('load');
         getSuggCoursesNum();
     });    
-//    $('.tableFloatingHeaderOriginal').children().each().click(function (){      
-//        getSuggCourse();
-//    });
+    $('#all_courses').click(function (){      
+        getSuggCourse();
+    });
     
     $(function(){        
         $('#all_courses_Table').jtable({
