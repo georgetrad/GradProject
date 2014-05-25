@@ -2,7 +2,10 @@
     $('#sugg').click(function (){        
         $('#sugg_courses_Table').jtable('load');
         getSuggCoursesNum();
-    });
+    });    
+//    $('.tableFloatingHeaderOriginal').children().each().click(function (){      
+//        getSuggCourse();
+//    });
     
     $(function(){        
         $('#all_courses_Table').jtable({
@@ -78,12 +81,18 @@
             });
             getSuggCourse();
         });
+        
 
+        
         $('#all_courses_Table').jtable('load');
         getSuggCoursesNum();
         
         // to top 
         $("#toTop").scrollToTop();
+        //header freeze
+        $('.jtable').stickyTableHeaders();
+//        $('.jtable').floatThead();        
+
     });       
     
     function getSuggCoursesNum(){

@@ -34,6 +34,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.min.js"></script> 
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
 <script type="text/javascript" src="views/js/jquery/jquery.scrollToTop.min.js"></script>
+<!--<script type="text/javascript" src="views/js/jquery/jquery.floatThead.js"></script>-->
+<!--<script type="text/javascript" src="views/js/jquery/jquery.freezeheader.js"></script>-->
+<script type="text/javascript" src="views/js/jquery/jquery.stickytableheaders.min.js"></script>
 
 <?php
 if(!loggedIn()){
