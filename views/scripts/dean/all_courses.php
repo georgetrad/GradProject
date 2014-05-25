@@ -12,7 +12,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 </div>
 
 <div class="row">
-    <div class="medium-6 large-6 columns">
+    <div class="medium-12 large-12 columns">
         <dl class="tabs" data-tab>
             <dd class="active"><a id="all_courses" href="#panel2-1"><?=COURSES?></a></dd>
             <dd><a id="sugg" href="#panel2-2"><?=SUGGESTED_COURSES?><span id="counter"></span></a></dd>
@@ -68,6 +68,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         جدول الطلاب
     </div>
 </div>
+
+<a href="#top" id="toTop"></a>
+
 <?php 
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_courses_script.php';

@@ -80,7 +80,10 @@
         });
 
         $('#all_courses_Table').jtable('load');
-        getSuggCoursesNum();        
+        getSuggCoursesNum();
+        
+        // to top 
+        $("#toTop").scrollToTop();
     });       
     
     function getSuggCoursesNum(){
