@@ -1,27 +1,27 @@
 <script>
     $('#sugg').click(function (){        
         $('#sugg_courses_Table').jtable('load');
-        getSuggCoursesNum();
+        //getSuggCoursesNum();
     }); 
 //    $('#all_courses').click(function (){        
 //        getSuggCourse();
 //    });   
     
-    $(function(){        
+    $(function(){
         $('#all_courses_Table').jtable({
             title: '<?php echo COURSES;?>',
             paging: false,                    
-            columnResizable: false, //Actually, no need to set true since it's default
-            columnSelectable: false, //Actually, no need to set true since it's default
-            saveUserPreferences: false, //Actually, no need to set true since it's default
+            columnResizable: false,             //Actually, no need to set true since it's default
+            columnSelectable: false,            //Actually, no need to set true since it's default
+            saveUserPreferences: false,         //Actually, no need to set true since it's default
             sorting: true,                    
-            selecting: false, //Enable selecting
-            multiselect: false, //Allow multiple selecting
-            selectingCheckboxes: false, //Show checkboxes on first column
-            selectOnRowClick: true, //Enable this to only select using checkboxes
-            totalRecordCount: 'RecordCount',
+            selecting: false,                   //Enable selecting
+            multiselect: false,                 //Allow multiple selecting
+            selectingCheckboxes: false,         //Show checkboxes on first column
+            selectOnRowClick: true,             //Enable this to only select using checkboxes
+            totalRecordCount: 'RecordCount',            
             actions: {
-                listAction: 'models/jTableFunctions/list_courses.php'                      
+                listAction: 'models/jTableFunctions/list_courses.php'        
             },
             fields: {
                 id: {
@@ -65,6 +65,7 @@
                 },
                 added: {
                     visibility: 'visible',
+                    width: '4%',
                     display: function (data) {
                         return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
                     }
@@ -82,8 +83,8 @@
             getSuggCourse();
         });
         
-        $('#all_courses_Table').jtable('load', undefined, function(){
-            getSuggCourse();
+        $('#all_courses_Table').jtable('load', undefined, function(){            
+            //getSuggCourse();
             getSuggCoursesNum();
             getBelowStuNum();
         });        
@@ -92,7 +93,9 @@
         $("#toTop").scrollToTop();
         //header freeze
         $('.jtable').stickyTableHeaders();
-    });       
+    }).ajaxStop(function (){
+        getSuggCourse();
+    });        
     
     function getSuggCoursesNum(){
         $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){

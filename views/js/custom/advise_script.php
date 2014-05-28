@@ -30,12 +30,17 @@
                 $('#wrong').html('<?php echo ENTER_STU_ID;?>');
             }
             getStuData(stuId);
+            
+            $.post("models/functions/_global_ajax.php", {case:'getStuGrades', id:stuId},function(data){
+                $('#table').html(data);
+            });
+            
             $('#jTable').jtable('load', {
                 stuId:$('#search_text').val()                
-            });            
+            });
         });
         
-        $('#jTable').jtable({            
+        $('#jTable').jtable({
             title: '<?php echo SUGGESTED_COURSES;?>',
             paging: true,                    
             columnResizable: false, //Actually, no need to set true since it's default
