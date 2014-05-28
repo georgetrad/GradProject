@@ -189,4 +189,10 @@ switch ($case){
         echo $html;
         break;
     }
+    
+    case 'getBelowStuNum':{
+        $result = databaseClass::getBelowStuNum();
+        echo $result;
+        break;
+    }
 }

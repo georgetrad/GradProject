@@ -48,7 +48,9 @@ define('COURSES', 'المقررات');
         define('REMOVED', 'حُذفت');
         define('CLASS_A', 'ضمن/أعلى - راسبون');
         define('CLASS_B', 'أدنى بمستوى واحد');
-        define('CLASS_C', 'راسبون في المتطلب السابق');        
+        define('CLASS_C', 'راسبون في المتطلب السابق');
+        define('NUM_OF_CRS', 'المقررات المقترحة');
+        define('SUGG_HRS', 'الساعات المقترحة');
         
     define('SUGGESTED_COURSES', 'المقررات المقترحة');
     

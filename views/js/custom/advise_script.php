@@ -17,24 +17,26 @@
             top: '50%', // Top position relative to parent
             left: '53%' // Left position relative to parent
         };
-    //****************On Page Load *****************************
+    //****************On Page Load *****************************    
     $(function(){
         $('input').focus(function (){
             $(this).attr("placeholder", "");
             $(this).css("direction", "ltr"); 
         });
-        $('#search_button').click(function (){
+        $('#search_button').click(function (){            
             var stuId = $('#search_text').val();
             if (stuId === ''){
                 $('#wrong').css('visibility', 'visible');
                 $('#wrong').html('<?php echo ENTER_STU_ID;?>');
             }
             getStuData(stuId);
-        });        
-    });
-    $(function(){    
-        $('#jTable').jtable({
-            title: '<?php echo ALL_STUDENTS;?>',
+            $('#jTable').jtable('load', {
+                stuId:$('#search_text').val()                
+            });            
+        });
+        
+        $('#jTable').jtable({            
+            title: '<?php echo SUGGESTED_COURSES;?>',
             paging: true,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default
@@ -43,37 +45,47 @@
             selecting: false, //Enable selecting
             multiselect: false, //Allow multiple selecting
             selectingCheckboxes: false, //Show checkboxes on first column
-            selectOnRowClick: true, //Enable this to only select using checkboxes
+            selectOnRowClick: false, //Enable this to only select using checkboxes
             totalRecordCount: 'RecordCount',
             actions: {
-                listAction: 'models/jTableFunctions/list_student.php'                      
+                listAction: 'models/jTableFunctions/list_stu_sugg.php'                      
             },
             fields: {
                 id: {
                     key: true,
                     list: true,
-                    title: '<?php echo COLLEGE_ID;?>',
+                    title: '<?php echo COURSE_CODE;?>',
                     width: '15%'
                 },
-                name: {
-                    title: '<?php echo NAME;?>',                            
+                name_ar: {
+                    title: '<?php echo COURSE_NAME;?>',                            
+                    width: '20%',
+                    visibility: 'fixed' //This column always will be shown,                            
+                },
+                name_ar1: {
+                    title: '<?php echo COURSE_NAME;?>',                            
+                    width: '20%',
+                    visibility: 'fixed' //This column always will be shown,                            
+                },
+                course_level: {
+                    title: '<?php echo LEVEL;?>',                            
                     width: '15%',
                     visibility: 'fixed' //This column always will be shown,                            
-                },            
-                gender: {
-                    title: '<?php echo GENDER;?>',
-                    width: '15%'                            
                 },
-                birth_date: {
-                    title: '<?php echo BIRTH_DATE;?>',
-                    width: '15%'                            
+                req_course_id: {
+                    title: '<?php echo REQ_COURSE;?>',                            
+                    width: '15%',
+                    visibility: 'fixed' //This column always will be shown,                            
                 },
+                credits: {
+                    title: '<?php echo CREDITS;?>',
+                    width: '15%'                            
+                },              
                 dummyColumn: {
                     visibility: 'hidden'
                 }        
             }
-        });
-        $('#jTable').jtable('load');   
+        });        
     });
     
     function getStuData(id){

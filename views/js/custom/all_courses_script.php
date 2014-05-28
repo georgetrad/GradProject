@@ -1,11 +1,11 @@
-<script>    
+<script>
     $('#sugg').click(function (){        
         $('#sugg_courses_Table').jtable('load');
         getSuggCoursesNum();
-    });    
-    $('#all_courses').click(function (){      
-        getSuggCourse();
-    });
+    }); 
+//    $('#all_courses').click(function (){        
+//        getSuggCourse();
+//    });   
     
     $(function(){        
         $('#all_courses_Table').jtable({
@@ -37,7 +37,7 @@
                 },                
                 ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',
-                    width: '4%'
+                    width: '8%'
                 },
                 course_level: {
                     title: '<?php echo LEVEL;?>',
@@ -45,7 +45,7 @@
                 },
                 req_course_id: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '2%'
+                    width: '6%'
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
@@ -82,24 +82,31 @@
             getSuggCourse();
         });
         
-
-        
-        $('#all_courses_Table').jtable('load');
-        getSuggCoursesNum();
-        
+        $('#all_courses_Table').jtable('load', undefined, function(){
+            getSuggCourse();
+            getSuggCoursesNum();
+            getBelowStuNum();
+        });        
+                
         // to top 
         $("#toTop").scrollToTop();
         //header freeze
         $('.jtable').stickyTableHeaders();
-//        $('.jtable').floatThead();        
-
     });       
     
     function getSuggCoursesNum(){
         $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
             var result = JSON.parse(data);
             var number = result.success;
-            $('#counter').html(' ('+data+')');
+            $('#sugg_crs_ounter').html(' ('+data+')');
+        });
+    }
+    
+    function getBelowStuNum(){
+        $.post('models/functions/_global_ajax.php', {case: 'getBelowStuNum'}, function(data){
+            var result = JSON.parse(data);
+            var number = result.success;
+            $('#below_stu_counter').html(' ('+data+')');
         });
     }
     
@@ -120,6 +127,7 @@
                 }
                 $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){
                     getSuggCoursesNum();
+                    getBelowStuNum();
                 });            
             });    
         });
@@ -142,6 +150,7 @@
                     }
                     $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){                
                         getSuggCoursesNum();
+                        getBelowStuNum();
                     });            
                 });   
             }

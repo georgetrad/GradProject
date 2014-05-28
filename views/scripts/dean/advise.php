@@ -123,7 +123,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <a href="#panel3"><?=AVAILABLE_CRS?></a>
                 <div id="panel3" class="content">
                     <div class="row">
-                        <div id="jTable" class="medium-6 large-6 columns show-for-medium-up"></div>                            
+                        <div class="medium-2 large-2 columns">&nbsp;</div>
+                        <div id="jTable" class="medium-8 large-8 columns show-for-medium-up"></div>
+                        <div class="medium-2 large-2 columns">&nbsp;</div>
                     </div>                        
                 </div>
             </dd>

@@ -15,8 +15,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <div class="medium-12 large-12 columns">
         <dl class="tabs" data-tab>
             <dd class="active"><a id="all_courses" href="#panel2-1"><?=COURSES?></a></dd>
-            <dd><a id="sugg" href="#panel2-2"><?=SUGGESTED_COURSES?><span id="counter"></span></a></dd>
-            <dd><a href="#panel2-3"><?=AFFECTED_STU?></a></dd>  
+            <dd><a id="sugg" href="#panel2-2"><?=SUGGESTED_COURSES?><span id="sugg_crs_ounter"></span></a></dd>
+            <dd><a id="below" href="#panel2-3"><?=AFFECTED_STU?><span id="below_stu_counter"></span></a></dd>  
         </dl>
     </div>
 </div>
@@ -65,7 +65,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     
     <!-- Tab 3 -->
     <div class="content" id="panel2-3">      
-        جدول الطلاب
+        <div class="row medium-3 large-3 columns show-for-medium-up"></div>
+        <div id="below_stu_Table" class="medium-12 large-12 columns show-for-medium-up"></div> <!--Table-->        
     </div>
 </div>
 
@@ -75,4 +76,5 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_courses_script.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/sugg_courses_script.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/below_stu_script.php';
 ?>
