@@ -87,14 +87,12 @@
             //getSuggCourse();
             getSuggCoursesNum();
             getBelowStuNum();
-        });        
+        });
                 
         // to top 
         $("#toTop").scrollToTop();
         //header freeze
         $('.jtable').stickyTableHeaders();
-    }).ajaxStop(function (){
-        getSuggCourse();
     });        
     
     function getSuggCoursesNum(){
@@ -158,5 +156,5 @@
                 });   
             }
         }, "json");   
-    }
+    }     
 </script>
