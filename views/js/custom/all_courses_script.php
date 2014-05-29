@@ -1,11 +1,4 @@
-<script>
-    function getSuggCoursesNum(){
-        $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
-            var result = JSON.parse(data);
-//            var number = result.success;
-            $('#sugg_crs_counter').html(' ('+data+')');
-        });
-    }
+<script>    
     function getSuggCourse(){
         $('#sugg_courses_Table').jtable('load', undefined, function(){
             $('.add').bind( "click", function() {
@@ -49,6 +42,22 @@
                 });   
             }
         }, "json");   
+    }
+    function getSuggCoursesNum(){
+        alert();
+        $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
+            $('#sugg_crs_counter').html(' ('+data+')');
+        });
+    }
+    function getBelowStuNum(){ 
+	$.post('models/functions/_global_ajax.php',{case: 'getBelowStuNum'},function(data){
+            $('#below_stu_counter').html(' ('+data+')'); 
+	}); 
+    }
+    function getSuggCoursesNum(){
+        $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
+            $('#sugg_crs_counter').html(' ('+data+')');
+        });
     }
     $(document).ready(function () {      
         $('#all_courses_Table').jtable({
@@ -117,11 +126,13 @@
             recordsLoaded: function (event, data) { 
                 getSuggCourse();
                 getSuggCoursesNum();
+                getBelowStuNum();
             },
         });
         $('#all_courses_Table').jtable('load');
         // get number of suggested courses when the document is ready
-        getSuggCoursesNum();
+//        getSuggCoursesNum();
+
         //on suggestion re draw the table and get the number of suggested courses
         $('#sugg').click(function (){        
             $('#sugg_courses_Table').jtable('load');

@@ -76,5 +76,5 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_courses_script.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/sugg_courses_script.php';
-//    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/below_stu_script.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/below_stu_script.php';
 ?>
