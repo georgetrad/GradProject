@@ -21,26 +21,39 @@ $(function(){
                 key: true,
                 list: true,
                 title: '<?php echo COLLEGE_ID;?>',
-                width: '15%',
+                width: '17%',
                 edit:false,
                 listClass: 'left_data'
             },
             name: {
                 title: '<?php echo NAME;?>',                            
-                width: '15%',
+                width: '30%',
                 visibility: 'fixed',
                 edit:false
-            },            
-            status: {
-                visibility: 'hidden',    
-                title: '<?php echo STATUS;?>',
-                width: '15%',
-                edit:true
             },
-            birth_date: {
-                title: '<?php echo BIRTH_DATE;?>',
-                width: '15%',
-                edit:false                            
+            dep_name: {
+                title: '<?php echo DEP;?>',                            
+                width: '30%',
+                visibility: 'fixed',
+                edit:false
+            },
+            status: {
+                visibility: 'hidden',
+                title: '<?php echo STATUS;?>',                
+                edit:true,
+                options: { 'G': '<?php echo GRADUATED;?>', 'A': '<?php echo ACTIVE;?>' }
+            },
+            level: {
+                title: '<?php echo LEVEL;?>',
+                width: '11%',
+                edit:false,
+                listClass: 'left_data'
+            },
+            hrs: {
+                title: '<?php echo COMPLETED_HRS;?>',
+                width: '12%',
+                edit:false,
+                listClass: 'left_data'
             },
             dummyColumn: {
                 visibility: 'hidden',

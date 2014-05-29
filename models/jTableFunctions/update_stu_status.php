@@ -4,7 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/dbFunction
 
 // Getting the inserted values in from the form.
 $primKey    = $_POST['id'];
-$status      = strtoupper($_POST['status']);
+$status     = $_POST['status'];
 $userId     = $_SESSION['userId'];
 
 $cols = array('status');
