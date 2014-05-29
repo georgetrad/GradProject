@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <div class="medium-12 large-12 columns">
         <dl class="tabs" data-tab>
             <dd class="active"><a id="all_courses" href="#panel2-1"><?=COURSES?></a></dd>
-            <dd><a id="sugg" href="#panel2-2"><?=SUGGESTED_COURSES?><span id="sugg_crs_ounter"></span></a></dd>
+            <dd><a id="sugg" href="#panel2-2"><?=SUGGESTED_COURSES?><span id="sugg_crs_counter"></span></a></dd>
             <dd><a id="below" href="#panel2-3"><?=AFFECTED_STU?><span id="below_stu_counter"></span></a></dd>  
         </dl>
     </div>
@@ -66,7 +66,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <!-- Tab 3 -->
     <div class="content" id="panel2-3">      
         <div class="row medium-3 large-3 columns show-for-medium-up"></div>
-        <div id="below_stu_Table" class="medium-12 large-12 columns show-for-medium-up"></div> <!--Table-->        
+        <div id="below_stu_Table" class="jTable medium-12 large-12 columns show-for-medium-up"></div> <!--Table-->        
     </div>
 </div>
 

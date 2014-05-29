@@ -97,7 +97,7 @@
     
     function getSuggCoursesNum(){
         $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){                        
-            $('#sugg_crs_ounter').html(' ('+data+')');
+            $('#sugg_crs_counter').html(' ('+data+')');
         });
     }
     
