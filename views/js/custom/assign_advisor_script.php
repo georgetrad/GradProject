@@ -38,7 +38,8 @@
                     key: true,
                     list: true,
                     title: '<?php echo COLLEGE_ID;?>',
-                    width: '20%'
+                    width: '20%',
+                    listClass: 'left_data'
                 },
                 studentName: {
                     title: '<?php echo STU_NAME;?>',                            
@@ -48,7 +49,8 @@
                 current_level: {
                     title: '<?php echo LEVEL;?>',                            
                     width: '20%',
-                    visibility: 'fixed' //This column always will be shown,                            
+                    visibility: 'fixed',
+                    listClass: 'left_data'
                 },
                 advisorName: {
                     title: '<?php echo ADVISOR;?>',

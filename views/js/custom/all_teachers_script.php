@@ -35,8 +35,8 @@ $(function(){
         },
         phone_number: {
             title: '<?php echo PHONE_NUM;?>',
-            width: '20%',
-            align: 'left'
+            width: '20%',            
+            listClass: 'left_data'
         },
         dummyColumn: {
             visibility: 'hidden'

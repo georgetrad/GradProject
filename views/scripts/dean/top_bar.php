@@ -31,7 +31,7 @@
                 <li class="has-dropdown">
                     <a><?=STUDENTS?></a>
                     <ul class="dropdown">                                
-                        <li><a href="views/scripts/dean/all_students.php"><?=ALL_STUDENTS?></a></li>                                              
+                        <li><a href="views/scripts/dean/all_students.php"><?=ALL_STUDENTS?></a></li>                        
                     </ul>
                 </li>
                 <li class="divider"></li>

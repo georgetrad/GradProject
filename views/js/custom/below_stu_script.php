@@ -20,7 +20,8 @@
                     key: true,
                     list: true,
                     title: '<?php echo COLLEGE_ID;?>',
-                    width: '10%'
+                    width: '10%',
+                    listClass: 'left_data'
                 },
                 name: {
                     title: '<?php echo NAME;?>',                            
@@ -34,19 +35,23 @@
                 },
                 level: {
                     title: '<?php echo LEVEL;?>',
-                    width: '6%'
+                    width: '6%',
+                    listClass: 'left_data'
                 },
                 hours: {
                     title: '<?php echo COMPLETED_HRS;?>',
-                width: '15%'
+                    width: '15%',
+                    listClass: 'left_data'
                 },
                 num_of_crs: {
                     title: '<?php echo NUM_OF_CRS;?>',
-                    width: '20%'
+                    width: '20%',
+                    listClass: 'left_data'
                 }, 
                hrs: {
                     title: '<?php echo SUGG_HRS;?>',
-                    width: '14%'
+                    width: '14%',
+                    listClass: 'left_data'
                 },
                 dummyColumns: {
                     visibility: 'hidden'            

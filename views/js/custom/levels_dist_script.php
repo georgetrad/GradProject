@@ -29,7 +29,8 @@ $(function(){
             },
             value: {
                 title: '<?php echo NUM_COMP_HRS;?>',
-                width: '30%'
+                width: '30%',
+                listClass: 'left_data'
             },
             dummyColumn: {
                 visibility: 'hidden',

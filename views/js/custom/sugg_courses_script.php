@@ -20,33 +20,32 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '15%'
+                    width: '15%',
+                    listClass: 'left_data'
                 },
                 name_ar: {
                     title: '<?php echo COURSE_NAME.' ('.ARABIC.')';?>',                            
                     width: '15%',
-                    visibility: 'fixed' //This column always will be shown,                            
-                },
-                name_er: {
-                    title: '<?php echo COURSE_NAME.' ('.ENGLISH.')';?>',                            
-                    width: '15%',
-                    visibility: 'fixed' //This column always will be shown,                            
-                },
+                    visibility: 'fixed'
+                },                
                 course_type_id: {
                     title: '<?php echo COURSE_TYPE;?>',
                     width: '15%'
                 },
                 level: {
                     title: '<?php echo LEVEL;?>',
-                    width: '15%'
+                    width: '15%',
+                    listClass: 'left_data'
                 },
                 req_course_id: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '15%'
+                    width: '15%',
+                    listClass: 'left_data'
                 }, 
                credits: {
                     title: '<?php echo CREDITS;?>',
-                    width: '15%'
+                    width: '15%',
+                    listClass: 'left_data'
                 },
                 dummyColumns: {
                     visibility: 'hidden'            

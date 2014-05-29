@@ -68,6 +68,9 @@ define('STUDENTS', 'الطلاب');
             define('EMAIL', 'البريد الالكتروني');
             define('ADDRESS', 'العنوان');
             define('FINAL_GRADE', 'الدرجة النهائية');
+            define('STATUS', 'الحالة');
+            define('ACTIVE', 'مستمر');
+            define('GRADUATED', 'متخرج');
     
 define('TEACHERS', 'المدرسون');
     define('DEP', 'القسم');

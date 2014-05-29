@@ -1,6 +1,6 @@
 <?php
 include_once '../db_connect.php';
-
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 // Get records count
 $query1 = "SELECT COUNT(id) AS RecordCount FROM student WHERE active='A'";
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
@@ -28,8 +28,8 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT id, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS name, gender, birth_date ";
-$query2.= "FROM student WHERE active='A'";
+$query2 = "SELECT id, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS name, gender, birth_date, status ";
+$query2.= "FROM student WHERE active='A' AND STATUS = 'A' ";
 
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
@@ -51,7 +51,14 @@ while($row = mysql_fetch_array($result2))
 {
     $rows[] = $row;
 }
- 
+//for($i=0 ; $i<count($rows) ; $i++){
+//    if($rows[$i]['status'] == 'A'){
+//        $rows[$i]['status'] = ACTIVE;
+//    }
+//    if($rows[$i]['status'] == 'G'){
+//        $rows[$i]['status'] = GRADUATED;
+//    }
+//}
 //Return results to jTable
 $jTableResult = array();
 $jTableResult['Result'] = "OK";

@@ -63,14 +63,6 @@ h4.title {
     background-color: #65A36A;
 }
 
-/*.tabs_bar {
-    background: linear-gradient(gray, darkgray);
-}*/
-
-/*span {
-    margin-bo: 20px;
-}*/
-
 .input-color {
     position: relative;
 }
@@ -125,14 +117,14 @@ h4.title {
 
 .home_data {
     font-size: 14px;
-    width: 200px;
+    width: 100px;
     text-align: right;
     background-color: white !important;
 }
 
 .left_home_title {
     font-size: 14px;
-    width: 220px;
+    width: 215px;
     //text-align: right;
     //margin-bottom: 5px;    
 }
@@ -163,4 +155,8 @@ h4.title {
     bottom:0;
     width:20px;
     height:20px;
+}
+
+.left_data {
+    text-align: left;
 }

@@ -13,30 +13,38 @@ $(function(){
         selectOnRowClick: true, //Enable this to only select using checkboxes
         totalRecordCount: 'RecordCount',
         actions: {
-            listAction: 'models/jTableFunctions/list_student.php'                      
+            listAction: 'models/jTableFunctions/list_student.php',
+            updateAction: 'models/jTableFunctions/update_stu_status.php',
         },
         fields: {
             id: {
                 key: true,
                 list: true,
                 title: '<?php echo COLLEGE_ID;?>',
-                width: '15%'
+                width: '15%',
+                edit:false,
+                listClass: 'left_data'
             },
             name: {
                 title: '<?php echo NAME;?>',                            
                 width: '15%',
-                visibility: 'fixed' //This column always will be shown,                            
+                visibility: 'fixed',
+                edit:false
             },            
-            gender: {
-                title: '<?php echo GENDER;?>',
-                width: '15%'                            
+            status: {
+                visibility: 'hidden',    
+                title: '<?php echo STATUS;?>',
+                width: '15%',
+                edit:true
             },
             birth_date: {
                 title: '<?php echo BIRTH_DATE;?>',
-                width: '15%'                            
+                width: '15%',
+                edit:false                            
             },
             dummyColumn: {
-                visibility: 'hidden'
+                visibility: 'hidden',
+                edit:false
             }        
         }
     });    

@@ -25,16 +25,19 @@ $(function(){
             grade_from_up: {
                 title: '<?php echo GRADE_FROM;?>',                            
                 width: '30%',
-                visibility: 'fixed' //This column always will be shown,                            
+                visibility: 'fixed',
+                listClass: 'left_data'
             },
             applies_to: {
                 title: '<?php echo APPLIES_TO;?>',
                 width: '30%',
-                type: 'year'
+                type: 'year',
+                listClass: 'left_data'
             },
             points: {
                 title: '<?php echo POINTS;?>',
-                width: '30%'                            
+                width: '30%',
+                listClass: 'left_data'                            
             },
             dummyColumn: {
                 visibility: 'hidden',

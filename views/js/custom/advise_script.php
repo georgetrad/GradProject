@@ -60,7 +60,8 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '15%'
+                    width: '15%',
+                    listClass: 'left_data'
                 },
                 name_ar: {
                     title: '<?php echo COURSE_NAME;?>',                            
@@ -75,16 +76,19 @@
                 course_level: {
                     title: '<?php echo LEVEL;?>',                            
                     width: '15%',
-                    visibility: 'fixed' //This column always will be shown,                            
+                    visibility: 'fixed',
+                    listClass: 'left_data'
                 },
                 req_course_id: {
                     title: '<?php echo REQ_COURSE;?>',                            
                     width: '15%',
-                    visibility: 'fixed' //This column always will be shown,                            
+                    visibility: 'fixed',
+                    listClass: 'left_data'
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
-                    width: '15%'                            
+                    width: '15%',
+                    listClass: 'left_data'
                 },              
                 dummyColumn: {
                     visibility: 'hidden'
