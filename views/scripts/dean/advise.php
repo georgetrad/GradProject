@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         &nbsp;
     </div>
     <form>        
-        <div class="medium-2 large-2 columns show-for-medium-up">
+        <div class="small-4 medium-2 large-2 columns show-for-medium-up">
             <input type="search" id="search_text" placeholder="<?=COLLEGE_ID?>" style="text-align: center"/>
         </div> 
         <div class="medium-1 large-1 columns show-for-medium-up">
@@ -27,11 +27,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <a href="#" class="close"></a>
             </div>            
         </div>
-        <div class="medium-2 large-4 columns show-for-medium-up">            
+        <div class="medium-2 large-4 columns show-for-medium-up">
         </div>
     </form>
 </div>
-<div id="contents" class="row" style="visibility: hidden">
+<div id="contents" class="row" style="visibility: hidden; padding-bottom: 100px; ">
     <div class="medium-1 large-1 columns">
         &nbsp;  
     </div>
@@ -123,9 +123,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <a href="#panel3"><?=STUDENT_GRADE?></a>
                 <div id="panel3" class="content">
                     <div class="row">
-                        <div class="medium-2 large-2 columns">&nbsp;</div>
-                        <div id="table" class="medium-8 large-8 columns show-for-medium-up"></div>
-                        <div class="medium-2 large-2 columns">&nbsp;</div>
+                        <div class="medium-3 large-3 columns">&nbsp;</div>
+                        <div id="table" class="medium-6 large-6 columns show-for-medium-up"></div>
+                        <div class="medium-3 large-3 columns">&nbsp;</div>
                     </div>                        
                 </div>
             </dd>
@@ -133,10 +133,13 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <a href="#panel4"><?=SUGGESTED_COURSES?></a>
                 <div id="panel4" class="content">
                     <div class="row">
-                        <div class="medium-2 large-2 columns">&nbsp;</div>
+                        <div class="medium-2 large-2 columns" data-reveal-id="crs_modal" data-reveal>
+                            <a class="tiny button"><?=CRS_TREE?></a>
+                        </div>
                         <div id="jTable" class="medium-8 large-8 columns show-for-medium-up"></div>
-                        <div class="medium-2 large-2 columns">&nbsp;</div>
-                    </div>                        
+                        <div class="medium-2 large-2 columns">                                                        
+                        </div>
+                    </div>
                 </div>
             </dd>
         </dl>
@@ -144,6 +147,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <div class="medium-1 large-1 columns">
         &nbsp;  
     </div>
+</div>
+
+<div id="crs_modal" class="reveal-modal text-center" data-reveal>    
+    <img src="style/img/crs_tree.jpg" >     
+  <a class="close-reveal-modal">&#215;</a>
 </div>
 <?php
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
