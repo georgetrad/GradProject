@@ -407,7 +407,7 @@ class databaseClass {
     }
     
     public static function getStuGrades($stuId){
-        $query = "SELECT * FROM stu_grades WHERE id2 = $stuId";
+        $query = "SELECT * FROM grades WHERE student = $stuId";
         $result = mysql_query($query);
         $queryNumRows = mysql_num_rows($result);
         if($queryNumRows == 0){

@@ -54,17 +54,17 @@
         $('#all_courses_Table').jtable({
             title: '<?php echo COURSES;?>',
             paging: false,                    
-            columnResizable: false, //Actually, no need to set true since it's default
-            columnSelectable: false, //Actually, no need to set true since it's default
-            saveUserPreferences: false, //Actually, no need to set true since it's default
+            columnResizable: false,             //Actually, no need to set true since it's default
+            columnSelectable: false,            //Actually, no need to set true since it's default
+            saveUserPreferences: false,         //Actually, no need to set true since it's default
             sorting: true,                    
-            selecting: false, //Enable selecting
-            multiselect: false, //Allow multiple selecting
-            selectingCheckboxes: false, //Show checkboxes on first column
-            selectOnRowClick: true, //Enable this to only select using checkboxes
-            totalRecordCount: 'RecordCount',
+            selecting: false,                   //Enable selecting
+            multiselect: false,                 //Allow multiple selecting
+            selectingCheckboxes: false,         //Show checkboxes on first column
+            selectOnRowClick: true,             //Enable this to only select using checkboxes
+            totalRecordCount: 'RecordCount',            
             actions: {
-                listAction: 'models/jTableFunctions/list_courses.php'                      
+                listAction: 'models/jTableFunctions/list_courses.php'        
             },
             fields: {
                 id: {
@@ -80,7 +80,7 @@
                 },                
                 ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',
-                    width: '4%'
+                    width: '8%'
                 },
                 course_level: {
                     title: '<?php echo LEVEL;?>',
@@ -88,7 +88,7 @@
                 },
                 req_course_id: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '2%'
+                    width: '6%'
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
@@ -108,6 +108,7 @@
                 },
                 added: {
                     visibility: 'visible',
+                    width: '4%',
                     display: function (data) {
                         return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
                     }

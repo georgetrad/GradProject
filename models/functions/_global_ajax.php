@@ -148,14 +148,6 @@ switch ($case){
         $result = databaseClass::getStuGrades($stuId);
         $html = '<table>';
         $html.=     '<tr>';
-        $html.=         '<th style="font-size:17px">';
-        $html.=             NAME;
-        $html.=         '</th>';
-        $html.=         '<td style="font-size:16px">';
-        $html.=             $result[0]['first_name'].' '.$result[0]['middle_name'].' '.$result[0]['last_name'];
-        $html.=         '</td>';
-        $html.=     '</tr>';
-        $html.=     '<tr>';
         $html.=         '<th style="width:100px; font-size:17px">';
         $html.=             COURSE_CODE;
         $html.=         '</th>';
@@ -175,10 +167,10 @@ switch ($case){
         for ($i=0 ; $i<count($result) ; $i++){
             $html.= '<tr>';
             $html.=     '<td style="font-size: 16px; text-align: left">';
-            $html.=         $result[$i]['id'];
+            $html.=         $result[$i]['course_id'];
             $html.=     '</td>';
             $html.=     '<td style="font-size: 16px">';
-            $html.=         $result[$i]['name_ar'];
+            $html.=         $result[$i]['course_name'];
             $html.=     '</td>';
             $html.=     '<td style="font-size: 16px; text-align: left">';
             $html.=         $result[$i]['grade'];
