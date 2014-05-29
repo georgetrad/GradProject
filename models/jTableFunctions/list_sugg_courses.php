@@ -2,7 +2,7 @@
 include_once '../db_connect.php';
 
 // Get records count
-$query1 = "SELECT COUNT(*) AS RecordCount FROM sugg_course";
+$query1 = "SELECT COUNT(*) AS RecordCount FROM sugg_course ";
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
@@ -42,33 +42,7 @@ if(isset($_GET['jtSorting'])){
 
 //Get the records from database
 $query2 = "SELECT course.* FROM course, sugg_course ";
-//if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
-//    $searchText = $_POST['searchText'];
-//    $searchId = $_POST['searchId'];
-//    
-//    if($searchId == 0){                                         // Modifying the query according to the search text.
-//        $query2.= " WHERE id LIKE '$searchText%'";
-//    }
-//    else if($searchId == 1){
-//        $query2.= " WHERE name_ar LIKE '$searchText%'";
-//    }
-//    else if ($searchId == 2) {
-//        $query2.= " WHERE name_en LIKE '$searchText%'";
-//    }
-//    else if($searchId == 3){
-//        $query2.= " WHERE course_type_id LIKE '$searchText%'";
-//    }
-//    else if($searchId == 4){
-//        $query2.= " WHERE level LIKE '$searchText%'";
-//    }
-//    else if($searchId == 5){
-//        $query2.= " WHERE credits LIKE '$searchText%'";
-//    }
-//    else if($searchId == 6){
-//        $query2.= " WHERE fees LIKE '$searchText%'";
-//    }
-//}
-$query2.= "WHERE course.id = sugg_course.course_id ";
+$query2.= "WHERE course.id = sugg_course.course_id AND sugg_course.semester_id = (SELECT max(id) FROM semester) ";
 $query2.= "ORDER BY $sorting";
 $result2 = mysql_query($query2);
 

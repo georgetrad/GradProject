@@ -91,7 +91,7 @@ class databaseClass {
      * @return type
      */
     public static function getSuggCoursesNum(){
-        $query = "SELECT count(id) FROM sugg_course WHERE active='A'";
+        $query = "SELECT count(id) FROM sugg_course WHERE active='A' AND semester_id = (SELECT max(id) FROM semester)";
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];
@@ -350,33 +350,29 @@ class databaseClass {
     }
     
     public static function getStuData($id){        
-        $query = "SELECT student.id,
-                    department.name_ar,
-                    CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name,
-                    department.tot_hours,
-                    student.registration_date,
-                    student.birth_date,
-                    student.gender,
-                    student.national_id,
-                    student.phone_number,
-                    student.email,
-                    student.status,
-                    student.address,
-                    student.tot_hours_completed,
-                    student.current_level,
-                    student.current_gpa
-                  FROM user                                               
-                    INNER JOIN teacher ON teacher.user_username = user.username
-                    INNER JOIN student ON student.advisor_id = teacher.id         
-                    INNER JOIN department ON department.id = student.department_id 
-                    AND teacher.user_username = '".$_SESSION['username']."'
-                    AND student.id = ".$id;
+        $query = "SELECT student.id, department.name_ar, ";
+        $query.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name, ";
+        $query.= "department.tot_hours, ";
+        $query.= "student.registration_date, ";
+        $query.= "student.birth_date, ";
+        $query.= "student.gender, ";
+        $query.= "student.national_id, ";
+        $query.= "student.phone_number, ";
+        $query.= "student.email, ";
+        $query.= "student.status, ";
+        $query.= "student.address, ";
+        $query.= "student.tot_hours_completed, ";
+        $query.= "student.current_level, ";
+        $query.= "student.current_gpa ";
+        $query.= "FROM user ";                                               
+        $query.= "INNER JOIN teacher ON teacher.user_username = user.username ";
+        $query.= "INNER JOIN student ON student.advisor_id = teacher.id ";       
+        $query.= "INNER JOIN department ON department.id = student.department_id "; 
+        $query.= "AND teacher.user_username = '".$_SESSION['username']."' ";
+        $query.= "AND student.id =". $id;
         
-        $queryRun = mysql_query($query);
-        if (!$queryRun){
-            $response = array('success' => false);
-        }
-        else if ($queryRun){
+        $queryRun = mysql_query($query);        
+        if ($queryRun){
             $stuId = mysql_result($queryRun, 0, 'id');
             $name = mysql_result($queryRun, 0, 'name');
             $gender = mysql_result($queryRun, 0, 'gender');
@@ -398,7 +394,7 @@ class databaseClass {
                 $gender = FEMALE;
             }
             
-            $failedQuery = "SELECT count(status) FROM student_course where student_id = 20910264 AND status = 'F'";
+            $failedQuery = "SELECT count(status) FROM student_course where student_id = $id AND status = 'F'";
             $result = mysql_query($failedQuery);
             $num = mysql_fetch_array($result);
             
@@ -406,7 +402,10 @@ class databaseClass {
                               'nationalId'  => $nationalId, 'address'  => $address, 'phone' => $phone, 'email' => $email, 'gpa' => $gpa,
                                 'comHrs' => $comHrs, 'level' => $stuLevel, 'depName' => $depName, 'depHrs' => $depHrs, 'regDate' => $regDate, 
                                 'failedCrs' => $num[0]);
-            }         
+            }
+        else {
+            $response = array('success' => false);
+        }
         return $response;
     }
     

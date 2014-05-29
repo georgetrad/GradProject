@@ -101,7 +101,8 @@
             spinner.spin(target);            
             var result = JSON.parse(data);
             var success = result.success;
-            if(success === true){
+            alert(success);
+            if(success === true){                
                 $('#wrong').css('visibility', 'hidden');
                 $('#contents').css('visibility', 'visible');
                 var id          = result.id;
@@ -137,7 +138,7 @@
                 $('#failed_crs').html(failedCrs);
                 spinner.stop(target);
             }
-            else if (success === false){                
+            else if (success === false) {
                 $('#wrong').css('visibility', 'visible');
             }
         });

@@ -11,14 +11,30 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
 <div class="row">
     <h4 class="title text-center"><?=$title;?></h4>  
 </div>
-
+<div class="row">
+    &nbsp;
+</div>
 <!-- Filtering Area -->
 <div class="row">    
     <div class="medium-2 large-3 columns show-for-medium-up">
         &nbsp;
     </div>
+    <div class="medium-2 large-1 columns show-for-medium-up">
+            <select id="search_id">                    
+                <option value="1"><?=NAME?></option>
+                <option value="2"><?=MIDDLE_NAME?></option>
+                <option value="3"><?=LAST_NAME?></option>
+                <option value="4"><?=COLLEGE_ID?></option>                                   
+            </select>
+        </div> 
+        <div class="medium-2 large-1 columns show-for-medium-up">
+            <input type="search" id="search_text" style="text-align: center"/>
+        </div> 
+        <div class="medium-1 large-1 columns show-for-medium-up">
+            <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">
+        </div>
     <form>       
-        <div class="medium-3 large-2 columns show-for-medium-up">            
+        <div class="medium-3 large-1 columns show-for-medium-up">            
             <?php
                 // select options
                 echo '<select id="advisor_id">';
@@ -36,7 +52,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
             <input type="button" id="save" class="tiny button" value='<?=SAVE?>'>
             <span id="spinner" ></span>
         </div>        
-        <div class="medium-3 large-5 columns">            
+        <div class="medium-3 large-3 columns">            
         </div>
     </form>       
 </div>

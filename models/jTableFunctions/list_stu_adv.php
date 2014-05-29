@@ -2,7 +2,24 @@
 include_once '../db_connect.php';
 
 // Get records count
-$query1 = "SELECT COUNT(*) AS RecordCount FROM student";
+$query1 = "SELECT COUNT(*) AS RecordCount FROM student WHERE active = 'A' ";
+if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
+    $searchText = $_POST['searchText'];
+    $searchId = $_POST['searchId'];
+    
+    if($searchId == 1){                                         // Modifying the query according to the search text.
+        $query1.= " AND first_name LIKE '$searchText%'";
+    }
+    else if($searchId == 2){
+        $query1.= " AND middle_name LIKE '$searchText%'";
+    }
+    else if($searchId == 3){
+        $query1.= " AND last_name LIKE '$searchText%'";
+    }
+    else if($searchId == 4){
+        $query1.= " AND id LIKE '$searchText%'";
+    }
+}
 
 $result1 = mysql_query($query1);            // Executing the query.
 $row = mysql_fetch_array($result1);         // Fetching the result.
@@ -18,12 +35,29 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT s.id, concat(s.first_name, ' ', s.middle_name, ' ', s.last_name) AS studentName, ";
-$query2.= "concat(t.first_name, ' ', t.last_name) AS advisorName ";
+$query2 = "SELECT s.id, CONCAT(s.first_name, ' ', s.middle_name, ' ', s.last_name) AS studentName, s.current_level, ";
+$query2.= "CONCAT(t.first_name, ' ', t.last_name) AS advisorName ";
 $query2.= "FROM student as s ";
 $query2.= "LEFT JOIN teacher as t ";
 $query2.= "ON s.advisor_id = t.id ";
-$query2.= "ORDER BY $sorting LIMIT $startIndex, $pageSize";
+if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
+    $searchText = $_POST['searchText'];
+    $searchId = $_POST['searchId'];
+    
+    if($searchId == 1){                                         // Modifying the query according to the search text.
+        $query2.= " WHERE s.first_name LIKE '$searchText%'";
+    }
+    else if($searchId == 2){
+        $query2.= " WHERE s.middle_name LIKE '$searchText%'";
+    }
+    else if($searchId == 3){
+        $query2.= " WHERE s.last_name LIKE '$searchText%'";
+    }
+    else if($searchId == 4){
+        $query2.= " WHERE s.id LIKE '$searchText%'";
+    }
+}
+$query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
 
 $result2 = mysql_query($query2);
 

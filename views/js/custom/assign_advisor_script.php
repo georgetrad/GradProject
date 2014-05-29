@@ -38,23 +38,36 @@
                     key: true,
                     list: true,
                     title: '<?php echo COLLEGE_ID;?>',
-                    width: '10%'
+                    width: '20%'
                 },
                 studentName: {
                     title: '<?php echo STU_NAME;?>',                            
-                    width: '15%',
+                    width: '35%',
+                    visibility: 'fixed' //This column always will be shown,                            
+                },
+                current_level: {
+                    title: '<?php echo LEVEL;?>',                            
+                    width: '20%',
                     visibility: 'fixed' //This column always will be shown,                            
                 },
                 advisorName: {
                     title: '<?php echo ADVISOR;?>',
-                    width: '15%'
+                    width: '25%'
                 },
                 dummyColumn: {
                     visibility: 'hidden'
                 }
             }
         });
-        $('#jTable').jtable('load');        
+        $('#jTable').jtable('load');
+        
+        $('#search_button').click(function (e) {
+            e.preventDefault();
+            $('#jTable').jtable('load', {
+                searchText: $('#search_text').val(),
+                searchId: $('#search_id').val()
+            });
+        });
     });
 
     $('#save').click(function (){
