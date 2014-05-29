@@ -421,4 +421,13 @@ class databaseClass {
         }
         return $rows;
     }
+    
+    public static function getBelowStuNum(){
+        $query = "SELECT s.min_req_hrs, COUNT(v.id) AS RecordCount ";
+        $query.= "FROM semester AS s, stu_sugg_hrs AS v ";
+        $query.= "WHERE s.id = (SELECT max(id) FROM semester) AND v.hrs<(s.min_req_hrs)";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[1];
+    }
 }

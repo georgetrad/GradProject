@@ -90,3 +90,4 @@ $jTableResult['Result'] = "OK";
 $jTableResult['TotalRecordCount'] = $recordCount;
 $jTableResult['Records'] = $rows;
 print json_encode($jTableResult);
+?>
