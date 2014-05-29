@@ -350,14 +350,28 @@ class databaseClass {
     }
     
     public static function getStuData($id){        
-        $query = "SELECT s.id, CONCAT(s.first_name, ' ', s.middle_name, ' ', s.last_name) as name, s.department_id, s.registration_date, ";
-        $query.= "s.gender, s.birth_date, s.national_id, s.address, s.phone_number, s.email, s.tot_hours_completed, s.current_level, s.current_gpa, ";
-        $query.= "d.name_ar, d.tot_hours ";
-        $query.= "FROM student AS s ";
-        $query.= "LEFT JOIN department AS d ";
-        $query.= "ON s.department_id = d.id ";
-        $query.= "WHERE s.id = $id";
-                
+        $query = "SELECT student.id,
+                    department.name_ar,
+                    CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name,
+                    department.tot_hours,
+                    student.registration_date,
+                    student.birth_date,
+                    student.gender,
+                    student.national_id,
+                    student.phone_number,
+                    student.email,
+                    student.status,
+                    student.address,
+                    student.tot_hours_completed,
+                    student.current_level,
+                    student.current_gpa
+                  FROM user                                               
+                    INNER JOIN teacher ON teacher.user_username = user.username
+                    INNER JOIN student ON student.advisor_id = teacher.id         
+                    INNER JOIN department ON department.id = student.department_id 
+                    AND teacher.user_username = '".$_SESSION['username']."'
+                    AND student.id = ".$id;
+        
         $queryRun = mysql_query($query);
         if (!$queryRun){
             $response = array('success' => false);

@@ -96,17 +96,13 @@
     });        
     
     function getSuggCoursesNum(){
-        $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
-            var result = JSON.parse(data);
-            var number = result.success;
+        $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){                        
             $('#sugg_crs_ounter').html(' ('+data+')');
         });
     }
     
     function getBelowStuNum(){
-        $.post('models/functions/_global_ajax.php', {case: 'getBelowStuNum'}, function(data){
-            var result = JSON.parse(data);
-            var number = result.success;
+        $.post('models/functions/_global_ajax.php', {case: 'getBelowStuNum'}, function(data){            
             $('#below_stu_counter').html(' ('+data+')');
         });
     }
