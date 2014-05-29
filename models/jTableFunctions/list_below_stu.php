@@ -23,7 +23,7 @@ if(isset($_GET['jtSorting'])){
 $query2 = "SELECT id,  CONCAT(first_name, ' ', middle_name, ' ', last_name) AS name, name_ar AS depName, current_level AS level, ";
 $query2.= "tot_hours_completed AS hours, num_of_crs, hrs ";
 $query2.= "FROM stu_sugg_hrs ";
-$query2.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester))";
+$query2.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL";
 $query2.= "ORDER BY $sorting LIMIT $startIndex, $pageSize";
 $result2 = mysql_query($query2);
 
