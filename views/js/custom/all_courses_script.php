@@ -114,11 +114,11 @@
                     width: '7%',
                     listClass: 'left_data'
                 },
-                classB: {
-                    title: '<?php echo CLASS_B;?>',
-                    width: '6%',
-                    listClass: 'left_data'
-                },
+//                classB: {
+//                    title: '<?php echo CLASS_B;?>',
+//                    width: '6%',
+//                    listClass: 'left_data'
+//                },
                 classC: {
                     title: '<?php echo CLASS_C;?>',
                     width: '8%',

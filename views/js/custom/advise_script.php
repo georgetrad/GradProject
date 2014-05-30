@@ -37,7 +37,11 @@
             
             $('#jTable').jtable('load', {
                 stuId:$('#search_text').val()                
-            });
+            });            
+        });
+        $("#search_text").keypress(function(key) {
+            if (key.which === 13)
+            $('#search_button').click();            
         });
         
         $('#jTable').jtable({
