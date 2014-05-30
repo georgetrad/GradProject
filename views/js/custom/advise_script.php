@@ -104,8 +104,7 @@
         $.post('models/functions/_global_ajax.php', {case:'getStuData', id: id}, function(data){                
             spinner.spin(target);            
             var result = JSON.parse(data);
-            var success = result.success;
-            alert(success);
+            var success = result.success;            
             if(success === true){                
                 $('#wrong').css('visibility', 'hidden');
                 $('#contents').css('visibility', 'visible');

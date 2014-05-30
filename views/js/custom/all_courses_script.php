@@ -16,6 +16,7 @@
                 }
                 $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){
                     getSuggCoursesNum();
+                    getBelowStuNum();
                 });            
             });    
         });
@@ -38,6 +39,7 @@
                     }
                     $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){                
                         getSuggCoursesNum();
+                        getBelowStuNum();
                     });            
                 });   
             }
@@ -140,10 +142,14 @@
         // get number of suggested courses when the document is ready
 //        getSuggCoursesNum();
 
-        //on suggestion re draw the table and get the number of suggested courses
+        //on suggested course tab click, re draw the table and get the number of suggested courses
         $('#sugg').click(function (){        
             $('#sugg_courses_Table').jtable('load');
-        }); 
+        });
+        //on below hours students tab click, re draw the table and get the number of suggested courses
+        $('#below').click(function (){        
+            $('#below_stu_Table').jtable('load');
+        });
         //Re-load records when user click 'load records' button.
         $('#search_button').click(function (e) {
             e.preventDefault();

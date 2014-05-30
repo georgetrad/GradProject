@@ -6,7 +6,7 @@
 DEFINE ('DB_USER', 'root');
 DEFINE ('DB_PASSWORD', 'root');
 DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'ebla');
+DEFINE ('DB_NAME', 'ebla_01');
 
 // Create a connnection.
 $dbc = @mysql_connect (DB_HOST, DB_USER, DB_PASSWORD) OR die ('Could not connect to MySQL: ' . mysql_error() );

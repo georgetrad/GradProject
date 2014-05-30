@@ -371,8 +371,9 @@ class databaseClass {
         $query.= "AND teacher.user_username = '".$_SESSION['username']."' ";
         $query.= "AND student.id =". $id;
         
-        $queryRun = mysql_query($query);        
-        if ($queryRun){
+        $queryRun = mysql_query($query);
+        $fetch = mysql_fetch_row($queryRun);
+        if ($fetch != ''){
             $stuId = mysql_result($queryRun, 0, 'id');
             $name = mysql_result($queryRun, 0, 'name');
             $gender = mysql_result($queryRun, 0, 'gender');
