@@ -1,5 +1,5 @@
 <?php
-//include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
 /*
  * @function: select
  * @return: array
