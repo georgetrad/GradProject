@@ -160,3 +160,7 @@ h4.title {
 .left_data {
     text-align: left;
 }
+
+.jtable-title-text {
+    margin-right: 12px;
+}

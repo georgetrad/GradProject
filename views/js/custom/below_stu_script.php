@@ -12,6 +12,7 @@
             selectingCheckboxes: false, //Show checkboxes on first column
             selectOnRowClick: false, //Enable this to only select using checkboxes
             totalRecordCount: 'RecordCount',
+            openChildAsAccordion: true,
             actions: {
                 listAction: 'models/jTableFunctions/list_below_stu.php'                      
             },
@@ -50,12 +51,61 @@
                 }, 
                hrs: {
                     title: '<?php echo SUGG_HRS;?>',
-                    width: '14%',
+                    width: '12%',
                     listClass: 'left_data'
                 },
                 dummyColumns: {
                     visibility: 'hidden'            
-                }            
+                },
+                    //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
+                    courses: {
+                        title: '',
+                        width: '2%',
+                        sorting: false,
+                        display: function (data) {
+                                //Create an image that will be used to open child table
+                                var $img = $('<img src="style/img/list_metro.png" style="cursor: pointer"/>');
+                                //Open child table when user clicks the image
+                                $img.click(function () {
+                                    $('#below_stu_Table').jtable('openChildTable',
+                                        $img.closest('tr'),
+                                        {
+                                            title: '<?php echo AVAILABLE_CRS;?>',
+                                            actions: {
+                                                listAction: 'models/jTableFunctions/list_stu_sugg_crs.php?studentId=' + data.record.id
+                                            },
+                                            fields: {
+                                                id: {
+                                                    type: 'hidden',
+                                                    defaultValue: data.record.id
+                                                },
+                                                course_id: {
+                                                    key: true,
+                                                    title: '<?php echo COURSE_CODE;?>',
+                                                    width: '25%',
+                                                    listClass: 'left_data'
+                                                },
+                                                name_ar: {
+                                                    title: '<?php echo COURSE_NAME;?>',
+                                                    width: '25%'
+                                                },
+                                                status: {
+                                                    title: '<?php echo STATUS;?>',
+                                                    width: '25%'
+                                                },
+                                                grade: {
+                                                    title: '<?php echo FINAL_GRADE;?>',
+                                                    width: '25%'                                                    
+                                                }
+                                            }
+                                        }, function (data) { //opened handler
+                                            data.childTable.jtable('load');
+                                        });
+                                });
+                                //Return image to show on the person row
+                                return $img;
+                            }
+                    }
             }
         });        
 

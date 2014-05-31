@@ -51,6 +51,9 @@ define('COURSES', 'المقررات');
         define('CLASS_C', 'راسبون في المتطلب السابق');
         define('NUM_OF_CRS', 'المقررات المقترحة');
         define('SUGG_HRS', 'الساعات المقترحة');
+    define('FAILED', 'رسوب');
+    define('NEVER_BEEN_TAKEN', 'لم يتم تسجيلها');
+    define('CONDITIONAL_PASS', 'نجاح مشروط');
         
     define('SUGGESTED_COURSES', 'المقررات المقترحة');
     
