@@ -247,6 +247,61 @@ class databaseClass {
         return true;   
     }
     /**
+     * This function imports students grades from an excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
+    public static function classGradeImport($file,$cls,$sem,$dep){
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/GradesUploads/'.$file;
+        //** General variables ***********************************//
+        $rows = 5000;
+        $rowsOffSet = 6;
+        $error = '';
+        //** Student ***********************************//
+        $columns = array(
+            "id"            => "T",
+            "first_name"    => "U",
+            "middle_name"   => "V",
+            "last_name"     => "W"   
+        );
+        $staticData = array(
+                "status"        => "A" ,
+                "department_id" => $dep
+        );   
+        $tableName = 'student';
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        $error .= $result;
+        unset($columns, $tableName, $staticData, $result);  
+        //** Student Class ***********************************//
+        $columns = array(
+            "student_class_student_id"  => "T"
+        );
+        $staticData = array(
+            "student_class_class_id"    => $cls 
+        );   
+        $tableName = 'student_class';
+        $result = importSC($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        $error .= $result;
+        unset($columns, $tableName, $staticData, $result); 
+        //** Final grade ***********************************//
+        $columns = array(
+            "student_class_student_id"  => "T",
+            "garde"      => "J"
+        );
+        $staticData = array(
+            "student_class_class_id"    => $cls,
+            "duty_type_id"              => "5"       
+        );   
+        $tableName = 'duty';
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        $error .= $result;
+        unset($columns, $tableName, $staticData, $result);      
+        //** Return response ***********************************//
+        $response =  array ('SUCCESS' => $success, 'ERROR' => $error);
+        return $response;  
+    }
+    /**
      * This function imports courses from an excel file.
      * @author Mohammad Haddad
      * @param String $file File name
@@ -287,7 +342,7 @@ class databaseClass {
         //*******************Variables   *******************//
         $rows = 5000;
         $rowsOffSet = 3;
-        //*******************Student File *******************//
+        //** Student name ******************************************************************************//
         $columns = array(
             "id"            => "A",
             "first_name"    => "B",
@@ -295,7 +350,7 @@ class databaseClass {
             "last_name"     => "D"    
         );
         $staticData = array(
-            "department_id" => $major       
+                "status"    => "A"       
         );   
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
