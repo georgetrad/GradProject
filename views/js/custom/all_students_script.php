@@ -1,13 +1,12 @@
 <script>
-function getGrauationStudents(){
-    $.post('models/functions/_global_ajax.php', {case: 'getGrauationStudents'}, function(data){
+function getGraduationStudents(){
+    $.post('models/functions/_global_ajax.php', {case: 'getGraduationStudents'}, function(data){
             $.each(data, function(key, value) {
                 $('*[data-record-key="'+value[0]+'"]').css( "background-color", "mistyrose");
             });    
         },"json");
 }    
 $(function(){  
-    getGrauationStudents();
     $('#jTable').jtable({
         title: '<?php echo ALL_STUDENTS;?>',
         paging: true,                    
@@ -25,7 +24,7 @@ $(function(){
             updateAction: 'models/jTableFunctions/update_stu_status.php',
         },
         recordsLoaded: function (event, data) { 
-            getGrauationStudents();
+            getGraduationStudents();
         },
         fields: {
             id: {

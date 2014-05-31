@@ -533,7 +533,7 @@ class databaseClass {
 //        return $result;
     }
     
-    public static function getGrauationStudents(){
+    public static function getGraduationStudents(){
         $id = getValue('max(id)', 'semester');
         $max = getValue('max_grad_stu_hrs', 'semester','id = '.$id);
         $result = getData('id','student',  'tot_hours_completed >= '.$max);

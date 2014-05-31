@@ -200,8 +200,8 @@ switch ($case){
 //        var_dump($result);
         break;
     }
-    case 'getGrauationStudents':{
-        $result = databaseClass::getGrauationStudents();
+    case 'getGraduationStudents':{
+        $result = databaseClass::getGraduationStudents();
         return json_encode($result);
         break;
     }
