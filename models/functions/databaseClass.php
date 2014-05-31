@@ -260,7 +260,7 @@ class databaseClass {
         $rowsOffSet = 6;
         $error = '';
         
-        //**
+        //** import course and class, if course is not defined its tpe wll be 0 ***********************************//
                 
         $objPHPExcel = PHPExcel_IOFactory::load($_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file);        
         $crs = $objPHPExcel->getActiveSheet()->getCell('D2')->getValue();
@@ -269,14 +269,6 @@ class databaseClass {
         $semName = $objPHPExcel->getActiveSheet()->getCell('A2')->getValue();
         
         $sem = getValue('id', 'semester', 'name LIKE"'.$semName.'"');
-//        
-//        print_r($crs.'<br>');
-//        print_r($crsName.'<br>');
-//        print_r($cls.'<br>');
-//        print_r($semName.'<br>');
-//        print_r($sem);
-//        exit;
-//        
         
         dbInsert('course', array('id','name_ar'),  array('"'.$crs.'"','"'.$crsName.'"'));
         dbInsert('class', array('id','course_id'),array('"'.$cls.'"','"'.$crs.'"'));
