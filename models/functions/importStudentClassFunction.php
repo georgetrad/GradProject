@@ -61,5 +61,5 @@ function importSC($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $sta
 //    $sqlValues .= "ON DUPLICATE KEY UPDATE ".$sDuplicate.";";
     
     $result = mysql_query($sql.$sqlValues);
-    return $result ? '<br>'.$result : '<br>'.$sql.$sqlValues;
+    return $result ? $result : $sql.$sqlValues;
 }

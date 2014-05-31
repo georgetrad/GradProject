@@ -285,15 +285,14 @@ class databaseClass {
         );   
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-        echo $result; exit;
         $error .= $result;
         unset($columns, $tableName, $staticData, $result);  
         //** Student Class ***********************************//
         $columns = array(
-            "student_class_student_id"  => "T"
+            "student_id"  => "T"
         );
         $staticData = array(
-            "student_class_class_id"    => $cls 
+            "class_id"    => $cls 
         );   
         $tableName = 'student_class';
         $result = importSC($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
@@ -302,7 +301,7 @@ class databaseClass {
         //** Final grade ***********************************//
         $columns = array(
             "student_class_student_id"  => "T",
-            "garde"      => "J"
+            "grade"      => "J"
         );
         $staticData = array(
             "student_class_class_id"    => $cls,
@@ -310,6 +309,7 @@ class databaseClass {
         );   
         $tableName = 'duty';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        var_dump($result);exit;
         $error .= $result;
         unset($columns, $tableName, $staticData, $result);      
         //** Return response ***********************************//

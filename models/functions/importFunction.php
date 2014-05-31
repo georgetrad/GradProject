@@ -29,7 +29,7 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
     for ($i=$rowsOffSet;$i<$rowsOffSet+$rows and $i<=$highestRow;$i++){
         $records_string = array();
         foreach ($columnIndex as $data){
-            $record_string = $objPHPExcel->getActiveSheet()->getCell($data.$i)->getValue();
+            $record_string = $objPHPExcel->getActiveSheet()->getCell($data.$i)->getCalculatedValue();
             array_push($records_string,$record_string);
         }
         
