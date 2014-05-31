@@ -195,4 +195,14 @@ switch ($case){
         echo $result;
         break;
     }
+    case 'getGraduationCourses':{
+        $result = databaseClass::getGraduationCourses();
+//        var_dump($result);
+        break;
+    }
+    case 'getGrauationStudents':{
+        $result = databaseClass::getGrauationStudents();
+        return json_encode($result);
+        break;
+    }
 }

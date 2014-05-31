@@ -9,6 +9,7 @@ function select($columns = '*', $tableName, $conditions = '1 = 1'){
                 FROM ".$tableName."
                 WHERE ".$conditions." AND active = 'A'";
     $result =  mysql_query($query);
+//    return $query;
     while($row = mysql_fetch_array($result)) {
         return $row;
     }
@@ -23,6 +24,7 @@ function getValue($columns, $tableName, $conditions = '1 = 1'){
                 FROM ".$tableName."
                 WHERE ".$conditions." AND active = 'A'";
     $result =  mysql_query($query);
+//    return $query;
     $row = mysql_fetch_array($result);
     return $row[0];
 }
@@ -48,10 +50,10 @@ function getData($columns, $tableName, $conditions = '1 = 1'){
     $query =   "SELECT ".$columns."
                 FROM ".$tableName."
                 WHERE ".$conditions." AND active = 'A'";
-    echo $query;
+//    echo $query;
     $result =  mysql_query($query);
     $resultArray = array();
-    while ($res =  mysql_fetch_array($result)){
+    while ($res =  mysql_fetch_row($result)){
         array_push($resultArray,$res);
     } return $resultArray;
 }
