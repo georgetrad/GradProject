@@ -110,6 +110,7 @@ define('IMPORTING', 'الاستيراد');
         define('IMP_FIN_GRADE', 'علامات نهائية');    
         define('IMP_COURSE_FILE', 'ملف مقررات');
         define('IMP_STUDENT_FILE', 'ملف طلاب');
+        define('IMP_CLASS_GRADES_FILE', 'ملف علامات شعبة');
         define('IMPORT', 'استيراد');
         define('INSERT_SUCCESS', 'تمّ استيراد البيانات بنجاح');
     define('UPDATE_DATA', 'تحديث بيانات');

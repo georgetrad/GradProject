@@ -80,6 +80,14 @@ switch ($case){
         $result = databaseClass::importStudent($file);
         echo $result;
         break;
+    }     
+    /******************** import_script ********************/
+    case 'classGradeImport':{
+        $file = $_POST['selectFile'];
+        $dep =  $_POST['selectMajor'];
+        $result = databaseClass::classGradeImport($file, $dep);
+        return $result;
+        break;
     } 
     /******************** import_script ********************/
     case 'courseImport':{
