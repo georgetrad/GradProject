@@ -119,6 +119,22 @@
                     spinner.stop(target);
                 });  
             }
+        }); 
+    /** Class Grades File Import **********************************************************************************/
+        $('#classGradesFileImportButton').click(function() {
+            this.submitting = false;
+        }).click(function() {
+            if (!this.submitting) {
+                this.submitting = true;
+                var self = this;
+                spinner.spin(target);
+                var formData = $('#classGradesForm').serialize();
+                formData += '&case=classGradeImport';
+                $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
+                    $('.result').css('visibility', 'visible');
+                    spinner.stop(target);
+                });  
+            }
         });
     });
 </script>   

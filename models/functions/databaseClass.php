@@ -4,6 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/PHPExcel/IOFactory.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importFunction.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importStudentClassFunction.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunction.php';
 /**  
  * * This class contains Database related functions for (SELECT, INSERT, UPDATE, DELETE) queries.
  */
@@ -252,12 +253,33 @@ class databaseClass {
      * @param String $file File name
      * @return boolean
      */
-    public static function classGradeImport($file,$cls,$sem,$dep){
-        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/GradesUploads/'.$file;
+    public static function classGradeImport($file,$dep){
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //** General variables ***********************************//
         $rows = 5000;
         $rowsOffSet = 6;
         $error = '';
+        
+        //**
+                
+        $objPHPExcel = PHPExcel_IOFactory::load($_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file);        
+        $crs = $objPHPExcel->getActiveSheet()->getCell('D2')->getValue();
+        $crsName = $objPHPExcel->getActiveSheet()->getCell('C2')->getValue();
+        $cls = $objPHPExcel->getActiveSheet()->getCell('E2')->getValue();
+        $semName = $objPHPExcel->getActiveSheet()->getCell('A2')->getValue();
+        
+        $sem = getValue('id', 'semester', 'name LIKE"'.$semName.'"');
+//        
+//        print_r($crs.'<br>');
+//        print_r($crsName.'<br>');
+//        print_r($cls.'<br>');
+//        print_r($semName.'<br>');
+//        print_r($sem);
+//        exit;
+//        
+        
+        dbInsert('course', array('id','name_ar'),  array('"'.$crs.'"','"'.$crsName.'"'));
+        dbInsert('class', array('id','course_id'),array('"'.$cls.'"','"'.$crs.'"'));
         //** Student ***********************************//
         $columns = array(
             "id"            => "T",
@@ -271,6 +293,7 @@ class databaseClass {
         );   
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        echo $result; exit;
         $error .= $result;
         unset($columns, $tableName, $staticData, $result);  
         //** Student Class ***********************************//
@@ -298,6 +321,7 @@ class databaseClass {
         $error .= $result;
         unset($columns, $tableName, $staticData, $result);      
         //** Return response ***********************************//
+        $success =  true;
         $response =  array ('SUCCESS' => $success, 'ERROR' => $error);
         return $response;  
     }

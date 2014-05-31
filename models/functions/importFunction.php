@@ -61,5 +61,6 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
     $sqlValues .= "ON DUPLICATE KEY UPDATE ".$sDuplicate;
     
     $result = mysql_query($sql.$sqlValues);
-    return $result ? '<br>'.$result : '<br>'.$sql.$sqlValues;
+//    return $result ? '<br>'.$result : '<br>'.$sql.$sqlValues;
+    return $sql.$sqlValues;
 }

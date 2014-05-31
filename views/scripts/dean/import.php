@@ -24,6 +24,7 @@ $filesList = scandir($dir);
             <dd><a class="tab" href="#panel2-4"><?=IMP_FIN_GRADE?></a></dd>
             <dd><a class="tab" href="#panel2-5"><?=IMP_COURSE_FILE?></a></dd>
             <dd><a class="tab" href="#panel2-6"><?=IMP_STUDENT_FILE?></a></dd>
+            <dd><a class="tab" href="#panel2-7"><?=IMP_CLASS_GRADES_FILE?></a></dd>
         </dl>
     </div>        
 </div>
@@ -198,6 +199,36 @@ $filesList = scandir($dir);
         <div class="row">
             <div class="medium-2 large-2 columns show-for-medium-up">
                 <input type="button" class="tiny button" id="studentFileImportButton" name="studentFileImportButton" value="<?=IMPORT?>">
+            </div>
+        </div>
+    </div> 
+    <!-- Tab 7 -->
+    <div class="content" id="panel2-7">        
+        <div class="row">   
+            <form id="classGradesForm">
+                <div class="medium-3 large-3 columns show-for-medium-up">                
+                    <span><?=IMP_CLASS_GRADES_FILE?></span><br><br>
+                    <select id="selectFile" name="selectFile">
+                        <?php       
+                        foreach ($filesList as $data){
+                            $q = explode('.', $data);
+                            if (!($data == '..'||$data == '.')){
+                                echo '<option value="'.$data.'">'.$data.'</option>';    
+                            }
+                        }?>
+                    </select>
+                    <select id="selectMajor" name="selectMajor">
+                        <option value="0">---</option>
+                        <option value="1">ICT</option>
+                        <option value="2">ARC</option>                
+                    </select>
+                </div>
+            </form>
+        </div>        
+        <div class="row">&nbsp;</div>
+        <div class="row">
+            <div class="medium-2 large-2 columns show-for-medium-up">
+                <input type="button" class="tiny button" id="classGradesFileImportButton" name="classGradesFileImportButton" value="<?=IMPORT?>">
             </div>
         </div>
     </div>

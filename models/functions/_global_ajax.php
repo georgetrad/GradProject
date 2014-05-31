@@ -2,8 +2,6 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/dbFunctions.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/databaseClass.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/PHPExcel/IOFactory.php';
 
 $case = $_POST['case'];
 
@@ -85,25 +83,9 @@ switch ($case){
     }     
     /******************** import_script ********************/
     case 'classGradeImport':{
-//        $file = $_POST['selectFile'];
-//        $cls =  $_POST['selectFile'];
-//        $sem =  $_POST['selectFile'];
-//        $dep =  $_POST['selectFile'];
-        $file = 'Grades - Example';
-//        $cls = 9999;
-//        $sem = 17;
-        $dep = 1;
-        $objPHPExcel = PHPExcel_IOFactory::load($file);        
-        $crs = $objPHPExcel->getActiveSheet()->getCell('D2')->getValue();
-        $crs_name = $objPHPExcel->getActiveSheet()->getCell('C2')->getValue();
-        $cls = $objPHPExcel->getActiveSheet()->getCell('E2')->getValue();
-        $sem = $objPHPExcel->getActiveSheet()->getCell('A2')->getValue();
-        
-        dbInsert('course', array('id','name_ar'),  array($crs,$crs_name));
-        dbInsert('class', array('id'),array($cls));
-//        dbInsert('course', array('id'), $values, $isDuplicate, $uColumns, $uValues);
-
-        $result = databaseClass::classGradeImport($file, $cls, $sem, $dep);
+        $file = $_POST['selectFile'];
+        $dep =  $_POST['selectMajor'];
+        $result = databaseClass::classGradeImport($file, $dep);
         return $result;
         break;
     } 
