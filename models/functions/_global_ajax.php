@@ -205,4 +205,9 @@ switch ($case){
         return json_encode($result);
         break;
     }
+    case 'getSuggestedCourses':{
+        $result = databaseClass::getSuggestedCourses();
+        return json_encode($result);
+        break;
+    }
 }
