@@ -46,7 +46,6 @@
         }, "json");   
     }
     function getSuggCoursesNum(){
-        alert();
         $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
             $('#sugg_crs_counter').html(' ('+data+')');
         });

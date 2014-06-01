@@ -162,7 +162,7 @@ switch ($case){
         $html.=         '<th style="width:250px; font-size:17px">';
         $html.=             COURSE_NAME;
         $html.=         '</th>';
-        $html.=         '<th style="width:150px; font-size:17px">';
+        $html.=         '<th style="width:120px; font-size:17px">';
         $html.=             FINAL_GRADE;
         $html.=         '</th>';
         $html.=         '<th style="width:50px; font-size:17px">';
