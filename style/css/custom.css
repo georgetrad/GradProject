@@ -164,3 +164,20 @@ h4.title {
 .jtable-title-text {
     margin-right: 12px;
 }
+
+.ui-dialog {
+    border-color: #258faf !important;
+}
+
+.ui-dialog-titlebar {
+    background-color: #258faf !important;
+}
+
+.ui-dialog-buttonpane{
+    border-color: #258faf !important;
+    background-color: white;
+}
+
+.ui-button-text-only .ui-button-text{
+     background-color: #258faf !important;
+}

@@ -53,10 +53,7 @@
                     title: '<?php echo SUGG_HRS;?>',
                     width: '12%',
                     listClass: 'left_data'
-                },
-                dummyColumns: {
-                    visibility: 'hidden'            
-                },
+                },                
                     //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
                     courses: {
                         title: '',

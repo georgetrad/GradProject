@@ -151,4 +151,6 @@ define('CHOOSE_OPTION', 'اختر أحد الخيارات');
 define('UPDATE', 'تحديث');
 define('MALE', 'ذكر');
 define('FEMALE', 'أنثى');
+define('ICT', 'المعلوماتية والاتصالات');
+define('ARC', 'العمارة');
 ?>

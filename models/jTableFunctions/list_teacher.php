@@ -23,7 +23,7 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT CONCAT(t.first_name, ' ', t.last_name) as name, t.degree, t.phone_number, d.name_ar as dep_name ";
+$query2 = "SELECT t.id, CONCAT(t.first_name, ' ', t.last_name) as name, t.degree, t.phone_number, t.email, d.name_ar as dep_name ";
 $query2.= "FROM teacher as t ";
 $query2.= "LEFT JOIN department as d ON  t.department_id= d.id ";
 $query2.= "WHERE t.active='A'";

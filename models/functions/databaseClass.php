@@ -438,7 +438,7 @@ class databaseClass {
         $query.= "FROM user ";                                               
         $query.= "INNER JOIN teacher ON teacher.user_username = user.username ";
         $query.= "INNER JOIN student ON student.advisor_id = teacher.id ";       
-        $query.= "INNER JOIN department ON department.id = student.department_id "; 
+        $query.= "INNER JOIN department ON department.id = student.department_id ";
         $query.= "AND teacher.user_username = '".$_SESSION['username']."' ";
         $query.= "AND student.id =". $id;
         
