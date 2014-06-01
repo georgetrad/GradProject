@@ -227,9 +227,11 @@ class databaseClass {
         $rowsOffSet = 3;
         //*******************Student duty , duty number 5*******************//
         $columns = array(
-            "student_class_student_id"                  => "A",
-            "student_class_class_id"                    => "H",
-            "grade"                                     => "O"
+            "student_class_student_id"  => "A",
+            "student_class_class_id"    => "H",
+            "grade"                     => "O",
+            "point"                     => "P",
+            "letter_grade"              => "Q"
         );
         $staticData = array(
                 "duty_type_id"    => "5"       

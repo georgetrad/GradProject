@@ -183,6 +183,12 @@ switch ($case){
             $html.=     '<td style="font-size: 16px; text-align: left">';
             $html.=         $result[$i]['grade'];
             $html.=     '</td>';            
+            $html.=     '<td style="font-size: 16px; text-align: left">';
+            $html.=         $result[$i]['point'];
+            $html.=     '</td>';            
+            $html.=     '<td style="font-size: 16px; text-align: left">';
+            $html.=         $result[$i]['letter_grade'];
+            $html.=     '</td>';            
             $html.= '</tr>';
         }
         $html.= '</table>';
