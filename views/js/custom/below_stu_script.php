@@ -1,4 +1,11 @@
-<script>    
+<script>
+function getGraduationStudents(){
+    $.post('models/functions/_global_ajax.php', {case: 'getGraduationStudents'}, function(data){
+            $.each(data, function(key, value) {
+                $('*[data-record-key="'+value[0]+'"]').css( "background-color", "mistyrose");
+            });    
+        },"json");
+}       
     $(function(){
         $('#below_stu_Table').jtable({
             title: '<?php echo STUDENTS;?>',
@@ -15,6 +22,9 @@
             openChildAsAccordion: true,
             actions: {
                 listAction: 'models/jTableFunctions/list_below_stu.php'                      
+            },
+            recordsLoaded: function (event, data) { 
+                getGraduationStudents();
             },
             fields: {
                 id: {

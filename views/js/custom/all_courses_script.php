@@ -61,7 +61,12 @@
             $('#sugg_crs_counter').html(' ('+data+')');
         });
     }
-    $(document).ready(function () {      
+    function getGraduationCourses(){
+        $.post('models/functions/_global_ajax.php', {case: 'getGradStu'}, function(data){
+
+        });
+    }
+    $(document).ready(function () {  
         $('#all_courses_Table').jtable({
             title: '<?php echo COURSES;?>',
             paging: false,                    
