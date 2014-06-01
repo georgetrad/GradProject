@@ -141,7 +141,7 @@
                 getSuggCourse();
                 getSuggCoursesNum();
                 getBelowStuNum();
-            },
+            }
         });
         $('#all_courses_Table').jtable('load');
         // get number of suggested courses when the document is ready

@@ -46,7 +46,10 @@
                     title: '<?php echo CREDITS;?>',
                     width: '15%',
                     listClass: 'left_data'
-                },                    
+                },
+                dummyColumn: {
+                    visibility: 'hidden',                    
+                }
             }
         });        
 
