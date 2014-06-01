@@ -44,10 +44,12 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT c.*, ct.name_ar as ct_name ";
+$query2 = "SELECT c.*, course_type.name_ar as ct_name, course1.name_ar AS req_name ";
 $query2.= "FROM course as c ";
-$query2.= "LEFT JOIN course_type as ct ON  c.course_type_id = ct.id ";
+$query2.= "INNER JOIN course_type ON c.course_type_id = course_type.id ";
+$query2.= "LEFT JOIN course course1 ON c.req_course_id = course1.id ";
 $query2.= "WHERE c.active='A' ";
+//print_r($query2);exit;
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];

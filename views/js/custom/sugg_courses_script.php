@@ -12,6 +12,7 @@
             selectingCheckboxes: false, //Show checkboxes on first column
             selectOnRowClick: true, //Enable this to only select using checkboxes
             totalRecordCount: 'RecordCount',
+            openChildAsAccordion: true,
             actions: {
                 listAction: 'models/jTableFunctions/list_sugg_courses.php'                      
             },
@@ -24,20 +25,20 @@
                     listClass: 'left_data'
                 },
                 name_ar: {
-                    title: '<?php echo COURSE_NAME.' ('.ARABIC.')';?>',                            
+                    title: '<?php echo COURSE_NAME;?>',                            
                     width: '15%',
                     visibility: 'fixed'
                 },                
-                course_type_id: {
+                ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',
                     width: '15%'
                 },
-                level: {
+                course_level: {
                     title: '<?php echo LEVEL;?>',
                     width: '15%',
                     listClass: 'left_data'
                 },
-                req_course_id: {
+                req_course: {
                     title: '<?php echo REQ_COURSE;?>',
                     width: '15%',
                     listClass: 'left_data'
@@ -47,9 +48,70 @@
                     width: '15%',
                     listClass: 'left_data'
                 },
-                dummyColumn: {
-                    visibility: 'hidden',                    
-                }
+                    //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
+                    courses: {
+                        title: '',
+                        width: '2%',
+                        sorting: false,
+                        display: function (data) {
+                                //Create an image that will be used to open child table
+                                var $img = $('<img src="style/img/list_metro.png" style="cursor: pointer"/>');
+                                //Open child table when user clicks the image
+                                $img.click(function () {
+                                    $('#below_stu_Table').jtable('openChildTable',
+                                        $img.closest('tr'),
+                                        {
+                                            title: '<?php echo STUDENTS;?>',
+                                            actions: {
+                                                listAction: 'models/jTableFunctions/list_sugg_crs_stu.php?coursetId=' + data.record.id
+                                            },
+                                            fields: {
+                                                id: {
+                                                    type: 'hidden',
+                                                    defaultValue: data.record.id
+                                                },
+                                                student_id: {
+                                                    key: true,
+                                                    title: '<?php echo COLLEGE_ID;?>',
+                                                    width: '10%',
+                                                    listClass: 'left_data'
+                                                },
+                                                name: {
+                                                    title: '<?php echo NAME;?>',
+                                                    width: '30%'
+                                                },
+                                                level: {
+                                                    title: '<?php echo LEVEL;?>',
+                                                    width: '5%',
+                                                    listClass: 'left_data'
+                                                },
+                                                tot_hrs: {
+                                                    title: '<?php echo COMPLETED_HRS;?>',
+                                                    width: '10%',
+                                                    listClass: 'left_data'
+                                                },
+                                                gpa: {
+                                                    title: '<?php echo GPA;?>',
+                                                    width: '25%',
+                                                    listClass: 'left_data'
+                                                },
+                                                adviserName: {
+                                                    title: '<?php echo ADVISOR;?>',
+                                                    width: '25%',                                                    
+                                                },
+                                                dummyColumn: {
+                                                    visibility: 'hidden',
+                                                    edit:false
+                                                }
+                                            }
+                                        }, function (data) { //opened handler
+                                            data.childTable.jtable('load');
+                                        });
+                                });
+                                //Return image to show on the person row
+                                return $img;
+                            }
+                    }
             }
         });        
 

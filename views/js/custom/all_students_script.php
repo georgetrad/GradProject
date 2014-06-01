@@ -43,7 +43,7 @@ $(function(){
             },
             dep_name: {
                 title: '<?php echo DEP;?>',                            
-                width: '30%',
+                width: '20%',
                 visibility: 'fixed',
                 edit:false
             },
@@ -61,7 +61,7 @@ $(function(){
             },
             hrs: {
                 title: '<?php echo COMPLETED_HRS;?>',
-                width: '12%',
+                width: '20%',
                 edit:false,
                 listClass: 'left_data'
             },

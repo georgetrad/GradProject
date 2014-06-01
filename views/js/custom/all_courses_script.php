@@ -97,17 +97,16 @@
                 },                
                 ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',
-                    width: '8%'
+                    width: '7%'
                 },
                 course_level: {
                     title: '<?php echo LEVEL;?>',
                     width: '2%',
                     listClass: 'left_data'
                 },
-                req_course_id: {
+                req_name: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '6%',
-                    listClass: 'left_data'
+                    width: '10%',                    
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
