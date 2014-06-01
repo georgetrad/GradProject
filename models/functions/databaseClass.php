@@ -284,7 +284,7 @@ class databaseClass {
                 "department_id" => $dep
         );   
         $tableName = 'student';
-        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData, false);
         $error .= $result;
         unset($columns, $tableName, $staticData, $result);  
         //** Student Class ***********************************//
