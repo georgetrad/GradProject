@@ -538,7 +538,11 @@ class databaseClass {
         $max = getValue('max_grad_stu_hrs', 'semester','id = '.$id);
         $result = getData('id','student',  'tot_hours_completed >= '.$max);
         print_r( json_encode($result));
-//        $result = json_encode($result);
-//        return $result;
+    }
+    
+    public static function getSuggestedCourses(){
+        $id = getValue('max(id)', 'semester');
+        $result = getData('course_id','sugg_course',  'semester_id = '.$id);
+        print_r( json_encode($result));
     }
 }

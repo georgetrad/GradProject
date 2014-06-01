@@ -1,4 +1,12 @@
 <script>
+           
+function markSuggestedCourses(){
+    $.post('models/functions/_global_ajax.php', {case: 'getSuggestedCourses'}, function(data){
+            $.each(data, function(key, value) {
+                $('*[data-record-key="'+value[0]+'"]').css( "background-color", "palegreen");
+            });    
+        },"json");
+}
     var options = {            
             lines: 13, // The number of lines to draw
             length: 6, // The length of each line
@@ -58,9 +66,12 @@
             totalRecordCount: 'RecordCount',
             actions: {
                 listAction: 'models/jTableFunctions/list_stu_sugg.php'                      
+            },                                              
+            recordsLoaded: function (event, data) { 
+                markSuggestedCourses();
             },
             fields: {
-                id: {
+                course_id: {
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',

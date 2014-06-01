@@ -105,5 +105,7 @@ $(function(){
             }
         }, 100);
     });
+    //header freeze
+    $('.jtable').stickyTableHeaders();
 });
 </script>

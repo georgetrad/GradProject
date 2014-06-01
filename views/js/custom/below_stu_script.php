@@ -6,6 +6,13 @@ function getGraduationStudents(){
             });    
         },"json");
 }       
+function markSuggestedCourses(){
+    $.post('models/functions/_global_ajax.php', {case: 'getSuggestedCourses'}, function(data){
+            $.each(data, function(key, value) {
+                $('*[data-record-key="'+value[0]+'"]').css( "background-color", "palegreen");
+            });    
+        },"json");
+}       
     $(function(){
         $('#below_stu_Table').jtable({
             title: '<?php echo STUDENTS;?>',
@@ -25,6 +32,7 @@ function getGraduationStudents(){
             },
             recordsLoaded: function (event, data) { 
                 getGraduationStudents();
+                markSuggestedCourses();
             },
             fields: {
                 id: {
@@ -76,7 +84,10 @@ function getGraduationStudents(){
                                 $img.click(function () {
                                     $('#below_stu_Table').jtable('openChildTable',
                                         $img.closest('tr'),
-                                        {
+                                        {                                                     
+                                            recordsLoaded: function (event, data) { 
+                                                markSuggestedCourses();
+                                            },
                                             title: '<?php echo AVAILABLE_CRS;?>',
                                             actions: {
                                                 listAction: 'models/jTableFunctions/list_stu_sugg_crs.php?studentId=' + data.record.id
@@ -116,6 +127,8 @@ function getGraduationStudents(){
             }
         });        
 
-        $('#below_stu_Table').jtable('load');        
+        $('#below_stu_Table').jtable('load');  
+        //header freeze
+        $('.jtable').stickyTableHeaders();      
     });
 </script>
