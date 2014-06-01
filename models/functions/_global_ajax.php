@@ -197,17 +197,17 @@ switch ($case){
     }
     case 'getGraduationCourses':{
         $result = databaseClass::getGraduationCourses();
-//        var_dump($result);
+        echo json_encode($result);
         break;
     }
     case 'getGraduationStudents':{
         $result = databaseClass::getGraduationStudents();
-        return json_encode($result);
+        echo json_encode($result);
         break;
     }
     case 'getSuggestedCourses':{
         $result = databaseClass::getSuggestedCourses();
-        return json_encode($result);
+        echo json_encode($result);
         break;
     }
 }

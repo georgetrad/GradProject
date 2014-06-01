@@ -529,20 +529,19 @@ class databaseClass {
         $id = getValue('max(id)', 'semester');
         $max = getValue('max_grad_stu_hrs', 'semester','id = '.$id);
         $result = select('tot_hours_completed','student',  'tot_hours_completed >= '.$max);
-        var_dump($result);
-//        return $result;
+        return $result;
     }
     
     public static function getGraduationStudents(){
         $id = getValue('max(id)', 'semester');
         $max = getValue('max_grad_stu_hrs', 'semester','id = '.$id);
         $result = getData('id','student',  'tot_hours_completed >= '.$max);
-        print_r( json_encode($result));
+        return $result;
     }
     
     public static function getSuggestedCourses(){
         $id = getValue('max(id)', 'semester');
         $result = getData('course_id','sugg_course',  'semester_id = '.$id);
-        print_r( json_encode($result));
+        return $result;
     }
 }
