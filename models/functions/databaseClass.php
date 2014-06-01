@@ -422,27 +422,13 @@ class databaseClass {
         return $response;
     }
     
-    public static function getStuData($id){        
-        $query = "SELECT student.id, department.name_ar, ";
-        $query.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name, ";
-        $query.= "department.tot_hours, ";
-        $query.= "student.registration_date, ";
-        $query.= "student.birth_date, ";
-        $query.= "student.gender, ";
-        $query.= "student.national_id, ";
-        $query.= "student.phone_number, ";
-        $query.= "student.email, ";
-        $query.= "student.status, ";
-        $query.= "student.address, ";
-        $query.= "student.tot_hours_completed, ";
-        $query.= "student.current_level, ";
-        $query.= "student.current_gpa ";
-        $query.= "FROM user ";                                               
-        $query.= "INNER JOIN teacher ON teacher.user_username = user.username ";
-        $query.= "INNER JOIN student ON student.advisor_id = teacher.id ";       
-        $query.= "INNER JOIN department ON department.id = student.department_id ";
-        $query.= "AND teacher.user_username = '".$_SESSION['username']."' ";
-        $query.= "AND student.id =". $id;
+    public static function getStuData($id){ 
+        
+        $query= "SELECT * FROM get_stu_data WHERE ";
+        if ($_SESSION['userLevel']!=-1){
+            $query.= "user_username = '".$_SESSION['username']."' AND ";
+        }
+        $query.= "id =". $id;
         
         $queryRun = mysql_query($query);
         $fetch = mysql_fetch_row($queryRun);
