@@ -27,6 +27,7 @@ function markSuggestedCourses(){
         };
     //****************On Page Load *****************************    
     $(function(){
+        $('#myStudents').sc
         $('#show').click(function (){
             if($(this).text() === 'طلابي'){
                 $('#myStudents').show();

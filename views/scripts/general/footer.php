@@ -35,6 +35,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
 <script type="text/javascript" src="views/js/jquery/jquery.scrollToTop.min.js"></script>
 <script type="text/javascript" src="views/js/jquery/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="views/js/jquery.scrollTo.min.js"></script>
 
 <?php
 if(!loggedIn()){

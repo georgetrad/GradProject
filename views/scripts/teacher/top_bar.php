@@ -13,23 +13,24 @@
                     </ul>
                 </li>
                 <li>
-                    <a><?=HOME?></a>                    
+                    <a href="views/scripts/teacher/home.php"><?=HOME?></a>                    
                 </li>
-                <li class="divider"></li>                                
+                <li class="divider"></li>                
+                <li>
+                    <a href="views/scripts/teacher/all_teachers.php"><?=TEACHERS?></a>                    
+                </li>
+                <li class="divider"></li>
                 <li class="has-dropdown">
                     <a><?=STUDENTS?></a>
                     <ul class="dropdown">                                
-                        <li><a><?=MY_STUDENTS?></a></li>                        
+                        <li><a href="views/scripts/teacher/all_students.php"><?=ALL_STUDENTS?></a></li>                        
                     </ul>
                 </li>
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a><?=IMPORT?></a>
-                    <ul class="dropdown">                        
-                        <li><a><?=COURSE_FILE?></a></li>
-                    </ul>
+                <li>
+                    <a href="views/scripts/teacher/advise.php"><?=ADVISE?></a>                    
                 </li>
-                <li class="divider"></li>
+                <li class="divider"></li>                
                 <li>
                     <a><?=DB?></a>                    
                 </li>
@@ -37,3 +38,5 @@
         </section>
     </nav>
 </div>
+    
+
