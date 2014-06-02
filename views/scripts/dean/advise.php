@@ -140,11 +140,11 @@ $stuInfo = databaseClass::getMyStudents();
                     </div>
                 </dd>
                 <dd>
-                    <a href="#panel4"><?=SUGGESTED_COURSES?></a>
+                    <a href="#panel4"><?=AVAILABLE_CRS?></a>
                     <div id="panel4" class="content">
                         <div class="row">
                             <div class="medium-2 large-2 columns" data-reveal-id="crs_modal" data-reveal>
-                                <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 100px; width: 200px;">
+                                <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 100px; width: 200px; cursor: pointer">
                             </div>
                             <div id="jTable" class="medium-10 large-10 columns show-for-medium-up"></div>                          
                         </div>
