@@ -64,7 +64,7 @@ function markSuggestedCourses(){
         });
         
         $('#jTable').jtable({
-            title: '<?php echo SUGGESTED_COURSES;?>',
+            title: '<?php echo AVAILABLE_CRS;?>',
             paging: true,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default
