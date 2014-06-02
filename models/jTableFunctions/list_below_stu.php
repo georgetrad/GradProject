@@ -2,13 +2,12 @@
 include_once '../db_connect.php';
 
 // Get records count
-$query1 = "SELECT s.min_req_hrs, COUNT(v.id) AS RecordCount ";
-$query1.= "FROM semester AS s, stu_sugg_hrs AS v ";
-$query1.= "WHERE s.id = (SELECT max(id) FROM semester) AND v.hrs<(s.min_req_hrs)";
+$query1 = "SELECT count(*) as record_count FROM stu_sugg_hrs ";
+$query1.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL ";
 //print_r($query1);exit;
 $result1 = mysql_query($query1);            // Executing the query.
 $row = mysql_fetch_array($result1);         // Fetching the result.
-$recordCount = $row['RecordCount'];         // Filling the result in an variable.
+$recordCount = $row['record_count'];         // Filling the result in an variable.
 
 
 $pageSize = $_GET['jtPageSize'];            // Getting the selected page size, start index from jTable

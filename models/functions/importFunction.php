@@ -1,5 +1,5 @@
 <?php
-function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData = array())
+function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData = array(),$update = true)
 {
     $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
     $highestRow = $objPHPExcel->getActiveSheet()->getHighestRow();
@@ -58,7 +58,9 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
     $sqlValues = " VALUES(";
     $sqlValues .= implode('), (',$allValues);
     $sqlValues .= ")";
-    $sqlValues .= "ON DUPLICATE KEY UPDATE ".$sDuplicate;
+    if ($update){
+        $sqlValues .= "ON DUPLICATE KEY UPDATE ".$sDuplicate;
+    }
     
     $result = mysql_query($sql.$sqlValues);
     return $result ? $result : $sql.$sqlValues;

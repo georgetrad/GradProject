@@ -227,9 +227,11 @@ class databaseClass {
         $rowsOffSet = 3;
         //*******************Student duty , duty number 5*******************//
         $columns = array(
-            "student_class_student_id"                  => "A",
-            "student_class_class_id"                    => "H",
-            "grade"                                     => "O"
+            "student_class_student_id"  => "A",
+            "student_class_class_id"    => "H",
+            "grade"                     => "O",
+            "point"                     => "P",
+            "letter_grade"              => "Q"
         );
         $staticData = array(
                 "duty_type_id"    => "5"       
@@ -284,7 +286,7 @@ class databaseClass {
                 "department_id" => $dep
         );   
         $tableName = 'student';
-        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData, false);
         $error .= $result;
         unset($columns, $tableName, $staticData, $result);  
         //** Student Class ***********************************//
@@ -420,27 +422,13 @@ class databaseClass {
         return $response;
     }
     
-    public static function getStuData($id){        
-        $query = "SELECT student.id, department.name_ar, ";
-        $query.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name, ";
-        $query.= "department.tot_hours, ";
-        $query.= "student.registration_date, ";
-        $query.= "student.birth_date, ";
-        $query.= "student.gender, ";
-        $query.= "student.national_id, ";
-        $query.= "student.phone_number, ";
-        $query.= "student.email, ";
-        $query.= "student.status, ";
-        $query.= "student.address, ";
-        $query.= "student.tot_hours_completed, ";
-        $query.= "student.current_level, ";
-        $query.= "student.current_gpa ";
-        $query.= "FROM user ";                                               
-        $query.= "INNER JOIN teacher ON teacher.user_username = user.username ";
-        $query.= "INNER JOIN student ON student.advisor_id = teacher.id ";       
-        $query.= "INNER JOIN department ON department.id = student.department_id ";
-        $query.= "AND teacher.user_username = '".$_SESSION['username']."' ";
-        $query.= "AND student.id =". $id;
+    public static function getStuData($id){ 
+        
+        $query= "SELECT * FROM get_stu_data WHERE ";
+        if ($_SESSION['userLevel']!=-1){
+            $query.= "user_username = '".$_SESSION['username']."' AND ";
+        }
+        $query.= "id =". $id;
         
         $queryRun = mysql_query($query);
         $fetch = mysql_fetch_row($queryRun);
@@ -508,12 +496,13 @@ class databaseClass {
     }
     
     public static function getBelowStuNum(){
-        $query = "SELECT s.min_req_hrs, COUNT(v.id) ";
-        $query.= "FROM semester AS s, stu_sugg_hrs AS v ";
-        $query.= "WHERE s.id = (SELECT max(id) FROM semester) AND v.hrs<(s.min_req_hrs)";
+//       $x = getValue('count(*)', 'stu_sugg_hrs',"hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL " );
+        $query = "SELECT count(*) as recordCount FROM stu_sugg_hrs ";
+        $query.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL ";
         $result = mysql_query($query);
-        $num = mysql_fetch_array($result);
-        return $num[1];
+        $num = mysql_fetch_row($result);
+        return $num[0];
+//        return $x;
     }
     
     public static function getWithouthAdvNum(){
@@ -529,21 +518,20 @@ class databaseClass {
         $id = getValue('max(id)', 'semester');
         $max = getValue('max_grad_stu_hrs', 'semester','id = '.$id);
         $result = select('tot_hours_completed','student',  'tot_hours_completed >= '.$max);
-        var_dump($result);
-//        return $result;
+        return $result;
     }
     
     public static function getGraduationStudents(){
         $id = getValue('max(id)', 'semester');
         $max = getValue('max_grad_stu_hrs', 'semester','id = '.$id);
         $result = getData('id','student',  'tot_hours_completed >= '.$max);
-        print_r( json_encode($result));
+        return $result;
     }
     
     public static function getSuggestedCourses(){
         $id = getValue('max(id)', 'semester');
         $result = getData('course_id','sugg_course',  'semester_id = '.$id);
-        print_r( json_encode($result));
+        return $result;
     }
     
     public static function getMyStudents(){
