@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Mohammad Haddad
+ * @return Array "result" "query" "error"
+ */
 function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData = array(),$update = true)
 {
     $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
@@ -18,7 +22,7 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
     foreach ($sdv as $value){
         array_push($sr, $value);
     }
-    $nsr = implode ('", "', $sr);
+    $nsr = implode ("', '", $sr);
     
     $columnIndex = array_values($columns);
 
@@ -33,10 +37,10 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
             array_push($records_string,$record_string);
         }
         
-        $values = '"'.implode ('", "', $records_string);
+        $values = "'".implode ("', '", $records_string);
         if ($nsr!='')
-            $values .= '", "'.$nsr;
-        $values .= '"';
+            $values .= "', '".$nsr;
+        $values .= "'";
         
         array_push($aValues,$values);
         $allValues = array_unique($aValues);
@@ -63,5 +67,6 @@ function import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $stati
     }
     
     $result = mysql_query($sql.$sqlValues);
-    return $result ? $result : $sql.$sqlValues;
+    $response = array("result" => $result, "query" => $sql.$sqlValues, "error"=> mysql_error());
+    return $response;
 }

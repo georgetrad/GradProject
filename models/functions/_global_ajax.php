@@ -74,58 +74,59 @@ switch ($case){
             unlink('../../uploads/'."'$id'");            
         }
     }    
-    /******************** import_script ********************/
+    /******************** importStudent ********************/
     case 'importStudent':{
         $file = $_POST['selectFile'];
         $result = databaseClass::importStudent($file);
-        echo $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     }     
-    /******************** import_script ********************/
+    /******************** classGradeImport ********************/
     case 'classGradeImport':{
         $file = $_POST['selectFile'];
         $dep =  $_POST['selectMajor'];
         $result = databaseClass::classGradeImport($file, $dep);
-        return $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     } 
-    /******************** import_script ********************/
+    /******************** courseImport ********************/
     case 'courseImport':{
         $file = $_POST['selectFile'];
         $result = databaseClass::courseImport($file);
-        echo $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     } 
-    /******************** import_script ********************/
+    /******************** classImport ********************/
     case 'classImport':{
         $file           = $_POST['selectFile'];
         $selectSemester = $_POST['selectSemester'];
         $result = databaseClass::classImport($file,$selectSemester);
-        echo $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     } 
-    /******************** import_script ********************/
+    /******************** gradeImport ********************/
     case 'gradeImport':{
         $file = $_POST['selectFile'];
         $result = databaseClass::gradeImport($file);
-        echo $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     } 
-    /******************** import_script ********************/
+    /******************** courseFileImport ********************/
     case 'courseFileImport':{
         $file = $_POST['selectFile'];
         $result = databaseClass::courseFileImport($file);
-        echo $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     } 
-    /******************** import_script ********************/
+    /******************** studentFileImport ********************/
     case 'studentFileImport':{
         $file = $_POST['selectFile'];
         $major = $_POST['selectMajor'];
         $result = databaseClass::studentFileImport($file, $major);
-        echo $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     }
+    /******************** updateData ********************/
     case 'updateData':{
         $selectedOption = $_POST['selectUpdate'];
         if($selectedOption == 0){
@@ -140,7 +141,7 @@ switch ($case){
         else if($selectedOption == 3){
             $result = databaseClass::updateCourse();
         }
-        echo $result;
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     }
     

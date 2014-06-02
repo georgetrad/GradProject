@@ -113,10 +113,12 @@ define('IMPORTING', 'الاستيراد');
         define('IMP_CLASS_GRADES_FILE', 'ملف علامات شعبة');
         define('IMPORT', 'استيراد');
         define('INSERT_SUCCESS', 'تمّ استيراد البيانات بنجاح');
+        define('INSERT_NOT_SUCCESS','لم يتمّ استيراد البيانات بنجاح');
     define('UPDATE_DATA', 'تحديث بيانات');
         define('UPDATE_STU', 'تحديث عدد الساعات المنجزة ومستوى الطلاب');
         define('UPDATE_RELATION', 'تحديث مواد الطلاب');
         define('UPDATE_SUCCESS', 'تمّ تحديث البيانات بنجاح');
+        define('UPDATE_NOT_SUCCESS', 'لم يتمّ تحديث البيانات بنجاح');
         define('UPDATE_STU_NUM', 'تحديث عدد الطلاب في كل مقرر');
     
 define('SETTINGS', 'الاعدادات');

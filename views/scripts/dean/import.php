@@ -241,8 +241,13 @@ $filesList = scandir($dir);
         &nbsp;
     </div>
     <div class="medium-4 large-4 columns">
-        <div data-alert class="result alert-box info" style="visibility: hidden; font-size: 20px; font-family: 'DroidKufi-Regular'; text-align: center">
+        <div data-alert class="result alert-box info" style="display:none; font-size: 20px; font-family: 'DroidKufi-Regular'; text-align: center">
             <?=INSERT_SUCCESS?>
+            <a href="#" class="close">&times;</a>
+        </div>
+        
+        <div data-alert class="result2 alert-box alert" style="display:none; font-size: 20px; font-family: 'DroidKufi-Regular'; text-align: center">
+            <?=INSERT_NOT_SUCCESS?>
             <a href="#" class="close">&times;</a>
         </div>
     </div>
