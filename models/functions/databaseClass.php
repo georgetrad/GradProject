@@ -3,7 +3,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/PHPExcel/IOFactory.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importFunction.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/importStudentClassFunction.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunction.php';
 /**  
  * * This class contains Database related functions for (SELECT, INSERT, UPDATE, DELETE) queries.
@@ -131,16 +130,8 @@ class databaseClass {
         );    
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-
-        if ($result===true){
-            echo 'file imported successfully';
-        }
-        else{ 
-            echo $result;            
-        }
-
-        unset($columns, $tableName, $staticData, $a);
-        return true;
+        unset($columns, $tableName, $staticData);
+        return $result;
     }
     /**
      * This function imports a courses excel file.
@@ -161,14 +152,8 @@ class databaseClass {
         $staticData = array();   
         $tableName = 'course';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-
-        if ($result===true)
-            echo 'file imported successfully';
-        else 
-            echo $result;
-
-        unset($columns, $tableName, $staticData, $a);
-        return true;   
+        unset($columns, $tableName, $staticData);
+        return $result;
     }
     /**
      * This function imports classes from an excel file.
@@ -190,14 +175,8 @@ class databaseClass {
             "semester_id"   => $inputSemester
         );
         $tableName = 'class';
-        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-
-        if ($result===true)
-            echo 'file imported successfully';
-        else 
-            echo $result;
-
-        unset($columns, $tableName, $staticData, $a);
+        $result1 = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        unset($columns, $tableName, $staticData);
         ////*******************Student class*******************//
         $columns = array(
             "student_id"    => "A",
@@ -205,14 +184,9 @@ class databaseClass {
         );
         $staticData = array();
         $tableName = 'student_class';
-        $result = importSC($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-
-        if ($result===true)
-            echo 'file imported successfully';
-        else 
-            echo $result;
-
-        unset($columns, $tableName, $staticData, $a);
+        $result2 = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData,false);
+        unset($columns, $tableName, $staticData);  
+        return array('result'=>$result1['result']&&$result2['result'],'query'=>$result1['query'].$result2['query'],'error'=>$result1['error'].$result2['error']);
     }
     /**
      * This function imports students grades from an excel file.
@@ -238,16 +212,8 @@ class databaseClass {
         );   
         $tableName = 'duty';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-
-        if ($result===true){
-            echo 'file imported successfully';
-        }
-        else{ 
-            echo $result;
-        }
-
-        unset($columns, $tableName, $staticData, $a);
-        return true;   
+        unset($columns, $tableName, $staticData);
+        return $result;  
     }
     /**
      * This function imports students grades from an excel file.
@@ -297,7 +263,7 @@ class databaseClass {
             "class_id"    => $cls 
         );   
         $tableName = 'student_class';
-        $result = importSC($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        $result = importSC($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData, false);
         $error .= $result;
         unset($columns, $tableName, $staticData, $result); 
         //** Final grade ***********************************//
@@ -341,13 +307,8 @@ class databaseClass {
         $staticData = array();
         $tableName = 'course';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-        if ($result===true){
-            echo 'file imported successfully';
-        }
-        else{
-            echo $result;
-        }
-        unset($columns, $tableName, $staticData);        
+        unset($columns, $tableName, $staticData);
+        return $result;       
     }
     /**
      * This function imports students from an excel file.
@@ -373,53 +334,29 @@ class databaseClass {
         );   
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
-
-        if ($result===true){
-            echo 'file imported successfully';
-        }
-        else {
-            echo $result;
-        }
-
-        unset($columns, $tableName, $staticData, $a);
-        return true;   
+        unset($columns, $tableName, $staticData);
+        return $result;
     }
     
     public static function updateHoursLevel(){
         // Update completed hours for all students.
         $query = "CALL update_hours_and_level()";
-        $result = mysql_query($query);            
-        // Update all students level according to their hours.
-        if($result){
-            $response = 'Success';
-        }
-        else{
-            $response = 'Fail';
-        }
-        return $response;        
+        $result = mysql_query($query);
+        $response = array("result" => $result, "error"=> mysql_error());
+        return $response;
     }
     
     public static function updateStuCourse(){        
         $query = "CALL update_student_course()";
         $result = mysql_query($query);
-        if($result){
-            $response = 'Success';
-        }        
-        else{
-            $response = 'Fail';
-        }
-        return $response;        
+        $response = array("result" => $result, "error"=> mysql_error());
+        return $response;
     }
     
     public static function updateCourse(){        
         $query = "CALL update_course()";
         $result = mysql_query($query);
-        if($result){
-            $response = 'Success';
-        }        
-        else{
-            $response = 'Fail';
-        }
+        $response = array("result" => $result, "error"=> mysql_error());
         return $response;
     }
     

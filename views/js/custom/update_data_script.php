@@ -30,10 +30,20 @@
                 spinner.spin(target);
                 var formData = $('#updateDataForm').serialize();
                 formData += '&case=updateData';
-                $.post("models/functions/_global_ajax.php", formData, function( data ) {                
-                     $('.result').css('visibility', 'visible');
-                    spinner.stop(target);
-                });  
+                $.post("models/functions/_global_ajax.php", formData, function( data ) {
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
+                },"JSON"); 
+                spinner.stop(target);
             }
         });
     });

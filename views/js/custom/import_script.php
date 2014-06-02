@@ -1,8 +1,4 @@
 <script>
-    $('.tab').click(function (){
-        $('.result').css('visibility', 'hidden');
-    });
-    
     $(function() {  
         var opts = {
             lines: 13, // The number of lines to draw
@@ -35,9 +31,19 @@
                 var formData = $('#studentImportForm').serialize();
                 formData += '&case=importStudent';
                 $.post('models/functions/_global_ajax.php', formData ,function( data ) {
-                    $('.result').css('visibility', 'visible');
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
                     spinner.stop(target);
-                });  
+                },"JSON");  
             }
         });    
     /** course Import **********************************************************************************/
@@ -51,9 +57,18 @@
                 var formData = $('#courseImportForm').serialize();
                 formData += '&case=courseImport';
                 $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
-                    $('.result').css('visibility', 'visible');
-                    spinner.stop(target);
-                });  
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
+                },"JSON");  
             }
         });    
     /** Class Import **********************************************************************************/
@@ -67,9 +82,19 @@
                 var formData = $('#classImportForm').serialize();
                 formData += '&case=classImport';
                 $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
-                    $('.result').css('visibility', 'visible');
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
                     spinner.stop(target);
-                });  
+                },"JSON");  
             }
         });    
     /** grade Import **********************************************************************************/
@@ -83,9 +108,19 @@
                 var formData = $('#gradeImportForm').serialize();
                 formData += '&case=gradeImport';
                 $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
-                    $('.result').css('visibility', 'visible');
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
                     spinner.stop(target);
-                });  
+                },"JSON");  
             }
         });   
     /** course File Import **********************************************************************************/
@@ -99,9 +134,19 @@
                 var formData = $('#courseFileImportForm').serialize();
                 formData += '&case=courseFileImport';
                 $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
-                    $('.result').css('visibility', 'visible');
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
                     spinner.stop(target);
-                });  
+                },"JSON");  
             }
         });   
     /** student File Import **********************************************************************************/
@@ -115,9 +160,19 @@
                 var formData = $('#studnetFileImportForm').serialize();
                 formData += '&case=studentFileImport';
                 $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
-                    $('.result').css('visibility', 'visible');
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
                     spinner.stop(target);
-                });  
+                },"JSON");  
             }
         }); 
     /** Class Grades File Import **********************************************************************************/
@@ -131,9 +186,19 @@
                 var formData = $('#classGradesForm').serialize();
                 formData += '&case=classGradeImport';
                 $.post( "models/functions/_global_ajax.php", formData ,function( data ) {
-                    $('.result').css('visibility', 'visible');
+                    if (data.result){
+                        $('.result').show();
+                        setTimeout(function() {
+                             $('.result').hide();
+                         }, 1000);
+                    }else{
+                        $('.result2').show();
+                        setTimeout(function() {
+                             $('.result2').hide();
+                         }, 1000);
+                    };
                     spinner.stop(target);
-                });  
+                },"JSON");  
             }
         });
     });
