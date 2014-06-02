@@ -173,6 +173,13 @@ $stuInfo = databaseClass::getMyStudents();
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/advise_script.php';
     $id = $_GET['studentId'];
     if ($id !=''){
-        echo '<script> $(document).ready(function () {getStuData('.$id.');})</script>';
+        echo '<script> $(document).ready(function () {getStuData('.$id.');';
+        echo "            $.post('models/functions/_global_ajax.php', {case:'getStuGrades', id:stuId},function(data){
+                $('#table').html(data);
+            });
+            
+            $('#jTable').jtable('load', {
+                stuId:$('#search_text').val()                
+            });  }) </script>";
     }
 ?>
