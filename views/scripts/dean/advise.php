@@ -171,15 +171,18 @@ $stuInfo = databaseClass::getMyStudents();
 <?php
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/advise_script.php';
+    if (isset($_GET['studentId'])){
     $id = $_GET['studentId'];
-    if ($id !=''){
-        echo '<script> $(document).ready(function () {getStuData('.$id.');';
-        echo "            $.post('models/functions/_global_ajax.php', {case:'getStuGrades', id:stuId},function(data){
-                $('#table').html(data);
-            });
-            
-            $('#jTable').jtable('load', {
-                stuId:$('#search_text').val()                
-            });  }) </script>";
+        echo    "<script> 
+                    $(document).ready(function () {
+                        getStuData(".$id.");
+                        $.post('models/functions/_global_ajax.php', {case:'getStuGrades', id:".$id."},function(data){
+                                $('#table').html(data);
+                        });
+                        $('#jTable').jtable('load', {
+                            stuId:".$id."               
+                        }); 
+                    });   
+                </script>";
     }
 ?>
