@@ -180,13 +180,13 @@ switch ($case){
             $html.=     '<td style="font-size: 16px">';
             $html.=         $result[$i]['course_name'];
             $html.=     '</td>';
-            $html.=     '<td style="font-size: 16px; text-align: left">';
+            $html.=     '<td style="font-size: 16px; text-align: center;">';
             $html.=         $result[$i]['grade'];
             $html.=     '</td>';            
             $html.=     '<td style="font-size: 16px; text-align: left">';
             $html.=         $result[$i]['point'];
             $html.=     '</td>';            
-            $html.=     '<td style="font-size: 16px; text-align: left">';
+            $html.=     '<td style="font-size: 16px; text-align: left; direction: ltr">';
             $html.=         $result[$i]['letter_grade'];
             $html.=     '</td>';            
             $html.= '</tr>';

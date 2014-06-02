@@ -1,5 +1,6 @@
 <?php
 include_once '../db_connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 
 $stuId = $_POST['stuId'];
 
