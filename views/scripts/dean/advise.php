@@ -171,4 +171,8 @@ $stuInfo = databaseClass::getMyStudents();
 <?php
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/advise_script.php';
+    $id = $_GET['studentId'];
+    if ($id !=''){
+        echo '<script> $(document).ready(function () {getStuData('.$id.');})</script>';
+    }
 ?>
