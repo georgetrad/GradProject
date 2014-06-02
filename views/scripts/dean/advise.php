@@ -24,11 +24,20 @@ $stuInfo = databaseClass::getMyStudents();
                 <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">            
             </div>
         </div>
+        <div class="row">
+            <div class="medium-9 large-9 columns">
+                <div id="wrong" data-alert class="alert-box alert" style="font-size: 12px; font-family: DroidKufi-Regular; display: none ">
+                    <span id="invalid_login"><?=ADVISE_SEARCH_ERROR?></span>
+                    <a href="#" class="close"></a>
+                </div>            
+            </div>
+        </div>
+        
         <div>
             <a id="show">طلابي</a>
             <br><br>
         </div>
-        <div id="myStudents" class="row" style="visibility: hidden">
+        <div id="myStudents" class="row" style="display: none">
             <div class="medium-3 large-3 columns">
                 <?php
                     for ($i=0 ; $i<count($stuInfo) ; $i++){
@@ -52,7 +61,7 @@ $stuInfo = databaseClass::getMyStudents();
         </div>
     </div>
     <div class="medium-9 large-9 columns">
-        <div id="contents" style="visibility: hidden; padding-bottom: 100px;">        
+        <div id="contents" style="display: none; padding-bottom: 100px;">        
             <dl class="accordion" data-accordion>
                 <dd>
                     <a href="#panel1"><?=PERSONAL_INFO?></a>

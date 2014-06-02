@@ -60,11 +60,7 @@
             $('#sugg_crs_counter').html(' ('+data+')');
         });
     }
-//    function getGraduationCourses(){
-//        $.post('models/functions/_global_ajax.php', {case: 'getGradStu'}, function(data){
-//
-//        });
-//    }
+    
     $(document).ready(function () {  
         $('#all_courses_Table').jtable({
             title: '<?php echo COURSES;?>',
@@ -117,11 +113,6 @@
                     width: '7%',
                     listClass: 'left_data'
                 },
-//                classB: {
-//                    title: '<?php echo CLASS_B;?>',
-//                    width: '6%',
-//                    listClass: 'left_data'
-//                },
                 classC: {
                     title: '<?php echo CLASS_C;?>',
                     width: '8%',
@@ -142,8 +133,6 @@
             }
         });
         $('#all_courses_Table').jtable('load');
-        // get number of suggested courses when the document is ready
-//        getSuggCoursesNum();
 
         //on suggested course tab click, re draw the table and get the number of suggested courses
         $('#sugg').click(function (){        

@@ -29,11 +29,11 @@ function markSuggestedCourses(){
     $(function(){
         $('#show').click(function (){
             if($(this).text() === 'طلابي'){
-                $('#myStudents').css('visibility', 'visible');
+                $('#myStudents').show();
                 $('#show').text('إخفاء');                    
             }
             else{
-                $('#myStudents').css('visibility', 'hidden');
+                $('#myStudents').hide();
                 $('#show').text('طلابي'); 
             }
         
@@ -45,7 +45,7 @@ function markSuggestedCourses(){
         $('#search_button').click(function (){            
             var stuId = $('#search_text').val();
             if (stuId === ''){
-                $('#wrong').css('visibility', 'visible');
+                $('#wrong').show();
                 $('#wrong').html('<?php echo ENTER_STU_ID;?>');
             }
             getStuData(stuId);
@@ -135,8 +135,8 @@ function markSuggestedCourses(){
             var result = JSON.parse(data);
             var success = result.success;            
             if(success === true){                
-                $('#wrong').css('visibility', 'hidden');
-                $('#contents').css('visibility', 'visible');
+                $('#wrong').hide();
+                $('#contents').show();
                 var id          = result.id;
                 var name        = result.name;
                 var gender      = result.gender;

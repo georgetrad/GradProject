@@ -115,7 +115,6 @@
             }
         });        
 
-        $('#sugg_courses_Table').jtable('load');
-        //getSuggCourse();
+        $('#sugg_courses_Table').jtable('load');        
     });
 </script>
