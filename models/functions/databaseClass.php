@@ -140,7 +140,7 @@ class databaseClass {
         }
 
         unset($columns, $tableName, $staticData, $a);
-        return true;        
+        return true;
     }
     /**
      * This function imports a courses excel file.
@@ -544,5 +544,22 @@ class databaseClass {
         $id = getValue('max(id)', 'semester');
         $result = getData('course_id','sugg_course',  'semester_id = '.$id);
         print_r( json_encode($result));
+    }
+    
+    public static function getMyStudents(){
+        $query = "SELECT student.id, ";
+        $query.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name ";        
+        $query.= "FROM user ";                                               
+        $query.= "INNER JOIN teacher ON teacher.user_username = user.username ";
+        $query.= "INNER JOIN student ON student.advisor_id = teacher.id ";       
+        $query.= "INNER JOIN department ON department.id = student.department_id ";
+        $query.= "AND teacher.user_username = '".$_SESSION['username']."' ";        
+        
+        $result = mysql_query($query);        
+        $rows = array();
+        while($row = mysql_fetch_array($result)){
+            $rows[] = $row;
+        }
+        return $rows;
     }
 }

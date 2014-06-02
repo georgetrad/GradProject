@@ -133,7 +133,7 @@
                     display: function (data) {
                         return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
                     }
-                }        
+                }
             },
             recordsLoaded: function (event, data) { 
                 getSuggCourse();

@@ -19,15 +19,24 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT *";
-$query2.= "FROM stu_sugg_crs ";
-$query2.= "WHERE id = $stuId ";
-$query2.= " ORDER BY $sorting";
+$query2 = "CALL crs_ava_stu ($stuId)";
 $result2 = mysql_query($query2);
 //Add all records to an array
 $rows = array();
 while ($row = mysql_fetch_array($result2)) {
     $rows[] = $row;
+}
+
+for($i=0 ; $i<count($rows) ; $i++){
+    if($rows[$i]['status'] == 'C'){
+        $rows[$i]['status'] = CONDITIONAL_PASS;
+    }
+    if($rows[$i]['status'] == 'N'){
+        $rows[$i]['status'] = NEVER_BEEN_TAKEN;
+    }
+    if($rows[$i]['status'] == 'F'){
+        $rows[$i]['status'] = FAILED;
+    }
 }
  
 //Return results to jTable

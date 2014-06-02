@@ -65,6 +65,13 @@ $(function(){
                 edit:false,
                 listClass: 'left_data'
             },
+            link: {
+                visibility: 'visible',
+                width: '4%',
+                display: function (data) {
+                    return '<a href="views/scripts/dean/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
+                }
+            },
             dummyColumn: {
                 visibility: 'hidden',
                 edit:false

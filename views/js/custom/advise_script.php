@@ -27,6 +27,17 @@ function markSuggestedCourses(){
         };
     //****************On Page Load *****************************    
     $(function(){
+        $('#show').click(function (){
+            if($(this).text() === 'طلابي'){
+                $('#myStudents').css('visibility', 'visible');
+                $('#show').text('إخفاء');                    
+            }
+            else{
+                $('#myStudents').css('visibility', 'hidden');
+                $('#show').text('طلابي'); 
+            }
+        
+        });
         $('input').focus(function (){
             $(this).attr("placeholder", "");
             $(this).css("direction", "ltr"); 
@@ -82,12 +93,7 @@ function markSuggestedCourses(){
                     title: '<?php echo COURSE_NAME;?>',                            
                     width: '20%',
                     visibility: 'fixed' //This column always will be shown,                            
-                },
-                name_ar1: {
-                    title: '<?php echo COURSE_NAME;?>',                            
-                    width: '20%',
-                    visibility: 'fixed' //This column always will be shown,                            
-                },
+                },                
                 course_level: {
                     title: '<?php echo LEVEL;?>',                            
                     width: '15%',
