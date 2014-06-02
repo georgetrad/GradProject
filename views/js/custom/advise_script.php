@@ -3,7 +3,7 @@
 function markSuggestedCourses(){
     $.post('models/functions/_global_ajax.php', {case: 'getSuggestedCourses'}, function(data){
             $.each(data, function(key, value) {
-                $('*[data-record-key="'+value[0]+'"]').css( "background-color", "palegreen");
+                $('*[data-record-key="'+value[0]+'"]').css( "background-color", "rgb(167, 229, 167)");
             });    
         },"json");
 }
@@ -96,21 +96,29 @@ function markSuggestedCourses(){
                 },                
                 course_level: {
                     title: '<?php echo LEVEL;?>',                            
-                    width: '15%',
+                    width: '10%',
                     visibility: 'fixed',
                     listClass: 'left_data'
                 },
-                req_course_id: {
+                req_name: {
                     title: '<?php echo REQ_COURSE;?>',                            
                     width: '15%',
-                    visibility: 'fixed',
-                    listClass: 'left_data'
+                    visibility: 'fixed'                    
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
                     width: '15%',
                     listClass: 'left_data'
-                },              
+                },
+                status: {
+                    title: '<?php echo STATUS;?>',
+                    width: '15%'                    
+                },
+                grade: {
+                    title: '<?php echo FINAL_GRADE;?>',
+                    width: '15%',
+                    listClass: 'left_data'
+                },
                 dummyColumn: {
                     visibility: 'hidden'
                 }        
