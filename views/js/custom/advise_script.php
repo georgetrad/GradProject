@@ -1,12 +1,12 @@
 <script>
            
-function markSuggestedCourses(){
-    $.post('models/functions/_global_ajax.php', {case: 'getSuggestedCourses'}, function(data){
-            $.each(data, function(key, value) {
-                $('*[data-record-key="'+value[0]+'"]').css( "background-color", "rgb(167, 229, 167)");
-            });    
-        },"json");
-}
+    function markSuggestedCourses(){
+        $.post('models/functions/_global_ajax.php', {case: 'getSuggestedCourses'}, function(data){
+                $.each(data, function(key, value) {
+                    $('*[data-record-key="'+value[0]+'"]').css( "background-color", "rgb(167, 229, 167)");
+                });    
+            },"json");
+    }
     var options = {            
             lines: 13, // The number of lines to draw
             length: 6, // The length of each line
@@ -26,8 +26,7 @@ function markSuggestedCourses(){
             left: '53%' // Left position relative to parent
         };
     //****************On Page Load *****************************    
-    $(function(){
-        $('#myStudents').sc
+    $(function(){        
         $('#show').click(function (){
             if($(this).text() === 'طلابي'){
                 $('#myStudents').show();
@@ -57,7 +56,7 @@ function markSuggestedCourses(){
             
             $('#jTable').jtable('load', {
                 stuId:$('#search_text').val()                
-            });            
+            });
         });
         $("#search_text").keypress(function(key) {
             if (key.which === 13)

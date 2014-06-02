@@ -105,7 +105,7 @@ $(function(){
                 displayed = false;
                 $message.fadeOut(500);
             }
-            else if(displayed == false)
+            else if(displayed === false)
             {
                 displayed = true;
                 $message.stop(true, true).show().click(function () { $message.fadeOut(500); });

@@ -17,6 +17,7 @@
                 $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){
                     getSuggCoursesNum();
                     getBelowStuNum();
+                    markSuggestedCourses();
                 });            
             });    
         });
@@ -35,11 +36,11 @@
                     else{
                         action = 'remove';
                         $(this).text('Add');
-                        $(this).css('color','green');
+                        $(this).css('color','green');                        
                     }
                     $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){                
                         getSuggCoursesNum();
-                        getBelowStuNum();
+                        getBelowStuNum();                        
                     });            
                 });   
             }
@@ -129,7 +130,7 @@
             recordsLoaded: function (event, data) { 
                 getSuggCourse();
                 getSuggCoursesNum();
-                getBelowStuNum();
+                getBelowStuNum();                
             }
         });
         $('#all_courses_Table').jtable('load');
