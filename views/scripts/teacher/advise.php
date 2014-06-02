@@ -1,14 +1,13 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
+if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == -1)){
     header('Location: ../../../index.php');
 }
 $title = ADVISE;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/databaseClass.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_bar.php';
 $stuInfo = databaseClass::getMyStudents();
-//print_r($stuInfo);exit;
 ?>
 <div class="row">
     <h4 class="title text-center"><?=$title;?></h4>

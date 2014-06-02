@@ -5,25 +5,68 @@ if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == -1)){
 }
 $title = HOME;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/databaseClass.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_bar.php';
-?>        
-<div id="search_div" class="row" style="display: none">
-    <div class="medium-1 large-1 columns show-for-medium-up">
-        <br>
-        <span><?=SEARCH_TYPE?></span>
-        <form>                        
-            <select id="search_id">                    
-                <option value="0">الرقم الجامعي</option>
-                <option value="1">الاسم</option>
-                <option value="2">اسم الأب</option>
-                <option value="3">النسبة</option>                    
-            </select>
-            <input type="search" id="search_text" style="text-align: center"/>
-            <input type="submit" class="tiny button" id="search_button" value="ابحث">
-        </form>
-    </div>                       
-</div>        
 
-<div id="jTable" class="row medium-6 large-6 columns show-for-medium-up">            
+$semesterInfo   = databaseClass::getCurrSemInfo();
+$belowStuNum    = databaseClass::getBelowStuNum();
+$withourAdvNum  = databaseClass::getWithouthAdvNum();
+$suggCrsNum     = databaseClass::getSuggCoursesNum();
+?>
+<div class="row">
+    <h4 class="title text-center"><?=$title;?></h4>
 </div>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';?>
+<div class="medium-1 large-1 columns">
+    &nbsp;
+</div>
+<div class="data_container medium-10 large-10 columns text-center">    
+    <div class="row" style="padding-bottom: 25px; padding-top: 25px">
+        <div class="medium-12 large-12 columns">
+            <span class=" date_title label" id="date"></span> <span class=" time_title secondary label" id="time"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="medium-5 large-5 columns">
+            <div class=" right_home_title label"><?=CURRENT_SEMESTER?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['name']?></div>
+        </div>
+        <div class="medium-5 large-5 columns">
+            <div class=" left_home_title label"><?=NUM_BELOW_STU?></div> <div class="home_data secondary label"><?=$belowStuNum?></div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="medium-5 large-5 columns">
+            <div class=" right_home_title label"><?=START_DATE?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['start_date']?></div>
+        </div>        
+        <div class="medium-5 large-5 columns">
+            <div class=" left_home_title label"><?=NUM_STU_WITHOUT_ADV?></div> <div class="home_data secondary label"><?=$withourAdvNum?></div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="medium-5 large-5 columns">
+            <div class=" right_home_title label"><?=END_DATE?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['end_date']?></div>
+        </div>
+        <div class="medium-5 large-5 columns">
+            <div class=" left_home_title label"><?=NUM_SUGG_CRS?></div> <div class="home_data secondary label"><?=$suggCrsNum?></div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="medium-5 large-5 columns">
+            <div class=" right_home_title label"><?=MIN_REQ_HRS?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['min_req_hrs']?></div>
+        </div>
+        <div class="medium-5 large-5 columns">
+            <div class=" left_home_title label"><?=MOST_FAILED_CRS?></div> <div class="home_data secondary label"></div>
+        </div>        
+    </div>    
+    <div class="row">
+        <div class="medium-5 large-5 columns">
+            <div class=" right_home_title label"><?=MAX_REQ_HRS?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['max_req_hrs']?></div>
+        </div>
+        <div class="medium-5 large-5 columns" style="padding-bottom: 25px;">
+            <div class=" left_home_title label"><?=MOST_PASSED_CRS?></div> <div class="home_data secondary label"></div>
+        </div>        
+    </div>    
+</div>
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/home_script.php';
+?>
