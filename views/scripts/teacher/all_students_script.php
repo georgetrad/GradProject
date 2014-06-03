@@ -8,7 +8,7 @@
     }    
     $(function(){  
         $('#students_table').jtable({
-            title: '<?php echo ALL_STUDENTS;?>',
+            title: '<?php echo MY_STUDENTS;?>',
             paging: true,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default

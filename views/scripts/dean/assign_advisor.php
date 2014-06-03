@@ -27,7 +27,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
                 <option value="4"><?=COLLEGE_ID?></option>                                   
             </select>
         </div> 
-        <div class="medium-2 large-1 columns show-for-medium-up">
+        <div class="medium-3 large-2 columns show-for-medium-up">
             <input type="search" id="search_text" style="text-align: center"/>
         </div> 
         <div class="medium-1 large-1 columns show-for-medium-up">
@@ -58,11 +58,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
 </div>
 
 <div class="row">
-    <div class="medium-2 large-3 columns show-for-medium-up">
+    <div class="medium-2 large-2 columns show-for-medium-up">
         &nbsp;        
     </div>    
-    <div id="jTable" class="medium-8 large-6 columns show-for-medium-up"><!--Table--></div>
-    <div class="medium-2 large-3 columns show-for-medium-up"></div>
+    <div id="jTable" class="medium-8 large-8 columns show-for-medium-up"><!--Table--></div>
+    <div class="medium-2 large-2 columns show-for-medium-up"></div>
 </div>
 <?php 
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';

@@ -32,7 +32,7 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // M
     $searchText = $_POST['searchText'];    
     $query2.= " AND CONCAT(t.first_name, ' ', t.last_name) LIKE '%$searchText%'";
 }
-$query2.= " ORDER BY t.$sorting LIMIT $startIndex, $pageSize";
+$query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
 $result2 = mysql_query($query2);
  
 //Add all records to an array

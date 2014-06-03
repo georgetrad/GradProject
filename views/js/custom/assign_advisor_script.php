@@ -16,8 +16,24 @@
         zIndex: 2e9, // The z-index (defaults to 2000000000)
         top: '35%', // Top position relative to parent
         left: '5%' // Left position relative to parent
-        };
-    $(function(){    
+    };
+    
+    function assign(advisorId, selectedStudents){                
+        var target = document.getElementById('spinner');
+        var spinner = new Spinner(options);
+        spinner.spin(target);        
+        $.post( "models/functions/_global_ajax.php", {case:'updateAdvisor', advisorId: advisorId, selectedStudents: selectedStudents },function(data) {       
+            $('#jTable').jtable('load');
+            spinner.stop(target);
+        });
+    }
+        
+    $(function(){
+        $("#search_text").keypress(function(key) {
+            if (key.which === 13)
+            $('#search_button').click();
+        });
+        
         $('#jTable').jtable({
             title: '<?php echo ALL_STUDENTS;?>',
             paging: true,                    
@@ -43,18 +59,23 @@
                 },
                 studentName: {
                     title: '<?php echo STU_NAME;?>',                            
-                    width: '35%',
+                    width: '30%',
+                    visibility: 'fixed' //This column always will be shown,                            
+                },
+                dep_name: {
+                    title: '<?php echo STU_NAME;?>',                            
+                    width: '15%',
                     visibility: 'fixed' //This column always will be shown,                            
                 },
                 current_level: {
                     title: '<?php echo LEVEL;?>',                            
-                    width: '20%',
+                    width: '15%',
                     visibility: 'fixed',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 advisorName: {
                     title: '<?php echo ADVISOR;?>',
-                    width: '25%'
+                    width: '20%'
                 },
                 dummyColumn: {
                     visibility: 'hidden'
@@ -82,15 +103,5 @@
             } 
         });
         assign(advisorId, selectedStudents);
-    });
-
-    function assign(advisorId, selectedStudents){                
-        var target = document.getElementById('spinner');
-        var spinner = new Spinner(options);
-        spinner.spin(target);        
-        $.post( "models/functions/_global_ajax.php", {case:'updateAdvisor', advisorId: advisorId, selectedStudents: selectedStudents },function(data) {       
-            $('#jTable').jtable('load');
-            spinner.stop(target);
-        });
-    }
+    });   
 </script>

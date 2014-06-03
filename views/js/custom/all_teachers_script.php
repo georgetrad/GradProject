@@ -7,9 +7,9 @@ $(function(){
         columnSelectable: false, //Actually, no need to set true since it's default
         saveUserPreferences: false, //Actually, no need to set true since it's default
         sorting: true,                    
-        selecting: false, //Enable selecting
-        multiselect: false, //Allow multiple selecting
-        selectingCheckboxes: false, //Show checkboxes on first column
+        selecting: true, //Enable selecting
+        multiselect: true, //Allow multiple selecting
+        selectingCheckboxes: true, //Show checkboxes on first column
         selectOnRowClick: true, //Enable this to only select using checkboxes
         totalRecordCount: 'RecordCount',
         actions: {
@@ -25,7 +25,7 @@ $(function(){
             },
             name: {
                 title: '<?php echo NAME;?>',                            
-                width: '15%',
+                width: '23%',
                 edit: false,
                 create: false
             },
@@ -48,14 +48,14 @@ $(function(){
             last_name: {
                 list: false,
                 edit: false,
-                title: '<?php echo LAST_NAME;?>',            
+                title: '<?php echo LAST_NAME;?>',
                 input: function () {                
                     return '<input type="text" name="last_name" style="width:200px" value="<?=LAST_NAME?>" />';                
                 }
             },
             dep_name: {
                 title: '<?php echo DEP;?>',
-                width: '20%',
+                width: '15%',
                 edit: false,
                 create: false
             },
@@ -66,7 +66,7 @@ $(function(){
             },
             degree: {
                 title: '<?php echo DEGREE;?>',
-                width: '18%',
+                width: '15%',
                 edit: false,
                 create: false
             },
@@ -83,7 +83,7 @@ $(function(){
             },
             email: {
                 title: '<?php echo EMAIL;?>',
-                width: '25%',            
+                width: '45%',            
                 listClass: 'left_data',
                 inputClass: 'left_data'
             }

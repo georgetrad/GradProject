@@ -36,11 +36,13 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "SELECT s.id, CONCAT(s.first_name, ' ', s.middle_name, ' ', s.last_name) AS studentName, s.current_level, ";
+$query2 = "SELECT s.id, CONCAT(s.first_name, ' ', s.middle_name, ' ', s.last_name) AS studentName, s.current_level, department.name_ar AS dep_name, ";
 $query2.= "CONCAT(t.first_name, ' ', t.last_name) AS advisorName ";
 $query2.= "FROM student as s ";
+$query2.= "INNER JOIN department ON department.id = s.department_id ";
 $query2.= "LEFT JOIN teacher as t ";
 $query2.= "ON s.advisor_id = t.id ";
+
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
