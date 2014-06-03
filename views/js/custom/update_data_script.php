@@ -27,23 +27,23 @@
             if (!this.submitting) {
                 this.submitting = true;
                 var self = this;
-                spinner.spin(target);
                 var formData = $('#updateDataForm').serialize();
                 formData += '&case=updateData';
-                $.post("models/functions/_global_ajax.php", formData, function( data ) {
+                spinner.spin(target);
+                $.post("models/functions/_global_ajax.php", formData, function( data ) {                    
                     if (data.result){
                         $('.result').show();
                         setTimeout(function() {
                              $('.result').hide();
-                         }, 1000);
+                         }, 3000);
                     }else{
                         $('.result2').show();
                         setTimeout(function() {
                              $('.result2').hide();
-                         }, 1000);
-                    };
-                },"JSON"); 
-                spinner.stop(target);
+                         }, 3000);
+                    }                    
+                    spinner.stop(target);
+                });
             }
         });
     });

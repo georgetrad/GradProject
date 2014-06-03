@@ -7,8 +7,6 @@ $title = ADVISE;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/databaseClass.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
-$stuInfo = databaseClass::getMyStudents();
-//print_r($stuInfo);exit;
 ?>
 <div class="row">
     <h4 class="title text-center"><?=$title;?></h4>
@@ -124,11 +122,11 @@ $stuInfo = databaseClass::getMyStudents();
                 </div>
             </dd>
             <dd>
-                <a href="#panel4"><?=SUGGESTED_COURSES?></a>
+                <a href="#panel4"><?=AVAILABLE_CRS?></a>
                 <div id="panel4" class="content">
                     <div class="row">
                         <div class="medium-2 large-2 columns" data-reveal-id="crs_modal" data-reveal>
-                            <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 100px; width: 200px; cursor: pointer">
+                            <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 100px; width: 150px; cursor: pointer">
                         </div>
                         <div id="jTable" class="medium-9 large-9 columns show-for-medium-up"></div>
                         <div class="medium-1 large-1 columns">                                                        
