@@ -12,7 +12,7 @@
                     $('*[data-record-key="'+value[0]+'"]').css( "background-color", "rgb(167, 229, 167)");
                 });    
             },"json");
-    }       
+    }
     $(function(){
         $('#below_stu_Table').jtable({
             title: '<?php echo STUDENTS;?>',

@@ -12,12 +12,12 @@
                 else{
                     action = 'remove';
                     $(this).text('Add');
-                    $(this).css('color','green');
+                    $(this).css('color','green');                    
                 }
                 $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){
                     getSuggCoursesNum();
                     getBelowStuNum();
-                    markSuggestedCourses();
+                    markSuggestedCourses();                    
                 });            
             });    
         });
@@ -36,11 +36,11 @@
                     else{
                         action = 'remove';
                         $(this).text('Add');
-                        $(this).css('color','green');                        
+                        $(this).css('color','green');
                     }
                     $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){                
                         getSuggCoursesNum();
-                        getBelowStuNum();                        
+                        getBelowStuNum();                                    
                     });            
                 });   
             }
@@ -65,15 +65,15 @@
     $(document).ready(function () {  
         $('#all_courses_Table').jtable({
             title: '<?php echo COURSES;?>',
-            paging: false,                    
-            columnResizable: false,             //Actually, no need to set true since it's default
-            columnSelectable: false,            //Actually, no need to set true since it's default
-            saveUserPreferences: false,         //Actually, no need to set true since it's default
+            paging: false,
+            columnResizable: false,
+            columnSelectable: false,
+            saveUserPreferences: false,
             sorting: true,                    
             selecting: false,                   //Enable selecting
             multiselect: false,                 //Allow multiple selecting
             selectingCheckboxes: false,         //Show checkboxes on first column
-            selectOnRowClick: true,             //Enable this to only select using checkboxes
+            selectOnRowClick: false,             //Enable this to only select using checkboxes
             totalRecordCount: 'RecordCount',            
             actions: {
                 listAction: 'models/jTableFunctions/list_courses.php'        
@@ -130,7 +130,8 @@
             recordsLoaded: function (event, data) { 
                 getSuggCourse();
                 getSuggCoursesNum();
-                getBelowStuNum();                
+                getBelowStuNum();
+                markSuggestedCourses();
             }
         });
         $('#all_courses_Table').jtable('load');

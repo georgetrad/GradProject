@@ -40,8 +40,7 @@
                 },
                 req_course: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '15%',
-                    listClass: 'left_data'
+                    width: '15%'                  
                 }, 
                credits: {
                     title: '<?php echo CREDITS;?>',
@@ -92,12 +91,21 @@
                                                 },
                                                 gpa: {
                                                     title: '<?php echo GPA;?>',
-                                                    width: '25%',
+                                                    width: '10%',
+                                                    listClass: 'left_data'
+                                                },
+                                                status: {
+                                                    title: '<?php echo STATUS;?>',
+                                                    width: '10%'
+                                                },
+                                                grade: {
+                                                    title: '<?php echo FINAL_GRADE;?>',
+                                                    width: '10%',
                                                     listClass: 'left_data'
                                                 },
                                                 adviserName: {
                                                     title: '<?php echo ADVISOR;?>',
-                                                    width: '25%',                                                    
+                                                    width: '25%'                                                    
                                                 },
                                                 dummyColumn: {
                                                     visibility: 'hidden',

@@ -65,7 +65,7 @@
         
         $('#jTable').jtable({
             title: '<?php echo AVAILABLE_CRS;?>',
-            paging: true,                    
+            paging: false,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default
             saveUserPreferences: false, //Actually, no need to set true since it's default

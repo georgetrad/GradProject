@@ -46,11 +46,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <div class="medium-1 large-1 columns show-for-medium-up">
                     <input type="submit" class="tiny button" id="search_button" value="<?=SEARCH?>">
                 </div> 
-                <div class="medium-4 large-7 columns show-for-medium-up text-left">                    
-                    <input type="button" class="tiny button" value="<?=NEVER_ADDED?>" style="background-color: #2ba6cb ;cursor: auto">
-                    <input type="button" class="tiny button" value="<?=ADDED?>" style="background-color: #ff0000; cursor: auto">
-                    <input type="button" class="tiny button" value="<?=REMOVED?>" style="background-color: green; cursor: auto">
-                </div>
+                <div class="medium-4 large-7 columns show-for-medium-up text-left"></div>
             </form>       
         </div>    
         <div class="row medium-3 large-3 columns show-for-medium-up"></div>        
