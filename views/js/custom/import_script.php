@@ -68,6 +68,7 @@
                              $('.result2').hide();
                          }, 1000);
                     };
+                    spinner.stop(target);
                 },"JSON");  
             }
         });    
