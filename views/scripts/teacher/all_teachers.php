@@ -30,7 +30,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
     &nbsp;
 </div>
 <!--Table-->
-<div id="jTable" class="medium-6 large-6 columns show-for-medium-up">            
+<div id="teachers_table" class="jTable medium-6 large-6 columns show-for-medium-up">            
 </div>
 <?php 
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';

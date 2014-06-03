@@ -20,7 +20,7 @@
             selectOnRowClick: true, //Enable this to only select using checkboxes
             totalRecordCount: 'RecordCount',
             actions: {
-                listAction: 'models/jTableFunctions/list_student.php',
+                listAction: 'models/jTableFunctions/list_my_students.php',
                 updateAction: 'models/jTableFunctions/update_stu_status.php',
             },
             recordsLoaded: function (event, data) { 
@@ -46,13 +46,7 @@
                     width: '20%',
                     visibility: 'fixed',
                     edit:false
-                },
-                status: {
-                    visibility: 'hidden',
-                    title: '<?php echo STATUS;?>',                
-                    edit:true,
-                    options: { 'G': '<?php echo GRADUATED;?>', 'A': '<?php echo ACTIVE;?>' }
-                },
+                },                
                 level: {
                     title: '<?php echo LEVEL;?>',
                     width: '11%',
@@ -69,8 +63,9 @@
                     visibility: 'visible',
                     width: '4%',
                     edit:false,
+                    sorting: false,
                     display: function (data) {
-                        return '<a href="views/scripts/dean/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
+                        return '<a href="views/scripts/teacher/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
                     }
                 },
                 dummyColumn: {

@@ -54,15 +54,24 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     </div>
     
     <!-- Tab 2 -->
-    <div class="content" id="panel2-2">            
-        <div class="row medium-3 large-3 columns show-for-medium-up"></div>        
-        <div id="sugg_courses_Table" class="medium-12 large-12 columns show-for-medium-up"></div> <!--Table-->
+    <div class="content" id="panel2-2">
+        <div class="row">
+            <div class="medium-1 large-1 columns">&nbsp;</div>
+            <div id="sugg_courses_Table" class="medium-10 large-10 columns show-for-medium-up"></div> <!--Table-->
+            <div class="medium-1 large-1 columns">&nbsp;</div>
+        </div>
+        
     </div>
     
     <!-- Tab 3 -->
     <div class="content" id="panel2-3">      
-        <div class="row medium-3 large-3 columns show-for-medium-up"></div>
-        <div id="below_stu_Table" class="jTable medium-12 large-12 columns show-for-medium-up"></div> <!--Table-->        
+        <div class="row">
+            <div class="medium-1 large-1 columns">&nbsp;</div>
+            <div id="below_stu_Table" class="jTable medium-10 large-10 columns"></div> <!--Table-->
+            <div class="medium-1 large-1 columns">&nbsp;</div>
+        </div>
+        
+        
     </div>
 </div>
 

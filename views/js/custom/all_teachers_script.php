@@ -1,6 +1,6 @@
 <script>
 $(function(){    
-    $('#jTable').jtable({
+    $('#teachers_table').jtable({
         title: '<?php echo ALL_STUDENTS;?>',
         paging: true,                    
         columnResizable: false, //Actually, no need to set true since it's default
@@ -92,15 +92,15 @@ $(function(){
     //Re-load records when user click 'load records' button.
     $('#search_button').click(function (e) {
         e.preventDefault();
-        $('#jTable').jtable('load', {
+        $('#teachers_table').jtable('load', {
             searchText: $('#search_text').val(),
             searchId: $('#search_id').val()
         });
     });
 
-    $('#jTable').jtable('load');
+    $('#teachers_table').jtable('load');
 
-    $('#jTable').jtable('load', undefined, function(){
+    $('#teachers_table').jtable('load', undefined, function(){
        $('.add').bind( "click", function() {
             if($(this).text() === 'Add'){
                 $(this).text('Remove');

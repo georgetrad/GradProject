@@ -1,5 +1,4 @@
-<script>
-           
+<script>           
     function markSuggestedCourses(){
         $.post('models/functions/_global_ajax.php', {case: 'getSuggestedCourses'}, function(data){
                 $.each(data, function(key, value) {

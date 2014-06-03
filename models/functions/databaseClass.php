@@ -19,7 +19,11 @@ class databaseClass {
     public static function logIn($username, $password){
         $password_hash	= md5($password);   //Decrypting the MD5 encrypted password.        
         // mySQL query
-        $query = "SELECT user_id, username, level FROM user WHERE username='".mysql_real_escape_string($username)."' AND password='".mysql_real_escape_string($password_hash)."' AND active = 'A'";
+        $query = "SELECT user.user_id, user.username, user.level, CONCAT(teacher.first_name, ' ', teacher.last_name) AS name ";
+        $query.= "FROM user ";        
+        $query.= "INNER JOIN teacher ON user.username = teacher.user_username ";
+        $query.= "WHERE user.username='".mysql_real_escape_string($username)."' AND user.password='".mysql_real_escape_string($password_hash)."' AND user.active = 'A' ";
+        
         $queryRun = mysql_query($query);        
         if($queryRun){
             $queryNumRows = mysql_num_rows($queryRun);
@@ -31,12 +35,14 @@ class databaseClass {
             else if($queryNumRows == 1){
                 $userId = mysql_result($queryRun, 0, 'user_id');
                 $username = mysql_result($queryRun, 0, 'username');
-                $userLevel = mysql_result($queryRun, 0, 'level');                                
+                $userLevel = mysql_result($queryRun, 0, 'level');
+                $name = mysql_result($queryRun, 0, 'name');
                 $response = array(
                     'success'   => true,
                     'username'  => $username,
                     'userId'    => $userId,
-                    'userLevel'  => $userLevel                    
+                    'userLevel' => $userLevel,
+                    'name'      => $name
                 );                
             }
             return $response;
@@ -473,8 +479,8 @@ class databaseClass {
     }
     
     public static function getMyStudents(){
-        $query = "SELECT student.id, ";
-        $query.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name ";        
+        $query = "SELECT student.id, student.current_level AS level, ";
+        $query.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name, department.name_ar as dep_name ";        
         $query.= "FROM user ";                                               
         $query.= "INNER JOIN teacher ON teacher.user_username = user.username ";
         $query.= "INNER JOIN student ON student.advisor_id = teacher.id ";       

@@ -38,7 +38,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
             <?php
                 // select options
                 echo '<select id="advisor_id">';
-                    $query = "SELECT id, first_name, last_name FROM teacher";
+                    $query = "SELECT id, first_name, last_name FROM teacher WHERE active = 'A'";
                     $result = mysql_query($query);
                     while($row = mysql_fetch_array($result)) {
                         $firstName = $row['first_name'];

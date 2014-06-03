@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == -1)){
     header('Location: ../../../index.php');
 }
-$title = ALL_STUDENTS;
+$title = MY_STUDENTS;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_bar.php';
 ?>
@@ -36,9 +36,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
     &nbsp;
 </div>
 <!--Table-->
-<div id="jTable" class="medium-6 large-6 columns show-for-medium-up">            
+<div id="students_table" class="jTable medium-6 large-6 columns show-for-medium-up">            
 </div>
 <?php 
-    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/all_students_script.php';
 ?>

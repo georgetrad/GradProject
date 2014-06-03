@@ -41,11 +41,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 if(!loggedIn()){
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/login_script.php';
 }
-else if(loggedIn() && $_SESSION['userLevel'] == -1){
-}
-else if(loggedIn() && $_SESSION['userLevel'] == 0){
-    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_students_script.php';
-}
 ?>   
 <script>
     $(document).foundation();

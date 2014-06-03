@@ -63,22 +63,6 @@ h4.title {
     background-color: #65A36A;
 }
 
-.input-color {
-    position: relative;
-}
-.input-color input {
-    padding-left: 20px;
-}
-.input-color .color-box {
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    background-color: #ccc;
-    position: absolute;
-    left: 5px;
-    top: 5px;
-}
-
 .data_container {
     border: solid;
     border-width: 2px;
@@ -111,7 +95,6 @@ h4.title {
 .right_home_title {
     font-size: 14px;
     width: 150px;
-    //text-align: right;
     margin-bottom: 5px;    
 }
 
@@ -124,9 +107,7 @@ h4.title {
 
 .left_home_title {
     font-size: 14px;
-    width: 215px;
-    //text-align: right;
-    //margin-bottom: 5px;    
+    width: 215px;    
 }
 
 #toTop {
@@ -159,6 +140,10 @@ h4.title {
 
 .left_data {
     text-align: left;
+}
+
+.center_data {
+    text-align: center;
 }
 
 .jtable-title-text {

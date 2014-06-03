@@ -26,21 +26,21 @@
                 },
                 name_ar: {
                     title: '<?php echo COURSE_NAME;?>',                            
-                    width: '15%',
+                    width: '20%',
                     visibility: 'fixed'
                 },                
                 ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',
-                    width: '15%'
+                    width: '20%'
                 },
                 course_level: {
                     title: '<?php echo LEVEL;?>',
-                    width: '15%',
+                    width: '10%',
                     listClass: 'left_data'
                 },
                 req_course: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '15%'                  
+                    width: '18%'                  
                 }, 
                credits: {
                     title: '<?php echo CREDITS;?>',
@@ -50,7 +50,7 @@
                     //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
                     courses: {
                         title: '',
-                        width: '2%',
+                        width: '5%',
                         sorting: false,
                         display: function (data) {
                                 //Create an image that will be used to open child table
@@ -77,7 +77,7 @@
                                                 },
                                                 name: {
                                                     title: '<?php echo NAME;?>',
-                                                    width: '30%'
+                                                    width: '25%'
                                                 },
                                                 level: {
                                                     title: '<?php echo LEVEL;?>',
@@ -86,7 +86,7 @@
                                                 },
                                                 tot_hrs: {
                                                     title: '<?php echo COMPLETED_HRS;?>',
-                                                    width: '10%',
+                                                    width: '15%',
                                                     listClass: 'left_data'
                                                 },
                                                 gpa: {

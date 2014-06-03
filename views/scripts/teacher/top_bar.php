@@ -7,7 +7,7 @@
             <!-- Right Navigation Section -->
             <ul class="right">                
                 <li class="active has-dropdown">
-                    <a><?=WELCOME.' '.$_SESSION['username']?></a>
+                    <a><?=WELCOME.' '.$_SESSION['name']?></a>
                     <ul class="dropdown">                                
                         <li><a href="models/functions/log_out.php"><?=LOGOUT?></a></li>
                     </ul>
@@ -20,11 +20,8 @@
                     <a href="views/scripts/teacher/all_teachers.php"><?=TEACHERS?></a>                    
                 </li>
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a><?=STUDENTS?></a>
-                    <ul class="dropdown">                                
-                        <li><a href="views/scripts/teacher/all_students.php"><?=ALL_STUDENTS?></a></li>                        
-                    </ul>
+                <li>
+                    <a href="views/scripts/teacher/all_students.php"><?=MY_STUDENTS?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li>

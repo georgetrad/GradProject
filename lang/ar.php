@@ -74,6 +74,7 @@ define('STUDENTS', 'الطلاب');
             define('STATUS', 'الحالة');
             define('ACTIVE', 'مستمر');
             define('GRADUATED', 'متخرج');
+    define('MY_STUDENTS', 'طلابي');
     
 define('TEACHERS', 'المدرسون');
     define('DEP', 'القسم');

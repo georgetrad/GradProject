@@ -9,19 +9,20 @@ switch ($case){
     /******************** login_script ********************/
     case 'login':{
         if (isset($_POST['username'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];    
-        $userInfo = databaseClass::logIn($username, $password);             // getting the user info from the database.
+            $username = $_POST['username'];
+            $password = $_POST['password'];    
+            $userInfo = databaseClass::logIn($username, $password);             // getting the user info from the database.
 
-        if($userInfo['success'] == true){
-            $semester = databaseClass::getLatestSemester();
-            // Assigning the user info to a session to use it later.
-            $_SESSION['userId']     = $userInfo['userId'];                
-            $_SESSION['username']   = $userInfo['username'];
-            $_SESSION['userLevel']  = $userInfo['userLevel'];           
-            $_SESSION['semester']   = $semester;
-        }
-        echo json_encode($userInfo);    // Encoding the user info in JSON because it cannot be returned as an array.
+            if($userInfo['success'] == true){
+                $semester = databaseClass::getLatestSemester();
+                // Assigning the user info to a session to use it later.
+                $_SESSION['userId']     = $userInfo['userId'];                
+                $_SESSION['username']   = $userInfo['username'];
+                $_SESSION['userLevel']  = $userInfo['userLevel'];
+                $_SESSION['name']       = $userInfo['name'];
+                $_SESSION['semester']   = $semester;
+            }
+            echo json_encode($userInfo);    // Encoding the user info in JSON because it cannot be returned as an array.
         }
         break;
     }

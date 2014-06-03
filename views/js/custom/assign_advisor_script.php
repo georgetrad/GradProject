@@ -87,7 +87,7 @@
     function assign(advisorId, selectedStudents){                
         var target = document.getElementById('spinner');
         var spinner = new Spinner(options);
-        spinner.spin(target);
+        spinner.spin(target);        
         $.post( "models/functions/_global_ajax.php", {case:'updateAdvisor', advisorId: advisorId, selectedStudents: selectedStudents },function(data) {       
             $('#jTable').jtable('load');
             spinner.stop(target);

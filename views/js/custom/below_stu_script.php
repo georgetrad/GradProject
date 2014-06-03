@@ -65,12 +65,12 @@
                 num_of_crs: {
                     title: '<?php echo NUM_OF_CRS;?>',
                     width: '20%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 }, 
                hrs: {
                     title: '<?php echo SUGG_HRS;?>',
                     width: '12%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },                
                     //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
                     courses: {
@@ -105,15 +105,18 @@
                                                 },
                                                 name_ar: {
                                                     title: '<?php echo COURSE_NAME;?>',
-                                                    width: '25%'
+                                                    width: '35%'
                                                 },
                                                 status: {
                                                     title: '<?php echo STATUS;?>',
-                                                    width: '25%'
+                                                    width: '20%'
                                                 },
                                                 grade: {
                                                     title: '<?php echo FINAL_GRADE;?>',
-                                                    width: '25%'                                                    
+                                                    width: '20%'                                                    
+                                                },
+                                                dummyColumn: {
+                                                    visibility: 'hidden'
                                                 }
                                             }
                                         }, function (data) { //opened handler
