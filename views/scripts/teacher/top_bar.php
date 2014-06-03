@@ -7,7 +7,7 @@
             <!-- Right Navigation Section -->
             <ul class="right">                
                 <li class="active has-dropdown">
-                    <a><?=WELCOME.' '.$_SESSION['name']?></a>
+                    <a><?=$_SESSION['name']?></a>
                     <ul class="dropdown">                                
                         <li><a href="models/functions/log_out.php"><?=LOGOUT?></a></li>
                     </ul>
