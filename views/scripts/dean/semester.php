@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         &nbsp;
     </div>
     <!--Table-->
-    <div id="jTable" class="medium-6 large-10 columns show-for-medium-up">            
+    <div id="jTable" class="medium-10 large-10 columns show-for-medium-up">            
     </div>
     <div class="medium-1 large-1 columns">
         &nbsp;
