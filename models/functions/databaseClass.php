@@ -308,7 +308,8 @@ class databaseClass {
             "course_type_id"    => "F",
             "req_course_id"     => "E",
             "name_ar"           => "B",
-            "course_level"      => "A"
+            "course_level"      => "A",
+            "credits"           => "D"
         );
         $staticData = array();
         $tableName = 'course';

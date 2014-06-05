@@ -10,7 +10,7 @@ if(!loggedIn()){
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, text/html" />        
         <title><?=$title?></title>
-        <base href="http://localhost/GradProject/" />
+        <base href="http://192.168.2.7/GradProject/" />
         <link rel="icon" type="image/png" href="style/img/Ebla_logo.png"/>
         <link rel="stylesheet" href="style/css/foundation.css"/>
         <link rel="stylesheet" href="style/jTable/themes/metro/darkgray/jtable.css"  type="text/css" />
