@@ -28,11 +28,8 @@
                     <a href="views/scripts/dean/all_teachers.php"><?=TEACHERS?></a>                    
                 </li>
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a><?=STUDENTS?></a>
-                    <ul class="dropdown">                                
-                        <li><a href="views/scripts/dean/all_students.php"><?=ALL_STUDENTS?></a></li>                        
-                    </ul>
+                <li>
+                    <a href="views/scripts/dean/all_students.php"><?=STUDENTS?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">

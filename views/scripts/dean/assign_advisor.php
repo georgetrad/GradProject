@@ -16,7 +16,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
 </div>
 <!-- Filtering Area -->
 <div class="row">    
-    <div class="medium-2 large-3 columns show-for-medium-up">
+    <div class="medium-2 large-2 columns show-for-medium-up">
         &nbsp;
     </div>
     <div class="medium-2 large-1 columns show-for-medium-up">
@@ -33,8 +33,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
         <div class="medium-1 large-1 columns show-for-medium-up">
             <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">
         </div>
-    <form>       
-        <div class="medium-3 large-1 columns show-for-medium-up">            
+    <form>        
+        <div class="medium-3 large-2 columns show-for-medium-up">       
             <?php
                 // select options
                 echo '<select id="advisor_id">';

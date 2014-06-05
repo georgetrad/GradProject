@@ -13,10 +13,7 @@ $(function(){
         selectOnRowClick: true, //Enable this to only select using checkboxes
         totalRecordCount: 'RecordCount',
         actions: {
-            listAction:   'models/jTableFunctions/list_teacher.php',
-            updateAction: 'models/jTableFunctions/update_teacher.php',
-            deleteAction: 'models/jTableFunctions/delete_teacher.php',
-            createAction: 'models/jTableFunctions/create_teacher.php'
+            listAction:   'models/jTableFunctions/list_teacher.php'            
         },
         fields: {
             id: {
@@ -25,56 +22,20 @@ $(function(){
             },
             name: {
                 title: '<?php echo NAME;?>',                            
-                width: '23%',
-                edit: false,
-                create: false
-            },
-            first_name: {
-                list: false,
-                edit: false,
-                title: '<?php echo NAME;?>',            
-                input: function () {                
-                    return '<input type="text" name="first_name" style="width:200px" value="<?=NAME?>" />';                
-                }
-            },
-            middle_name: {
-                list: false,
-                edit: false,
-                title: '<?php echo MIDDLE_NAME;?>',            
-                input: function () {                
-                    return '<input type="text" name="middle_name" style="width:200px" value="<?=MIDDLE_NAME?>" />';                
-                }
-            },
-            last_name: {
-                list: false,
-                edit: false,
-                title: '<?php echo LAST_NAME;?>',
-                input: function () {                
-                    return '<input type="text" name="last_name" style="width:200px" value="<?=LAST_NAME?>" />';                
-                }
+                width: '23%',                
             },
             dep_name: {
                 title: '<?php echo DEP;?>',
                 width: '15%',
                 edit: false,
                 create: false
-            },
-            dep: {
-                title: '<?php echo DEP;?>',            
-                list: false,
-                options: { '1': '<?php echo ICT;?>', '2': '<?php echo ARC;?>' }
-            },
+            },            
             degree: {
                 title: '<?php echo DEGREE;?>',
                 width: '15%',
                 edit: false,
                 create: false
-            },
-            deg: {
-                title: '<?php echo DEGREE;?>',            
-                list: false,
-                options: { 'P': '<?php echo DOCTOR;?>', 'E': '<?php echo ENGINEER;?>' }
-            },
+            },            
             phone_number: {
                 title: '<?php echo PHONE_NUM;?>',
                 width: '15%',            
@@ -86,6 +47,11 @@ $(function(){
                 width: '45%',            
                 listClass: 'left_data',
                 inputClass: 'left_data'
+            },
+            dummyColumn: {              
+                visibility: 'hidden',
+                edit: false,
+                create: false
             }
         }
     }); 

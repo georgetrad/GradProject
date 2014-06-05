@@ -8,7 +8,7 @@
     }    
     $(function(){  
         $('#students_table').jtable({
-            title: '<?php echo ALL_STUDENTS;?>',
+            title: '<?php echo STUDENTS;?>',
             paging: true,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default
@@ -63,12 +63,13 @@
                     title: '<?php echo COMPLETED_HRS;?>',
                     width: '20%',
                     edit:false,
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 link: {
                     visibility: 'visible',
                     width: '4%',
                     edit:false,
+                    sorting: false,
                     display: function (data) {
                         return '<a href="views/scripts/dean/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
                     }

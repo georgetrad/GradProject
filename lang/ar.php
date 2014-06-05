@@ -98,6 +98,7 @@ define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
         define('REG_DATE', 'تاريخ التسجيل');
         define('DEP_HRS', 'ساعات القسم');
         define('CRS_TREE', 'الخطة الدرسية');
+        define('NO_GRADES', 'لا يوجد علامات');
 
 define('IMPORTING', 'الاستيراد');
     define('IMPORT_FILES', 'استيراد ملفات');

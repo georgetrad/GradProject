@@ -370,7 +370,7 @@ class databaseClass {
     public static function getStuData($id){ 
         
         $query= "SELECT * FROM get_stu_data WHERE ";
-        if ($_SESSION['userLevel']!=-1){
+        if ($_SESSION['userLevel']!= -1){
             $query.= "user_username = '".$_SESSION['username']."' AND ";
         }
         $query.= "id =". $id;
@@ -429,7 +429,7 @@ class databaseClass {
         $result = mysql_query($query);
         $queryNumRows = mysql_num_rows($result);
         if($queryNumRows == 0){
-            print_r('Error');exit;
+            return false;
         }
         else{
             $rows = array();
