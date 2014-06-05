@@ -14,7 +14,7 @@ $withourAdvNum  = databaseClass::getWithouthAdvNum();
 $suggCrsNum     = databaseClass::getSuggCoursesNum();
 ?>
 <div class="row">
-    <h4 class="title text-center"><?=$title;?></h4>
+    <h4 class="title text-center"><?=$title;?></h4>    
 </div>
 <div class="medium-1 large-1 columns">
     &nbsp;

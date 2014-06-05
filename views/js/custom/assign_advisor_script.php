@@ -63,7 +63,7 @@
                     visibility: 'fixed' //This column always will be shown,                            
                 },
                 dep_name: {
-                    title: '<?php echo STU_NAME;?>',                            
+                    title: '<?php echo DEP;?>',                            
                     width: '15%',
                     visibility: 'fixed' //This column always will be shown,                            
                 },

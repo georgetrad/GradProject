@@ -16,7 +16,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
         &nbsp;
     </div>         
     <div class="medium-2 large-2 columns show-for-medium-up">
-        <input type="search" id="search_text" style="text-align: center"/>
+        <input type="search" id="search_text" placeholder="<?=NAME?>" style="text-align: center"/>
     </div> 
     <div class="medium-1 large-1 columns show-for-medium-up">
         <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">

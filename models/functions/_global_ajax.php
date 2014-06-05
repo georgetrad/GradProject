@@ -157,12 +157,14 @@ switch ($case){
         $stuId = $_POST['id'];
         $result = databaseClass::getStuGrades($stuId);
         if ($result == FALSE){
-            $html = '<div class="medium-4 large-4 columns">
-                        <div id="wrong" data-alert class="alert-box warning text-center" style="font-size: 14px; font-family: DroidKufi-Regular">
-                                <span id="invalid_login">لا يوجد علامات</span>
-                                <a href="#" class="close"></a>
-                            </div>
-                        </div>';
+            $html = '<div class="medium-4 large-4 columns">&nbsp;</div>';
+            $html.= '<div class="medium-4 large-4 columns">';
+            $html.=     '<div id="wrong" data-alert class="alert-box warning text-center" style="font-size: 14px; font-family: DroidKufi-Regular">';
+            $html.=         '<span id="invalid_login">'.NO_GRADES.'</span>';
+            $html.=         '<a href="#" class="close"></a>';
+            $html.=     '</div>';
+            $html.= '</div>';
+            $html.= '<div class="medium-4 large-4 columns">&nbsp;</div>';
         }
         else {
             $html = '<table>';

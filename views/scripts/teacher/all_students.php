@@ -12,9 +12,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
 </div>
 <!-- Filtering Area -->
 <div class="row">    
-    <div class="medium-4 large-4 columns show-for-medium-up">
-        &nbsp;
-    </div>
+    <div class="medium-2 large-2 columns show-for-medium-up">&nbsp;</div>
     <form>
         <div class="medium-2 large-1 columns show-for-medium-up">
             <select id="search_id">                    
@@ -32,13 +30,13 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
         </div>
     </form>       
 </div>
-<div class="row medium-3 large-3 columns show-for-medium-up">
-    &nbsp;
+<div class="row">
+    <div class="medium-2 large-2 columns">&nbsp</div>
+    <div id="students_table" class="jTable medium-8 large-8 columns"><!--Table--></div>
+    <div class="medium-2 large-2 columns">&nbsp;</div>
 </div>
-<!--Table-->
-<div id="students_table" class="jTable medium-6 large-6 columns show-for-medium-up">            
-</div>
+
 <?php 
-    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/all_students_script.php';
 ?>

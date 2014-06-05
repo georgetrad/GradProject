@@ -19,7 +19,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         <input type="search" id="search_text" placeholder="<?=COLLEGE_ID?>" style="text-align: center"/>
     </div> 
     <div class="medium-1 large-1 columns show-for-medium-up">
-        <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">            
+        <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">        
     </div> 
     <div class="medium-6 large-2 columns show-for-medium-up">
         <div id="wrong" data-alert class="alert-box alert" style="font-size: 12px; font-family: DroidKufi-Regular; display: none ">
