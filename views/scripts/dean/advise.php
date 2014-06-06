@@ -28,6 +28,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         </div>            
     </div>
     <div class="medium-2 large-4 columns show-for-medium-up">
+        <div class="settingVals">
+            <div style="display: inline" ><?=STR_PRINT?>:</div>
+            <input style="display: inline"  type="checkbox" class="selPA" value="area1" checked /> <?=STUDENT_GRADE?>
+            <input style="display: inline"  type="checkbox" class="selPA" value="area2" checked /> <?=AVAILABLE_CRS?>
+            <div style="display: inline" class="printBtn"><img src="style/img/print-icon.png" height="25" /></div>
+        </div>
     </div>    
 </div>
 <div id="contents" class="row" style="display: none; padding-bottom: 100px; ">
@@ -48,7 +54,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                         </div>                        
                     </div>
                     <div class="row">
-                        <div class="medium-6 large-6 columns">
+                        <div class="medium-6 large-6 columns PrintArea area0">
                             <div class="stu_title label"><?=NAME?></div> <div id="name" class="stu_data secondary label"></div>
                         </div>
                         <div class="medium-6 large-6 columns">
@@ -113,7 +119,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
             </dd>
             <dd>
                 <a href="#panel3"><?=STUDENT_GRADE?></a>
-                <div id="panel3" class="content">
+                <div id="panel3" class="content PrintArea area1">
                     <div class="row">
                         <div class="medium-3 large-3 columns">&nbsp;</div>
                         <div id="table" class="medium-6 large-6 columns show-for-medium-up"></div>
@@ -128,7 +134,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                         <div class="medium-2 large-2 columns" data-reveal-id="crs_modal" data-reveal>
                             <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 100px; width: 150px; cursor: pointer">
                         </div>
-                        <div id="jTable" class="medium-9 large-9 columns show-for-medium-up"></div>
+                        <div id="jTable" class="medium-9 large-9 columns show-for-medium-up PrintArea area2"></div>
                         <div class="medium-1 large-1 columns">                                                        
                         </div>
                     </div>

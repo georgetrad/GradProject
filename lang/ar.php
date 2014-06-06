@@ -142,6 +142,7 @@ define('SETTINGS', 'الاعدادات');
 define('DB', 'قاعدة البيانات');
 
 define('SEARCH', 'بحث');
+define('STR_PRINT', 'الطباعة');
 define('FILENAME', 'اسم الملف');
 define('BROWSE', 'إستعراض');
 define('PHONE_NUM', 'رقم الهاتف');

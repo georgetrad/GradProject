@@ -145,6 +145,16 @@
                     visibility: 'hidden'
                 }        
             }
-        });        
+        }); 
+        $(".printBtn").click(function(){
+
+            var print = "div.PrintArea.area0";
+            $("input.selPA:checked").each(function(){
+                print += (print.length > 0 ? "," : "") + "div.PrintArea." + $(this).val();
+            });
+			
+            $( print ).printArea();
+			
+        });
     });    
 </script>
