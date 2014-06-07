@@ -1,4 +1,4 @@
-<?php
+ <?php
 include_once '../db_connect.php';
 
 // Get records count
@@ -34,9 +34,6 @@ $result1 = mysql_query($query1);            // Executing the query.
 $row = mysql_fetch_array($result1);         // Fetching the result.
 $recordCount = $row['RecordCount'];         // Filling the result in an variable.
 
-
-//$pageSize = $_GET['jtPageSize'];            // Getting the selected page size, start index from jTable
-//$startIndex = $_GET['jtStartIndex'];
 $sorting = 'id ASC';                        // Assigning a default sorting order.
 
 if(isset($_GET['jtSorting'])){
@@ -49,7 +46,7 @@ $query2.= "FROM course as c ";
 $query2.= "INNER JOIN course_type ON c.course_type_id = course_type.id ";
 $query2.= "LEFT JOIN course course1 ON c.req_course_id = course1.id ";
 $query2.= "WHERE c.active='A' ";
-//print_r($query2);exit;
+
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];

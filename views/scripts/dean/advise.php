@@ -37,7 +37,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <div class="medium-10 large-10 columns">
         <dl class="accordion" data-accordion>
             <dd>
-                <a href="#panel1"><?=PERSONAL_INFO?></a>
+                <a href="#panel1"><?=PERSONAL_INFO?><span class="name" style="margin-right: 35%"></span></a>
                 <div id="panel1" class="content active">
                     <div class="row">
                         <div class="medium-6 large-6 columns">
@@ -49,7 +49,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                     </div>
                     <div class="row">
                         <div class="medium-6 large-6 columns">
-                            <div class="stu_title label"><?=NAME?></div> <div id="name" class="stu_data secondary label"></div>
+                            <div class="stu_title label"><?=NAME?></div> <div class="name stu_data secondary label"></div>
                         </div>
                         <div class="medium-6 large-6 columns">
                             <div class="stu_title label"><?=PHONE_NUM?></div> <div id="phone" class="stu_data secondary label"></div>
@@ -125,10 +125,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <a href="#panel4"><?=AVAILABLE_CRS?></a>
                 <div id="panel4" class="content">
                     <div class="row">
-                        <div class="medium-2 large-2 columns" data-reveal-id="crs_modal" data-reveal>
-                            <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 100px; width: 150px; cursor: pointer">
+                        <div class="medium-1 large-1 columns" data-reveal-id="crs_modal" data-reveal>
+                            <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 50px; width: 75px; cursor: pointer">
                         </div>
-                        <div id="jTable" class="medium-9 large-9 columns show-for-medium-up"></div>
+                        <div id="jTable" class="medium-11 large-11 columns show-for-medium-up"></div>
                         <div class="medium-1 large-1 columns">                                                        
                         </div>
                     </div>

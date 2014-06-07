@@ -25,7 +25,7 @@
                 var failedCrs   = result.failedCrs;
                 
                 $('#stu_id').html(sId);
-                $('#name').html(name);
+                $('.name').html(name);
                 $('#gender').html(gender);
                 $('#birth_date').html(birthDate);
                 $('#national_id').html(nationalId);
@@ -88,14 +88,14 @@
         $('#jTable').jtable({
             title: '<?php echo AVAILABLE_CRS;?>',
             paging: false,                    
-            columnResizable: false, //Actually, no need to set true since it's default
-            columnSelectable: false, //Actually, no need to set true since it's default
-            saveUserPreferences: false, //Actually, no need to set true since it's default
+            columnResizable: false, 
+            columnSelectable: false,
+            saveUserPreferences: false,
             sorting: true,                    
-            selecting: false, //Enable selecting
-            multiselect: false, //Allow multiple selecting
-            selectingCheckboxes: false, //Show checkboxes on first column
-            selectOnRowClick: false, //Enable this to only select using checkboxes
+            selecting: false,
+            multiselect: false,
+            selectingCheckboxes: false,
+            selectOnRowClick: false,
             totalRecordCount: 'RecordCount',
             actions: {
                 listAction: 'models/jTableFunctions/list_stu_sugg.php'                      
@@ -108,38 +108,43 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '15%',
+                    width: '10%',
                     listClass: 'left_data'
                 },
                 name_ar: {
                     title: '<?php echo COURSE_NAME;?>',                            
-                    width: '20%',
+                    width: '17%',
                     visibility: 'fixed' //This column always will be shown,                            
                 },                
                 course_level: {
                     title: '<?php echo LEVEL;?>',                            
                     width: '10%',
                     visibility: 'fixed',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
+                },
+                ct_name: {
+                    title: '<?php echo COURSE_TYPE;?>',                            
+                    width: '15%',
+                    visibility: 'fixed',                    
                 },
                 req_name: {
                     title: '<?php echo REQ_COURSE;?>',                            
-                    width: '15%',
+                    width: '13%',
                     visibility: 'fixed'                    
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
                     width: '15%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 status: {
                     title: '<?php echo STATUS;?>',
-                    width: '15%'                    
+                    width: '10%'                    
                 },
                 grade: {
                     title: '<?php echo FINAL_GRADE;?>',
-                    width: '15%',
-                    listClass: 'left_data'
+                    width: '20%',
+                    listClass: 'center_data'
                 },
                 dummyColumn: {
                     visibility: 'hidden'

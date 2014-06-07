@@ -20,8 +20,7 @@
             selectOnRowClick: true, //Enable this to only select using checkboxes
             totalRecordCount: 'RecordCount',
             actions: {
-                listAction: 'models/jTableFunctions/list_my_students.php',
-                updateAction: 'models/jTableFunctions/update_stu_status.php',
+                listAction: 'models/jTableFunctions/list_my_students.php',                
             },
             recordsLoaded: function (event, data) { 
                 getGraduationStudents();

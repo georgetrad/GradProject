@@ -7,10 +7,10 @@ $(function(){
         columnSelectable: false, //Actually, no need to set true since it's default
         saveUserPreferences: false, //Actually, no need to set true since it's default
         sorting: true,                    
-        selecting: true, //Enable selecting
-        multiselect: true, //Allow multiple selecting
-        selectingCheckboxes: true, //Show checkboxes on first column
-        selectOnRowClick: true, //Enable this to only select using checkboxes
+        selecting: false, //Enable selecting
+        multiselect: false, //Allow multiple selecting
+        selectingCheckboxes: false, //Show checkboxes on first column
+        selectOnRowClick: false, //Enable this to only select using checkboxes
         totalRecordCount: 'RecordCount',
         actions: {
             listAction:   'models/jTableFunctions/list_teacher.php',
