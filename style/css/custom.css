@@ -164,5 +164,9 @@ h4.title {
 }
 
 .ui-button-text-only .ui-button-text{
-     background-color: #258faf !important;
+    background-color: #258faf !important;
+}
+
+.printBtn{
+    cursor: pointer;
 }
