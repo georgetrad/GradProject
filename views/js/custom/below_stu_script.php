@@ -49,18 +49,17 @@
                 },
                 depName: {
                     title: '<?php echo DEP;?>',                            
-                    width: '15%',
-                    visibility: 'fixed' //This column always will be shown,                            
+                    width: '13%'                    
                 },
                 level: {
                     title: '<?php echo LEVEL;?>',
-                    width: '6%',
-                    listClass: 'left_data'
+                    width: '8%',
+                    listClass: 'center_data'
                 },
                 hours: {
                     title: '<?php echo COMPLETED_HRS;?>',
                     width: '15%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 num_of_crs: {
                     title: '<?php echo NUM_OF_CRS;?>',

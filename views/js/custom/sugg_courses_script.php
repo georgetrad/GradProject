@@ -36,7 +36,7 @@
                 course_level: {
                     title: '<?php echo LEVEL;?>',
                     width: '10%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 req_course: {
                     title: '<?php echo REQ_COURSE;?>',
@@ -45,7 +45,7 @@
                credits: {
                     title: '<?php echo CREDITS;?>',
                     width: '15%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                     //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
                     courses: {
@@ -82,17 +82,17 @@
                                                 level: {
                                                     title: '<?php echo LEVEL;?>',
                                                     width: '5%',
-                                                    listClass: 'left_data'
+                                                    listClass: 'center_data'
                                                 },
                                                 tot_hrs: {
                                                     title: '<?php echo COMPLETED_HRS;?>',
                                                     width: '15%',
-                                                    listClass: 'left_data'
+                                                    listClass: 'center_data'
                                                 },
                                                 gpa: {
                                                     title: '<?php echo GPA;?>',
                                                     width: '10%',
-                                                    listClass: 'left_data'
+                                                    listClass: 'center_data'
                                                 },
                                                 status: {
                                                     title: '<?php echo STATUS;?>',
@@ -101,7 +101,7 @@
                                                 grade: {
                                                     title: '<?php echo FINAL_GRADE;?>',
                                                     width: '10%',
-                                                    listClass: 'left_data'
+                                                    listClass: 'center_data'
                                                 },
                                                 adviserName: {
                                                     title: '<?php echo ADVISOR;?>',

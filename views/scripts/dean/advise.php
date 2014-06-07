@@ -55,7 +55,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                     </div>
                     <div class="row">
                         <div class="medium-6 large-6 columns PrintArea area0">
-                            <div class="stu_title label"><?=NAME?></div> <div id="name" class="stu_data secondary label"></div>
+                            <div class="stu_title label"><?=NAME?></div> <div class="name stu_data secondary label"></div>
                         </div>
                         <div class="medium-6 large-6 columns">
                             <div class="stu_title label"><?=PHONE_NUM?></div> <div id="phone" class="stu_data secondary label"></div>
@@ -121,9 +121,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <a href="#panel3"><?=STUDENT_GRADE?></a>
                 <div id="panel3" class="content PrintArea area1">
                     <div class="row">
-                        <div class="medium-3 large-3 columns">&nbsp;</div>
-                        <div id="table" class="medium-6 large-6 columns show-for-medium-up"></div>
-                        <div class="medium-3 large-3 columns">&nbsp;</div>
+                        <div class="medium-2 large-2 columns">&nbsp;</div>
+                        <div id="table" class="medium-8 large-8 columns"></div>
+                        <div class="medium-2 large-2 columns">&nbsp;</div>
                     </div>                        
                 </div>
             </dd>

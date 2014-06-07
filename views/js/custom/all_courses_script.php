@@ -98,7 +98,7 @@
                 course_level: {
                     title: '<?php echo LEVEL;?>',
                     width: '2%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 req_name: {
                     title: '<?php echo REQ_COURSE;?>',
@@ -107,17 +107,17 @@
                 credits: {
                     title: '<?php echo CREDITS;?>',
                     width: '5%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },                
                 classA: {
                     title: '<?php echo CLASS_A;?>',
                     width: '7%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 classC: {
                     title: '<?php echo CLASS_C;?>',
                     width: '8%',
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 added: {
                     visibility: 'visible',

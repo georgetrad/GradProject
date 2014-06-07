@@ -134,12 +134,15 @@ switch ($case){
             $result = 'Fail';
         }
         if($selectedOption == 1){
-            $result = databaseClass::updateHoursLevel();
+            $result = databaseClass::updateAll();
         }
         else if($selectedOption == 2){
-            $result = databaseClass::updateStuCourse();
+            $result = databaseClass::updateHoursLevel();
         }
         else if($selectedOption == 3){
+            $result = databaseClass::updateStuCourse();
+        }
+        else if($selectedOption == 4){
             $result = databaseClass::updateCourse();
         }
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
@@ -169,19 +172,22 @@ switch ($case){
         else {
             $html = '<table>';
             $html.=     '<tr>';
-            $html.=         '<th style="width:100px; font-size:17px">';
+            $html.=         '<th style="width:10%; font-size:17px">';
             $html.=             COURSE_CODE;
             $html.=         '</th>';
-            $html.=         '<th style="width:250px; font-size:17px">';
+            $html.=         '<th style="width:25%; font-size:17px;">';
             $html.=             COURSE_NAME;
             $html.=         '</th>';
-            $html.=         '<th style="width:120px; font-size:17px">';
+            $html.=         '<th style="width:25%; font-size:17px">';
+            $html.=             CREDITS;
+            $html.=         '</th>';
+            $html.=         '<th style="width:10%; font-size:17px">';
             $html.=             FINAL_GRADE;
             $html.=         '</th>';
-            $html.=         '<th style="width:50px; font-size:17px">';
+            $html.=         '<th style="width:30px; font-size:17px">';
             $html.=             POINTS;
             $html.=         '</th>';
-            $html.=         '<th style="width:50px; font-size:17px" >';
+            $html.=         '<th style="width:10px; font-size:17px" >';
             $html.=             LETTER;
             $html.=         '</th>';
             $html.=     '</tr>';
@@ -190,8 +196,11 @@ switch ($case){
                 $html.=     '<td style="font-size: 16px; text-align: left">';
                 $html.=         $result[$i]['course_id'];
                 $html.=     '</td>';
-                $html.=     '<td style="font-size: 16px">';
+                $html.=     '<td style="font-size: 16px; padding-right:20px">';
                 $html.=         $result[$i]['course_name'];
+                $html.=     '</td>';
+                $html.=     '<td style="font-size: 16px; text-align: center;">';
+                $html.=         $result[$i]['credits'];
                 $html.=     '</td>';
                 $html.=     '<td style="font-size: 16px; text-align: center;">';
                 $html.=         $result[$i]['grade'];

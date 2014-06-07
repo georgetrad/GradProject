@@ -125,7 +125,7 @@
                 ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',                            
                     width: '15%',
-                    visibility: 'fixed',                    
+                    visibility: 'fixed'                    
                 },
                 req_name: {
                     title: '<?php echo REQ_COURSE;?>',                            

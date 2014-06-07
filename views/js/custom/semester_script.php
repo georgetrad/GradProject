@@ -27,7 +27,7 @@ $(function(){
             name: {
                 title: '<?php echo NAME;?>',                            
                 width: '10%',
-                visibility: 'fixed'                
+                listClass: 'left_data'
             },
             start_date: {
                 title: '<?php echo START_DATE;?>',
@@ -44,27 +44,27 @@ $(function(){
             min_req_hrs: {
                 title: '<?php echo MIN_REQ_HRS;?>',
                 width: '10%',
-                listClass: 'left_data'
+                listClass: 'center_data'
             },
             max_req_hrs: {
                 title: '<?php echo MAX_REQ_HRS;?>',
                 width: '10%',
-                listClass: 'left_data'
+                listClass: 'center_data'
             },
             exc_gpa: {
                 title: '<?php echo EXC_GPA;?>',
                 width: '10%',
-                listClass: 'left_data'
+                listClass: 'center_data'
             },
             exc_gpa_hrs: {
                 title: '<?php echo EXC_GPA_HRS;?>',
                 width: '10%',
-                listClass: 'left_data'
+                listClass: 'center_data'
             },
             max_grad_stu_hrs: {
                 title: '<?php echo MAX_GRAD_STU_HRS;?>',
                 width: '10%',
-                listClass: 'left_data'
+                listClass: 'center_data'
             },
             dummyColumn: {              
                 visibility: 'hidden',

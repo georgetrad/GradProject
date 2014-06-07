@@ -154,6 +154,7 @@ define('SAVE', 'حفظ');
 define('DELETE', 'حذف');
 define('CHOOSE_OPTION', 'اختر أحد الخيارات');
 define('UPDATE', 'تحديث');
+define('UPDATE_ALL', 'تحديث الكل');
 define('MALE', 'ذكر');
 define('FEMALE', 'أنثى');
 define('ICT', 'المعلوماتية والاتصالات');

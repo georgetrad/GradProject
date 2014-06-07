@@ -12,6 +12,7 @@ $query2 = "SELECT student_id, CONCAT(first_name, ' ', middle_name, ' ', last_nam
 $query2.= "CONCAT(t_first_name, ' ', t_last_name) AS adviserName ";
 $query2.= "FROM stu_in_sugg_crs ";
 $query2.= "WHERE id = '$courseId'";
+//print_r($query2);exit;
 $result2 = mysql_query($query2);
 //Add all records to an array
 $rows = array();
