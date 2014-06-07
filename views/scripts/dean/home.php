@@ -53,17 +53,17 @@ $suggCrsNum     = databaseClass::getSuggCoursesNum();
         <div class="medium-5 large-5 columns">
             <div class=" right_home_title label"><?=MIN_REQ_HRS?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['min_req_hrs']?></div>
         </div>
-        <div class="medium-5 large-5 columns">
+<!--        <div class="medium-5 large-5 columns">
             <div class=" left_home_title label"><?=MOST_FAILED_CRS?></div> <div class="home_data secondary label"></div>
-        </div>        
+        </div>        -->
     </div>    
     <div class="row">
         <div class="medium-5 large-5 columns">
             <div class=" right_home_title label"><?=MAX_REQ_HRS?></div> <div class="secondary label home_data"><?=$semesterInfo[0]['max_req_hrs']?></div>
         </div>
-        <div class="medium-5 large-5 columns" style="padding-bottom: 25px;">
+<!--        <div class="medium-5 large-5 columns" style="padding-bottom: 25px;">
             <div class=" left_home_title label"><?=MOST_PASSED_CRS?></div> <div class="home_data secondary label"></div>
-        </div>        
+        </div>        -->
     </div>    
 </div>
 <?php

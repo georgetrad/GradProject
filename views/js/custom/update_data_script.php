@@ -43,7 +43,7 @@
                          }, 3000);
                     }                    
                     spinner.stop(target);
-                });
+                },"JSON"); 
             }
         });
     });

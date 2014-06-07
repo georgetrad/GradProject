@@ -121,6 +121,7 @@ class databaseClass {
      */
     public static function importStudent($file){
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        $userId = $_SESSION['userId'];
         //** Variables ******************************************************************************//
         $rows = 5000;
         $rowsOffSet = 3;
@@ -132,7 +133,9 @@ class databaseClass {
             "last_name"     => "D"    
         );
         $staticData = array(
-                "status"    => "A"       
+                "status"        => "A",       
+                "upload_file"   => $file,       
+                "user_id"       => $userId       
         );    
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
@@ -146,6 +149,7 @@ class databaseClass {
      * @return boolean
      */
     public static function courseImport($file){
+        $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
         $rows = 5000;
@@ -155,7 +159,10 @@ class databaseClass {
             "id"            => "F",
             "name_ar"       => "G"
         );
-        $staticData = array();   
+        $staticData = array(       
+            "upload_file"   => $file,       
+            "user_id"       => $userId
+        );   
         $tableName = 'course';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
         unset($columns, $tableName, $staticData);
@@ -168,6 +175,7 @@ class databaseClass {
      * @return boolean
      */
     public static function classImport($file,$inputSemester){
+        $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
         $rows = 5000;
@@ -178,7 +186,9 @@ class databaseClass {
             "course_id"     => "F"
         );
         $staticData = array(
-            "semester_id"   => $inputSemester
+            "semester_id"   => $inputSemester,       
+            "upload_file"   => $file,       
+            "user_id"       => $userId    
         );
         $tableName = 'class';
         $result1 = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
@@ -201,6 +211,7 @@ class databaseClass {
      * @return boolean
      */
     public static function gradeImport($file){
+        $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
         $rows = 5000;
@@ -214,7 +225,9 @@ class databaseClass {
             "letter_grade"              => "Q"
         );
         $staticData = array(
-                "duty_type_id"    => "5"       
+            "duty_type_id"    => "5",       
+            "upload_file"   => $file,       
+            "user_id"       => $userId          
         );   
         $tableName = 'duty';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
@@ -228,6 +241,7 @@ class databaseClass {
      * @return boolean
      */
     public static function classGradeImport($file,$dep){
+        $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //** General variables ***********************************//
         $rows = 5000;
@@ -254,8 +268,10 @@ class databaseClass {
             "last_name"     => "W"   
         );
         $staticData = array(
-                "status"        => "A" ,
-                "department_id" => $dep
+            "status"        => "A" ,
+            "department_id" => $dep,       
+            "upload_file"   => $file,       
+            "user_id"       => $userId
         );   
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData, false);
@@ -279,7 +295,9 @@ class databaseClass {
         );
         $staticData = array(
             "student_class_class_id"    => $cls,
-            "duty_type_id"              => "5"       
+            "duty_type_id"              => "5",       
+            "upload_file"   => $file,       
+            "user_id"       => $userId       
         );   
         $tableName = 'duty';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
@@ -298,6 +316,7 @@ class databaseClass {
      * @return boolean
      */
     public static function courseFileImport($file){
+        $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
         $rows = 5000;
@@ -308,9 +327,13 @@ class databaseClass {
             "course_type_id"    => "F",
             "req_course_id"     => "E",
             "name_ar"           => "B",
-            "course_level"      => "A"
+            "course_level"      => "A",
+            "credits"           => "D"
         );
-        $staticData = array();
+        $staticData = array(       
+            "upload_file"   => $file,       
+            "user_id"       => $userId
+        );
         $tableName = 'course';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
         unset($columns, $tableName, $staticData);
@@ -323,6 +346,7 @@ class databaseClass {
      * @return boolean
      */
     public static function studentFileImport($file, $dep){
+        $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
         //*******************Variables   *******************//
         $rows = 5000;
@@ -335,8 +359,10 @@ class databaseClass {
             "last_name"     => "D"    
         );
         $staticData = array(
-                "status"        => "A",
-                "department_id" => $dep   
+            "status"        => "A",
+            "department_id" => $dep,       
+            "upload_file"   => $file,       
+            "user_id"       => $userId       
         );   
         $tableName = 'student';
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
