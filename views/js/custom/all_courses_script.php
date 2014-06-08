@@ -56,10 +56,20 @@
             $('#below_stu_counter').html(' ('+data+')'); 
 	}); 
     }
-    function getSuggCoursesNum(){
-        $.post('models/functions/_global_ajax.php', {case: 'getSuggCoursesNum'}, function(data){
-            $('#sugg_crs_counter').html(' ('+data+')');
-        });
+    function getCheckboxFilter(){
+        $.post('models/functions/_global_ajax.php', {case: 'getCheckboxFilter'}, function(data){
+            $('#checkboxFilterContainer').html( data );
+        }, "JSON");
+    }
+    function setFilterValues(){
+        var filter = $('#checkboxFilter').serialize();
+//        filter += "&case='setFilterValues'";
+        alert(filter);
+//        $(filter)
+//            e.preventDefault();
+//            $('#all_courses_Table').jtable('load', {
+//                searchId: $('#search_id').val()
+//            });
     }
     
     $(document).ready(function () {  
@@ -156,5 +166,11 @@
         $("#toTop").scrollToTop();
         //header freeze
         $('.jtable').stickyTableHeaders();
+        //getCheckboxFilter()
+        getCheckboxFilter();
+        //setFilterValues()
+        $('#checkboxFilterContainer').click(function(){
+            setFilterValues();
+        });
     });  
 </script>

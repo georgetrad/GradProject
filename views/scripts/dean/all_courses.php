@@ -48,6 +48,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 </div> 
                 <div class="medium-4 large-7 columns show-for-medium-up text-left"></div>
             </form>       
+        </div>
+        <!-- NEW Filtering Area -->
+        <div class="row"> 
+            <div class="medium-1 large-1 columns">&nbsp;</div>
+            <div id="checkboxFilterContainer"></div>
+            <div class="medium-1 large-1 columns">&nbsp;</div>   
         </div>    
         <div class="row medium-3 large-3 columns show-for-medium-up"></div>        
         <div id="all_courses_Table" class="medium-12 large-12 columns show-for-medium-up"></div> <!--Table-->
