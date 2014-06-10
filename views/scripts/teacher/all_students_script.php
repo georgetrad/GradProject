@@ -20,7 +20,7 @@
             selectOnRowClick: true, //Enable this to only select using checkboxes
             totalRecordCount: 'RecordCount',
             actions: {
-                listAction: 'models/jTableFunctions/list_my_students.php',                
+                listAction: 'models/jTableFunctions/list_my_students.php'                
             },
             recordsLoaded: function (event, data) { 
                 getGraduationStudents();
@@ -30,47 +30,98 @@
                     key: true,
                     list: true,
                     title: '<?php echo COLLEGE_ID;?>',
-                    width: '17%',
+                    width: '15%',
                     edit:false,
                     listClass: 'left_data'
                 },
                 name: {
                     title: '<?php echo NAME;?>',                            
-                    width: '30%',
-                    visibility: 'fixed',
+                    width: '29%',                    
                     edit:false
                 },
                 dep_name: {
                     title: '<?php echo DEP;?>',                            
-                    width: '20%',
-                    visibility: 'fixed',
+                    width: '13%',                    
                     edit:false
                 },                
                 level: {
                     title: '<?php echo LEVEL;?>',
                     width: '11%',
                     edit:false,
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 hrs: {
                     title: '<?php echo COMPLETED_HRS;?>',
-                    width: '20%',
+                    width: '15%',
                     edit:false,
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 link: {
                     visibility: 'visible',
-                    width: '4%',
+                    width: '3%',
                     edit:false,
                     sorting: false,
                     display: function (data) {
                         return '<a href="views/scripts/teacher/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
-                    }
+                    }                
                 },
-                dummyColumn: {
-                    visibility: 'hidden',
-                    edit:false
-                }        
+                    //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
+                    personal_info: {
+                        title: '',
+                        width: '15%',
+                        sorting: false,
+                        display: function (data) {
+                                //Create an image that will be used to open child table
+                                var $img = $('<img src="style/img/list_metro.png" style="cursor: pointer"/>');
+                                //Open child table when user clicks the image
+                                $img.click(function () {
+                                    $('#students_table').jtable('openChildTable',
+                                        $img.closest('tr'),
+                                        {
+                                            title: '<?php echo PERSONAL_INFO;?>',
+                                            actions: {
+                                                listAction: 'models/jTableFunctions/list_student_info.php?studentId=' + data.record.id,
+                                                updateAction: 'models/jTableFunctions/update_student_info.php?studentId=' + data.record.id
+                                            },
+                                            fields: {
+                                                id: {
+                                                    type: 'hidden',
+                                                    defaultValue: data.record.id
+                                                },
+                                                birth_date: {
+                                                    title: '<?php echo BIRTH_DATE;?>',
+                                                    width: '10%',
+                                                    type: 'date',
+                                                    list_class: 'left_data'
+                                                },
+                                                address: {
+                                                    title: '<?php echo ADDRESS;?>',
+                                                    width: '40%',
+                                                    list_class: 'right_data'
+                                                },
+                                                phone_number: {
+                                                    title: '<?php echo PHONE_NUM;?>',
+                                                    width: '15%',
+                                                    listClass: 'left_data'
+                                                },
+                                                email: {
+                                                    title: '<?php echo EMAIL;?>',
+                                                    width: '35%',
+                                                    listClass: 'left_data'
+                                                },
+                                                dummyColumn: {
+                                                    visibility: 'hidden',
+                                                    edit:false
+                                                }
+                                            }
+                                        }, function (data) { //opened handler
+                                            data.childTable.jtable('load');
+                                        });
+                                });
+                                //Return image to show on the person row
+                                return $img;
+                            }
+                    }        
             }
         });    
         //Re-load records when user click 'load records' button.

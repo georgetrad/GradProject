@@ -53,14 +53,7 @@ while($row = mysql_fetch_array($result2))
 {
     $rows[] = $row;
 }
-//for($i=0 ; $i<count($rows) ; $i++){
-//    if($rows[$i]['status'] == 'A'){
-//        $rows[$i]['status'] = ACTIVE;
-//    }
-//    if($rows[$i]['status'] == 'G'){
-//        $rows[$i]['status'] = GRADUATED;
-//    }
-//}
+
 //Return results to jTable
 $jTableResult = array();
 $jTableResult['Result'] = "OK";
