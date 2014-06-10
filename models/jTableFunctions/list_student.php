@@ -46,7 +46,7 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // M
 }
 $query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
 $result2 = mysql_query($query2);
-//print_r($query2);exit;
+
 //Add all records to an array
 $rows = array();
 while($row = mysql_fetch_array($result2))

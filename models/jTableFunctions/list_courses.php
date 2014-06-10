@@ -12,22 +12,16 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     }
     else if($searchId == 1){
         $query1.= " WHERE name_ar LIKE '$searchText%'";
-    }
-    else if ($searchId == 2) {
-        $query1.= " WHERE name_en LIKE '$searchText%'";
-    }
-    else if($searchId == 3){
+    }    
+    else if($searchId == 2){
         $query1.= " WHERE course_type_id LIKE '$searchText%'";
     }
-    else if($searchId == 4){
+    else if($searchId == 3){
         $query1.= " WHERE level LIKE '$searchText%'";
     }
-    else if($searchId == 5){
+    else if($searchId == 4){
         $query1.= " WHERE credits LIKE '$searchText%'";
-    }
-    else if($searchId == 6){
-        $query1.= " WHERE fees LIKE '$searchText%'";
-    }
+    }    
 }
 
 $result1 = mysql_query($query1);            // Executing the query.
@@ -47,31 +41,25 @@ $query2.= "INNER JOIN course_type ON c.course_type_id = course_type.id ";
 $query2.= "LEFT JOIN course course1 ON c.req_course_id = course1.id ";
 $query2.= "WHERE c.active='A' ";
 
-if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
+if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
     
     if($searchId == 0){                                         // Modifying the query according to the search text.
-        $query2.= " AND c.id LIKE '$searchText%'";
+        $query1.= " WHERE id LIKE '$searchText%'";
     }
     else if($searchId == 1){
-        $query2.= " AND c.name_ar LIKE '$searchText%'";
-    }
-    else if ($searchId == 2) {
-        $query2.= " AND c.name_en LIKE '$searchText%'";
+        $query1.= " WHERE name_ar LIKE '$searchText%'";
+    }    
+    else if($searchId == 2){
+        $query1.= " WHERE course_type_id LIKE '$searchText%'";
     }
     else if($searchId == 3){
-        $query2.= " AND c.course_type_id LIKE '$searchText%'";
+        $query1.= " WHERE level LIKE '$searchText%'";
     }
     else if($searchId == 4){
-        $query2.= " AND c.level LIKE '$searchText%'";
-    }
-    else if($searchId == 5){
-        $query2.= " AND c.credits LIKE '$searchText%'";
-    }
-    else if($searchId == 6){
-        $query2.= " AND c.fees LIKE '$searchText%'";
-    }
+        $query1.= " WHERE credits LIKE '$searchText%'";
+    }    
 }
 
 $query2.= " ORDER BY $sorting";

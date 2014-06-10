@@ -37,25 +37,25 @@
                 },
                 name: {
                     title: '<?php echo NAME;?>',                            
-                    width: '25%',                    
+                    width: '30%',                    
                     edit:false
                 },
                 dep_name: {
                     title: '<?php echo DEP;?>',                            
-                    width: '20%',                   
+                    width: '15%',                   
                     edit:false
                 },
                 status: {
                     visibility: 'hidden',
                     title: '<?php echo STATUS;?>',                
                     edit:true,
-                    options: { 'G': '<?php echo GRADUATED;?>', 'A': '<?php echo ACTIVE;?>' }
+                    options: { 'G': '<?php echo GRADUATED;?>', 'A': '<?php echo ACTIVE;?>', 'B': '<?php echo BANNED;?>', 'L': '<?php echo LEFT;?>', 'P': '<?php echo POSTPONED;?>' }
                 },
                 level: {
                     title: '<?php echo LEVEL;?>',
                     width: '11%',
                     edit:false,
-                    listClass: 'left_data'
+                    listClass: 'center_data'
                 },
                 hrs: {
                     title: '<?php echo COMPLETED_HRS;?>',
@@ -72,15 +72,15 @@
                         return '<a href="views/scripts/dean/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
                     }
                 },
-                    //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
+                    //CHILD TABLE DEFINITION FOR "PERSONAL INFORMATION"
                     personal_info: {
                         title: '',
-                        width: '5%',
+                        width: '3%',
                         sorting: false,
                         edit:false,                        
                         display: function (data) {
                                 //Create an image that will be used to open child table
-                                var $img = $('<img src="style/img/personal.png" style="cursor: pointer"/>');
+                                var $img = $('<img src="style/img/personal.png" style="cursor: pointer; padding-right:2px; padding-bottom:4px"/>');
                                 //Open child table when user clicks the image
                                 $img.click(function () {
                                     $('#students_table').jtable('openChildTable',

@@ -91,7 +91,7 @@
             columnResizable: false, 
             columnSelectable: false,
             saveUserPreferences: false,
-            sorting: true,                    
+            sorting: false,                    
             selecting: false,
             multiselect: false,
             selectingCheckboxes: false,

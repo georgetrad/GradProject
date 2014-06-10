@@ -122,6 +122,7 @@
                 added: {
                     visibility: 'visible',
                     width: '4%',
+                    listClass: 'center_data',
                     display: function (data) {
                         return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
                     }

@@ -65,14 +65,14 @@
                         return '<a href="views/scripts/teacher/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
                     }                
                 },
-                    //CHILD TABLE DEFINITION FOR "PHONE NUMBERS"
+                    //CHILD TABLE DEFINITION FOR "FOR "PERSONAL INFORMATION"
                     personal_info: {
                         title: '',
                         width: '15%',
                         sorting: false,
                         display: function (data) {
                                 //Create an image that will be used to open child table
-                                var $img = $('<img src="style/img/personal.png" style="cursor: pointer"/>');
+                                var $img = $('<img src="style/img/personal.png" style="cursor: pointer; padding-right:2px; padding-bottom:4px"/>');
                                 //Open child table when user clicks the image
                                 $img.click(function () {
                                     $('#students_table').jtable('openChildTable',

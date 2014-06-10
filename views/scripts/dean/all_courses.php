@@ -32,12 +32,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <div class="medium-2 large-2 columns show-for-medium-up">
                     <select id="search_id">                    
                         <option value="0"><?=COURSE_CODE?></option>
-                        <option value="1"><?=COURSE_NAME.' ('.ARABIC.')'?></option>
-                        <option value="2"><?=COURSE_NAME.' ('.ENGLISH.')'?></option>
-                        <option value="3"><?=COURSE_TYPE?></option>
-                        <option value="4"><?=LEVEL?></option>
-                        <option value="5"><?=CREDITS?></option>
-                        <option value="6"><?=FEES?></option>
+                        <option value="1"><?=COURSE_NAME?></option>
+                        <option value="2"><?=COURSE_TYPE?></option>
+                        <option value="3"><?=LEVEL?></option>
+                        <option value="4"><?=CREDITS?></option>
                     </select>
                 </div> 
                 <div class="medium-2 large-2 columns show-for-medium-up">
