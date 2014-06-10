@@ -4,6 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/dbFunction
 
 // Getting the inserted values in from the form.
 $primKey        = $_POST['id'];
+$gender         = $_POST['gender'];
 $birthDate      = $_POST['birth_date'];
 $phone          = $_POST['phone_number'];
 $email          = $_POST['email'];
@@ -11,6 +12,7 @@ $address        = $_POST['address'];
 $userId         = $_SESSION['userId'];
 
 $cols = array(
+    'gender',
     'birth_date',    
     'phone_number',    
     'email',
@@ -20,6 +22,7 @@ $cols = array(
     );
 
 $data = array(
+    "'$gender'",
     "'$birthDate'",
     "'$phone'",
     "'$email'",

@@ -72,7 +72,7 @@
                         sorting: false,
                         display: function (data) {
                                 //Create an image that will be used to open child table
-                                var $img = $('<img src="style/img/list_metro.png" style="cursor: pointer"/>');
+                                var $img = $('<img src="style/img/personal.png" style="cursor: pointer"/>');
                                 //Open child table when user clicks the image
                                 $img.click(function () {
                                     $('#students_table').jtable('openChildTable',
@@ -87,6 +87,12 @@
                                                 id: {
                                                     type: 'hidden',
                                                     defaultValue: data.record.id
+                                                },
+                                                gender: {
+                                                    visibility: 'hidden',
+                                                    title: '<?php echo GENDER;?>',                
+                                                    edit:true,
+                                                    options: { 'M': '<?php echo MALE;?>', 'F': '<?php echo FEMALE;?>' }
                                                 },
                                                 birth_date: {
                                                     title: '<?php echo BIRTH_DATE;?>',
