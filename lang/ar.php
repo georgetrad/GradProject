@@ -160,6 +160,7 @@ define('UPDATE', 'تحديث');
 define('UPDATE_ALL', 'تحديث الكل');
 define('MALE', 'ذكر');
 define('FEMALE', 'أنثى');
+define('ALL', 'الكل');
 define('ICT', 'المعلوماتية والاتصالات');
 define('ARC', 'العمارة');
 ?>

@@ -2,7 +2,13 @@
 include_once '../db_connect.php';
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 // Get records count
-$query1 = "SELECT COUNT(id) AS RecordCount FROM student WHERE active='A' AND STATUS = 'A'";
+$query1 = "SELECT COUNT(id) AS RecordCount ";
+$query1.= "FROM student WHERE active='A' AND STATUS = 'A' ";
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query1.= "AND department_id = $dep ";
+}
+
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
@@ -32,6 +38,11 @@ $query2 = "SELECT s.id, CONCAT(s.first_name, ' ', s.middle_name, ' ', s.last_nam
 $query2.= "FROM student AS s ";
 $query2.= "INNER JOIN department AS d ON  s.department_id= d.id ";
 $query2.= "WHERE s.active='A' AND s.STATUS = 'A' ";
+
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query2.= "AND department_id = $dep ";
+}
 
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];

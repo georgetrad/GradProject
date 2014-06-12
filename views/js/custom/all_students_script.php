@@ -140,12 +140,13 @@
         });    
         //Re-load records when user click 'load records' button.
         $('#search_button').click(function (e) {
-            e.preventDefault();
+            e.preventDefault();            
             $('#students_table').jtable('load', {
                 searchText: $('#search_text').val(),
-                searchId: $('#search_id').val()
+                searchId: $('#search_id').val(),
+                depSearchId: $('input[name=dep]:checked').val()
             });
-        });
+        });               
 
         $('#students_table').jtable('load');  
         // to top 
