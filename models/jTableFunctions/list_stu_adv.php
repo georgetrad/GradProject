@@ -2,7 +2,11 @@
 include_once '../db_connect.php';
 
 // Get records count
-$query1 = "SELECT COUNT(*) AS RecordCount FROM student WHERE active = 'A' ";
+$query1 = "SELECT COUNT(*) AS RecordCount FROM student WHERE active = 'A' AND status = 'A' ";
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query1.= "AND department_id = $dep ";
+}
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
@@ -42,7 +46,12 @@ $query2.= "FROM student as s ";
 $query2.= "INNER JOIN department ON department.id = s.department_id ";
 $query2.= "LEFT JOIN teacher as t ";
 $query2.= "ON s.advisor_id = t.id ";
+$query2.= "WHERE s.status = 'A' AND s.active = 'A' ";
 
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query2.= "AND s.department_id = $dep ";
+}
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
@@ -60,6 +69,7 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
         $query2.= " WHERE s.id LIKE '$searchText%'";
     }
 }
+
 $query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
 
 $result2 = mysql_query($query2);
