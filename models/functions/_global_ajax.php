@@ -29,16 +29,33 @@ switch ($case){
     }
     /******************** all_courses_script ********************/
     case 'suggCourse':{
-        $action         = $_POST['action'];
+        $action         = $_POST['action'];        
         $courseCode     = $_POST['courseCode'];
         $userId         = $_SESSION['userId'];
         $result = databaseClass::suggCourse($action, $courseCode, $userId);
         echo json_encode($result);
         break;
     }
+    /******************** ask_for_courses_script ********************/
+    case 'askForCourse':{
+        $action         = $_POST['action'];        
+        $courseCode     = $_POST['courseCode'];
+        $userId         = $_SESSION['userId'];
+        $studentId      = $_SESSION['id'];
+        $semester   = $_SESSION['semester'];
+        $result = databaseClass::askForCourse($action, $studentId, $courseCode, $semester, $userId);
+        echo json_encode($result);
+        break;
+    }
     /******************** all_courses_script ********************/
     case 'getSuggCourses':{
         $result = databaseClass::getSuggCourses();
+        echo json_encode($result);
+        break;
+    }
+    /******************** ask_for_courses_script ********************/
+    case 'getAskedCourses':{
+        $result = databaseClass::getAskedCourses();
         echo json_encode($result);
         break;
     }

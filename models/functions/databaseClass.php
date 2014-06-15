@@ -83,12 +83,37 @@ class databaseClass {
             $query.= "WHERE course_id='$courseCode';";
             $queryRun = mysql_query($query);
         }
-        if($queryRun){
+        if(isset($queryRun)){
             $response = array(
                 'Success' => true
             );
+        return $response;            
         }        
-        return $response;
+    }
+    /**
+     * This function inserts/removes to/from student_suggest table.
+     * @author George Trad
+     * @param String $action
+     * @param String $courseCode
+     * @param Integer $userId
+     */
+    public static function askForCourse($action, $studentId, $courseCode, $semester, $userId){        
+        if($action == 'add'){            
+            $cols = array('student_id', 'course_id', 'semester_id', 'create_date', 'user_id');            
+            $values = array("'$studentId'", "'$courseCode'", $semester, 'now()', $userId);
+            dbInsert('student_suggest', $cols, $values);            
+        }
+        else if($action == 'remove'){
+            $query = "DELETE FROM student_suggest ";
+            $query.= "WHERE course_id='$courseCode';";
+            $queryRun = mysql_query($query);
+        }
+        if(isset($queryRun)){
+            $response = array(
+                'Success' => true
+            );
+            return $response;
+        }                
     }
     /**
      * This function returns the courses that have been suggested by the dean to show them in jTable.
@@ -99,6 +124,22 @@ class databaseClass {
         $resultArray =array();
         $columns = 'COURSE_ID';
         $tableName = 'sugg_course';
+        $query =   "SELECT ".$columns." FROM ".$tableName;
+        $result =  mysql_query($query);
+        while ($result2 = mysql_fetch_array($result)){
+            array_push($resultArray, $result2);
+        }
+        return $resultArray;
+    }
+    /**
+     * This function returns the courses that have been suggested by the dean to show them in jTable.
+     * @author George Trad
+     * @return JSON Array
+     */
+    public static function getAskedCourses(){
+        $resultArray =array();
+        $columns = 'COURSE_ID';
+        $tableName = 'student_suggest';
         $query =   "SELECT ".$columns." FROM ".$tableName;
         $result =  mysql_query($query);
         while ($result2 = mysql_fetch_array($result)){

@@ -1,50 +1,53 @@
 <script>
-    function getSuggCourse(){
-        $('#sugg_courses_Table').jtable('load', undefined, function(){
-            $('.add').bind( "click", function() {
-                var courseCode = $(this).parents("tr").find("td:first").text();
-
-                if($(this).text() === 'Add'){
-                    var action = 'add';
-                    $(this).text('Remove');
-                    $(this).css('color','red');                    
-                }
-                else{
-                    action = 'remove';
-                    $(this).text('Add');
-                    $(this).css('color','green');                    
-                }
-                $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){
-                    getSuggCoursesNum();
-                    getBelowStuNum();
-                    markSuggestedCourses();                    
-                });            
-            });    
+    function getSuggCourse(){        
+        $('.icon').bind( "click", function() {            
+            var courseCode = $(this).parents("tr").find("td:first").text();            
+            if($(this).hasClass('add')){
+                var action = 'add';
+                var src = 'style/img/remove.png';
+                $(this).attr('src', src);
+                $(this).removeClass('add');
+                $(this).addClass('remove');
+            }
+            else{
+                action = 'remove';
+                var src = 'style/img/add.png';
+                $(this).attr('src', src);
+                $(this).removeClass('remove');
+                $(this).addClass('add');
+            }            
+            $.post('models/functions/_global_ajax.php', {case:'askForCourse', action: action, courseCode: courseCode}, function(data){
+                getSuggCoursesNum();                
+                markSuggestedCourses();                    
+            });            
         });
-
-        $.post('models/functions/_global_ajax.php',{case: 'getSuggCourses'}, function(data){
+        
+        $.post('models/functions/_global_ajax.php',{case: 'getAskedCourses'}, function(data){
             var i = 0;
+            var source = 'style/img/remove.png';
             for (i=0;i<data.length;i++){
-                $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find("td:last").text('Remove').css({'color':'red', 'cursor':'pointer'}).bind( "click", function() {
+                $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find('img.icon').attr('src', source).bind('click', function() {
                     var courseCode = $(this).parents("tr").find("td:first").text();
-
-                    if($(this).text() === 'Add'){
+                    if($(this).hasClass('add')){
                         var action = 'add';
-                        $(this).text('Remove');
-                        $(this).css('color','red');                        
+                        var src = 'style/img/remove.png';
+                        $(this).attr('src', src);
+                        $(this).removeClass('add');
+                        $(this).addClass('remove');
                     }
                     else{
                         action = 'remove';
-                        $(this).text('Add');
-                        $(this).css('color','green');
+                        var src = 'style/img/add.png';
+                        $(this).attr('src', src);
+                        $(this).removeClass('remove');
+                        $(this).addClass('add');
                     }
-                    $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){                
-                        getSuggCoursesNum();
-                        getBelowStuNum();                                    
+                    $.post('models/functions/_global_ajax.php', {case:'askForCourse', action: action, courseCode: courseCode}, function(data){                
+                        getSuggCoursesNum();                                                           
                     });            
                 });   
             }
-        }, "json");   
+        }, "json");
     }
     
     $(document).ready(function () {  
@@ -109,15 +112,12 @@
                     width: '4%',
                     listClass: 'center_data',
                     display: function (data) {
-                        return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
+                        return '<img class="add icon" src="style/img/add.png" style="cursor: pointer" id="<?php echo COURSE_CODE;?>"/>';                    
                     }
                 }
             },
             recordsLoaded: function (event, data) { 
                 getSuggCourse();
-                getSuggCoursesNum();
-                getBelowStuNum();
-                markSuggestedCourses();
             }
         });
         $('#available_courses_table').jtable('load');

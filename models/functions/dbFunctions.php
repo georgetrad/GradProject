@@ -73,7 +73,7 @@ function dbInsert($tableName, $columns = array(), $values = array(), $isDuplicat
         }
         $query.= ") ";
     }
-  //  print_r($query);exit;
+//    print_r($query);exit;
     mysql_query($query);                 // Executing the query
     $result = array();
     $result['Result'] = "Sucess";
