@@ -40,10 +40,11 @@ switch ($case){
     case 'askForCourse':{
         $action         = $_POST['action'];        
         $courseCode     = $_POST['courseCode'];
+        $credits        = $_POST['credits'];
         $userId         = $_SESSION['userId'];
         $studentId      = $_SESSION['id'];
-        $semester   = $_SESSION['semester'];
-        $result = databaseClass::askForCourse($action, $studentId, $courseCode, $semester, $userId);
+        $semester       = $_SESSION['semester'];
+        $result = databaseClass::askForCourse($action, $studentId, $courseCode, $credits, $semester, $userId);
         echo json_encode($result);
         break;
     }
@@ -55,7 +56,8 @@ switch ($case){
     }
     /******************** ask_for_courses_script ********************/
     case 'getAskedCourses':{
-        $result = databaseClass::getAskedCourses();
+        $studentId = $_SESSION['id'];
+        $result = databaseClass::getAskedCourses($studentId);        
         echo json_encode($result);
         break;
     }
@@ -64,7 +66,14 @@ switch ($case){
         $result = databaseClass::getSuggCoursesNum();
         echo $result;
         break;
-    }    
+    }
+    /******************** ask_for_courses_script ********************/
+    case 'getAskCoursesNum':{
+        $studentId = $_SESSION['id'];
+        $result = databaseClass::getAskCoursesNum($studentId);        
+        echo json_encode($result);
+        break;
+    }
     /******************** assign_advisor_script ********************/
     case 'updateAdvisor':{
         $advisorId          = $_POST['advisorId'];

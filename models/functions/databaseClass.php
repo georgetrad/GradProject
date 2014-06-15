@@ -97,10 +97,10 @@ class databaseClass {
      * @param String $courseCode
      * @param Integer $userId
      */
-    public static function askForCourse($action, $studentId, $courseCode, $semester, $userId){        
+    public static function askForCourse($action, $studentId, $courseCode, $credits, $semester, $userId){        
         if($action == 'add'){            
-            $cols = array('student_id', 'course_id', 'semester_id', 'create_date', 'user_id');            
-            $values = array("'$studentId'", "'$courseCode'", $semester, 'now()', $userId);
+            $cols = array('student_id', 'course_id', 'credits', 'semester_id', 'create_date', 'user_id');            
+            $values = array("'$studentId'", "'$courseCode'", $credits, $semester, 'now()', $userId);
             dbInsert('student_suggest', $cols, $values);            
         }
         else if($action == 'remove'){
@@ -132,15 +132,15 @@ class databaseClass {
         return $resultArray;
     }
     /**
-     * This function returns the courses that have been suggested by the dean to show them in jTable.
+     * This function returns the courses that have been asked by the student.
      * @author George Trad
      * @return JSON Array
      */
-    public static function getAskedCourses(){
+    public static function getAskedCourses($studentId){
         $resultArray =array();
         $columns = 'COURSE_ID';
         $tableName = 'student_suggest';
-        $query =   "SELECT ".$columns." FROM ".$tableName;
+        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE student_id = '$studentId'";
         $result =  mysql_query($query);
         while ($result2 = mysql_fetch_array($result)){
             array_push($resultArray, $result2);
@@ -158,6 +158,22 @@ class databaseClass {
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];
+    }
+    /**
+     * This function returns the total number of asked courses from student_suggest table.
+     * @author George Trad
+     * @return type
+     */
+    public static function getAskCoursesNum($studentId){
+        $query = "SELECT count(id) AS num, sum(credits) AS hrs FROM student_suggest WHERE student_id = '$studentId' AND semester_id = (SELECT max(id) FROM semester)";
+        $result = mysql_query($query);
+        $num = mysql_result($result, 0, 'num');
+        $hrs = mysql_result($result, 0, 'hrs');                
+        $response = array(
+            'num' => $num,
+            'hrs' => $hrs
+        );        
+        return $response;
     }
     /**
      * This functions returns the latest inserted semester.

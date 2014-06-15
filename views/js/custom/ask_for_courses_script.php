@@ -1,7 +1,9 @@
 <script>
     function getSuggCourse(){        
         $('.icon').bind( "click", function() {            
-            var courseCode = $(this).parents("tr").find("td:first").text();            
+            var courseCode = $(this).parents("tr").find("td:first").text();
+            var credits = $(this).parents("tr").find("td:first").next().next().next().next().next().text();
+            
             if($(this).hasClass('add')){
                 var action = 'add';
                 var src = 'style/img/remove.png';
@@ -16,11 +18,10 @@
                 $(this).removeClass('remove');
                 $(this).addClass('add');
             }            
-            $.post('models/functions/_global_ajax.php', {case:'askForCourse', action: action, courseCode: courseCode}, function(data){
-                getSuggCoursesNum();                
-                markSuggestedCourses();                    
+            $.post('models/functions/_global_ajax.php', {case:'askForCourse', action: action, courseCode: courseCode, credits:credits}, function(data){
+                getAskCoursesNum();                
             });            
-        });
+        });       
         
         $.post('models/functions/_global_ajax.php',{case: 'getAskedCourses'}, function(data){
             var i = 0;
@@ -28,6 +29,8 @@
             for (i=0;i<data.length;i++){
                 $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find('img.icon').attr('src', source).bind('click', function() {
                     var courseCode = $(this).parents("tr").find("td:first").text();
+                    var credits = $(this).parents("tr").find("td:first").next().next().next().next().next().text();
+                    
                     if($(this).hasClass('add')){
                         var action = 'add';
                         var src = 'style/img/remove.png';
@@ -42,12 +45,27 @@
                         $(this).removeClass('remove');
                         $(this).addClass('add');
                     }
-                    $.post('models/functions/_global_ajax.php', {case:'askForCourse', action: action, courseCode: courseCode}, function(data){                
-                        getSuggCoursesNum();                                                           
+                    $.post('models/functions/_global_ajax.php', {case:'askForCourse', action: action, courseCode: courseCode, credits:credits}, function(data){                
+                        getAskCoursesNum();                        
                     });            
                 });   
             }
         }, "json");
+    }
+    
+    function getAskCoursesNum(){
+        $.post('models/functions/_global_ajax.php', {case: 'getAskCoursesNum'}, function(data){
+            var result = JSON.parse(data);
+            var num = result.num;
+            var hrs = result.hrs;            
+            $('#num_ask_crs').html(num + ' مقرر');
+            if (hrs === null){
+                $('#num_ask_hrs').html('0' + ' ساعة');
+            }
+            else{
+                $('#num_ask_hrs').html(hrs + ' ساعة');
+            }            
+        });        
     }
     
     $(document).ready(function () {  
@@ -118,6 +136,7 @@
             },
             recordsLoaded: function (event, data) { 
                 getSuggCourse();
+                getAskCoursesNum();
             }
         });
         $('#available_courses_table').jtable('load');
