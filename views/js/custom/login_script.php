@@ -67,6 +67,10 @@
                 window.location.replace('views/scripts/teacher/home.php');
                 return true;
             }
+            else if(type === '1'){                        
+                window.location.replace('views/scripts/student/home.php');                
+                return true;
+            }
             else if(success === false){                        
                 $('#wrong').css({'display': 'block'});
                 $('#invalid_login').html('<?php echo INVALID_CRED;?>');

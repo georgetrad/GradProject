@@ -150,6 +150,8 @@ define('FILENAME', 'اسم الملف');
 define('BROWSE', 'إستعراض');
 define('PHONE_NUM', 'رقم الهاتف');
 
+define('ASK_COURSES', 'طلب مقررات');
+
 define('STUDENT_GRADE', 'كشف علامات الطالب');
 define('ARABIC', 'عربي');
 define('ENGLISH', 'إنكليزي');

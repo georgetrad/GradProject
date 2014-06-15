@@ -19,6 +19,7 @@ switch ($case){
                 $_SESSION['userId']     = $userInfo['userId'];                
                 $_SESSION['username']   = $userInfo['username'];
                 $_SESSION['userLevel']  = $userInfo['userLevel'];
+                $_SESSION['id']         = $userInfo['id'];
                 $_SESSION['name']       = $userInfo['name'];
                 $_SESSION['semester']   = $semester;
             }
@@ -236,11 +237,6 @@ switch ($case){
     }
     case 'getSuggestedCourses':{
         $result = databaseClass::getSuggestedCourses();
-        echo json_encode($result);
-        break;
-    }
-    case 'getCheckboxFilter':{
-        $result = databaseClass::getCheckboxFilter();
         echo json_encode($result);
         break;
     }

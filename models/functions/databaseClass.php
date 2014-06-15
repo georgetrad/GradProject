@@ -19,9 +19,8 @@ class databaseClass {
     public static function logIn($username, $password){
         $password_hash	= md5($password);   //Decrypting the MD5 encrypted password.        
         // mySQL query
-        $query = "SELECT user.user_id, user.username, user.level, CONCAT(teacher.first_name, ' ', teacher.last_name) AS name ";
+        $query = "SELECT user.user_id, user.username, user.level ";
         $query.= "FROM user ";        
-        $query.= "INNER JOIN teacher ON user.username = teacher.user_username ";
         $query.= "WHERE user.username='".mysql_real_escape_string($username)."' AND user.password='".mysql_real_escape_string($password_hash)."' AND user.active = 'A' ";
         
         $queryRun = mysql_query($query);        
@@ -35,16 +34,33 @@ class databaseClass {
             else if($queryNumRows == 1){
                 $userId = mysql_result($queryRun, 0, 'user_id');
                 $username = mysql_result($queryRun, 0, 'username');
-                $userLevel = mysql_result($queryRun, 0, 'level');
-                $name = mysql_result($queryRun, 0, 'name');
-                $response = array(
+                $userLevel = mysql_result($queryRun, 0, 'level');                                
+            }
+            
+            if($userLevel == 0 || $userLevel ==  -1){
+                $query2 = "SELECT id, CONCAT(teacher.first_name, ' ', teacher.last_name) AS name ";
+                $query2.= "FROM teacher, user ";
+                $query2.= "WHERE user.username = teacher.user_username AND user.username = '$username'";
+            }
+            
+            else if($userLevel == 1){
+                $query2 = "SELECT id, CONCAT(student.first_name, ' ', student.last_name) AS name ";
+                $query2.= "FROM student, user ";
+                $query2.= "WHERE user.username = student.user_username AND user.username = '$username'";
+            }
+            
+            $queryRun2 = mysql_query($query2);
+            $name = mysql_result($queryRun2, 0, 'name');
+            $id = mysql_result($queryRun2, 0, 'id');
+            $response = array(
                     'success'   => true,
                     'username'  => $username,
                     'userId'    => $userId,
                     'userLevel' => $userLevel,
+                    'id'        => $id,
                     'name'      => $name
-                );                
-            }
+                );
+                
             return $response;
         }
     }        
@@ -512,16 +528,6 @@ class databaseClass {
     public static function getSuggestedCourses(){
         $id = getValue('max(id)', 'semester');
         $result = getData('course_id','sugg_course',  'semester_id = '.$id);
-        return $result;
-    }
-    
-    public static function getCheckboxFilter(){
-        $data = getData('name_ar,id','course_type');
-        $result = "<form id='checkboxFilter'>"; 
-        foreach ($data as $value){
-            $result .= "<input type='checkbox' name='filter' value='".$value[1]."' id='course_type_".$value[1]."'>".' '.$value[0].'   ';            
-        }
-        $result .= "</form>";
         return $result;
     }
     
