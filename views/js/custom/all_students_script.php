@@ -31,18 +31,18 @@
                     key: true,
                     list: true,
                     title: '<?php echo COLLEGE_ID;?>',
-                    width: '17%',
+                    width: '13%',
                     edit:false,
                     listClass: 'left_data'
                 },
                 name: {
                     title: '<?php echo NAME;?>',                            
-                    width: '30%',                    
+                    width: '31%',                    
                     edit:false
                 },
                 dep_name: {
                     title: '<?php echo DEP;?>',                            
-                    width: '15%',                   
+                    width: '18%',                   
                     edit:false
                 },
                 status: {
