@@ -32,12 +32,8 @@
                     <a href="views/scripts/dean/all_students.php"><?=STUDENTS?></a>                    
                 </li>
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a><?=ACADEMIC_ADVISING?></a>
-                    <ul class="dropdown">                                
-                        <li><a href="views/scripts/dean/advise.php"><?=ADVISE?></a></li>
-                        <li><a href="views/scripts/dean/assign_advisor.php"><?=ASSIGN_STUDENTS?></a></li>                        
-                    </ul>
+                <li>
+                    <a href="views/scripts/dean/assign_advisor.php"><?=ASSIGN_STUDENTS?></a>                  
                 </li>
                 <li class="divider"></li>
                 <li class="has-dropdown">
@@ -58,11 +54,9 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a><?=DB?></a>                    
+                    <a href="db" target="a_blank"><?=DB?></a>                    
                 </li>
             </ul>               
         </section>
     </nav>
 </div>
-    
-

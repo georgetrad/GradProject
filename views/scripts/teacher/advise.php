@@ -37,7 +37,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
     <div class="medium-10 large-10 columns">
         <dl class="accordion" data-accordion>
             <dd>
-                <a href="#panel1"><?=PERSONAL_INFO?></a>
+                <a href="#panel1"><?=PERSONAL_INFO?><span class="name" style="margin-right: 35%"></span></a>
                 <div id="panel1" class="content active">
                     <div class="row">
                         <div class="medium-6 large-6 columns">
@@ -49,7 +49,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
                     </div>
                     <div class="row">
                         <div class="medium-6 large-6 columns">
-                            <div class="stu_title label"><?=NAME?></div> <div id="name" class="stu_data secondary label"></div>
+                            <div class="stu_title label"><?=NAME?></div> <div class="name stu_data secondary label"></div>
                         </div>
                         <div class="medium-6 large-6 columns">
                             <div class="stu_title label"><?=PHONE_NUM?></div> <div id="phone" class="stu_data secondary label"></div>

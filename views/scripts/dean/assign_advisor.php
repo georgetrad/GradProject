@@ -29,6 +29,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/selectFunc
         </div> 
         <div class="medium-3 large-2 columns show-for-medium-up">
             <input type="search" id="search_text" style="text-align: center"/>
+            <input type="radio" name="dep" value="0" checked style="margin-left: 3px"><?=ALL?>&nbsp;
+            <input type="radio" name="dep" value="1" style="margin-left: 3px"><?=ICT?>&nbsp;
+            <input type="radio" name="dep" value="2" style="margin-left: 3px"><?=ARC?>
         </div> 
         <div class="medium-1 large-1 columns show-for-medium-up">
             <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">

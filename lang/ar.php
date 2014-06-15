@@ -74,6 +74,9 @@ define('STUDENTS', 'الطلاب');
             define('STATUS', 'الحالة');
             define('ACTIVE', 'مستمر');
             define('GRADUATED', 'متخرج');
+            define('BANNED', 'محروم');
+            define('LEFT', 'منقطع');
+            define('POSTPONED', 'مؤجل');
     define('MY_STUDENTS', 'طلابي');
     
 define('TEACHERS', 'المدرسون');
@@ -157,6 +160,7 @@ define('UPDATE', 'تحديث');
 define('UPDATE_ALL', 'تحديث الكل');
 define('MALE', 'ذكر');
 define('FEMALE', 'أنثى');
+define('ALL', 'الكل');
 define('ICT', 'المعلوماتية والاتصالات');
 define('ARC', 'العمارة');
 ?>

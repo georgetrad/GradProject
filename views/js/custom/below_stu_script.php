@@ -112,7 +112,8 @@
                                                 },
                                                 grade: {
                                                     title: '<?php echo FINAL_GRADE;?>',
-                                                    width: '20%'                                                    
+                                                    width: '20%',
+                                                    listClass: 'left_data'
                                                 },
                                                 dummyColumn: {
                                                     visibility: 'hidden'

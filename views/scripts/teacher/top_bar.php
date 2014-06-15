@@ -22,11 +22,7 @@
                 <li class="divider"></li>
                 <li>
                     <a href="views/scripts/teacher/all_students.php"><?=MY_STUDENTS?></a>                    
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="views/scripts/teacher/advise.php"><?=ADVISE?></a>                    
-                </li>
+                </li>                
                 <li class="divider"></li>                
                 <li>
                     <a><?=DB?></a>                    
@@ -35,5 +31,3 @@
         </section>
     </nav>
 </div>
-    
-
