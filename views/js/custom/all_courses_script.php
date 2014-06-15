@@ -61,6 +61,7 @@
             $('#checkboxFilterContainer').html( data );
         }, "JSON");
     }
+  //happy birthday to you
     function setFilterValues(){
         var filter = $('#checkboxFilter').serialize();
 //        filter += "&case='setFilterValues'";
