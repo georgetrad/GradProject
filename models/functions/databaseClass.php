@@ -444,13 +444,9 @@ class databaseClass {
     }
     
     public static function updateAll(){        
-        $query1 = "CALL update_hours_and_level()";
-        $result1 = mysql_query($query1);
-        $query2 = "CALL update_student_course()";
-        $result2 = mysql_query($query2);
-        $query3 = "CALL update_course()";
-        $result3 = mysql_query($query3);
-        $response = array("result1" => $result1, "result2" => $result2, "result3" => $result3, "error"=> mysql_error());
+        $query = "CALL update_data()";
+        $result = mysql_query($query);
+        $response = array("result" => $result, "error"=> mysql_error());
         return $response;
     }
     
