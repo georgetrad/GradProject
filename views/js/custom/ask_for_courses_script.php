@@ -89,7 +89,7 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '5%',
+                    width: '6%',
                     listClass: 'left_data'
                 },
                 name_ar: {
@@ -103,7 +103,7 @@
                 },
                 course_level: {
                     title: '<?php echo LEVEL;?>',
-                    width: '2%',
+                    width: '3%',
                     listClass: 'center_data'
                 },
                 req_name: {
@@ -117,12 +117,11 @@
                 },                
                 status: {
                     title: '<?php echo STATUS;?>',
-                    width: '7%',
-                    listClass: 'center_data'
+                    width: '6%'
                 },
                 grade: {
                     title: '<?php echo FINAL_GRADE;?>',
-                    width: '8%',
+                    width: '7%',
                     listClass: 'center_data'
                 },
                 added: {

@@ -153,6 +153,7 @@ define('PHONE_NUM', 'رقم الهاتف');
 define('ASK_COURSES', 'طلب مقررات');
     define('NUM_ASK_CRS', 'عدد المقررات المطلوبة');
     define('NUM_ASK_HRS', 'عدد الساعات المطلوبة');
+    define('MY_GRADES', 'علاماتي');
 
 define('STUDENT_GRADE', 'كشف علامات الطالب');
 define('ARABIC', 'عربي');

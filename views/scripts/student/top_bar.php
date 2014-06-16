@@ -17,6 +17,10 @@
                 </li>
                 <li class="divider"></li>
                 <li>
+                    <a href="views/scripts/student/my_grades.php"><?=MY_GRADES?></a>                    
+                </li>
+                <li class="divider"></li>
+                <li>
                     <a href="views/scripts/student/ask_for_courses.php"><?=ASK_COURSES?></a>                    
                 </li>                
             </ul>               
