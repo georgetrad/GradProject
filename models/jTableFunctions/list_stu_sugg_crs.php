@@ -9,7 +9,7 @@ if(isset($_GET['jtSorting'])){
 }
 
 //Get the records from database
-$query2 = "CALL crs_ava_stu ($stuId)";
+$query2 = "CALL crs_ava_stu ($stuId, 'course_id asc')";
 $result2 = mysql_query($query2);
 
 //Add all records to an array
