@@ -26,7 +26,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 <script type="text/javascript" src="views/js/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="views/js/jquery/jquery-ui-1.10.4.custom.min.js"></script>                
 <script type="text/javascript" src="views/js/foundation/foundation.js"></script>
-<script type="text/javascript" src="views/js/foundation/foundation.topbar.js"></script>        
+<script type="text/javascript" src="views/js/foundation/foundation.topbar.js"></script>
 <script type="text/javascript" src="views/js/foundation/foundation.reveal.js"></script>
 <script type="text/javascript" src="views/js/foundation/foundation.tab.js"></script>
 <script type="text/javascript" src="views/js/foundation/foundation.accordion.js"></script>

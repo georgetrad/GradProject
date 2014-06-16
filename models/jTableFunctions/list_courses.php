@@ -61,16 +61,23 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
         $query1.= " WHERE credits LIKE '$searchText%'";
     }    
 }
-
 $query2.= " ORDER BY $sorting";
 $result2 = mysql_query($query2);
+
 //Add all records to an array
 $rows = array();
 while($row = mysql_fetch_array($result2))
 {
     $rows[] = $row;
 }
- 
+for ($i=0 ; $i<count($rows) ; $i++){
+    $courseCode = $rows[$i]['id'];
+    $query3 = "SELECT count(id) AS count FROM student_suggest WHERE course_id = '$courseCode'";
+    $result3 = mysql_query($query3);
+    $rows[$i]['wanting_num'] = mysql_result($result3, 0, 'count');
+}
+
+//print_r($rows);exit;
 //Return results to jTable
 $jTableResult = array();
 $jTableResult['Result'] = "OK";

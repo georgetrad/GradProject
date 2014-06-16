@@ -34,36 +34,60 @@ class databaseClass {
             else if($queryNumRows == 1){
                 $userId = mysql_result($queryRun, 0, 'user_id');
                 $username = mysql_result($queryRun, 0, 'username');
-                $userLevel = mysql_result($queryRun, 0, 'level');                                
-            }
-            
-            if($userLevel == 0 || $userLevel ==  -1){
-                $query2 = "SELECT id, CONCAT(teacher.first_name, ' ', teacher.last_name) AS name ";
-                $query2.= "FROM teacher, user ";
-                $query2.= "WHERE user.username = teacher.user_username AND user.username = '$username'";
-            }
-            
-            else if($userLevel == 1){
-                $query2 = "SELECT id, CONCAT(student.first_name, ' ', student.last_name) AS name ";
-                $query2.= "FROM student, user ";
-                $query2.= "WHERE user.username = student.user_username AND user.username = '$username'";
-            }
-            
-            $queryRun2 = mysql_query($query2);
-            $name = mysql_result($queryRun2, 0, 'name');
-            $id = mysql_result($queryRun2, 0, 'id');
-            $response = array(
-                    'success'   => true,
-                    'username'  => $username,
-                    'userId'    => $userId,
-                    'userLevel' => $userLevel,
-                    'id'        => $id,
-                    'name'      => $name
-                );
+                $userLevel = mysql_result($queryRun, 0, 'level');
                 
+                if($userLevel == 0 || $userLevel ==  -1){
+                    $query2 = "SELECT id, CONCAT(teacher.first_name, ' ', teacher.last_name) AS name ";
+                    $query2.= "FROM teacher, user ";
+                    $query2.= "WHERE user.username = teacher.user_username AND user.username = '$username'";
+                }
+
+                else if($userLevel == 1){
+                    $query2 = "SELECT id, CONCAT(student.first_name, ' ', student.last_name) AS name ";
+                    $query2.= "FROM student, user ";
+                    $query2.= "WHERE user.username = student.user_username AND user.username = '$username'";
+                }
+
+                $queryRun2 = mysql_query($query2);
+                $name = mysql_result($queryRun2, 0, 'name');
+                $id = mysql_result($queryRun2, 0, 'id');
+                $response = array(
+                        'success'   => true,
+                        'username'  => $username,
+                        'userId'    => $userId,
+                        'userLevel' => $userLevel,
+                        'id'        => $id,
+                        'name'      => $name
+                    );
+            }                
             return $response;
         }
-    }        
+    }
+    public static function changePassword($userId, $oldPassword, $newPassword){        
+        $passwordHash	= md5($oldPassword);
+        $response = array();
+        $query = "SELECT password FROM user WHERE user_id = $userId";
+        $queryRun = mysql_query($query);                
+        $queryNumRows = mysql_num_rows($queryRun);
+        if($queryNumRows == 0){
+            $response['success'] = false;
+        }
+        else if($queryNumRows == 1){
+            $password = mysql_result($queryRun, 0, 'password');            
+            if($passwordHash == $password){
+                $updatedPassword = md5($newPassword);
+                $cols = array('password', 'update_date');
+                $data = array("'$updatedPassword'", 'now()');
+                dbUpdate('user', $cols, $data, "user_id = $userId");                
+                $response['success'] = true;
+            }
+            else{
+                $response['success'] = false;
+            }
+        }
+        return $response;
+    }
+
     /**
      * This function inserts/removes to/from sugg_course table.
      * @author George Trad
