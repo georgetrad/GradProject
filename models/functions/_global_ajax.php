@@ -266,4 +266,8 @@ switch ($case){
         echo json_encode($result);
         break;
     }
+    case 'getCheckboxFilter':{
+        $result = databaseClass::getCheckboxFilter();
+        echo json_encode($result);
+    break;}
 }

@@ -588,6 +588,16 @@ class databaseClass {
         return $result;
     }
     
+    public static function getCheckboxFilter(){
+        $data = getData('name_ar,id','course_type');
+        $result = "<form id='checkboxFilter'>"; 
+        foreach ($data as $value){
+            $result .= "<input type='checkbox' name='filter' value='".$value[1]."' id='course_type_".$value[1]."'>".' '.$value[0].'   ';            
+        }
+        $result .= "</form>";
+        return $result;
+    }
+    
     public static function getMyStudents(){
         $query = "SELECT student.id, student.current_level AS level, ";
         $query.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name, department.name_ar as dep_name ";        
