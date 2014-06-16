@@ -129,7 +129,7 @@
                     width: '4%',
                     listClass: 'center_data',
                     display: function (data) {
-                        return '<img class="add icon" src="style/img/add.png" style="cursor: pointer" id="<?php echo COURSE_CODE;?>"/>';                    
+                        return '<img class="add icon" src="style/img/add.png" style="cursor: pointer" id="<?php echo COURSE_CODE;?>"/>';
                     }
                 }
             },

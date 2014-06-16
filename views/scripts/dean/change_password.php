@@ -11,11 +11,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     <h4 class="title text-center"><?=$title;?></h4>
 </div>
 <div class="row">
+    &nbsp;
+</div>
+<div class="row">
     <div class="medium-1 large-1 columns">
         &nbsp;
     </div>
     <div class="medium-2 large-1 columns">
-        <span style="vertical-align: middle;"><?=OLD_PASSWORD?></span>
+        <span style="vertical-align: middle; font-size: 12px; font-family: DroidKufi-Regular"><?=OLD_PASSWORD?></span>
     </div>
     <div class="medium-3 large-2 columns">
         <input type="password" id="old_password" placeholder="<?=OLD_PASSWORD?>">
@@ -29,7 +32,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         &nbsp;
     </div>
     <div class="medium-2 large-1 columns">
-        <span style="vertical-align: middle;"><?=NEW_PASSWORD?></span>
+        <span style="vertical-align: middle; font-size: 12px; font-family: DroidKufi-Regular"><?=NEW_PASSWORD?></span>
     </div>
     <div class="medium-3 large-2 columns">
         <input type="password" id="new_password" placeholder="<?=NEW_PASSWORD?>">
@@ -43,7 +46,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         &nbsp;
     </div>
     <div class="medium-2 large-1 columns">
-        <span style="vertical-align: middle;"><?=CONFIRM_PASSWORD?></span>
+        <span style="vertical-align: middle; font-size: 12px; font-family: DroidKufi-Regular"><?=CONFIRM_PASSWORD?></span>
     </div>
     <div class="medium-3 large-2 columns">
         <input type="password" id="confirm_password" placeholder="<?=CONFIRM_PASSWORD?>">

@@ -30,9 +30,9 @@
                 var success = result.success;
                 if (success === true){
                     $('#wrong_old').hide();
-                    $('#change_success').show();
+                    $('#change_success').show();                    
                     setTimeout(function() {
-                        window.location.replace('models/functions/log_out.php');
+                        window.location.replace('models/functions/log_out.php');                        
                     }, 3000);                                        
                 }
                 else if(success === false){                          

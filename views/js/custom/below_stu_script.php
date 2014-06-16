@@ -2,16 +2,16 @@
     function getGraduationStudents(){
         $.post('models/functions/_global_ajax.php', {case: 'getGraduationStudents'}, function(data){
                 $.each(data, function(key, value) {
-                    $('*[data-record-key="'+value[0]+'"]').css( "background-color", "mistyrose");
+                    $('*[data-record-key="'+value[0]+'"]').css('background-color', 'mistyrose');
                 });    
-            },"json");
+            },'json');
     }       
     function markSuggestedCourses(){
         $.post('models/functions/_global_ajax.php', {case: 'getSuggestedCourses'}, function(data){
                 $.each(data, function(key, value) {
-                    $('*[data-record-key="'+value[0]+'"]').css( "background-color", "rgb(167, 229, 167)");
+                    $('*[data-record-key="'+value[0]+'"]').css('background-color', 'rgb(167, 229, 167)');
                 });    
-            },"json");
+            },'json');
     }
     $(function(){
         $('#below_stu_Table').jtable({
