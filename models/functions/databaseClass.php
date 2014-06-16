@@ -532,6 +532,8 @@ class databaseClass {
             $result = mysql_query($failedQuery);
             $num = mysql_fetch_array($result);
             
+            $gpa = getValue('SUM(academic_view_max.point*academic_view_max.credits)/SUM(academic_view_max.credits)','academic_view_max','student_id='.$id,FALSE);//select SUM(academic_view_max.point*academic_view_max.credits)/SUM(academic_view_max.credits) from academic_view_max where academic_view_max.student_id = 
+                    
             $response = array('success'   => true, 'id'  => $stuId, 'name'    => $name, 'gender'  => $gender, 'birthDate'  => $birthDate,
                               'nationalId'  => $nationalId, 'address'  => $address, 'phone' => $phone, 'email' => $email, 'gpa' => $gpa,
                                 'comHrs' => $comHrs, 'level' => $stuLevel, 'depName' => $depName, 'depHrs' => $depHrs, 'regDate' => $regDate, 
