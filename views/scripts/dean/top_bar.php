@@ -7,9 +7,10 @@
             <!-- Right Navigation Section -->
             <ul class="right">                
                 <li class="active has-dropdown">
-                    <a><?=$_SESSION['name']?></a>
+                    <a style="padding-right: 25px"><?=$_SESSION['name']?></a>
                     <ul class="dropdown">                                
                         <li><a href="models/functions/log_out.php"><?=LOGOUT?></a></li>
+                        <li><a href="views/scripts/dean/change_password.php"><?=CHANGE_PASSWORD?></a></li>
                     </ul>
                 </li>
                 <li>
@@ -41,7 +42,7 @@
                     <ul class="dropdown">                                
                         <li><a href="views/scripts/dean/upload.php"><?=UPLOAD_FILE?></a></li>
                         <li><a href="views/scripts/dean/import.php"><?=IMPORT_FILES?></a></li>
-                        <li><a href="views/scripts/dean/update_data.php"><?=UPDATE_DATA?></a></li>
+                        <li><a href="views/scripts/dean/update_data.php"><?=UPDATE_DATA?></a></li>                        
                     </ul>
                 </li>                                
                 <li class="divider"></li>
@@ -49,7 +50,7 @@
                     <a><?=SETTINGS?></a>
                     <ul class="dropdown">
                         <li><a href="views/scripts/dean/grades_dist.php"><?=GRADES_DIST?></a></li>
-                        <li><a href="views/scripts/dean/levels_dist.php"><?=HRS_CONST?></a></li>
+                        <li><a href="views/scripts/dean/levels_dist.php"><?=HRS_CONST?></a></li>                        
                     </ul>
                 </li>
                 <li class="divider"></li>

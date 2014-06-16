@@ -1,7 +1,7 @@
 <script>    
     $(function(){    
         $('#my_grades_table').jtable({        
-            title: '<?php echo MY_GRADES;?>',
+            title: '<?php echo GRADES_TABLE;?>',
             paging: true,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default

@@ -27,6 +27,16 @@ switch ($case){
         }
         break;
     }
+    /******************** change_password_script ********************/
+    case 'changePassword':{        
+        $oldPassword        = $_POST['oldPassword'];
+        $newPassword        = $_POST['newPassword'];            
+        $userId             = $_SESSION['userId'];
+        // getting the user info from the database.
+        $result = databaseClass::changePassword($userId, $oldPassword, $newPassword);
+        echo json_encode($result);    // Encoding the user info in JSON because it cannot be returned as an array.        
+        break;
+    }
     /******************** all_courses_script ********************/
     case 'suggCourse':{
         $action         = $_POST['action'];        

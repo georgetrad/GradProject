@@ -117,7 +117,7 @@
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
-                    width: '5%',
+                    width: '8%',
                     listClass: 'center_data'
                 },                
                 classA: {
@@ -128,6 +128,11 @@
                 classC: {
                     title: '<?php echo CLASS_C;?>',
                     width: '8%',
+                    listClass: 'center_data'
+                },
+                wanting_num: {
+                    title: '<?php echo WANTING_NUM;?>',
+                    width: '5%',
                     listClass: 'center_data'
                 },
                 added: {

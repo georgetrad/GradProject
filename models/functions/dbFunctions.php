@@ -106,8 +106,7 @@ function dbUpdate($tableName, $columns = array(), $values = array(), $condition 
         }
     }    
     $query.= " WHERE $condition";
-    mysql_query($query);                 // Executing the query
-//    print_r($query);exit;
+    mysql_query($query);                 // Executing the query    
     $result = array();
     $result['Result'] = "Sucess";
     return $result;
