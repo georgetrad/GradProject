@@ -19,10 +19,11 @@ function select($columns = '*', $tableName, $conditions = '1 = 1'){
  * @function: getValue
  * @return: value
  */
-function getValue($columns, $tableName, $conditions = '1 = 1'){
+function getValue($columns, $tableName, $conditions = '1 = 1', $checkActive = true){
     $query =   "SELECT ".$columns."
                 FROM ".$tableName."
-                WHERE ".$conditions." AND active = 'A'";
+                WHERE ".$conditions;
+                if ($checkActive)$query.=" AND active = 'A'";
     $result =  mysql_query($query);
 //    return $query;
     $row = mysql_fetch_array($result);
