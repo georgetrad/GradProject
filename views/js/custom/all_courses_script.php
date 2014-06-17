@@ -141,7 +141,7 @@
                     title: '<?php echo WANTING_NUM;?>',
                     width: '5%',
                     listClass: 'center_data',
-//                    sorting: false
+                    sorting: false
                 },
                 added: {
                     visibility: 'visible',

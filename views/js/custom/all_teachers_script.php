@@ -94,7 +94,8 @@ $(function(){
         e.preventDefault();
         $('#teachers_table').jtable('load', {
             searchText: $('#search_text').val(),
-            searchId: $('#search_id').val()
+            searchId: $('#search_id').val(),
+            depSearchId: $('input[name=dep]:checked').val()
         });
     });
 

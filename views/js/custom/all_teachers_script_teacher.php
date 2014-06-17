@@ -22,7 +22,7 @@ $(function(){
             },
             name: {
                 title: '<?php echo NAME;?>',                            
-                width: '23%',                
+                width: '23%'             
             },
             dep_name: {
                 title: '<?php echo DEP;?>',
@@ -60,7 +60,8 @@ $(function(){
         e.preventDefault();
         $('#teachers_table').jtable('load', {
             searchText: $('#search_text').val(),
-            searchId: $('#search_id').val()
+            searchId: $('#search_id').val(),
+            depSearchId: $('input[name=dep]:checked').val()
         });
     });
 
