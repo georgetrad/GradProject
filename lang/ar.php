@@ -127,6 +127,7 @@ define('IMPORTING', 'الاستيراد');
         define('UPDATE_SUCCESS', 'تمّ تحديث البيانات بنجاح');
         define('UPDATE_NOT_SUCCESS', 'لم يتمّ تحديث البيانات بنجاح');
         define('UPDATE_STU_NUM', 'تحديث عدد الطلاب في كل مقرر');
+        define('CREATE_STU_USERS', 'إنشاء اسماء مستخدمين للطلاب الجدد');
     
 define('SETTINGS', 'الاعدادات');
     define('GRADES_DIST', 'توزيع الدرجات والنقاط');

@@ -182,6 +182,9 @@ switch ($case){
         else if($selectedOption == 4){
             $result = databaseClass::updateCourse();
         }
+        else if($selectedOption == 5){
+            $result = databaseClass::createUsernamesForStudent();
+        }
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     }

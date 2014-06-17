@@ -19,7 +19,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                 <option value="1"><?=UPDATE_ALL?></option>
                 <option value="2"><?=UPDATE_STU?></option>
                 <option value="3"><?=UPDATE_RELATION?></option>
-                <option value="4"><?=UPDATE_STU_NUM?></option>                
+                <option value="4"><?=UPDATE_STU_NUM?></option> 
+                <option value="5"><?=CREATE_STU_USERS?></option>                
             </select>
         </form>        
     </div>
