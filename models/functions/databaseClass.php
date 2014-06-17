@@ -99,7 +99,7 @@ class databaseClass {
         if($action == 'add'){
             $semester = $_SESSION['semester'];
             $cols = array('course_id', 'semester_id', 'active', 'create_date', 'user_id');            
-            $values = array("'$courseCode'", $semester, "'A'", 'now()', $userId);
+            $values = array("'$courseCode'", $semester, "'A'", 'now()', $userId);            
             dbInsert('sugg_course', $cols, $values);            
         }
         else if($action == 'remove'){
@@ -148,7 +148,7 @@ class databaseClass {
         $resultArray =array();
         $columns = 'COURSE_ID';
         $tableName = 'sugg_course';
-        $query =   "SELECT ".$columns." FROM ".$tableName;
+        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE semester_id = (SELECT max(id) FROM semester)";
         $result =  mysql_query($query);
         while ($result2 = mysql_fetch_array($result)){
             array_push($resultArray, $result2);

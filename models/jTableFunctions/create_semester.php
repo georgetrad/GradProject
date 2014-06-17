@@ -1,6 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/dbFunctions.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/databaseClass.php';
 
 // Getting the inserted values in from the form.
 $name           = $_POST['name'];
@@ -42,7 +43,8 @@ $data = array(
 );
 
 dbInsert('semester', $cols, $data);
-
+$semester = databaseClass::getLatestSemester();
+$_SESSION['semester'] = $semester;
 //Get last inserted record (to show it on jTable)
 $query = "SELECT * FROM semester WHERE id = LAST_INSERT_ID();";
 $result = mysql_query($query);
