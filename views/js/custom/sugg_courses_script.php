@@ -64,6 +64,9 @@
                                             actions: {
                                                 listAction: 'models/jTableFunctions/list_sugg_crs_stu.php?coursetId=' + data.record.id
                                             },
+                                            recordsLoaded: function (event, data) { 
+                                                $('.jtable-child-table-container').stickyTableHeaders();
+                                            },
                                             fields: {
                                                 id: {
                                                     type: 'hidden',
@@ -77,11 +80,11 @@
                                                 },
                                                 name: {
                                                     title: '<?php echo NAME;?>',
-                                                    width: '25%'
+                                                    width: '20%'
                                                 },
                                                 level: {
                                                     title: '<?php echo LEVEL;?>',
-                                                    width: '5%',
+                                                    width: '10%',
                                                     listClass: 'center_data'
                                                 },
                                                 tot_hrs: {
@@ -105,7 +108,7 @@
                                                 },
                                                 adviserName: {
                                                     title: '<?php echo ADVISOR;?>',
-                                                    width: '25%'                                                    
+                                                    width: '15%'                                                    
                                                 },
                                                 dummyColumn: {
                                                     visibility: 'hidden',
