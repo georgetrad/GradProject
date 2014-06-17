@@ -16,6 +16,9 @@
                 <li>
                     <a href="views/scripts/student/home.php"><?=HOME?></a>                    
                 </li>
+                <li>
+                    <a href="views/scripts/student/my_info.php"><?=MY_INFO?></a>                    
+                </li>
                 <li class="divider"></li>
                 <li>
                     <a href="views/scripts/student/my_grades.php"><?=MY_GRADES?></a>                    

@@ -506,11 +506,11 @@ class databaseClass {
     public static function getStuData($id){ 
         
         $query= "SELECT * FROM get_stu_data WHERE ";
-        if ($_SESSION['userLevel']!= -1){
+        if ($_SESSION['userLevel'] == 0){
             $query.= "user_username = '".$_SESSION['username']."' AND ";
         }
         $query.= "id =". $id;
-        
+//        print_r($query);exit;
         $queryRun = mysql_query($query);
         $fetch = mysql_fetch_row($queryRun);
         if ($fetch != ''){
@@ -522,7 +522,7 @@ class databaseClass {
             $address = mysql_result($queryRun, 0, 'address');
             $phone = mysql_result($queryRun, 0, 'phone_number');
             $email = mysql_result($queryRun, 0, 'email');
-            $gpa = mysql_result($queryRun, 0, 'current_gpa');
+//            $gpa = mysql_result($queryRun, 0, 'current_gpa');
             $comHrs = mysql_result($queryRun, 0, 'tot_hours_completed');
             $stuLevel = mysql_result($queryRun, 0, 'current_level');
             $depName = mysql_result($queryRun, 0, 'name_ar');
