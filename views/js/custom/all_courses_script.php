@@ -1,18 +1,22 @@
 <script>    
     function getSuggCourse(){
         $('#sugg_courses_Table').jtable('load', undefined, function(){
-            $('.add').bind( "click", function() {
-                var courseCode = $(this).parents("tr").find("td:first").text();
+            $('.add').bind('click', function() {
+                var courseCode = $(this).parents('tr').find('td:first').text();
 
-                if($(this).text() === 'Add'){
+                if($(this).hasClass('add')){
                     var action = 'add';
-                    $(this).text('Remove');
-                    $(this).css('color','red');                    
+                    var src = 'style/img/remove.png';
+                    $(this).attr('src', src);
+                    $(this).removeClass('add');
+                    $(this).addClass('remove');
                 }
                 else{
                     action = 'remove';
-                    $(this).text('Add');
-                    $(this).css('color','green');                    
+                    var src = 'style/img/add.png';
+                    $(this).attr('src', src);
+                    $(this).removeClass('remove');
+                    $(this).addClass('add');                    
                 }
                 $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){
                     getSuggCoursesNum();
@@ -24,19 +28,24 @@
 
         $.post('models/functions/_global_ajax.php',{case: 'getSuggCourses'}, function(data){
             var i = 0;
+            var source = 'style/img/remove.png';
             for (i=0;i<data.length;i++){
-                $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find("td:last").text('Remove').css({'color':'red', 'cursor':'pointer'}).bind( "click", function() {
-                    var courseCode = $(this).parents("tr").find("td:first").text();
+                $('*[data-record-key="'+data[i]['COURSE_ID']+'"]').find('img.icon').attr('src', source).bind('click', function() {
+                    var courseCode = $(this).parents('tr').find('td:first').text();
 
-                    if($(this).text() === 'Add'){
+                    if($(this).hasClass('add')){
                         var action = 'add';
-                        $(this).text('Remove');
-                        $(this).css('color','red');                        
+                        var src = 'style/img/remove.png';
+                        $(this).attr('src', src);
+                        $(this).removeClass('add');
+                        $(this).addClass('remove');
                     }
                     else{
                         action = 'remove';
-                        $(this).text('Add');
-                        $(this).css('color','green');
+                        var src = 'style/img/add.png';
+                        $(this).attr('src', src);
+                        $(this).removeClass('remove');
+                        $(this).addClass('add');
                     }
                     $.post('models/functions/_global_ajax.php', {case:'suggCourse', action: action, courseCode: courseCode}, function(data){                
                         getSuggCoursesNum();
@@ -58,21 +67,9 @@
     }
     function getCheckboxFilter(){
         $.post('models/functions/_global_ajax.php', {case: 'getCheckboxFilter'}, function(data){
-            $('#checkboxFilterContainer').html( data );
+            $('#checkboxFilterContainer').html(data);
         }, "JSON");
-    }
-  //happy birthday to you
-    function setFilterValues(){
-        var filter = $('#checkboxFilter').serialize();
-//        filter += "&case='setFilterValues'";
-        alert(filter);
-//        $(filter)
-//            e.preventDefault();
-//            $('#all_courses_Table').jtable('load', {
-//                searchId: $('#search_id').val()
-//            });
-    }
-    
+    }  
     $(document).ready(function () {  
         $('#all_courses_Table').jtable({
             title: '<?php echo COURSES;?>',
@@ -104,7 +101,7 @@
                 },                
                 ct_name: {
                     title: '<?php echo COURSE_TYPE;?>',
-                    width: '7%'
+                    width: '9%'
                 },
                 course_level: {
                     title: '<?php echo LEVEL;?>',
@@ -113,7 +110,7 @@
                 },
                 req_name: {
                     title: '<?php echo REQ_COURSE;?>',
-                    width: '10%',                    
+                    width: '8%',                    
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
@@ -122,7 +119,12 @@
                 },                
                 classA: {
                     title: '<?php echo CLASS_A;?>',
-                    width: '7%',
+                    width: '6%',
+                    listClass: 'center_data'
+                },
+                classB: {
+                    title: '<?php echo CLASS_B;?>',
+                    width: '6%',
                     listClass: 'center_data'
                 },
                 classC: {
@@ -130,17 +132,23 @@
                     width: '8%',
                     listClass: 'center_data'
                 },
+                classE: {
+                    title: '<?php echo CLASS_E;?>',
+                    width: '7%',
+                    listClass: 'center_data'
+                },
                 wanting_num: {
                     title: '<?php echo WANTING_NUM;?>',
                     width: '5%',
-                    listClass: 'center_data'
+                    listClass: 'center_data',
+//                    sorting: false
                 },
                 added: {
                     visibility: 'visible',
                     width: '4%',
                     listClass: 'center_data',
                     display: function (data) {
-                        return '<a class="add" id="<?php echo COURSE_CODE;?>">Add</a>';                    
+                        return '<img class="add icon" src="style/img/add.png" style="cursor: pointer" id="<?php echo COURSE_CODE;?>"/>';
                     }
                 }
             },
@@ -166,18 +174,15 @@
             e.preventDefault();
             $('#all_courses_Table').jtable('load', {
                 searchText: $('#search_text').val(),
-                searchId: $('#search_id').val()
-            });
+                searchId: $('#search_id').val(),
+                filter: $('#checkboxFilter').serializeArray()
+            });            
         });
         // to top 
         $("#toTop").scrollToTop();
         //header freeze
         $('.jtable').stickyTableHeaders();
-        //getCheckboxFilter()
-        getCheckboxFilter();
-        //setFilterValues()
-        $('#checkboxFilterContainer').click(function(){
-            setFilterValues();
-        });
+        //getCheckboxFilter
+        getCheckboxFilter();        
     });  
 </script>

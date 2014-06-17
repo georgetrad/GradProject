@@ -1,35 +1,7 @@
  <?php
 include_once '../db_connect.php';
 
-// Get records count
-$query1 = "SELECT COUNT(*) AS RecordCount FROM course";
-if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
-    $searchText = $_POST['searchText'];
-    $searchId = $_POST['searchId'];
-    
-    if($searchId == 0){                                         // Modifying the query according to the search text.
-        $query1.= " WHERE id LIKE '$searchText%'";
-    }
-    else if($searchId == 1){
-        $query1.= " WHERE name_ar LIKE '$searchText%'";
-    }    
-    else if($searchId == 2){
-        $query1.= " WHERE course_type_id LIKE '$searchText%'";
-    }
-    else if($searchId == 3){
-        $query1.= " WHERE level LIKE '$searchText%'";
-    }
-    else if($searchId == 4){
-        $query1.= " WHERE credits LIKE '$searchText%'";
-    }    
-}
-
-$result1 = mysql_query($query1);            // Executing the query.
-$row = mysql_fetch_array($result1);         // Fetching the result.
-$recordCount = $row['RecordCount'];         // Filling the result in an variable.
-
 $sorting = 'id ASC';                        // Assigning a default sorting order.
-
 if(isset($_GET['jtSorting'])){
     $sorting = $_GET['jtSorting'];             // Changing sort order according to what the user has selected.
 }
@@ -43,25 +15,35 @@ $query2.= "WHERE c.active='A' ";
 
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
-    $searchId = $_POST['searchId'];
+    $searchId = $_POST['searchId'];    
     
     if($searchId == 0){                                         // Modifying the query according to the search text.
-        $query1.= " WHERE id LIKE '$searchText%'";
+        $query2.= "AND c.id LIKE '$searchText%'";
     }
     else if($searchId == 1){
-        $query1.= " WHERE name_ar LIKE '$searchText%'";
+        $query2.= " AND c.name_ar LIKE '$searchText%'";
     }    
     else if($searchId == 2){
-        $query1.= " WHERE course_type_id LIKE '$searchText%'";
+        $query2.= " AND c.course_type_id LIKE '$searchText%'";
     }
     else if($searchId == 3){
-        $query1.= " WHERE level LIKE '$searchText%'";
+        $query2.= " AND c.level LIKE '$searchText%'";
     }
     else if($searchId == 4){
-        $query1.= " WHERE credits LIKE '$searchText%'";
-    }    
+        $query2.= " AND c.credits LIKE '$searchText%'";
+    }           
+}
+if(isset($_POST['filter']) && !empty($_POST['filter'])){
+    $filter = $_POST['filter'];
+    $query2.= " AND c.course_type_id = ".$filter[0]['value'];
+    if(count($filter) > 1){
+        for($i=1 ; $i<(count($filter)) ; $i++){ 
+            $query2.= " OR c.course_type_id = ".$filter[$i]['value'];
+        }
+    } 
 }
 $query2.= " ORDER BY $sorting";
+
 $result2 = mysql_query($query2);
 
 //Add all records to an array
@@ -81,7 +63,6 @@ for ($i=0 ; $i<count($rows) ; $i++){
 //Return results to jTable
 $jTableResult = array();
 $jTableResult['Result'] = "OK";
-$jTableResult['TotalRecordCount'] = $recordCount;
 $jTableResult['Records'] = $rows;
 print json_encode($jTableResult);
 ?>

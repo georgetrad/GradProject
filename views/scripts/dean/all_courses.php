@@ -48,11 +48,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
             </form>       
         </div>
         <!-- NEW Filtering Area -->
-        <div class="row"> 
-            <div class="medium-1 large-1 columns">&nbsp;</div>
-            <div id="checkboxFilterContainer"></div>
-            <div class="medium-1 large-1 columns">&nbsp;</div>   
-        </div>    
+        <div class="row">             
+            <div id="checkboxFilterContainer" style="margin-right: 15px;"></div>             
+        </div>
+        
         <div class="row medium-3 large-3 columns show-for-medium-up"></div>        
         <div id="all_courses_Table" class="medium-12 large-12 columns show-for-medium-up"></div> <!--Table-->
     </div>
@@ -78,9 +77,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
         
     </div>
 </div>
-
 <a href="#top" id="toTop"></a>
-
 <?php 
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/js/custom/all_courses_script.php';

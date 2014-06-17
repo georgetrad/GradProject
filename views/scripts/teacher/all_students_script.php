@@ -62,8 +62,7 @@
                     edit:false,
                     sorting: false,
                     display: function (data) {
-                        return '<a href="views/scripts/teacher/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
-                    }                
+                        return '<a href="views/scripts/dean/advise.php?studentId='+data.record.id+'"'+'><img src="style/img/view.png" style="cursor: pointer; padding-right:4px"/></a>';                                        }                
                 },
                     //CHILD TABLE DEFINITION FOR "FOR "PERSONAL INFORMATION"
                     personal_info: {
@@ -72,7 +71,7 @@
                         sorting: false,
                         display: function (data) {
                                 //Create an image that will be used to open child table
-                                var $img = $('<img src="style/img/personal.png" style="cursor: pointer; padding-right:2px; padding-bottom:4px"/>');
+                                var $img = $('<img src="style/img/personal.png" style="cursor: pointer; padding-bottom:2px"/>');
                                 //Open child table when user clicks the image
                                 $img.click(function () {
                                     $('#students_table').jtable('openChildTable',

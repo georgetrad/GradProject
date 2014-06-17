@@ -65,11 +65,11 @@
                 },
                 link: {
                     visibility: 'visible',
-                    width: '4%',
+                    width: '3%',
                     edit:false,
                     sorting: false,
-                    display: function (data) {
-                        return '<a href="views/scripts/dean/advise.php?studentId='+data.record.id+'"'+'>View</a>';                    
+                    display: function (data) {                        
+                        return '<a href="views/scripts/dean/advise.php?studentId='+data.record.id+'"'+'><img src="style/img/view.png" style="cursor: pointer"/></a>';                    
                     }
                 },
                     //CHILD TABLE DEFINITION FOR "PERSONAL INFORMATION"
