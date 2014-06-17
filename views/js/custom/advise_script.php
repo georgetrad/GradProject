@@ -153,12 +153,11 @@
         }); 
         $(".printBtn").click(function(){
 
-            var print = "div.PrintArea.area0";
+            var print = ".area0";
             $("input.selPA:checked").each(function(){
-                print += (print.length > 0 ? "," : "") + "div.PrintArea." + $(this).val();
-            });
-			
-            $( print ).printArea();
+                print += (print.length > 0 ? "," : "") + " ."+$(this).val();
+            });			
+            $( print ).printThis();
 			
         });
     });    

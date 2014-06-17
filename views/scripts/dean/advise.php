@@ -129,7 +129,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
             </dd>
             <dd>
                 <a href="#panel4"><?=AVAILABLE_CRS?></a>
-                <div id="panel4" class="content">
+                <div id="panel4" class="content PrintArea area2">
                     <div class="row">
                         <div class="medium-1 large-1 columns" data-reveal-id="crs_modal" data-reveal>
                             <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 50px; width: 75px; cursor: pointer">
