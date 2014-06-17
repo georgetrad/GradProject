@@ -4,13 +4,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 
 $stuId = $_POST['stuId'];
 
-$sorting = 'id ASC';                        // Assigning a default sorting order.
+$sorting = 'course_id ASC';                        // Assigning a default sorting order.
 if(isset($_GET['jtSorting'])){
     $sorting = $_GET['jtSorting'];             // Changing sort order according to what the user has selected.
 }
 
 //Get the records from database
-$query2 = "CALL crs_ava_stu ($stuId, 'course_id asc')";
+$query2 = "CALL crs_ava_stu ($stuId, '$sorting')";
+//print_r($query2);exit;
 $result2 = mysql_query($query2);
 //Add all records to an array
 $rows = array();

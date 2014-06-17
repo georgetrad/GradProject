@@ -19,7 +19,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
         <input type="search" id="search_text" placeholder="<?=COLLEGE_ID?>" style="text-align: center"/>
     </div> 
     <div class="medium-1 large-1 columns show-for-medium-up">
-        <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">            
+        <input type="button" class="tiny button" id="search_button" value="<?=SEARCH?>">        
     </div> 
     <div class="medium-6 large-2 columns show-for-medium-up">
         <div id="wrong" data-alert class="alert-box alert" style="font-size: 12px; font-family: DroidKufi-Regular; display: none ">
@@ -28,6 +28,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
         </div>            
     </div>
     <div class="medium-2 large-4 columns show-for-medium-up">
+        <div class="settingVals">
+            <div style="display: inline" ><?=STR_PRINT?>:</div>
+            <input style="display: inline"  type="checkbox" class="selPA" value="area1" checked /> <?=STUDENT_GRADE?>
+            <input style="display: inline"  type="checkbox" class="selPA" value="area2" checked /> <?=AVAILABLE_CRS?>
+            <div style="display: inline" class="printBtn"><img src="style/img/print-icon.png" height="25" /></div>
+        </div>
     </div>    
 </div>
 <div id="contents" class="row" style="display: none; padding-bottom: 100px; ">
@@ -48,7 +54,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
                         </div>                        
                     </div>
                     <div class="row">
-                        <div class="medium-6 large-6 columns">
+                        <div class="medium-6 large-6 columns PrintArea area0">
                             <div class="stu_title label"><?=NAME?></div> <div class="name stu_data secondary label"></div>
                         </div>
                         <div class="medium-6 large-6 columns">
@@ -113,11 +119,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
             </dd>
             <dd>
                 <a href="#panel3"><?=STUDENT_GRADE?></a>
-                <div id="panel3" class="content">
+                <div id="panel3" class="content PrintArea area1">
                     <div class="row">
-                        <div class="medium-3 large-3 columns">&nbsp;</div>
-                        <div id="table" class="medium-6 large-6 columns show-for-medium-up"></div>
-                        <div class="medium-3 large-3 columns">&nbsp;</div>
+                        <div class="medium-2 large-2 columns">&nbsp;</div>
+                        <div id="table" class="medium-8 large-8 columns"></div>
+                        <div class="medium-2 large-2 columns">&nbsp;</div>
                     </div>                        
                 </div>
             </dd>
@@ -125,12 +131,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_b
                 <a href="#panel4"><?=AVAILABLE_CRS?></a>
                 <div id="panel4" class="content">
                     <div class="row">
-                        <div class="medium-2 large-2 columns" data-reveal-id="crs_modal" data-reveal>
-                            <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 100px; width: 150px; cursor: pointer">
+                        <div class="medium-1 large-1 columns" data-reveal-id="crs_modal" data-reveal>
+                            <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 50px; width: 75px; cursor: pointer">
                         </div>
-                        <div id="jTable" class="medium-9 large-9 columns show-for-medium-up"></div>
-                        <div class="medium-1 large-1 columns">                                                        
-                        </div>
+                        <div id="jTable" class="medium-11 large-11 columns show-for-medium-up PrintArea area2"></div>                        
                     </div>
                 </div>
             </dd>

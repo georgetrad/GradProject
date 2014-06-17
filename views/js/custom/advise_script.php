@@ -91,7 +91,7 @@
             columnResizable: false, 
             columnSelectable: false,
             saveUserPreferences: false,
-            sorting: false,                    
+            sorting: true,                    
             selecting: false,
             multiselect: false,
             selectingCheckboxes: false,
@@ -108,7 +108,7 @@
                     key: true,
                     list: true,
                     title: '<?php echo COURSE_CODE;?>',
-                    width: '10%',
+                    width: '9%',
                     listClass: 'left_data'
                 },
                 name_ar: {
@@ -134,7 +134,7 @@
                 },
                 credits: {
                     title: '<?php echo CREDITS;?>',
-                    width: '15%',
+                    width: '14%',
                     listClass: 'center_data'
                 },
                 status: {
@@ -143,7 +143,7 @@
                 },
                 grade: {
                     title: '<?php echo FINAL_GRADE;?>',
-                    width: '20%',
+                    width: '22%',
                     listClass: 'center_data'
                 },
                 dummyColumn: {
