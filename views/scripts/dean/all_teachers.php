@@ -12,7 +12,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
 </div>
 <!-- Filtering Area -->
 <div class="row">    
-    <div class="medium-2 large-2 columns show-for-medium-up">
+    <div class="medium-1 large-1 columns show-for-medium-up">
         &nbsp;
     </div>         
     <div class="medium-2 large-2 columns show-for-medium-up">
@@ -23,10 +23,21 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
     </div> 
     <div class="medium-7 large-7 columns show-for-medium-up"></div>
 </div>
+
 <div class="row">
-    <div class="medium-2 large-2 columns">&nbsp;</div>
-    <div id="teachers_table" class="jTable medium-8 large-8 columns"></div><!--Table-->
-    <div class="medium-2 large-2 columns">&nbsp;</div>
+    <div class="medium-1 large-1 columns show-for-medium-up">&nbsp;</div>
+    <div class="medium-4 large-3 columns show-for-medium-up">        
+        <input type="radio" name="dep" value="0" checked style="margin-left: 3px"><?=ALL?>&nbsp;
+        <input type="radio" name="dep" value="1" style="margin-left: 3px"><?=ICT?>&nbsp;
+        <input type="radio" name="dep" value="2" style="margin-left: 3px"><?=ARC?>
+    </div>
+    <div class="medium-6 large-6 columns show-for-medium-up"></div>
+</div>
+
+<div class="row">
+    <div class="medium-1 large-1 columns">&nbsp;</div>
+    <div id="teachers_table" class="jTable medium-10 large-10 columns"></div><!--Table-->
+    <div class="medium-1 large-1 columns">&nbsp;</div>
 </div>
 <?php 
     include $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/footer.php';

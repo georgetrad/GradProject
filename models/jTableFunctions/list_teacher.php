@@ -4,6 +4,11 @@ include_once '../db_connect.php';
 
 // Get records count
 $query1 = "SELECT COUNT(*) AS RecordCount FROM teacher WHERE active='A' ";
+
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query1.= "AND department_id = $dep ";
+}
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];   
     $query1.= " AND (first_name LIKE '$searchText%' OR middle_name LIKE '$searchText%' OR last_name LIKE '$searchText%') ";    
@@ -27,6 +32,11 @@ $query2 = "SELECT t.id, CONCAT(t.first_name, ' ', t.last_name) as name, t.degree
 $query2.= "FROM teacher as t ";
 $query2.= "LEFT JOIN department as d ON  t.department_id= d.id ";
 $query2.= "WHERE t.active='A'";
+
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query2.= "AND department_id = $dep ";
+}
 
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];    

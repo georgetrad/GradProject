@@ -8,7 +8,7 @@
     }    
     $(function(){  
         $('#students_table').jtable({
-            title: '<?php echo MY_STUDENTS;?>',
+            title: '<?php echo STUDENTS;?>',
             paging: true,                    
             columnResizable: false, //Actually, no need to set true since it's default
             columnSelectable: false, //Actually, no need to set true since it's default
@@ -134,7 +134,8 @@
             e.preventDefault();
             $('#students_table').jtable('load', {
                 searchText: $('#search_text').val(),
-                searchId: $('#search_id').val()
+                searchId: $('#search_id').val(),
+                depSearchId: $('input[name=dep]:checked').val()
             });
         });
 

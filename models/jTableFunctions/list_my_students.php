@@ -10,6 +10,11 @@ $query1.= "INNER JOIN student ON student.advisor_id = teacher.id ";
 $query1.= "INNER JOIN department ON department.id = student.department_id ";
 $query1.= "AND teacher.user_username = '".$_SESSION['username']."' AND student.status = 'A' ";
 
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query1.= "AND student.department_id = $dep ";
+}
+
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
@@ -38,9 +43,14 @@ $query2 = "SELECT student.id, student.current_level AS level, student.tot_hours_
 $query2.= "CONCAT (student.first_name, ' ', student.middle_name, ' ', student.last_name) as name, department.name_ar as dep_name ";        
 $query2.= "FROM user ";                                               
 $query2.= "INNER JOIN teacher ON teacher.user_username = user.username ";
-$query2.= "INNER JOIN student ON student.advisor_id = teacher.id ";       
+$query2.= "INNER JOIN student ON student.advisor_id = teacher.id ";
 $query2.= "INNER JOIN department ON department.id = student.department_id ";
 $query2.= "AND teacher.user_username = '".$_SESSION['username']."' AND student.status = 'A' ";
+
+if(isset($_POST['depSearchId']) && $_POST['depSearchId'] != 0){
+    $dep = $_POST['depSearchId'];
+    $query2.= "AND student.department_id = $dep ";
+}
 
 if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // Modifying the query according to the search text.
     $searchText = $_POST['searchText'];
