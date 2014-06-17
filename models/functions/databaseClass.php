@@ -496,6 +496,13 @@ class databaseClass {
         return $response;
     }
     
+    public static function createUsernamesForStudent(){        
+        $query = "CALL create_user_stu()";
+        $result = mysql_query($query);
+        $response = array("result" => $result, "error"=> mysql_error());
+        return $response;
+    }
+    
     public static function getStuData($id){ 
         
         $query= "SELECT * FROM get_stu_data WHERE ";
