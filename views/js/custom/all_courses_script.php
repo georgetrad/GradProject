@@ -132,7 +132,7 @@
                     width: '8%',
                     listClass: 'center_data'
                 },
-                classE: {
+                classD: {
                     title: '<?php echo CLASS_E;?>',
                     width: '7%',
                     listClass: 'center_data'
