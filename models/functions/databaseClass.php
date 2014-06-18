@@ -148,7 +148,7 @@ class databaseClass {
         $resultArray =array();
         $columns = 'COURSE_ID';
         $tableName = 'sugg_course';
-        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE semester_id = (SELECT max(id) FROM semester)";
+        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE semester_id = (SELECT max(id) FROM semester WHERE active = 'A')";
         $result =  mysql_query($query);
         while ($result2 = mysql_fetch_array($result)){
             array_push($resultArray, $result2);
@@ -178,7 +178,7 @@ class databaseClass {
      * @return type
      */
     public static function getSuggCoursesNum(){
-        $query = "SELECT count(id) FROM sugg_course WHERE active='A' AND semester_id = (SELECT max(id) FROM semester)";
+        $query = "SELECT count(id) FROM sugg_course WHERE active='A' AND semester_id = (SELECT max(id) FROM semester WHERE active = 'A')";
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];
@@ -189,7 +189,7 @@ class databaseClass {
      * @return type
      */
     public static function getAskCoursesNum($studentId){
-        $query = "SELECT count(id) AS num, sum(credits) AS hrs FROM student_suggest WHERE student_id = '$studentId' AND semester_id = (SELECT max(id) FROM semester)";
+        $query = "SELECT count(id) AS num, sum(credits) AS hrs FROM student_suggest WHERE student_id = '$studentId' AND semester_id = (SELECT max(id) FROM semester WHERE active = 'A')";
         $result = mysql_query($query);
         $num = mysql_result($result, 0, 'num');
         $hrs = mysql_result($result, 0, 'hrs');                
@@ -553,7 +553,7 @@ class databaseClass {
     }
     
     public function getCurrSemInfo(){
-        $query = "SELECT * FROM semester WHERE id= (SELECT max(id) FROM semester) AND active = 'A'";
+        $query = "SELECT * FROM semester WHERE id= (SELECT max(id) FROM semester WHERE active = 'A') AND active = 'A'";
         $result = mysql_query($query);
         $rows = array();
         while($row = mysql_fetch_array($result)){
@@ -581,7 +581,7 @@ class databaseClass {
     public static function getBelowStuNum(){
 //       $x = getValue('count(*)', 'stu_sugg_hrs',"hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL " );
         $query = "SELECT count(*) as recordCount FROM stu_sugg_hrs ";
-        $query.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL ";
+        $query.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester WHERE active = 'A')) OR hrs IS NULL ";
         $result = mysql_query($query);
         $num = mysql_fetch_row($result);
         return $num[0];
