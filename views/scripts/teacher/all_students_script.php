@@ -58,17 +58,19 @@
                 },
                 link: {
                     visibility: 'visible',
-                    width: '3%',
+                    width: '2%',
                     edit:false,
                     sorting: false,
+                    listClass: 'center_data',
                     display: function (data) {
                         return '<a href="views/scripts/teacher/advise.php?studentId='+data.record.id+'"'+'><img src="style/img/view.png" style="cursor: pointer; padding-right:4px"/></a>';                                        }                
                 },
                     //CHILD TABLE DEFINITION FOR "FOR "PERSONAL INFORMATION"
                     personal_info: {
                         title: '',
-                        width: '15%',
+                        width: '10%',
                         sorting: false,
+                        listClass: 'center_data',
                         display: function (data) {
                                 //Create an image that will be used to open child table
                                 var $img = $('<img src="style/img/personal.png" style="cursor: pointer; padding-bottom:2px"/>');
@@ -166,5 +168,10 @@
         });
         //header freeze
         $('.jtable').stickyTableHeaders();
+        
+        $("#search_text").keypress(function(key) {
+            if (key.which === 13)
+            $('#search_button').click();
+        });
     });
 </script>

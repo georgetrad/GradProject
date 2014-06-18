@@ -134,9 +134,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.
                         <div class="medium-1 large-1 columns" data-reveal-id="crs_modal" data-reveal>
                             <img src="style/img/crs_tree.jpg" alt="Classes Tree" style="height: 50px; width: 75px; cursor: pointer">
                         </div>
-                        <div id="jTable" class="medium-9 large-9 columns show-for-medium-up PrintArea area2"></div>
-                        <div class="medium-1 large-1 columns">                                                        
-                        </div>
+                        <div id="jTable" class="medium-11 large-11 columns show-for-medium-up PrintArea area2"></div>                        
                     </div>
                 </div>
             </dd>

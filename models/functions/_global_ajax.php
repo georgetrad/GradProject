@@ -190,7 +190,12 @@ switch ($case){
     }
     
     case 'getStuData':{
-        $id = $_POST['id'];
+        if(isset($_POST['id']) && !empty($_POST['id'])){
+            $id = $_POST['id'];
+        }
+        else{
+            $id = $_SESSION['id'];
+        }        
         $result = databaseClass::getStuData($id);        
         echo (json_encode($result));
         break;

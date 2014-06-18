@@ -31,6 +31,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 <script type="text/javascript" src="views/js/foundation/foundation.tab.js"></script>
 <script type="text/javascript" src="views/js/foundation/foundation.accordion.js"></script>
 <script type="text/javascript" src="views/js/foundation/foundation.alert.js"></script>
+<script type="text/javascript" src="views/js/foundation/foundation.orbit.js"></script>
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.min.js"></script> 
 <script type="text/javascript" src="views/js/jTable/jquery.jtable.ar.js"></script>
 <script type="text/javascript" src="views/js/jquery/jquery.scrollToTop.min.js"></script>
@@ -42,6 +43,16 @@ if(!loggedIn()){
 }
 ?>   
 <script>
-    $(document).foundation();
+    $(document).foundation({
+        orbit: {
+        animation: 'slide',
+        navigation_arrows: true,
+        timer_show_progress_bar: false,
+        timer_speed: 3000,        
+        pause_on_hover: true,
+        resume_on_mouseout: false,
+        slide_number: false
+    }
+    });
 </script>
 

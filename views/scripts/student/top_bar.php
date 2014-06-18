@@ -10,11 +10,14 @@
                     <a style="padding-right: 25px"><?=$_SESSION['name']?></a>
                     <ul class="dropdown">                                
                         <li><a href="models/functions/log_out.php"><?=LOGOUT?></a></li>
-                        <li><a href="views/scripts/student/change_password.php"><?=CHANGE_PASSWORD?></a></li>
+                        <li><a href="views/scripts/general/change_password.php"><?=CHANGE_PASSWORD?></a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="views/scripts/student/home.php"><?=HOME?></a>                    
+                </li>
+                <li>
+                    <a href="views/scripts/student/my_info.php"><?=MY_INFO?></a>                    
                 </li>
                 <li class="divider"></li>
                 <li>

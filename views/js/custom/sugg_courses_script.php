@@ -71,7 +71,7 @@
                                                 id: {
                                                     type: 'hidden',
                                                     defaultValue: data.record.id
-                                                },
+                                                },                                                
                                                 student_id: {
                                                     key: true,
                                                     title: '<?php echo COLLEGE_ID;?>',

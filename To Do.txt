@@ -1,8 +1,0 @@
-test
-George:
-- create index.php in every folder (if signed in).
-- Add back to top link
-
-
-Mohammad:
-- merge the controller of the dean page and the teacher's

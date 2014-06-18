@@ -506,11 +506,11 @@ class databaseClass {
     public static function getStuData($id){ 
         
         $query= "SELECT * FROM get_stu_data WHERE ";
-        if ($_SESSION['userLevel']!= -1){
+        if ($_SESSION['userLevel'] == 0){
             $query.= "user_username = '".$_SESSION['username']."' AND ";
         }
         $query.= "id =". $id;
-        
+//        print_r($query);exit;
         $queryRun = mysql_query($query);
         $fetch = mysql_fetch_row($queryRun);
         if ($fetch != ''){
@@ -522,7 +522,7 @@ class databaseClass {
             $address = mysql_result($queryRun, 0, 'address');
             $phone = mysql_result($queryRun, 0, 'phone_number');
             $email = mysql_result($queryRun, 0, 'email');
-            $gpa = mysql_result($queryRun, 0, 'current_gpa');
+//            $gpa = mysql_result($queryRun, 0, 'current_gpa');
             $comHrs = mysql_result($queryRun, 0, 'tot_hours_completed');
             $stuLevel = mysql_result($queryRun, 0, 'current_level');
             $depName = mysql_result($queryRun, 0, 'name_ar');
@@ -592,6 +592,44 @@ class databaseClass {
         $query = "SELECT count(id) ";
         $query.= "FROM student ";
         $query.= "WHERE advisor_id IS NULL";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
+    public static function getMyStudentsNum(){
+        $id = $_SESSION['id'];
+        $query = "SELECT count(id) ";
+        $query.= "FROM student ";
+        $query.= "WHERE advisor_id = $id";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
+    public static function getGradsNum(){        
+        $query = "SELECT count(id) ";
+        $query.= "FROM student ";
+        $query.= "WHERE active = 'A' AND status = 'G'";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
+    public static function getStudentsNum(){        
+        $query = "SELECT count(id) ";
+        $query.= "FROM student ";
+        $query.= "WHERE active = 'A' AND status = 'A'";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
+    public static function getMyAdvisorName($studentId){        
+        $query = "SELECT CONCAT(teacher.first_name, ' ', teacher.last_name) ";
+        $query.= "FROM student ";
+        $query.= "LEFT JOIN teacher ON student.advisor_id = teacher.id ";
+        $query.= "WHERE student.id = $studentId";
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];

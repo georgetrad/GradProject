@@ -5,7 +5,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
 $stuId = $_SESSION['id'];
 
 //Get the records from database
-$query2 = "CALL crs_ava_stu ($stuId, 'course_id asc')";
+$query2 = "CALL crs_ava_stu ($stuId, 'course_id DESC')";
 $result2 = mysql_query($query2);
 //Add all records to an array
 $rows = array();

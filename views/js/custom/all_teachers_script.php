@@ -99,6 +99,11 @@ $(function(){
         });
     });
 
-    $('#teachers_table').jtable('load');   
+    $('#teachers_table').jtable('load');
+    
+    $("#search_text").keypress(function(key) {
+        if (key.which === 13)
+        $('#search_button').click();
+    });
 });
 </script>
