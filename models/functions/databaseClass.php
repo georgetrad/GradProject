@@ -597,6 +597,44 @@ class databaseClass {
         return $num[0];
     }
     
+    public static function getMyStudentsNum(){
+        $id = $_SESSION['id'];
+        $query = "SELECT count(id) ";
+        $query.= "FROM student ";
+        $query.= "WHERE advisor_id = $id";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
+    public static function getGradsNum(){        
+        $query = "SELECT count(id) ";
+        $query.= "FROM student ";
+        $query.= "WHERE active = 'A' AND status = 'G'";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
+    public static function getStudentsNum(){        
+        $query = "SELECT count(id) ";
+        $query.= "FROM student ";
+        $query.= "WHERE active = 'A' AND status = 'A'";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
+    public static function getMyAdvisorName($studentId){        
+        $query = "SELECT CONCAT(teacher.first_name, ' ', teacher.last_name) ";
+        $query.= "FROM student ";
+        $query.= "LEFT JOIN teacher ON student.advisor_id = teacher.id ";
+        $query.= "WHERE student.id = $studentId";
+        $result = mysql_query($query);
+        $num = mysql_fetch_array($result);
+        return $num[0];
+    }
+    
     public static function getGraduationCourses(){
         $id = getValue('max(id)', 'semester');
         $max = getValue('max_grad_stu_hrs', 'semester','id = '.$id);

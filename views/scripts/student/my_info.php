@@ -7,6 +7,8 @@ $title = MY_INFO;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/functions/databaseClass.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/student/top_bar.php';
+$studentId       = $_SESSION['id']; 
+$advisorName    = databaseClass::getMyAdvisorName($studentId);
 ?>
 <div class="row">
     <h4 class="title text-center"><?=$title;?></h4>
@@ -78,17 +80,17 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/student/top_b
                     </div>
                     <div class="row">
                         <div class="medium-6 large-6 columns">
-                            <div class="stu_title label"><?=REG_DATE?></div> <div id="reg_date" class="stu_data secondary label"></div>                                
-                        </div>                        
-                    </div>
-                    <div class="row">
-                        <div class="medium-6 large-6 columns">
                             <div class="stu_title label"><?=LEVEL?></div> <div id="level" class="stu_data secondary label"></div>                                
                         </div>                        
                     </div>
                     <div class="row">
                         <div class="medium-6 large-6 columns">
                             <div class="stu_title label"><?=GPA?></div> <div id="gpa" class="stu_data secondary label"></div>                                
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="medium-6 large-6 columns">
+                            <div class="stu_title label"><?=MY_ADVISOR?></div> <div class="stu_data secondary label"><?=$advisorName?></div>                                
                         </div>                        
                     </div>
                 </div>

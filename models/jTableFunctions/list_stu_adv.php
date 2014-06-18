@@ -57,21 +57,21 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchId = $_POST['searchId'];
     
     if($searchId == 1){                                         // Modifying the query according to the search text.
-        $query2.= " WHERE s.first_name LIKE '$searchText%'";
+        $query2.= " AND s.first_name LIKE '$searchText%'";
     }
     else if($searchId == 2){
-        $query2.= " WHERE s.middle_name LIKE '$searchText%'";
+        $query2.= " AND s.middle_name LIKE '$searchText%'";
     }
     else if($searchId == 3){
-        $query2.= " WHERE s.last_name LIKE '$searchText%'";
+        $query2.= " AND s.last_name LIKE '$searchText%'";
     }
     else if($searchId == 4){
-        $query2.= " WHERE s.id LIKE '$searchText%'";
+        $query2.= " AND s.id LIKE '$searchText%'";
     }
 }
 
 $query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
-
+//print_r($query2);exit;
 $result2 = mysql_query($query2);
 
 //Add all records to an array

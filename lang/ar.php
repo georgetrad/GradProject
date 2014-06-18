@@ -12,14 +12,15 @@ define('INVALID_CRED', 'معلومات تسجيل الدخول غير صحيحة
 define('WELCOME', 'مرحباً');
 define('LOGOUT', 'تسجيل الخروج');
 define('WELCOME_TO_AA', 'مرحباً بك في الإرشاد الأكاديمي');
+define('MY_ADVISOR', 'المرشد الأكاديمي');
 
 define('HOME', 'الرئيسية');
     define('CURRENT_SEMESTER', 'الفصل الحالي');
-    define('NUM_SUGG_CRS', 'عدد المواد المقترحة');
+    define('NUM_SUGG_CRS', 'عدد المقررات المقترحة');
+    define('STU_NUM', 'عدد الطلاب');
     define('NUM_BELOW_STU', 'عدد الطلاب دون النصاب');
     define('NUM_STU_WITHOUT_ADV', 'عدد الطلاب بدون مرشد أكاديمي');
-    define('MOST_FAILED_CRS', 'المادة الأكثر رسوباً');
-    define('MOST_PASSED_CRS', 'المادة الأكثر نجاحاً');    
+    define('NUM_OF_GRADS', 'عدد الطلاب المتخرجون');
 
 define('SEMESTERS', 'الفصول');
     define('PREV_SEMESTERS', 'الفصول السابقة');
@@ -100,7 +101,7 @@ define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
         define('ENTER_STU_ID', 'الرجاء إدخال الرقم الجامعي للطالب');
         define('COMPLETED_HRS', 'عدد الساعات المنجزة');
         define('GPA', 'المعدل النقطي');        
-        define('FAILED_CRS_NUM', 'عدد المواد الراسبة');        
+        define('FAILED_CRS_NUM', 'عدد المقررات الراسبة');        
         define('REG_DATE', 'تاريخ التسجيل');
         define('DEP_HRS', 'ساعات القسم');
         define('CRS_TREE', 'الخطة الدرسية');
@@ -128,7 +129,7 @@ define('IMPORTING', 'الاستيراد');
         define('UPDATE_SUCCESS', 'تمّ تحديث البيانات بنجاح');
         define('UPDATE_NOT_SUCCESS', 'لم يتمّ تحديث البيانات بنجاح');
         define('UPDATE_STU_NUM', 'تحديث عدد الطلاب في كل مقرر');
-        define('CREATE_STU_USERS', 'إنشاء اسماء مستخدمين للطلاب الجدد');
+        define('CREATE_STU_USERS', 'إنشاء حسابات للطلاب الجدد');
     
 define('SETTINGS', 'الاعدادات');
     define('GRADES_DIST', 'توزيع الدرجات والنقاط');

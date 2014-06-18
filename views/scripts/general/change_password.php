@@ -5,7 +5,15 @@ if(!loggedIn()){
 }
 $title = CHANGE_PASSWORD;
 include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/general/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/student/top_bar.php';
+if($_SESSION['userLevel'] == -1){
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/dean/top_bar.php';
+}
+else if($_SESSION['userLevel'] == 0){
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/teacher/top_bar.php';
+}
+else if($_SESSION['userLevel'] == 1){
+    include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/student/top_bar.php';
+}
 ?>
 <div class="row">
     <h4 class="title text-center"><?=$title;?></h4>

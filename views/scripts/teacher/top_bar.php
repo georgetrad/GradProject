@@ -10,7 +10,7 @@
                     <a style="padding-right: 25px"><?=$_SESSION['name']?></a>
                     <ul class="dropdown">                                
                         <li><a href="models/functions/log_out.php"><?=LOGOUT?></a></li>
-                        <li><a href="views/scripts/teacher/change_password.php"><?=CHANGE_PASSWORD?></a></li>
+                        <li><a href="views/scripts/general/change_password.php"><?=CHANGE_PASSWORD?></a></li>
                     </ul>
                 </li>
                 <li>
@@ -26,7 +26,7 @@
                 </li>                
                 <li class="divider"></li>                
                 <li>
-                    <a><?=DB?></a>                    
+                    <a href="db" target="a_blank"><?=DB?></a>
                 </li>
             </ul>               
         </section>

@@ -60,7 +60,7 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // M
         $query2.= " AND (student.first_name LIKE '%$searchText%' OR student.middle_name LIKE '%$searchText%' OR student.last_name LIKE '%$searchText%') ";
     }
     else if($searchId == 2){
-        $query2.= " AND student..id LIKE '$searchText%'";
+        $query2.= " AND student.id LIKE '$searchText%'";
     }     
 }
 $query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
