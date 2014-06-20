@@ -35,12 +35,12 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
 }
 if(isset($_POST['filter']) && !empty($_POST['filter'])){
     $filter = $_POST['filter'];
-    $query2.= " AND c.course_type_id = ".$filter[0]['value'];
-    if(count($filter) > 1){
-        for($i=1 ; $i<(count($filter)) ; $i++){ 
-            $query2.= " OR c.course_type_id = ".$filter[$i]['value'];
-        }
-    } 
+    $result=array();
+    foreach ($filter as $row){
+        array_push($result, $row['value']);
+    }    
+    $filterValues = implode(', ', $result);
+    $query2 .= "AND c.course_type_id IN ( ".$filterValues.")";    
 }
 $query2.= " ORDER BY $sorting";
 

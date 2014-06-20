@@ -687,7 +687,7 @@ class databaseClass {
         $data = getData('name_ar,id','course_type');
         $result = "<form id='checkboxFilter'>"; 
         foreach ($data as $value){
-            $result.= "<input type='checkbox' name='filter' value='".$value[1]."' id='course_type_".$value[1]."'>".' '.$value[0].'   ';
+            $result.= "<input type='checkbox' checked name='filter' value='".$value[1]."' id='course_type_".$value[1]."'>".' '.$value[0].'   ';
             $result.= "&nbsp;";
                     
         }
