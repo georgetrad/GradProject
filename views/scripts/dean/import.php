@@ -25,6 +25,7 @@ $filesList = scandir($dir);
             <dd><a class="tab" href="#panel2-5"><?=IMP_COURSE_FILE?></a></dd>
             <dd><a class="tab" href="#panel2-6"><?=IMP_STUDENT_FILE?></a></dd>
             <dd><a class="tab" href="#panel2-7"><?=IMP_CLASS_GRADES_FILE?></a></dd>
+            <dd><a class="tab" href="#panel2-8"><?=IMP_STUDENT_STATUS?></a></dd>
         </dl>
     </div>        
 </div>
@@ -230,6 +231,32 @@ $filesList = scandir($dir);
             <div class="medium-2 large-2 columns show-for-medium-up">
                 <input type="button" class="tiny button" id="classGradesFileImportButton" name="classGradesFileImportButton" value="<?=IMPORT?>">
             </div>
+        </div>
+    </div>
+    <!-- Tab 8 -->
+    <div class="content" id="panel2-8">   
+        
+        <form id="studentStatusForm">
+            <div class="row">
+                <div class="medium-2 large-2 columns show-for-medium-up">                
+                    <span><?=IMP_CLASS_GRADES_FILE?></span><br><br>
+                    <select id="selectFile" name="selectFile">
+                        <?php       
+                        foreach ($filesList as $data){
+                            $q = explode('.', $data);
+                            if (!($data == '..'||$data == '.')){
+                                echo '<option value="'.$data.'">'.$data.'</option>';    
+                            }
+                        }?>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 large-2 columns show-for-medium-up">                
+                    <input type="button" class="tiny button" id="importStudentStatus" name="importStudentStatus" value="<?=IMPORT?>">
+                </div>
+            </div>
+            </form>
         </div>
     </div>
 </div>

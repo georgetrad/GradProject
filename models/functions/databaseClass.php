@@ -337,6 +337,34 @@ class databaseClass {
      * @param String $file File name
      * @return boolean
      */
+    public static function importStudentStatus($file){
+        $userId = $_SESSION['userId'];
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        //*******************Variables   *******************//
+        $rows = 10000;
+        $rowsOffSet = 2;
+        //*******************Student *******************//
+        $columns = array(
+            "id"                    => "D",
+            "registration_date"     => "B",
+            "status"                => "K",
+            "department_id"         => "L"
+        );
+        $staticData = array(     
+            "upload_file"   => $file,       
+            "user_id"       => $userId          
+        );   
+        $tableName = 'student';
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        unset($columns, $tableName, $staticData);
+        return $result;  
+    }
+    /**
+     * This function imports students grades from an excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function classGradeImport($file,$dep){
         $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
@@ -476,7 +504,7 @@ class databaseClass {
     
     public static function updateHoursLevel(){
         // Update completed hours for all students.
-        $query = "CALL update_hours_and_level()";
+        $query = "CALL update_student()";
         $result = mysql_query($query);
         $response = array("result" => $result, "error"=> mysql_error());
         return $response;

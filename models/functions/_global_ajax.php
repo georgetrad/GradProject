@@ -127,6 +127,13 @@ switch ($case){
         echo json_encode($result, JSON_UNESCAPED_UNICODE);
         break;
     } 
+    /******************** importStudentStatus ********************/
+    case 'importStudentStatus':{
+        $file = $_POST['selectFile'];
+        $result = databaseClass::importStudentStatus($file);
+        echo json_encode($result, JSON_UNESCAPED_UNICODE);
+        break;
+    } 
     /******************** courseImport ********************/
     case 'courseImport':{
         $file = $_POST['selectFile'];
