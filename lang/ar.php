@@ -20,7 +20,7 @@ define('HOME', 'الرئيسية');
     define('STU_NUM', 'عدد الطلاب');
     define('NUM_BELOW_STU', 'عدد الطلاب دون النصاب');
     define('NUM_STU_WITHOUT_ADV', 'عدد الطلاب بدون مرشد أكاديمي');
-    define('NUM_OF_GRADS', 'عدد الطلاب المتخرجون');
+    define('NUM_OF_GRADS', 'عدد الطلاب المتخرجين');
 
 define('SEMESTERS', 'الفصول');
     define('PREV_SEMESTERS', 'الفصول السابقة');
@@ -35,7 +35,7 @@ define('SEMESTERS', 'الفصول');
 
 define('COURSES', 'المقررات');    
     define('SUGGEST_COURSES', 'اقتراح مقررات');
-        define('AFFECTED_STU', 'الطلاب الذين لم يحققوا عدد الساعات الأدنى');
+        define('AFFECTED_STU', 'الطلاب الذين لم يطرح لهم العدد الأدنى من الساعات');
         define('COURSE_CODE', 'رمز المقرر');
         define('COURSE_NAME', 'اسم المقرر');
         define('COURSE_TYPE', 'نوع المقرر');

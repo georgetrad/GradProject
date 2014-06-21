@@ -400,8 +400,7 @@ class databaseClass {
         $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
         var_dump($result);exit;
         $error .= $result;
-        unset($columns, $tableName, $staticData, $result);      
-        //** Return response ***********************************//
+        unset($columns, $tableName, $staticData, $result);        
         $success =  true;
         $response =  array ('SUCCESS' => $success, 'ERROR' => $error);
         return $response;  
@@ -474,8 +473,7 @@ class databaseClass {
         return $response;
     }
     
-    public static function updateHoursLevel(){
-        // Update completed hours for all students.
+    public static function updateHoursLevel(){        
         $query = "CALL update_hours_and_level()";
         $result = mysql_query($query);
         $response = array("result" => $result, "error"=> mysql_error());
@@ -510,7 +508,6 @@ class databaseClass {
             $query.= "user_username = '".$_SESSION['username']."' AND ";
         }
         $query.= "id =". $id;
-//        print_r($query);exit;
         $queryRun = mysql_query($query);
         $fetch = mysql_fetch_row($queryRun);
         if ($fetch != ''){
@@ -522,7 +519,6 @@ class databaseClass {
             $address = mysql_result($queryRun, 0, 'address');
             $phone = mysql_result($queryRun, 0, 'phone_number');
             $email = mysql_result($queryRun, 0, 'email');
-//            $gpa = mysql_result($queryRun, 0, 'current_gpa');
             $comHrs = mysql_result($queryRun, 0, 'tot_hours_completed');
             $stuLevel = mysql_result($queryRun, 0, 'current_level');
             $depName = mysql_result($queryRun, 0, 'name_ar');
@@ -579,13 +575,11 @@ class databaseClass {
     }
     
     public static function getBelowStuNum(){
-//       $x = getValue('count(*)', 'stu_sugg_hrs',"hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL " );
         $query = "SELECT count(*) as recordCount FROM stu_sugg_hrs ";
         $query.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL ";
         $result = mysql_query($query);
         $num = mysql_fetch_row($result);
         return $num[0];
-//        return $x;
     }
     
     public static function getWithouthAdvNum(){
@@ -601,7 +595,7 @@ class databaseClass {
         $id = $_SESSION['id'];
         $query = "SELECT count(id) ";
         $query.= "FROM student ";
-        $query.= "WHERE advisor_id = $id";
+        $query.= "WHERE advisor_id = $id AND status = 'A'";
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];
