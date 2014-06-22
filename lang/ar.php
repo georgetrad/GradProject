@@ -35,7 +35,7 @@ define('SEMESTERS', 'الفصول');
 
 define('COURSES', 'المقررات');    
     define('SUGGEST_COURSES', 'اقتراح مقررات');
-        define('AFFECTED_STU', 'الطلاب الذين لم يحققوا عدد الساعات الأدنى');
+        define('AFFECTED_STU', 'الطلاب الذين لم يطرح لهم العدد الأدنى من الساعات');
         define('COURSE_CODE', 'رمز المقرر');
         define('COURSE_NAME', 'اسم المقرر');
         define('COURSE_TYPE', 'نوع المقرر');
@@ -117,7 +117,7 @@ define('IMPORTING', 'الاستيراد');
         define('IMP_COURSES', 'مقررات');
         define('IMP_CLASSES', 'شعب');
         define('IMP_FIN_GRADE', 'علامات نهائية');    
-        define('IMP_COURSE_FILE', 'ملف مقررات');
+        define('IMP_COURSE_FILE', 'ملف الخطة الدرسية');
         define('IMP_STUDENT_FILE', 'ملف طلاب');
         define('IMP_STUDENT_STATUS', 'حالة الطالب');
         define('IMP_CLASS_GRADES_FILE', 'ملف علامات شعبة');
