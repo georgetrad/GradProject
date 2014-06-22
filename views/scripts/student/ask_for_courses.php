@@ -12,18 +12,17 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/GradProject/views/scripts/student/top_b
 </div>
 <!-- Filtering Area -->
 <div class="row">    
-    <div class="medium-7 large-7 columns show-for-medium-up">&nbsp;</div>    
-    <div class="medium-5 large-5 columns show-for-medium-up">
+    <div class="small-6 medium-6 large-6 columns show-for-medium-up">&nbsp;</div>    
+    <div class="small-6 medium-6 large-6 columns show-for-medium-up">
         <div class="right_home_title label"><?=NUM_ASK_CRS?></div><div id="num_ask_crs" class="secondary label home_data"></div>
         <div class="right_home_title label"><?=NUM_ASK_HRS?></div><div id="num_ask_hrs" class="secondary label home_data"></div>
     </div>    
-    <!--<div class="medium-1 large-1 columns show-for-medium-up">&nbsp;</div>-->    
 </div>
 <br>
 <div class="row">
-    <div class="medium-1 large-1 columns">&nbsp</div>
-    <div id="available_courses_table" class="jTable medium-10 large-10 columns"><!--Table--></div>
-    <div class="medium-1 large-1 columns">&nbsp;</div>
+    <div class="small-1 medium-1 large-1 columns">&nbsp</div>
+    <div id="available_courses_table" class="jTable small-10 medium-10 large-10 columns"><!--Table--></div>
+    <div class="small-1 medium-1 large-1 columns">&nbsp;</div>
 </div>
 
 <?php 

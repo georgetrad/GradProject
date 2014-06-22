@@ -11,7 +11,7 @@ define('INVALID_LOGIN', 'يرجى إدخال معلومات تسجيل الدخ�
 define('INVALID_CRED', 'معلومات تسجيل الدخول غير صحيحة');
 define('WELCOME', 'مرحباً');
 define('LOGOUT', 'تسجيل الخروج');
-define('WELCOME_TO_AA', 'مرحباً بك في الإرشاد الأكاديمي');
+define('WELCOME_TO_AA', 'مرحباً بك في برنامج الإرشاد الأكاديمي في جامعة إيبلا الخاصّة');
 define('MY_ADVISOR', 'المرشد الأكاديمي');
 
 define('HOME', 'الرئيسية');
@@ -116,10 +116,10 @@ define('IMPORTING', 'الاستيراد');
         define('IMP_STU', 'طلاب');
         define('IMP_COURSES', 'مقررات');
         define('IMP_CLASSES', 'شعب');
-        define('IMP_FIN_GRADE', 'علامات نهائية');    
-        define('IMP_COURSE_FILE', 'ملف مقررات');
+        define('IMP_FIN_GRADE', 'درجات نهائية');    
+        define('IMP_COURSE_FILE', 'الخطة الدرسية');
         define('IMP_STUDENT_FILE', 'ملف طلاب');
-        define('IMP_CLASS_GRADES_FILE', 'ملف علامات شعبة');
+        define('IMP_CLASS_GRADES_FILE', 'علامات شعبة');
         define('IMPORT', 'استيراد');
         define('INSERT_SUCCESS', 'تمّ استيراد البيانات بنجاح');
         define('INSERT_NOT_SUCCESS','لم يتمّ استيراد البيانات بنجاح');
