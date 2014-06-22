@@ -148,7 +148,7 @@ class databaseClass {
         $resultArray =array();
         $columns = 'COURSE_ID';
         $tableName = 'sugg_course';
-        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE semester_id = (SELECT max(id) FROM semester)";
+        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE semester_id = (SELECT max(id) FROM semester WHERE active = 'A')";
         $result =  mysql_query($query);
         while ($result2 = mysql_fetch_array($result)){
             array_push($resultArray, $result2);
@@ -178,7 +178,7 @@ class databaseClass {
      * @return type
      */
     public static function getSuggCoursesNum(){
-        $query = "SELECT count(id) FROM sugg_course WHERE active='A' AND semester_id = (SELECT max(id) FROM semester)";
+        $query = "SELECT count(id) FROM sugg_course WHERE active='A' AND semester_id = (SELECT max(id) FROM semester WHERE active = 'A')";
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];
@@ -189,7 +189,7 @@ class databaseClass {
      * @return type
      */
     public static function getAskCoursesNum($studentId){
-        $query = "SELECT count(id) AS num, sum(credits) AS hrs FROM student_suggest WHERE student_id = '$studentId' AND semester_id = (SELECT max(id) FROM semester)";
+        $query = "SELECT count(id) AS num, sum(credits) AS hrs FROM student_suggest WHERE student_id = '$studentId' AND semester_id = (SELECT max(id) FROM semester WHERE active = 'A')";
         $result = mysql_query($query);
         $num = mysql_result($result, 0, 'num');
         $hrs = mysql_result($result, 0, 'hrs');                
@@ -337,6 +337,34 @@ class databaseClass {
      * @param String $file File name
      * @return boolean
      */
+    public static function importStudentStatus($file){
+        $userId = $_SESSION['userId'];
+        $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
+        //*******************Variables   *******************//
+        $rows = 10000;
+        $rowsOffSet = 2;
+        //*******************Student *******************//
+        $columns = array(
+            "id"                    => "D",
+            "registration_date"     => "B",
+            "status"                => "K",
+            "department_id"         => "L"
+        );
+        $staticData = array(     
+            "upload_file"   => $file,       
+            "user_id"       => $userId          
+        );   
+        $tableName = 'student';
+        $result = import($inputFileName, $columns, $tableName, $rows, $rowsOffSet, $staticData);
+        unset($columns, $tableName, $staticData);
+        return $result;  
+    }
+    /**
+     * This function imports students grades from an excel file.
+     * @author Mohammad Haddad
+     * @param String $file File name
+     * @return boolean
+     */
     public static function classGradeImport($file,$dep){
         $userId = $_SESSION['userId'];
         $inputFileName = $_SERVER['DOCUMENT_ROOT'].'/GradProject/uploads/'.$file;
@@ -473,8 +501,9 @@ class databaseClass {
         return $response;
     }
     
-    public static function updateHoursLevel(){        
-        $query = "CALL update_hours_and_level()";
+    public static function updateHoursLevel(){
+        // Update completed hours for all students.
+        $query = "CALL update_student()";
         $result = mysql_query($query);
         $response = array("result" => $result, "error"=> mysql_error());
         return $response;
@@ -535,7 +564,7 @@ class databaseClass {
             $result = mysql_query($failedQuery);
             $num = mysql_fetch_array($result);
             
-            $gpa = getValue('SUM(academic_view_max.point*academic_view_max.credits)/SUM(academic_view_max.credits)','academic_view_max','student_id='.$id,FALSE);//select SUM(academic_view_max.point*academic_view_max.credits)/SUM(academic_view_max.credits) from academic_view_max where academic_view_max.student_id = 
+            $gpa = getValue('FORMAT(SUM(academic_view_max.point*academic_view_max.credits)/SUM(academic_view_max.credits),2)','academic_view_max','student_id='.$id,FALSE);//select SUM(academic_view_max.point*academic_view_max.credits)/SUM(academic_view_max.credits) from academic_view_max where academic_view_max.student_id = 
                     
             $response = array('success'   => true, 'id'  => $stuId, 'name'    => $name, 'gender'  => $gender, 'birthDate'  => $birthDate,
                               'nationalId'  => $nationalId, 'address'  => $address, 'phone' => $phone, 'email' => $email, 'gpa' => $gpa,
@@ -549,7 +578,7 @@ class databaseClass {
     }
     
     public function getCurrSemInfo(){
-        $query = "SELECT * FROM semester WHERE id= (SELECT max(id) FROM semester) AND active = 'A'";
+        $query = "SELECT * FROM semester WHERE id= (SELECT max(id) FROM semester WHERE active = 'A') AND active = 'A'";
         $result = mysql_query($query);
         $rows = array();
         while($row = mysql_fetch_array($result)){
@@ -576,7 +605,7 @@ class databaseClass {
     
     public static function getBelowStuNum(){
         $query = "SELECT count(*) as recordCount FROM stu_sugg_hrs ";
-        $query.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester)) OR hrs IS NULL ";
+        $query.= "WHERE hrs<(SELECT min_req_hrs FROM semester WHERE id = (SELECT max(id) FROM semester WHERE active = 'A')) OR hrs IS NULL ";
         $result = mysql_query($query);
         $num = mysql_fetch_row($result);
         return $num[0];
