@@ -49,7 +49,9 @@
                     visibility: 'hidden',
                     title: '<?php echo STATUS;?>',                
                     edit:true,
-                    options: { 'G': '<?php echo GRADUATED;?>', 'A': '<?php echo ACTIVE;?>', 'B': '<?php echo BANNED;?>', 'L': '<?php echo LEFT;?>', 'P': '<?php echo POSTPONED;?>' }
+                    options: { 'A': '<?php echo ACTIVE;?>', 'G': '<?php echo GRADUATED;?>', 'B': '<?php echo BANNED;?>',
+                                'L': '<?php echo LEFT;?>','P': '<?php echo POSTPONED;?>',
+                                'W': '<?php echo WITHDRAW;?>', 'O': '<?php echo OFF;?>'}
                 },
                 level: {
                     title: '<?php echo LEVEL;?>',
@@ -65,7 +67,7 @@
                 },
                 link: {
                     visibility: 'visible',
-                    width: '2%',
+                    width: '3%',
                     edit:false,
                     sorting: false,
                     listClass: 'center_data',
@@ -76,7 +78,7 @@
                     //CHILD TABLE DEFINITION FOR "PERSONAL INFORMATION"
                     personal_info: {
                         title: '',
-                        width: '2%',
+                        width: '3%',
                         sorting: false,
                         listClass: 'center_data',
                         edit:false,                        
