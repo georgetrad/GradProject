@@ -614,7 +614,7 @@ class databaseClass {
     public static function getWithouthAdvNum(){
         $query = "SELECT count(id) ";
         $query.= "FROM student ";
-        $query.= "WHERE advisor_id IS NULL";
+        $query.= "WHERE advisor_id IS NULL AND status = 'A' AND active = 'A'";
         $result = mysql_query($query);
         $num = mysql_fetch_array($result);
         return $num[0];

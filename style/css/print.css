@@ -11,3 +11,13 @@ and open the template in the editor.
 body{
     direction: rtl;
 }
+table, th, td{
+  border-collapse:collapse !important;
+  border: 1px solid black !important;
+  width:100% !important;
+  text-align:right !important;
+  border-color: black !important;
+}
+area0{
+width: 80%;
+}

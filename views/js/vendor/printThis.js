@@ -196,10 +196,10 @@
     $.fn.printThis.defaults = {
         debug: false, // show the iframe for debugging
         importCSS: true, // import parent page css
-        printContainer: true, // print outer container/$.selector
-        loadCSS: "style/css/print.css", // load an additional css file
+        printContainer: false, // print outer container/$.selector
+        loadCSS: "../../GradProject/style/css/print.css", // load an additional css file
         pageTitle: "", // add title to print page
-        removeInline: false, // remove all inline styles
+        removeInline: true, // remove all inline styles
         printDelay: 333, // variable print delay
         header: x, // prefix to html
         formValues: true // preserve input/form values

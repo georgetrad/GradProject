@@ -23,7 +23,7 @@ $filesList = scandir($dir);
             <dd><a class="tab" href="#panel2-3"><?=IMP_CLASSES?></a></dd>
             <dd><a class="tab" href="#panel2-4"><?=IMP_FIN_GRADE?></a></dd>
             <dd><a class="tab" href="#panel2-5"><?=IMP_COURSE_FILE?></a></dd>
-            <dd><a class="tab" href="#panel2-6"><?=IMP_STUDENT_FILE?></a></dd>
+            <!--<dd><a class="tab" href="#panel2-6"><?=IMP_STUDENT_FILE?></a></dd>-->
             <dd><a class="tab" href="#panel2-7"><?=IMP_CLASS_GRADES_FILE?></a></dd>
             <dd><a class="tab" href="#panel2-8"><?=IMP_STUDENT_STATUS?></a></dd>
         </dl>
