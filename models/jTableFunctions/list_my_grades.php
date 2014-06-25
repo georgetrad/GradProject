@@ -5,20 +5,20 @@ include_once '../db_connect.php';
 // Get records count
 $studentId = $_SESSION['id'];
 
-$query1 = "SELECT COUNT(*) AS RecordCount FROM grades WHERE student = '$studentId'";
+$query1 = "SELECT COUNT(*) AS RecordCount FROM academic_view_max WHERE student_id = '$studentId'";
 $result1 = mysql_query($query1);
 $row = mysql_fetch_array($result1);
 $recordCount = $row['RecordCount'];
 
 $pageSize = $_GET['jtPageSize'];
 $startIndex = $_GET['jtStartIndex'];
-$sorting = 'name ASC';
+$sorting = 'course_level ASC';
 if(isset($_GET['jtSorting'])){
     $sorting = $_GET['jtSorting'];   
 }
 
 //Get records from database
-$query2 = "SELECT * FROM grades WHERE student = '$studentId' ";
+$query2 = "SELECT * FROM academic_view_max WHERE student_id = '$studentId' ";
 $query2.= " ORDER BY $sorting LIMIT $startIndex, $pageSize";
 $result2 = mysql_query($query2);
 //print_r($query2);exit; 
