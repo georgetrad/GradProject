@@ -1,6 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/GradProject/models/core.php';
-if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] == 0)){
+if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] != -1)){
     header('Location: ../../../index.php');
 }
 $title = UPLOAD_FILE;

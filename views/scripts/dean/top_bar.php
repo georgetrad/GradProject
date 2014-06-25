@@ -1,5 +1,7 @@
 <?php
-
+if(!loggedIn() || (loggedIn() && $_SESSION['userLevel'] != -1)){
+    header('Location: ../../../index.php');
+}
 ?>
 <div class="contain-to-grid sticky">
     <nav class="top-bar" data-topbar>                
