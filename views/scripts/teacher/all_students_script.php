@@ -58,7 +58,7 @@
                 },
                 link: {
                     visibility: 'visible',
-                    width: '2%',
+                    width: '3%',
                     edit:false,
                     sorting: false,
                     listClass: 'center_data',
@@ -68,7 +68,7 @@
                     //CHILD TABLE DEFINITION FOR "FOR "PERSONAL INFORMATION"
                     personal_info: {
                         title: '',
-                        width: '10%',
+                        width: '16%',
                         sorting: false,
                         listClass: 'center_data',
                         display: function (data) {

@@ -9,7 +9,6 @@ define('USERNAME', 'اسم المستخدم');
 define('PASSWORD', 'كلمة المرور');
 define('INVALID_LOGIN', 'يرجى إدخال معلومات تسجيل الدخول');
 define('INVALID_CRED', 'معلومات تسجيل الدخول غير صحيحة');
-define('WELCOME', 'مرحباً');
 define('LOGOUT', 'تسجيل الخروج');
 define('WELCOME_TO_AA', 'مرحباً بك في برنامج الإرشاد الأكاديمي في جامعة إيبلا الخاصّة');
 define('MY_ADVISOR', 'المرشد الأكاديمي');
@@ -57,10 +56,9 @@ define('COURSES', 'المقررات');
         define('WANTING_NUM', 'الراغبون');
     define('FAILED', 'رسوب');
     define('NEVER_BEEN_TAKEN', 'لم يتم تسجيلها');
-    define('CONDITIONAL_PASS', 'نجاح مشروط');
-        
+    define('CONDITIONAL_PASS', 'نجاح مشروط');        
     define('SUGGESTED_COURSES', 'المقررات المقترحة');
-    
+
 define('STUDENTS', 'الطلاب');
     define('ALL_STUDENTS', 'طلاب الكلية');
         define('SEARCH_TYPE', 'نوع البحث');
@@ -76,19 +74,21 @@ define('STUDENTS', 'الطلاب');
             define('ADDRESS', 'العنوان');
             define('FINAL_GRADE', 'الدرجة النهائية');
             define('STATUS', 'الحالة');
-            define('ACTIVE', 'مستمر');
-            define('GRADUATED', 'متخرج');
-            define('BANNED', 'محروم');
-            define('LEFT', 'منقطع');
-            define('POSTPONED', 'مؤجل');
+                define('ACTIVE', 'مستمر');
+                define('GRADUATED', 'متخرج');
+                define('BANNED', 'محروم');
+                define('LEFT', 'منقطع');
+                define('POSTPONED', 'مؤجل');
+                define('WITHDRAW', 'منسحب');
+                define('OFF', 'مفصول');
     define('MY_STUDENTS', 'طلابي');
-    
+
 define('TEACHERS', 'المدرسون');
     define('DEP', 'القسم');
     define('DEGREE', 'المرتبة العلمية');
         define('DOCTOR', 'دكتور');
         define('ENGINEER', 'مهندس');
-    
+
 define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
     define('ASSIGN_STUDENTS', 'إسناد طلاب');
         define('ADVISOR', 'المرشد الحالي');
@@ -99,7 +99,7 @@ define('ACADEMIC_ADVISING', 'الارشاد الأكاديمي');
         define('AVAILABLE_CRS', 'المقررات المتاحة');
         define('ADVISE_SEARCH_ERROR', 'لا يمكنك رؤية معلومات هذا الطالب');
         define('ENTER_STU_ID', 'الرجاء إدخال الرقم الجامعي للطالب');
-        define('COMPLETED_HRS', 'عدد الساعات المنجزة');
+        define('COMPLETED_HRS', 'الساعات المنجزة');
         define('GPA', 'المعدل النقطي');        
         define('FAILED_CRS_NUM', 'عدد المقررات الراسبة');        
         define('REG_DATE', 'تاريخ التسجيل');
@@ -120,7 +120,7 @@ define('IMPORTING', 'الاستيراد');
         define('IMP_COURSE_FILE', 'الخطة الدرسية');
         define('IMP_STUDENT_FILE', 'ملف طلاب');
         define('IMP_STUDENT_STATUS', 'حالة الطالب');
-        define('IMP_CLASS_GRADES_FILE', 'ملف علامات شعبة');
+        define('IMP_CLASS_GRADES_FILE', 'علامات شعبة');
         define('IMPORT', 'استيراد');
         define('INSERT_SUCCESS', 'تمّ استيراد البيانات بنجاح');
         define('INSERT_NOT_SUCCESS','لم يتمّ استيراد البيانات بنجاح');
@@ -131,7 +131,7 @@ define('IMPORTING', 'الاستيراد');
         define('UPDATE_NOT_SUCCESS', 'لم يتمّ تحديث البيانات بنجاح');
         define('UPDATE_STU_NUM', 'تحديث عدد الطلاب في كل مقرر');
         define('CREATE_STU_USERS', 'إنشاء حسابات للطلاب الجدد');
-    
+
 define('SETTINGS', 'الاعدادات');
     define('GRADES_DIST', 'توزيع الدرجات والنقاط');
         define('GRADES', 'الدرجات');
@@ -139,7 +139,7 @@ define('SETTINGS', 'الاعدادات');
         define('APPLIES_TO', 'تطبق على طلاب عام');
         define('POINTS', 'النقاط');
         define('LETTER', 'التقدير');
-        
+
     define('HRS_CONST', 'ثوابت ساعات المستويات');
         define('LEVELS_DIST', 'توزيع المستويات');
         define('NUM_COMP_HRS', 'عدد الساعات المنجزة');
@@ -147,7 +147,7 @@ define('SETTINGS', 'الاعدادات');
         define('LEVEL_3', 'الثالث');
         define('LEVEL_4', 'الرابع');
         define('LEVEL_5', 'الخامس');
-    
+
 define('DB', 'قاعدة البيانات');
 
 define('SEARCH', 'بحث');
@@ -169,7 +169,7 @@ define('OLD_PASSWORD', 'كلمة المرور القديمة');
 define('NEW_PASSWORD', 'كلمة المرور الجديدة');
 define('CONFIRM_PASSWORD', 'تأكيد كلمة المرور');
 define('EMPTY_PASSWORD', 'الرجاء ملء كافة الحقول');
-define('SHORT_PASSWORD', 'يجب أن تكون كلمة المرور الجديدة أطول من ثلاثة محارف');
+define('SHORT_PASSWORD', 'يجب أن تكون كلمة المرور الجديدة أطول من محرفين');
 define('DOESNT_MATCH', 'لا يوجد تتطابق بين كلمتي المرور القديمة والجديدة.');
 define('WRONG_OLD', 'الرجاء التأكد من كلمة المرور القديمة');
 define('CHANGE_SUCCESS', 'لقد تم تغيير كلمة المرور بنجاح');

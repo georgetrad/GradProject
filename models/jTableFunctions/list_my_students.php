@@ -20,9 +20,15 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){
     $searchId = $_POST['searchId'];
     
     if($searchId == 1){                                         // Modifying the query according to the search text.
-        $query1.= " AND CONCAT(student.first_name, ' ', student.middle_name, ' ', student.last_name) LIKE '%$searchText%'";
+        $query1.= " AND student.first_name LIKE '$searchText%'";
     }
     else if($searchId == 2){
+        $query1.= " AND student.middle_name LIKE '$searchText%'";
+    }
+    else if($searchId == 3){
+        $query1.= " AND student.last_name LIKE '$searchText%'";
+    }
+    else if($searchId == 4){
         $query1.= " AND student.id LIKE '$searchText%'";
     }     
 }
@@ -56,10 +62,16 @@ if(isset($_POST['searchText']) && !empty($_POST['searchText'])){            // M
     $searchText = $_POST['searchText'];
     $searchId = $_POST['searchId'];
     
-    if($searchId == 1){
-        $query2.= " AND (student.first_name LIKE '%$searchText%' OR student.middle_name LIKE '%$searchText%' OR student.last_name LIKE '%$searchText%') ";
+    if($searchId == 1){                                         // Modifying the query according to the search text.
+        $query2.= " AND student.first_name LIKE '$searchText%'";
     }
     else if($searchId == 2){
+        $query2.= " AND student.middle_name LIKE '$searchText%'";
+    }
+    else if($searchId == 3){
+        $query2.= " AND student.last_name LIKE '$searchText%'";
+    }
+    else if($searchId == 4){
         $query2.= " AND student.id LIKE '$searchText%'";
     }     
 }

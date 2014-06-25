@@ -33,7 +33,7 @@
                     $('#change_success').show();                    
                     setTimeout(function() {
                         window.location.replace('models/functions/log_out.php');                        
-                    }, 3000);                                        
+                    }, 2000);                                        
                 }
                 else if(success === false){                          
                     $('#wrong_old').show();                    
@@ -64,7 +64,8 @@
                 $('#short_password').show();                
             }
             else if (newPassword !== confirmPassword){                
-                $('#wrong').hide();    
+                $('#wrong').hide();
+                $('#wrong_old').hide();
                 $('#short_password').hide();
                 $('#doesnt_match').show();
             }
