@@ -48,9 +48,9 @@ if(!loggedIn()){
         animation: 'slide',
         navigation_arrows: true,
         timer_show_progress_bar: false,
-        timer_speed: 3000,        
+        timer_speed: 2000,        
         pause_on_hover: true,
-        resume_on_mouseout: false,
+        resume_on_mouseout: true,
         slide_number: false
     }
     });
