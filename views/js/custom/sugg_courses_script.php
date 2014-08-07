@@ -51,13 +51,13 @@
                     courses: {
                         title: '',
                         width: '5%',
-                        sorting: false,
+                        sorting: true,
                         display: function (data) {
                                 //Create an image that will be used to open child table
                                 var $img = $('<img src="style/img/list_metro.png" style="cursor: pointer"/>');
                                 //Open child table when user clicks the image
                                 $img.click(function () {
-                                    $('#below_stu_Table').jtable('openChildTable',
+                                    $('#sugg_courses_Table').jtable('openChildTable',
                                         $img.closest('tr'),
                                         {
                                             title: '<?php echo STUDENTS;?>',

@@ -155,3 +155,7 @@ h4.title {
 .printBtn{
     cursor: pointer;
 }
+
+html, body, .off-canvas-wrap, .inner-wrap, .main-section {
+  height: 100% !important;
+}

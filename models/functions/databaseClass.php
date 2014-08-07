@@ -164,7 +164,7 @@ class databaseClass {
         $resultArray =array();
         $columns = 'COURSE_ID';
         $tableName = 'student_suggest';
-        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE student_id = '$studentId'";
+        $query =   "SELECT ".$columns." FROM ".$tableName." WHERE student_id = '$studentId' AND semester_id = (SELECT MAX(id) FROM semester)";
         $result =  mysql_query($query);
         while ($result2 = mysql_fetch_array($result)){
             array_push($resultArray, $result2);
